@@ -168,11 +168,12 @@
   {}%                                     % Space above
   {}%                                     % Space below
   {}%                             % Body font
-  {0.5em}%                                     % Indent amount
-  {\itshape}%                            % Theorem head font
+  {}%                                     % Indent amount
+  {\itshape\bfseries}%                            % Theorem head font
   {}%                                    % Punctuation after theorem head
   {\newline}%                                    % Space after theorem head, ' ', or \newline
   {}%                                     % Theorem head spec (can be left empty, meaning `normal')
+
 
 \theoremstyle{break}
 
@@ -185,3 +186,9 @@
 %	New definitions
 %----------------------------------------------------------------------------------------
 \newcommand{\M}{\mathcal{M}}
+
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.7}
+%\pgfplotsset{compat=1.16}
