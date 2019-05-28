@@ -174,21 +174,55 @@
   {\newline}%                                    % Space after theorem head, ' ', or \newline
   {}%                                     % Theorem head spec (can be left empty, meaning `normal')
 
+\newtheoremstyle{nte}%                % Name
+  {}%                                     % Space above
+  {}%                                     % Space below
+  {}%                             % Body font
+  {}%                                     % Indent amount
+  {\itshape}%                            % Theorem head font
+  {:}%                                    % Punctuation after theorem head
+  { }%                                    % Space after theorem head, ' ', or \newline
+  {}%                                     % Theorem head spec (can be left empty, meaning `normal')
 
 \theoremstyle{break}
 
-\newtheorem{thm}{Theorem}[section] % reset theorem numbering for each chapter
-\newtheorem{defn}[thm]{Definition} % definition numbers are dependent on theorem numbers
-\newtheorem{exmp}[thm]{Example} % same for example numbers
+\newtheorem{theorem}{Theorem}[section] % reset theorem numbering for each chapter
+\newtheorem{defn}[theorem]{Definition} % definition numbers are dependent on theorem numbers
+\newtheorem{exmp}[theorem]{Example} % same for example numbers
+\theoremstyle{nte}
+\newtheorem*{note}{Note}
+
 
 
 %----------------------------------------------------------------------------------------
 %	New definitions
 %----------------------------------------------------------------------------------------
 \newcommand{\M}{\mathcal{M}}
+\newcommand{\eval}{\big|}
 
 
 \usepackage{tikz}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.7}
+\usepackage{hyperref}
+\hypersetup{
+    unicode=false,          % non-Latin characters in Acrobat’s bookmarks
+    pdftoolbar=true,        % show Acrobat’s toolbar?
+    pdfmenubar=true,        % show Acrobat’s menu?
+    pdffitwindow=false,     % window fit to page when opened
+    pdfstartview={FitH},    % fits the width of the page to the window
+    pdftitle={},    % title
+    pdfauthor={},     % author
+    pdfsubject={},   % subject of the document
+    pdfcreator={},   % creator of the document
+    pdfproducer={}, % producer of the document
+    pdfkeywords={}, % list of keywords
+    pdfnewwindow=true,      % links in new PDF window
+    colorlinks=false,       % false: boxed links; true: colored links
+    linkcolor=red,          % color of internal links (change box color with linkbordercolor)
+    citecolor=green,        % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=cyan           % color of external links
+}
+%\usepackage{url}
 %\pgfplotsset{compat=1.16}

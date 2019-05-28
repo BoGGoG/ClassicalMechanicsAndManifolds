@@ -94,17 +94,17 @@ which are both useless.
 
 The special case $M = \mathbb{R}^d = \mathbb{R} \times \cdots \times \mathbb{R}$ has a standard topology
 for which we need the definition of a soft ball.
-\begin{defn}[Soft Ball in $\mathcal{R}^d$]
+\begin{defn}[Soft Ball in $\mathbb{R}^d$]
    \begin{equation}
        B_r(p) := \left\{ (q_1,\cdots,q_d)| \sum_{i=1}^{d}(p_i-p_i) < r \right\}\,,
    \end{equation} 
-   with $r\in \mathcal{R}^+$, $p\in\mathcal{R}^d$.
+   with $r\in \mathbb{R}^+$, $p\in\mathbb{R}^d$.
    Note: This does not need a norm or vector space structure on $\mathbb{R}^d$.
 \end{defn}
 \begin{defn}[$\mathcal{O}_\text{standard}$ on $\mathbb{R}^d$]
     \begin{equation}
         U \in \mathcal{O}_\text{standard} :\Leftrightarrow \forall p\in U:
-        \exists r\in\mathcal{R}^+ : B_r(p) \subseteq U
+        \exists r\in\mathbb{R}^+ : B_r(p) \subseteq U
     \end{equation}
 \end{defn}
 
@@ -135,7 +135,9 @@ We call $(M, \mathcal{O}$ a \textit{topological space} and:
         \item $U \in \mathcal{O} \Leftrightarrow: \text{call } U\subseteq M$ an \textit{open set}
         \item $M\backslash A \in \mathcal{O} \Leftrightarrow: \text{call } U\subseteq M$  a \textit{closed set}
     \end{itemize}
-    Note: The empty set is open and closed. If a set is open we cannot directly follow that it is not closed or vise versa.
+\begin{note}
+    The empty set is open and closed. If a set is open we cannot directly follow that it is not closed or vise versa. For $M = \left\{ 1, 2 \right\}$ and $\mathcal{O}_M = \left\{ \emptyset, \left\{ 1 \right\}, \left\{ 2 \right\}, \left\{ 1,2 \right\} \right\}$ the set $\left\{ 2 \right\}$ is open and closed.
+\end{note}
 
 \subsection{Continuous maps}
 A map
@@ -164,10 +166,45 @@ A map that is injective and surjective is called \textit{surjective}.
     \textit{``A map is open iff the preimages of all open sets are open sets.''}
 \end{defn}
 
-Note: If a map is not surjective there are sets with preimage $\emptyset$, thus we need to have
-$\emptyset$ in $\mathcal{O}$, otherwise only surjective maps could be continuous.
+\begin{note}
+    If a map is not surjective there are sets with preimage $\emptyset$, thus we need to have
+    $\emptyset$ in $\mathcal{O}$, otherwise only surjective maps could be continuous.
+\end{note}
+\begin{note}
+    The inverse of a continuous function does not need to be continuous.
+\end{note}
+
+\begin{defn}[Composition of maps]
+    For $f$ and $g$
+    \begin{equation*}
+        f: M \to N, \quad g: N \to P\,,
+    \end{equation*}
+    we define the \textit{composition} as
+    \begin{align}
+        g \circ f&: M \to P \\
+        m &\mapsto (g\circ f)(m) := g(f(m)) \nonumber
+    \end{align}
+\end{defn}
+
+\begin{theorem}[Composition of continuos maps]
+    For $f$, $g$ continuos also $g\circ f$ is continuous (if spaces match).
+\end{theorem}
 
 
+\begin{defn}[Subset topology, Inherited topology]
+    A set $M$ with topology $\mathcal{O}_M$. Given any subset $S \subseteq M$ we
+    can construct the inherited topology $\mathcal{O}\eval_S \subseteq \mathcal{P}(S)$
+    \begin{equation}
+        \mathcal{O}\eval_S := \left\{ U\cap S~|~U\in \mathcal{O}M \right\}\,.
+    \end{equation}
+\end{defn}
+
+\begin{note}
+    For $S \subseteq M$, if $f$ is continuous then $f\eval_{S}$ is also
+    continuous if $\mathcal{O}\eval_S$ is chosen. This is for example important
+    if you are on a trajectory $\gamma$ through $\mathbb{R}^n$ and measure the temperature
+    $T\eval_\gamma$.
+\end{note}
 %------------------------------------------------
 
 
