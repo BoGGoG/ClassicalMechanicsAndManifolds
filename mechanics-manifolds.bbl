@@ -19,6 +19,15 @@
 
 \refsection{0}
   \datalist[entry]{nyt/global//global/global}
+    \entry{texstackexchange:manifolds}{misc}{}
+      \field{sortinit}{D}
+      \field{sortinithash}{2ef1bd9a78cc71eb74d7231c635177b8}
+      \field{labeldatesource}{nodate}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://tex.stackexchange.com/questions/382762/drawing-manifolds-in-tikz}}
+      \field{note}{Accessed: 02 Jun 2019 10:42:19 CEST}
+      \field{title}{Drawing manifolds in tikz}
+    \endentry
     \entry{Schuller15}{misc}{}
       \name{author}{1}{}{%
         {{uniquename=0,uniquepart=base,hash=ecc3fa675c17b9bbfc6794ea99804c67}{%
