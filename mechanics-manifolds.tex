@@ -309,6 +309,26 @@ which is called the \textit{chart transition map}.
 \begin{note}
     As a physicist one talks about a ``change in coordinates''.
 \end{note}
+
+\subsection{Manifold Philosophy}
+
+The idea is to define properties of some object in the real world $\M$ by at a chart-representative
+of it. For example the continuity of a curve $\gamma: [0,1]\to\M$ can be judged by looking at
+$x\circ\gamma: [0,1]\to\mathbb{R}^{d}$, because $x$ is invertible and in both directions continuous
+and the composition of two continuous maps is also continuous.
+\begin{note}
+    One needs to make sure that the property of the object on $\M$ does not depend on the
+    map $x$ or $y$. For continuity this is the case, since 
+    $y\circ\gamma = (y\circ x^{-1}) \circ x\circ \gamma$ and the chart transition map
+    $y\circ x^{-1}$ is also continuous.
+\end{note}
+
+Other properties like ``differentiability'' are not even defined on $\M$ a priori,
+so one can only talk about the chart representative. Here the definition that $\gamma$
+is differentiable iff $x\circ\gamma: [0,1]\to\mathbb{R}^{d}$ is differentiable has the
+problem that $x$ and $y$ only need to be continuous and so the chart transition map
+$y\circ x^{-1}$ does not need to be differentiable unless one restricts oneself to only
+differentiable charts.
 %------------------------------------------------
 
 
