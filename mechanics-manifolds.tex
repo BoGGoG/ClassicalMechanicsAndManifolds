@@ -33,7 +33,7 @@
 \title{Mathematical Notes on Manifolds in Physics}
 
 \author{%
-	\authorstyle{Niklas Zorbach\textsuperscript{1} and Marco Knipfer\textsuperscript{1, 2}} % Authors
+	\authorstyle{Niklas Zorbach\textsuperscript{1} and Marco Knipfer\textsuperscript{1, 2}} % Authors 
 	\newline\newline % Space before institutions
 	\textsuperscript{1}\institution{Institute for Theoretical Physics, Goethe-University Frankfurt, Germany}\\ 
 	\textsuperscript{2}\institution{Institute for Physics and Astronomy, The University of Alabama, USA}\\ 
@@ -42,7 +42,7 @@
 % Example of a one line author/institution relationship
 %\author{\newauthor{John Marston} \newinstitution{Universidad Nacional Autónoma de México, Mexico City, Mexico}}
 
-\date{\today} 
+\date{Version: \today} 
 
 %----------------------------------------------------------------------------------------
 
@@ -56,7 +56,12 @@
 %	ABSTRACT
 %----------------------------------------------------------------------------------------
 
-\lettrineabstract{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce maximus nisi ligula. Morbi laoreet ex ligula, vitae lobortis purus mattis vel. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec ac metus ut turpis mollis placerat et nec enim. Duis tristique nibh maximus faucibus facilisis. Praesent in consequat leo. Maecenas condimentum ex rhoncus, elementum diam vel, malesuada ante.}
+%\lettrineabstract makes first letter in abstract huge and nice, but does not allow equations in the whole {}.
+\lettrineabstract{We are writing these notes in order to learn Riemannian Geometry and better understand
+Lagrangian Mechanics and General Relativity. As a physicist one usually learns all of this in a rather practical way without
+understanding the basic mathematical concepts. For example a physicist usually does not learn that the
+Lagrangian lives on the tangent bundle, because one implicitly always
+identifies some spaces (here the space and the tangent space), which is possible on a flat manifold.}
 
 %----------------------------------------------------------------------------------------
 %	ARTICLE CONTENTS
@@ -473,12 +478,168 @@ where $\varphi_i$ are the components of $\varphi\in V^\star$ and $v^j$ the compo
 the chosen basis. In equation~(\ref{eq:tensorcomponentsexample}) the \textit{Einstein summation convention} is used, \textit{i.e.}\ an index that appears up and down in an expression is summed over.
 
 \begin{note}
-    The Einstein summation convention is only useful because we are working wit \textit{linear maps},
+    The Einstein summation convention is only useful because we are working with \textit{linear maps},
     otherwise the expression
     \begin{equation}
         \varphi\left(\sum_i v^i e_i\right) = \sum_i \varphi(v^i e_i)\,, 
     \end{equation}
     would not hold and with the summation index we would not know where the sum sign goes.
+\end{note}
+
+\section{Differentiable Manifolds}
+So far we only had topological manifolds. We also want to be able to talk about the velocity of
+curves. The problem is that the notion of a topological manifold is not enough to define
+differentiability of curves. In this section we will find out what additional structure we need
+to be able to talk about the differentiability of
+\begin{itemize}
+    \item curves: $\mathbb{R}\to \M$
+    \item functions: $\M\to \mathbb{R}$
+    \item maps: $\M\to\mathcal{N}$
+\end{itemize}
+Strategy: Choose a chart $(U, x)$ and consider portion of the curve in the domain of the chart:
+$\gamma: \mathbb{R}\to U$ (see figure~\ref{fig:curvechart}). Since $x\circ\gamma: \mathbb{R}\to\mathbb{R}^d$
+we can try to ``lift'' the notion of differentiability of a curve on $\mathbb{R}^d$ to that of
+a curve on $\M$. The problem is to make this independent of the chart.
+\begin{figure}
+    \centering
+    \begin{tikzpicture}
+    \matrix (m) [matrix of math nodes,row sep=3em,column sep=4em,minimum width=2em]
+    {
+        ~                 & y(U\cup V)\subseteq \mathbb{R}^d\\
+        \gamma:\mathbb{R} & U\cup V \neq \emptyset \\
+        ~                 & x(U\cup V)\subseteq \mathbb{R}^d \\
+    };
+    \path[-stealth]
+        (m-2-1) edge node [above] {$\gamma$} (m-2-2)
+        (m-2-1) edge node [below, rotate = -25] {$x\circ\gamma$} (m-3-2)
+        (m-2-1) edge node [above, rotate = +25] {$y\circ\gamma$} (m-1-2)
+        (m-3-2) edge[bend right = 60] node [right, rotate = 90, xshift = -0.5cm, yshift = -0.2cm] {$y\circ x^{-1}$} (m-1-2)
+        (m-2-2) edge node [right] {$x$} (m-3-2)
+        (m-2-2) edge node [right] {$y$} (m-1-2);
+    \end{tikzpicture}
+    \caption{Curve $\gamma$ in chart.}
+    \label{fig:curvechart}
+\end{figure}
+\begin{equation}
+    y\circ\gamma = \underbrace{(y\circ x^{-1})}_{\mathbb{R}^d\to\mathbb{R}^d}\circ \underbrace{(x\circ\gamma)}_{\substack{\mathbb{R}\to\mathbb{R}^d\\ \text{differentiable}}}\,,
+\end{equation}
+but we only know that the \textit{chart transition map} $y\circ x^{-1}$ is continuous (because of the definition of a top. Manifold). Thus it is not guaranteed that
+$y\circ \gamma$ is continuons, not differentiable. Reminder: The composition of continuous maps is continuous,
+same for differentiable. 
+The above definition of differentiability of $\gamma$ by
+checking the differentiability of $x\circ\gamma$ with some chart $x$ is not independent of the chart.
+
+\begin{defn}[$\flower$ - compatibility of charts]
+    Two charts $(U, x)$ and $(V, y)$ of a topological manifold are called $\flower$-compatible if
+    either
+    \begin{enumerate}
+        \item $U\cup V = \emptyset$ or
+        \item $U\cup V \neq \emptyset$ and the chart transition maps
+            \begin{align*}
+                y\circ x^{-1}&:\mathbb{R}^d\supseteq x(U\cup V) \to y(U\cup V) \subseteq \mathbb{R}^d \\
+                x\circ y^{-1}&: \mathbb{R}^d\supseteq y(U\cup V) \to x(U\cup V) \subseteq \mathbb{R}^d
+            \end{align*}
+            have the $\flower$-property in the $\mathbb{R}^d$-sense.
+    \end{enumerate}
+\end{defn}
+
+\begin{defn}[$\flower$-compatible atlas]
+    An atlas $\mathcal{A}_\flower$ is a $\flower$-compatible atlas if any two charts in
+    $\mathcal{A}_\flower$ are $\flower$-compatible.
+\end{defn}
+
+\begin{defn}[$\flower$-manifold]
+    A $\flower$-manifold is a triple $(\underbrace{\M, \mathcal{O}}_{\text{top.\ manif.}}, 
+    \underbrace{\mathcal{A}_\flower}_{\in \mathcal{A}_\text{max}}$).
+\end{defn}
+
+\begin{tabular}{ll}
+    $\flower$ & $\flower$ property in $\mathbb{R}^d$-sense \\
+    \hline\hline
+    $C^0$     & $C^0(\mathbb{R}^d \to \mathbb{R}^d)$ continuous maps\\
+    $C^1$     & $C^1(\mathbb{R}^d \to \mathbb{R}^d)$ differentiable and result is cont.\\
+    $C^k$     & $C^k(\mathbb{R}^d \to \mathbb{R}^d)$ k times diffble and result is cont.\\
+    $D^k$     & $D^k(\mathbb{R}^d \to \mathbb{R}^d)$ k times differentiable\\
+    $C^\infty$     & $C^\infty(\mathbb{R}^d \to \mathbb{R}^d)$ smooth functions\\
+    $C^\omega$  & $\exists$ multidim. Taylor expansion, $C^\omega \subset C^\infty$
+\end{tabular}
+\begin{note}
+    The more fancy properties one wants for the objects on the manifold, the more restrictive one
+    has to be for the atlas.
+\end{note}
+\begin{theorem}[$C^1\to C^\infty$]
+    Any $C^{k \leq 1}$-manifold atlas $\mathcal{A}_{C^{k\leq 1}}$ of a topological manifold contains
+    a $C^\infty$-atlas.
+\end{theorem}
+Thus we may without loss of generality always consider $C^\infty$-manifolds. 
+``smooth'' manifolds, unless we wish to define Taylor expandibility or complex differentiability, \ldots.
+\begin{defn}[Smooth manifold]
+    $(\M, \mathcal{O}, \mathcal{A})$
+\end{defn}
+
+\section{Diffeomorphisms}
+\begin{equation*}
+    M \xrightarrow{\phantom{asdf}\phi\phantom{asdf}} N
+\end{equation*}
+$M$, $N$ naked sets, then the structure-preserving maps are bijections (invertionable maps).
+\begin{defn}[Set-theoretically isomorphic]
+    Two sets $M$, $N$ are said to be \textit{set-thoretically isomorphic} $M\cong_\text{st} N$ if
+    $\exists$ a bijection $\phi: M\to N$ between them.
+\end{defn}
+\begin{note}
+    Then they are ``of the same size''. Examples: $\mathbb{N}\cong_\text{st}\mathbb{Z}$, $\mathbb{N}\cong_\text{st} \mathbb{Q}$,
+    $\mathbb{N}\not\cong_\text{st} \mathbb{R}$
+\end{note}
+Now $(\M, \mathcal{O}_\M)$ and $(\mathcal{N}, \mathcal{O_N})$.
+\begin{equation*}
+    \M \xrightarrow{\phantom{asdf}\phi\phantom{asdf}} \mathcal{N}
+\end{equation*}
+\begin{defn}[Topologically isomorphic (homeomorphic)]
+    $(\M, \mathcal{O}_\M) \cong_\text{top} (\mathcal{N}, \mathcal{O_N})$ topologically isomorphic = ``homeomorphic'' if $\exists \phi: \M\to\mathcal{N}$ and $\phi, \phi^{-1}$ are \textit{continuous}.
+\end{defn}
+\begin{note}
+    Continuity is the important property here.
+    This is a stronger notion. If two spaces are hoemomorphic then they are also set-theoretically isomorphic.
+\end{note}
+\begin{defn}[Isomorphic vector spaces]
+    $(V, +_V, \cdot_V) \cong_\text{vec} (W, +_W, \cdot_W)$ if $\exists$ a bijection $\phi:V\to W$ that is
+    linear in both directions.
+\end{defn}
+\begin{defn}[diffeomorphic]
+    Two $C^\infty$ manifolds $(\M, \mathcal{O_M}, \mathcal{A_M})$ and $(\mathcal{N, O_N, A_N})$
+    are said to be \textit{diffeomorphic} if $\exists$ a bijeciton $\phi: \M \to \mathcal{N}$ such that
+    $\phi, \phi^{-1}$ are both $C^\infty$-maps, where by $C^\infty$ we mean that $y\circ \phi \circ x^{-1}$
+    is in $C^\infty$ in the $\mathcal{R}^d$-sense, see figure~\ref{fig:diffeo-commdiag}.
+    \label{def:diffeomorphic}
+\end{defn}
+
+\begin{figure}[tbh]
+    \centering
+    \begin{tikzpicture}
+    \matrix (m) [matrix of math nodes,row sep=3em,column sep=4em,minimum width=2em]
+    {
+        \mathbb{R}^d & \mathbb{R}^l \\
+        \M \supseteq U & V \subseteq N \\
+        \mathbb{R}^d & \mathbb{R}^l \\
+    };
+    \path[-stealth]
+        (m-1-1) edge node [below] {$\tilde{y} \circ \phi \circ \tilde{x}^{-1}$} (m-1-2)
+        (m-2-1) edge node [left] {$\tilde{x}$} (m-1-1)
+        (m-2-2) edge node [right] {$\tilde{y}$} (m-1-2)
+        (m-2-1) edge node [above] {$\phi$} (m-2-2)
+        (m-2-1) edge node [left] {$x$} (m-3-1)
+        (m-2-2) edge node [right] {$y$} (m-3-2)
+        (m-3-1) edge node [above] {$y \circ \phi \circ x^{-1}$} (m-3-2)
+        (m-3-1) edge[bend left = 60] node [left, rotate = 90, xshift = 0.5cm, yshift = +0.2cm] {$C^\infty$} (m-1-1)
+        (m-3-2) edge[bend right = 60] node [right, rotate = 90, xshift = -0.4cm, yshift = -0.25cm] {$C^\infty$} (m-1-2);
+    \end{tikzpicture}
+    \caption{Picture for the definition of diffeomorphisms}
+    \label{fig:diffeo-commdiag}
+\end{figure}
+\begin{note}
+    Since we started with $C^\infty$-manifolds, the chart transition maps are $C^\infty$ and thus
+    the notion of differentiability in the definition~\ref{def:diffeomorphic} is independent of the
+    choice of charts, see figure~\ref{fig:diffeo-commdiag}.
 \end{note}
 %------------------------------------------------
 

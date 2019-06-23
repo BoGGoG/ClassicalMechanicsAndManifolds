@@ -252,6 +252,7 @@
 % https://tex.stackexchange.com/questions/382762/drawing-manifolds-in-tikz
 \usepgfplotslibrary{patchplots}
 \usetikzlibrary{patterns, positioning, arrows}
+\usetikzlibrary{matrix}
 \pgfplotsset{compat=1.15}
 
 \pgfplotsset{compat=1.7}
@@ -264,3 +265,15 @@
     }
 \pgfusepath{fill}
 }
+
+
+%----------------------------------------------------------------------------------------
+%	SYMBOLS
+%----------------------------------------------------------------------------------------
+% 
+%\usepackage{bbding}
+%\usepackage{pifont}
+%\usepackage{wasysym}
+\usepackage{amsfonts}
+%\newcommand{\flower}{\SixFlowerRemovedOpenPetal}
+\newcommand{\flower}{\star}
