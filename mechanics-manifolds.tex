@@ -574,7 +574,7 @@ checking the differentiability of $x\circ\gamma$ with some chart $x$ is not inde
 Thus we may without loss of generality always consider $C^\infty$-manifolds. 
 ``smooth'' manifolds, unless we wish to define Taylor expandibility or complex differentiability, \ldots.
 \begin{defn}[Smooth manifold]
-    $(\M, \mathcal{O}, \mathcal{A})$
+    $(\M, \mathcal{O}, \mathcal{A})$, where $(\mathcal{M, O})$ is a topological manifold and $\mathcal{A}$ is a $C^\infty$-atlas.
 \end{defn}
 
 \section{Diffeomorphisms}
@@ -609,7 +609,7 @@ Now $(\M, \mathcal{O}_\M)$ and $(\mathcal{N}, \mathcal{O_N})$.
     Two $C^\infty$ manifolds $(\M, \mathcal{O_M}, \mathcal{A_M})$ and $(\mathcal{N, O_N, A_N})$
     are said to be \textit{diffeomorphic} if $\exists$ a bijeciton $\phi: \M \to \mathcal{N}$ such that
     $\phi, \phi^{-1}$ are both $C^\infty$-maps, where by $C^\infty$ we mean that $y\circ \phi \circ x^{-1}$
-    is in $C^\infty$ in the $\mathcal{R}^d$-sense, see figure~\ref{fig:diffeo-commdiag}.
+    is in $C^\infty$ in the $\mathbb{R}^d$-sense, see figure~\ref{fig:diffeo-commdiag}.
     \label{def:diffeomorphic}
 \end{defn}
 
@@ -633,14 +633,27 @@ Now $(\M, \mathcal{O}_\M)$ and $(\mathcal{N}, \mathcal{O_N})$.
         (m-3-1) edge[bend left = 60] node [left, rotate = 90, xshift = 0.5cm, yshift = +0.2cm] {$C^\infty$} (m-1-1)
         (m-3-2) edge[bend right = 60] node [right, rotate = 90, xshift = -0.4cm, yshift = -0.25cm] {$C^\infty$} (m-1-2);
     \end{tikzpicture}
-    \caption{Picture for the definition of diffeomorphisms}
+    \caption{In the definition of diffeomorphic~\ref{def:diffeomorphic} $\phi, \phi^{-1}$ have to be
+    $C^\infty$, which is defined such that $y\circ\phi\circ x^{-1}$ has to be $C^\infty$ in the $\mathbb{R}^d$-sense, which is chart-independent here.}
     \label{fig:diffeo-commdiag}
 \end{figure}
 \begin{note}
     Since we started with $C^\infty$-manifolds, the chart transition maps are $C^\infty$ and thus
     the notion of differentiability in the definition~\ref{def:diffeomorphic} is independent of the
-    choice of charts, see figure~\ref{fig:diffeo-commdiag}.
+    choice of charts, \textit{i.e.} $\tilde{y}\circ\phi\tilde{x}^{-1}$ is also $C^\infty$, see figure~\ref{fig:diffeo-commdiag}.
 \end{note}
+\begin{theorem}
+    \# = number of $C^\infty$-manifolds one can make of a given $C^\infty$-manifold (if any) --- up to diffeomorphisms ---.\newline
+    \begin{center}
+    \begin{tabular}{ll}
+        $\text{dim}M$  & \# \\
+        \hline
+        \begin{tabular}{l} 1 \\ 2 \\ 3 \end{tabular} & $\left.\begin{tabular}{l} 1 \\ 2 \\ 3 \end{tabular}\right\}$ Moise-Radon theorem  \\
+        \begin{tabular}{l} 4 \end{tabular} & \begin{tabular}{l} uncountable infinitely many \end{tabular} \\
+        \begin{tabular}{l} 5 \\ 6 \\ \vdots \end{tabular} & $\left.\begin{tabular}{l} finite \\ finite \\ finite \end{tabular}\right\}$ surgery theory
+    \end{tabular}
+    \end{center}
+\end{theorem}
 %------------------------------------------------
 
 
