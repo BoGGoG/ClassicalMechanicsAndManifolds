@@ -667,7 +667,7 @@ Now $(\M, \mathcal{O}_\M)$ and $(\mathcal{N}, \mathcal{O_N})$.
     \end{align}
     with
     \begin{equation}
-        f \mapsto v_{\gamma,p}(f) := (f \circ \gamma)'(\gamma^{-1}(p))\,,
+        f \mapsto v_{\gamma,p}(f) := (f \circ \gamma)'(\underbrace{\gamma^{-1}(p)}_{\lambda_0})\,,
     \end{equation}
     \textit{i.e.}, the directional derivative of $f$ along $\gamma$ at the point $p$
 \end{defn}
@@ -708,17 +708,46 @@ Since $f\circ\gamma: \mathbb{R}\to\mathbb{R}$ we can simply take the normal deri
     that acts on $f$, as the vector.
 \end{note}
 \begin{defn}[Tangent space]
-    $\forall p \in \M$ the ``tangent space to $\M$ at $p$'' is
+    $\forall p \in \M$ the ``tangent space to $\M$ at $p$'' consists of all the velocities
+    of curves at that point :
     \begin{equation}
         T_p\M:=\left\{ v_{\gamma,p} | \gamma\text{ smooth curves} \right\}\,.
     \end{equation}
     \label{def:tangentspace}
 \end{defn}
 \begin{note}
-    There is no reference to any external space or embedding in definition~\ref{def:tangentspace}!
+    There is no reference to any external space or embedding in definition~\ref{def:tangentspace},
+    see also figure~\ref{fig:tangentspace}!
 \end{note}
 $T_p\M$ can be made into a vector space. The proof for this is so important and contains so many
 important things, that one should go through it in detail.
+
+\begin{figure}[tbh]
+    \centering
+    \begin{tikzpicture}[x={(170:1cm)},y={(55:.7cm)},z={(90:1cm)}]
+        \draw (2.5,-2.5,0)  -- (2.5,2.5,0) node[below right] {$T_p\M$} -- (-2.5,2.5,0) -- (-2.5,-2.5,0) -- cycle;
+        \draw[looseness=.6] (2.5,-2.5,-1) node[above right] {$\M$}
+        to[bend left] (2.5,2.5,-1)
+        to[bend left] coordinate (mp) (-2.5,2.5,-1)
+        to[bend right] (-2.5,-2.5,-1)
+        to[bend right] coordinate (mm) (2.5,-2.5,-1)
+        -- cycle;
+        \draw[dashed,looseness=.2] (mm) to[bend left] (0,0,0) to[bend left] (mp);
+        \draw[dashed,looseness=.8] (2,-0.9,0) to[bend left] (-2.8,-1,0);% to[bend left] (mp);
+        \path[looseness=.2] (mm) to[bend left]
+        node[pos=.2,pin={[pin distance=1cm,pin edge={solid,<-}]below right:$\gamma$}] {} (0,0,0);
+        \path[looseness=.2] (2,-0.3,0) to[bend right]
+        node[pos=.2,pin={[pin distance=0.5cm,pin edge={solid,<-}]below right:$\delta$}] {} (-2.8,0,0);
+
+        \draw[->] (0,0,0) -- (0,1.5,0) node[above right] {$\dot{\gamma} = v_{\gamma, p}$};
+        \node at (-0.3,-0.4,0) {$p$};
+    \end{tikzpicture}
+    \caption{Picture for immagining the tangent space. Keep in mind that there is no embedding needed like
+    in this picture. Also in one can only think of $v_{\gamma,p}$ as an arrow in the chart, but not at
+    manifold level. Also it is usefull to think of the arrow as the directional derivative $\partial_v$ in
+    the direciton of this arrow.}
+    \label{fig:tangentspace}
+\end{figure}
 \begin{defn}[Addition and multiplication for tangent space]
     For $p\in\M$, $\gamma$ smooth curve on $\M$, $\alpha \in \mathbb{R}$:
     \begin{align}
@@ -733,8 +762,12 @@ But do they close, \textit{i.e.}, is the tangent space a vector space?
 It remains to be shown that
 \begin{enumerate}
     \item $\exists\, \text{curve }\sigma: v_{\gamma, p} + v_{\delta, p} = v_{\sigma, p}$
+        \label{item:addofcurves}
     \item $\exists\, \text{curve }\tau: \alpha\cdot v_{\gamma,p} = v_{\tau, p}$
 \end{enumerate}
+The problem for~\ref{item:addofcurves} is that one cannot define $v_{\gamma,p} + v_{\delta, p}$
+as just adding the points of the curves, since there is no such thing as adding two points on 
+a manifold (what would be Paris + Berlin?).\\
 \begin{proof} (Tangent space is a vector space)\\
     \begin{itemize}
         \item[2.]
@@ -748,18 +781,40 @@ It remains to be shown that
                 v_{\tau, p} &:= (f\circ\tau)'(0) = (f\circ\gamma\circ\mu_\alpha)'(0)\nonumber\\
                 &= (f\circ\gamma)(\lambda_0)\alpha = \alpha v_{\gamma,p}\,.
             \end{align}
-        \item [1.] Make a choice of chart $(U, x)$ with $p\in U$, later show independence of chart.
+        \item [1.] Two curves $\gamma(\lambda), \delta(\lambda)$ with $\gamma(\lambda_0) = p$ and
+            $\delta(\lambda_1) = p$. 
+            Make a choice of chart $(U, x)$ with $p\in U$, later show independence of chart.
             Define
             \begin{align}
-                \sigma_x&:\,\mathbb{R}\to\M\,, \\
+                \sigma_x&:\,\mathbb{R}\to\M\,,\nonumber \\
             \sigma_x(\lambda)&:= x^{-1} \left[ (x\circ\gamma)(\lambda_0 + \lambda)\right. +\\
-            &+ \left.(x\circ\delta)(\lambda_1+\lambda) - (x\circ\gamma)(\lambda_0)\right]\,.
+            &+ \left.(x\circ\delta)(\lambda_1+\lambda) - (x\circ\gamma)(\lambda_0)\right]\,.\nonumber
             \end{align}
             \begin{align}
-                \sigma_x(0) &= \delta(\lambda_1) = p\\
-                v_{\sigma_x, p}(f) &= (f\circ\sigma_x)'(0)
+                \sigma_x(0) &= \delta(\lambda_1) = p\,,\\
+                v_{\sigma_x, p}(f) &= (f\circ\sigma_x)'(0)\label{eq:vsigma}\\
+                &= \left[ \underbrace{(f\circ x^{-1})}_{\mathbb{R}^d\to\mathbb{R}}\circ\underbrace{(x\circ\sigma_x)}_{\mathbb{R}^d\to\mathbb{R}} \right]'(0)\nonumber\,,
             \end{align}
+            where now we use the multidimensional chain rule that a physicist would rather know as
+            $\frac{\diff}{\diff \lambda}f(\vec{y}(\lambda))
+            = (\vec{\nabla}_{y} f)\cdot \frac{\diff \vec{y}}{\diff\lambda}$.
+            \begin{align*}
+                v_{\sigma_x,p}(f) &= (x^i\circ\sigma_x)'(0)\left[\partial_i(f\circ x^{-1})\right]
+                (\underbrace{x(\sigma_x(0))}_{x(p)})\\
+                (x^i\circ\sigma_x)'(0) &=[(x^i\circ\gamma(\lambda_0+\lambda) + (x^i\circ\delta)(\lambda_1+\lambda)\\ 
+                &~- (x^i\circ\gamma)(\lambda_0)]'\\
+                &= (x^i\circ\gamma)'(\lambda_0) + (x^i\circ\delta)'(\lambda_1) = v^i_{\gamma,p} + v^i_{\delta,p}\,.
+            \end{align*}
+            Plugging this into equation~(\ref{eq:vsigma}) and doing the same step backwards we get
+            \begin{equation}
+                v_{\sigma_x, p}(f) = v_{\gamma,p}(f) + v_{\delta, p}(f)\quad\forall f\in C^\infty(\M)\,,
+            \end{equation}
+            independent of the chart.
     \end{itemize}
+    \begin{note}
+        It turns out that the sum of curves like this depends on the map $(U, x)$, but the derivative
+        at the point $p$ does not.
+    \end{note}
 \end{proof}
 
 %------------------------------------------------
