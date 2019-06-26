@@ -168,8 +168,8 @@ A map that is injective and surjective is called \textit{surjective}.
     $\mathcal{O}_N$} if
     \begin{equation}
         \boxed{
-    \forall V\in \mathcal{O}_N: \text{preim}_f(V) \in \mathcal{O}_M\,.
-}
+    \forall V\in \mathcal{O}_N: \text{preim}_f(V) \in \mathcal{O}_M
+}\,.
     \end{equation}
     \textit{``A map is open iff the preimages of all open sets are open sets.''}
 \end{defn}
@@ -671,8 +671,8 @@ Now $(\M, \mathcal{O}_\M)$ and $(\mathcal{N}, \mathcal{O_N})$.
     with
     \begin{equation}
         \boxed{
-        v_{\gamma,p}(f) := (f \circ \gamma)'(\underbrace{\gamma^{-1}(p)}_{\lambda_0})\,,
-    }
+        v_{\gamma,p}(f) := (f \circ \gamma)'(\underbrace{\gamma^{-1}(p)}_{\lambda_0})
+    }\,,
     \end{equation}
     \textit{i.e.}, the directional derivative of $f$ along $\gamma$ at the point $p$
 \end{defn}
@@ -910,17 +910,67 @@ and with the multidimensional chain rule, which a physicist would write as
 equation~(\ref{eq:changeofcomp-calc}) becomes
 \begin{align}
     \left( \frac{\partial}{\partial x^i} \right)_p f &= 
-    \left( \partial_i (y\circ x^{-1} \right)^{j}(x(p))\cdot
-        \left( \partial_j(f\circ y^{-1} \right)(y(p))\nonumber\\
+    \left( \partial_i (y\circ x^{-1} )^{j}\right)(x(p))\cdot
+    \left( \partial_j(f\circ y^{-1}) \right)(y(p))\nonumber\\
             &= \left(\frac{\partial y^j}{\partial x^i}\right)_p \cdot \left(\frac{\partial f}{\partial y^j}\right)_p f\,.
 \end{align}
 Comparison with equation~(\ref{eq:vectransformdef}) yields the transformation for vector components.
 Namely the components of $X$ in the $y$-chart, $X^{j}_{(y)}$ can be calculated from the components
 in the $x$-chart, $X^i_{(x)}$ through
 \begin{equation}
-    \boxed{
-    X^j_{(y)} = \left( \frac{\partial y^j}{\partial x^i} \right) X^{i}_{(x)}\,.
-}
+    \boxed{%
+    X^j_{(y)} = \left( \frac{\partial y^j}{\partial x^i} \right) X^{i}_{(x)}
+}\,.
+\end{equation}
+
+\subsection{Cotangent spaces}
+The cotangent space of $T_p\M$ is
+\begin{equation}
+    (T_p\M)^* := \left\{ \phi: T_p\M \linearto \mathbb{R} \right\}\,.
+\end{equation}
+One often just writes $T_p\M^*$.
+\begin{exmp}[Gradient]
+    For $f\in C^\infty(\M)$, define 
+    \begin{align}
+        (\diff f)_p: T_p\M &\linearto \mathbb{R}\nonumber\\
+        X &\mapsto (\diff f)_p(X) := Xf\,,
+    \end{align}
+    then $(\diff f)_p(X) \in \mathbb{R}$, thus
+    $(\diff f)_p \in T_p\M^*$ and we call $(\diff f)_p$ the \textit{gradient} of $f$ at $p\in M$. 
+    Note that the gradient is a $(0,1)$-tensor, a covector, and not a $(1,0)$-tensor,
+    which would be a vector.
+
+    The components of the gradient with respect to the chart induced basis are
+    (choosing a chart $(U, x)$)
+    \begin{align}
+        \left( (\diff f)_p \right)_j &:= (\diff f)_p\left( \frac{\partial}{\partial X^j} \right)
+        = \left( \frac{\partial f}{\partial x^j} \right)_p\\
+        &= \partial_j (f\circ x^{-1})(x(p))\,.
+    \end{align}
+\end{exmp}
+
+\begin{theorem}[Chart induced basis for the cotantent space]
+    Consider chart $(U,x)$, $x^i: U \to \mathbb{R}$.
+    Then
+    \begin{equation}
+        \left( \diff x^1 \right), \left( \diff x^2 \right), \ldots, \left( \diff x^d \right),\,,
+    \end{equation}
+    is a basis of $T_p\M^*$. In fact, if one chooses the chart induced basis in $T_p\M$,
+    it is the dual basis of the dual space $T_p\M^*$, \textit{i.e.},
+    \begin{equation}
+        (\diff x^a)_p \left( \frac{\partial}{\partial x^b} \right) = \delta^a_b\,.
+    \end{equation}
+\end{theorem}
+Again, one can calculate how the components of a covector behave under a change of chart.
+Of a covector $\omega \in T_p\M^\star$ the components are given by
+\begin{equation}
+    \omega = \omega_{(x)i}(\diff x^i)_p = \omega_{(y)i}(\diff y^i)_p\,,
+\end{equation}
+and following similar steps as before
+\begin{equation}
+    \boxed{%
+    \omega_{(y)i} = \left( \frac{\partial x^j}{\partial y^i} \right)_p
+}\,.
 \end{equation}
 %------------------------------------------------
 
