@@ -102,7 +102,7 @@ The special case $M = \mathbb{R}^d = \mathbb{R} \times \cdots \times \mathbb{R}$
 for which we need the definition of a soft ball.
 \begin{defn}[Soft Ball in $\mathbb{R}^d$]
    \begin{equation}
-       B_r(p) := \left\{ (q_1,\cdots,q_d)| \sum_{i=1}^{d}(p_i-p_i) < r \right\}\,,
+   B_r(p) := \left\{ (q_1,\cdots,q_d) \left| \sum_{i=1}^{d}(p_i-p_i) < r\right. \right\}\,,
    \end{equation} 
    with $r\in \mathbb{R}^+$, $p\in\mathbb{R}^d$.
    Note: This does not need a norm or vector space structure on $\mathbb{R}^d$.
@@ -167,7 +167,9 @@ A map that is injective and surjective is called \textit{surjective}.
     Then a map $f: M \to N$ is called \textit{continuous with respect to $\mathcal{O}_M$ and
     $\mathcal{O}_N$} if
     \begin{equation}
+        \boxed{
     \forall V\in \mathcal{O}_N: \text{preim}_f(V) \in \mathcal{O}_M\,.
+}
     \end{equation}
     \textit{``A map is open iff the preimages of all open sets are open sets.''}
 \end{defn}
@@ -232,7 +234,7 @@ A map that is injective and surjective is called \textit{surjective}.
     Thus in the above definition $x(U)$ is also open (from the definition of continuity).
 \end{note}
 
-\begin{terminology}
+\begin{terminology}~\\
     \begin{itemize}
         \item $(U,x)$ is a \textit{chart} of $\M, \mathcal{O}$,
         \item $\mathcal{A} = \left\{ (U_{(\alpha)}, x_{(\alpha)} | \alpha \in A \right\}$ is an \textit{atlas} of $(\M, \mathcal{O})$ if $\bigcup\limits_{\alpha\in A} U_{(\alpha)}$ covers the whole manifold $\M$,
@@ -500,7 +502,7 @@ Strategy: Choose a chart $(U, x)$ and consider portion of the curve in the domai
 $\gamma: \mathbb{R}\to U$ (see figure~\ref{fig:curvechart}). Since $x\circ\gamma: \mathbb{R}\to\mathbb{R}^d$
 we can try to ``lift'' the notion of differentiability of a curve on $\mathbb{R}^d$ to that of
 a curve on $\M$. The problem is to make this independent of the chart.
-\begin{figure}
+\begin{figure}[tbh]
     \centering
     \begin{tikzpicture}
     \matrix (m) [matrix of math nodes,row sep=3em,column sep=4em,minimum width=2em]
@@ -662,21 +664,24 @@ Now $(\M, \mathcal{O}_\M)$ and $(\mathcal{N}, \mathcal{O_N})$.
     $(\mathcal{M,O,A})$ smooth manifold, curve $\gamma: \mathbb{R}\to \M$ at least $C^1$.
     Suppose $\gamma(\lambda_0) = p$.
     The velocity $v$ of $\gamma$ at $p$ is the linear map
-    \begin{align}
-        v_{\gamma, p}: C^\infty(\M) \linearto \mathbb{R}\,,
-    \end{align}
+    \begin{align*}
+        v_{\gamma, p}: C^\infty(\M) \linearto \mathbb{R}\,,\\
+        f \mapsto v_{\gamma, p}(f)\,,
+    \end{align*}
     with
     \begin{equation}
-        f \mapsto v_{\gamma,p}(f) := (f \circ \gamma)'(\underbrace{\gamma^{-1}(p)}_{\lambda_0})\,,
+        \boxed{
+        v_{\gamma,p}(f) := (f \circ \gamma)'(\underbrace{\gamma^{-1}(p)}_{\lambda_0})\,,
+    }
     \end{equation}
     \textit{i.e.}, the directional derivative of $f$ along $\gamma$ at the point $p$
 \end{defn}
 \begin{note}
     Remember 
     \begin{align}
-        C^\infty(\M) &= \left\{ f: \M\to\mathbb{R} | f \text{ smooth, }\right. \\
+        C^\infty(\M) &= \left\{ f: \M\to\mathbb{R} | f \text{ smooth, }\right. \nonumber\\
             &(f+g)(p):= f(p) + g(p)\\
-        &\left.(\lambda \cdot g)(p) := \lambda \cdot g(p), \lambda \in \mathbb{R}\right\}
+            &\left.(\lambda \cdot g)(p) := \lambda \cdot g(p), \lambda \in \mathbb{R}\right\}\nonumber
     \end{align}
     is a vector space.
 \end{note}
@@ -745,7 +750,7 @@ important things, that one should go through it in detail.
     \caption{Picture for immagining the tangent space. Keep in mind that there is no embedding needed like
     in this picture. Also in one can only think of $v_{\gamma,p}$ as an arrow in the chart, but not at
     manifold level. Also it is usefull to think of the arrow as the directional derivative $\partial_v$ in
-    the direciton of this arrow.}
+    the direciton of this arrow. Picture adapted from~\cite{texstackexchange:tangentspace}}
     \label{fig:tangentspace}
 \end{figure}
 \begin{defn}[Addition and multiplication for tangent space]
@@ -812,11 +817,111 @@ a manifold (what would be Paris + Berlin?).\\
             independent of the chart.
     \end{itemize}
     \begin{note}
-        It turns out that the sum of curves like this depends on the map $(U, x)$, but the derivative
-        at the point $p$ does not.
+        It turns out that the sum of curves like this depends on the chart $(U, x)$, but the derivative
+        of the sum of the curves at the point $p$ does not.
     \end{note}
 \end{proof}
+    
+\subsection{Components of vectors}
+Let $(U,x) \in \mathcal{A}_\text{smooth}$,
+\begin{align}
+    v_{\gamma,p}(f):&= (f\circ\gamma)'(0) = \left[ (f\circ x^{-1})\circ(x\circ\gamma) \right]'(0) \nonumber\\
+    &= (x^i\circ\gamma)' (0) \cdot \left( \partial_i (f\circ x^{-1}) \right)\left( x(p) \right)\nonumber\\
+    &=:\dot{\gamma}^i_x(0) \left(\frac{\partial f}{\partial x^i}\right)_p
+    \label{eq:vectorcomponents}
+\end{align}
+\begin{note}
+    The last step in equation~(\ref{eq:vectorcomponents}) is pure notation.
+    If one sees $(\partial f / \partial x^i)_p$, one should first think of
+    $\left( \partial_i (f\circ x^{-1}) \right)\left( x(p) \right)$ and also
+    for $\dot{\gamma}^i_x(x)$.
+    Nevertheless one can show that what we write like a partial derivative here,
+    behaves (and maybe tastes) like a partial derivative.
+\end{note}
+Thus we write
+\begin{equation}
+    v_{\gamma,p}(f) = \dot{\gamma}^i_x(0)\left( \frac{\partial}{\partial x^i} \right)_p f\,,\quad\forall f\in C^\infty\,,
+\end{equation}
+which leads to
+\begin{equation}
+    v_{\gamma,p} = \underbrace{\dot{\gamma}^i_x(0)}_{\text{components}} 
+\underbrace{\left( \frac{\partial}{\partial x^i} \right)_p}_{\substack{\text{chart induced} \\\text{basis of } T_pU}}\,.
+\end{equation}
+\begin{theorem}[Chart induced basis of $T_pU$]
+    Let $(U,x) \in \mathcal{A}_\text{smooth}$.
+    The
+    \begin{equation}
+        \left( \frac{\partial}{\partial x^1} \right)_p, \ldots, \left( \frac{\partial}{\partial x^d} \right)_p \quad \in T_p\M
+    \end{equation}
+    constitute a \textit{basis} of $T_pU$.
+\end{theorem}
+\noindent
+\begin{proof}
+    Show linear independence 
+    \begin{align}
+        \lambda^i\left( \frac{\partial}{\partial x^i} \right)_p &\stackrel{!}{=} 0\\
+        \lambda^i\left( \frac{\partial}{\partial x^i} \right)_p (x^j) &= 
+        \lambda^i \overbrace{\partial_i(x^j\circ x^{-1})}^{\delta_i^j}(x(p)) \nonumber\\
+        &= \lambda^j\,,\quad\forall j = 1,\ldots,d\,,
+    \end{align}
+\end{proof}
+\begin{corollary}
+    \begin{equation}
+        \underbrace{\mathrm{dim}T_p\M}_{\substack{\text{vector space}\\\text{dimension}}} = d = 
+        \underbrace{\mathrm{dim}\M}_{\substack{\text{top. manif.}\\ \text{dimension}}}\,.
+    \end{equation}
+\end{corollary}
+\subsection{Change of vector components under a change of charts}
+\begin{note}
+    A vector is an abstract object and does not change under a change of charts.
+    How should it? It does not depend on the chart.
+    If it would, we could change objects by looking at them differently (different coordinates),
+    so we could do telekinesis.
 
+    What does change are the components of a vector.
+\end{note}
+\begin{terminology}
+    $X\in T_p\M$ always means that 
+    \begin{itemize}
+        \item $\exists\,\gamma:\mathbb{R}\to\M$ s.t.\ $X = v_{\gamma,p}$.
+        \item $\exists\, X^1,\ldots,X^d \in \mathbb{R}: X = X^i\left( \partial/\partial x^i \right)_p$.
+    \end{itemize}
+\end{terminology}
+Let $(U, x)$ and $(V,y)$ be overlapping charts and $p\in U\cup V$.
+Let $X \in T_p\M$.
+\begin{align}
+    X &= X_{(x)}^i\left( \frac{\partial}{\partial x^i} \right)_p\nonumber\\
+    &= X_{(y)}^i\left( \frac{\partial}{\partial y^i} \right)_p
+    \label{eq:vectransformdef}
+\end{align}
+Again we have to translate the ``partial derivative''-notation:
+\begin{align}
+    \left( \frac{\partial}{\partial x^i} \right)_p f &= 
+    \partial_i \left( f\circ x^{-1} \right)(x(p))\label{eq:changeofcomp-calc}\\
+    &= \partial_i \left( \underbrace{(f\circ y^{-1})}_{\mathbb{R}^d\to\mathbb{R}}
+    \circ \underbrace{(y\circ x^{-1})}_{\mathbb{R}^d\to\mathbb{R}^d}
+    \right)(x(p))\nonumber\,,
+\end{align}
+and with the multidimensional chain rule, which a physicist would write as
+\begin{equation}
+    \frac{\partial}{\partial x^i}\left( f(\vec{y}(\vec{x})) \right) = 
+    \left( \vec{\nabla}_y f(\vec{y}) \right)\cdot \frac{\partial \vec{y}}{\partial x^i}\,,
+\end{equation}
+equation~(\ref{eq:changeofcomp-calc}) becomes
+\begin{align}
+    \left( \frac{\partial}{\partial x^i} \right)_p f &= 
+    \left( \partial_i (y\circ x^{-1} \right)^{j}(x(p))\cdot
+        \left( \partial_j(f\circ y^{-1} \right)(y(p))\nonumber\\
+            &= \left(\frac{\partial y^j}{\partial x^i}\right)_p \cdot \left(\frac{\partial f}{\partial y^j}\right)_p f\,.
+\end{align}
+Comparison with equation~(\ref{eq:vectransformdef}) yields the transformation for vector components.
+Namely the components of $X$ in the $y$-chart, $X^{j}_{(y)}$ can be calculated from the components
+in the $x$-chart, $X^i_{(x)}$ through
+\begin{equation}
+    \boxed{
+    X^j_{(y)} = \left( \frac{\partial y^j}{\partial x^i} \right) X^{i}_{(x)}\,.
+}
+\end{equation}
 %------------------------------------------------
 
 
@@ -828,4 +933,3 @@ a manifold (what would be Paris + Berlin?).\\
 
 %----------------------------------------------------------------------------------------
 \end{document}
-

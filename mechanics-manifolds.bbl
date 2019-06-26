@@ -19,10 +19,49 @@
 
 \refsection{0}
   \datalist[entry]{nyt/global//global/global}
+    \entry{texstackexchange:tangentspace}{misc}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=8d62649f09aa401c82a531e3e14249ca}{%
+           family={Menke},
+           familyi={M\bibinitperiod},
+           given={Henri},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{8d62649f09aa401c82a531e3e14249ca}
+      \strng{fullhash}{8d62649f09aa401c82a531e3e14249ca}
+      \strng{bibnamehash}{8d62649f09aa401c82a531e3e14249ca}
+      \strng{authorbibnamehash}{8d62649f09aa401c82a531e3e14249ca}
+      \strng{authornamehash}{8d62649f09aa401c82a531e3e14249ca}
+      \strng{authorfullhash}{8d62649f09aa401c82a531e3e14249ca}
+      \field{sortinit}{M}
+      \field{sortinithash}{cfd219b90152c06204fab207bc6c7cab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://tex.stackexchange.com/a/234697}}
+      \field{month}{3}
+      \field{note}{Accessed: 25 Jun 2019 14:00:19 CEST}
+      \field{title}{make parametrised surface graphic with annotated features using Tikz or PGFplots}
+      \field{year}{2015}
+    \endentry
     \entry{texstackexchange:manifolds}{misc}{}
-      \field{sortinit}{D}
-      \field{sortinithash}{2ef1bd9a78cc71eb74d7231c635177b8}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=5f4a3796fbb8a0794283a603750d60ee}{%
+           family={QuantumMechanic},
+           familyi={Q\bibinitperiod}}}%
+      }
+      \strng{namehash}{5f4a3796fbb8a0794283a603750d60ee}
+      \strng{fullhash}{5f4a3796fbb8a0794283a603750d60ee}
+      \strng{bibnamehash}{5f4a3796fbb8a0794283a603750d60ee}
+      \strng{authorbibnamehash}{5f4a3796fbb8a0794283a603750d60ee}
+      \strng{authornamehash}{5f4a3796fbb8a0794283a603750d60ee}
+      \strng{authorfullhash}{5f4a3796fbb8a0794283a603750d60ee}
+      \field{sortinit}{Q}
+      \field{sortinithash}{d257e420984a3a5c57a3330114cd646a}
       \field{labeldatesource}{nodate}
+      \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://tex.stackexchange.com/questions/382762/drawing-manifolds-in-tikz}}
       \field{note}{Accessed: 02 Jun 2019 10:42:19 CEST}

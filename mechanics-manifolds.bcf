@@ -1999,6 +1999,8 @@
     <bcf:citekey order="1">Schuller15</bcf:citekey>
     <bcf:citekey order="2">texstackexchange:manifolds</bcf:citekey>
     <bcf:citekey order="3">texstackexchange:manifolds</bcf:citekey>
+    <bcf:citekey order="4">texstackexchange:tangentspace</bcf:citekey>
+    <bcf:citekey order="5">texstackexchange:tangentspace</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">
