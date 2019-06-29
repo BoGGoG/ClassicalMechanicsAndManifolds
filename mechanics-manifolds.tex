@@ -696,15 +696,6 @@ Since $f\circ\gamma: \mathbb{R}\to\mathbb{R}$ we can simply take the normal deri
     (m-1-1) edge node [above] {$\gamma$} (m-1-2)
     (m-1-2) edge node [above] {$f$} (m-1-3)
     (m-1-1) edge[bend left = -60] node [above] {$f\circ\gamma$} (m-1-3);
-    %(m-1-1) edge node [below] {$\tilde{y} \circ \phi \circ \tilde{x}^{-1}$} (m-1-2)
-    %(m-2-1) edge node [left] {$\tilde{x}$} (m-1-1)
-    %(m-2-2) edge node [right] {$\tilde{y}$} (m-1-2)
-    %(m-2-1) edge node [above] {$\phi$} (m-2-2)
-    %(m-2-1) edge node [left] {$x$} (m-3-1)
-    %(m-2-2) edge node [right] {$y$} (m-3-2)
-    %(m-3-1) edge node [above] {$y \circ \phi \circ x^{-1}$} (m-3-2)
-    %(m-3-1) edge[bend left = 60] node [left, rotate = 90, xshift = 0.5cm, yshift = +0.2cm] {$C^\infty$} (m-1-1)
-    %(m-3-2) edge[bend right = 60] node [right, rotate = 90, xshift = -0.4cm, yshift = -0.25cm] {$C^\infty$} (m-1-2);
 \end{tikzpicture}
 \end{center}
 \begin{note}
@@ -835,6 +826,12 @@ Let $(U,x) \in \mathcal{A}_\text{smooth}$,
     If one sees $(\partial f / \partial x^i)_p$, one should first think of
     $\left( \partial_i (f\circ x^{-1}) \right)\left( x(p) \right)$ and also
     for $\dot{\gamma}^i_x(x)$.
+    \begin{align}
+        \Aboxed{%
+            \left( \frac{\partial f}{\partial x^i} \right)_p &:= \left( \partial_i(f\circ x^{-1} \right)(x(p))}\\
+        \Aboxed{%
+        \dot{\gamma}_x^i (0) &:= (x^i\circ\gamma)'(0)}
+    \end{align}
     Nevertheless one can show that what we write like a partial derivative here,
     behaves (and maybe tastes) like a partial derivative.
 \end{note}
@@ -912,14 +909,14 @@ equation~(\ref{eq:changeofcomp-calc}) becomes
     \left( \frac{\partial}{\partial x^i} \right)_p f &= 
     \left( \partial_i (y\circ x^{-1} )^{j}\right)(x(p))\cdot
     \left( \partial_j(f\circ y^{-1}) \right)(y(p))\nonumber\\
-            &= \left(\frac{\partial y^j}{\partial x^i}\right)_p \cdot \left(\frac{\partial f}{\partial y^j}\right)_p f\,.
+            &= \left(\frac{\partial y^j}{\partial x^i}\right)_p \cdot \left(\frac{\partial}{\partial y^j}\right)_p f\,.
 \end{align}
 Comparison with equation~(\ref{eq:vectransformdef}) yields the transformation for vector components.
 Namely the components of $X$ in the $y$-chart, $X^{j}_{(y)}$ can be calculated from the components
 in the $x$-chart, $X^i_{(x)}$ through
 \begin{equation}
     \boxed{%
-    X^j_{(y)} = \left( \frac{\partial y^j}{\partial x^i} \right) X^{i}_{(x)}
+    X^j_{(y)} = \left( \frac{\partial y^j}{\partial x^i} \right)_p X^{i}_{(x)}
 }\,.
 \end{equation}
 
@@ -961,17 +958,124 @@ One often just writes $T_p\M^*$.
         (\diff x^a)_p \left( \frac{\partial}{\partial x^b} \right) = \delta^a_b\,.
     \end{equation}
 \end{theorem}
-Again, one can calculate how the components of a covector behave under a change of chart.
+Again, one can calculate how the components of a covector behave under a \textit{change of chart}.
 Of a covector $\omega \in T_p\M^\star$ the components are given by
 \begin{equation}
     \omega = \omega_{(x)i}(\diff x^i)_p = \omega_{(y)i}(\diff y^i)_p\,,
+    \label{eq:1form}
 \end{equation}
-and following similar steps as before
+Since $\omega$ is a 1-form it always acts on a vector $v\in T_p\M$,
+\begin{equation}
+    \omega(v) = \omega_{(x)i}\left( \diff x^i \right)_p(v) = \omega_{(x)i}v(x^i)\,.
+\end{equation}
+Take a curve $\gamma(\lambda)$ for which $v$ is the tangent vector at $p$, then
+\begin{align*}
+    v(x^i) &= (x^i\circ \gamma)'(0) = \left( (x^i \circ y^{-1} ) \circ ( y \circ \gamma ) \right)'(0) \\
+    &= \left[ \partial_j(x^i \circ y^{-1} (y(p)) \right] \frac{\diff( y^j \circ \gamma)}{\diff \lambda}(0) \\
+        &= \left( \frac{\partial x^i}{\partial y^j} \right)_p (y^j \circ \gamma)'(0)\\
+        &= \left( \frac{\partial x^i}{\partial y^j} \right)_p v(y^j)\,.
+\end{align*}
+Plugging this in equation~(\ref{eq:1form})
+\begin{align}
+    w(v) &= w_{(x)i}\left( \diff x^i \right)_p = \omega_{(x)i} \left( \frac{\partial x^i}{\partial y^j} \right)_p \left( \diff y^i \right)_p\nonumber \\
+    &= w_{(y)i}\left( \diff y^i \right)_p\,.
+\end{align}
+So the transformation for the components of a 1-form is
 \begin{equation}
     \boxed{%
-    \omega_{(y)i} = \left( \frac{\partial x^j}{\partial y^i} \right)_p
+        \omega_{(y)i} = \left( \frac{\partial x^j}{\partial y^i} \right)_p \omega_{(x)j}
 }\,.
 \end{equation}
+
+\subsection{Fields, Bundles}
+Up until now we were always working at a single point $p\in \M$.
+The vectors and tensors we defined live in the tangent space at that point, $T_p\M$.
+\begin{defn}[Bundle]
+    A \textit{bundle} is a triple
+    \begin{equation}
+        \mathcal{E} \xrightarrow{\phantom{asfd}\pi\phantom{asdf}} \M\,,
+    \end{equation}
+    where
+    \begin{itemize}
+        \item $\mathcal{E}$: smooth manifold (``total space''),
+        \item $\pi$: surjective smooth map (``projection map''),
+        \item $\M$: smooth manifold (``base space'').
+    \end{itemize}
+\end{defn}
+\begin{defn}[fibre]
+    $\mathcal{E} \xrightarrow{\pi} \M$ a bundle, $p\in\M$, then
+    \begin{equation}
+        \mathrm{preim}_\pi({p})
+    \end{equation}
+    is called the \textit{fibre over} $p$.
+\end{defn}
+\begin{defn}[section of a bundle]
+    A \textit{section} $\sigma$ of a bundle is a map $\M\to\mathcal{E}$
+    with $\pi\circ\sigma = \mathrm{Id}_\M$.
+\end{defn}
+\begin{center}
+\begin{tikzpicture}
+    \matrix (m) [matrix of math nodes,row sep=3em,column sep=4em,minimum width=2em]
+    {%
+        \mathcal{E}\\
+        \mathcal{M}\\
+    };
+    \path[-stealth]
+        (m-1-1) edge node [right] {$\pi$} (m-2-1)
+        (m-2-1) edge [bend right = 50] node [right] {$\sigma$} (m-1-1);
+        %(m-1-2) edge node [above] {$f$} (m-1-3)
+        %(m-1-1) edge[bend left = -60] node [above] {$f\circ\gamma$} (m-1-3);
+\end{tikzpicture}
+\end{center}
+\begin{note}
+In figure~\ref{fig:cicletangentbundle} a picture for a specific bundle is given.
+We choose $\M$ to be a circle and $\mathcal{E}$ to be a cylinder with the same radius.
+Then $\pi$ can be any map $\mathcal{E}\to\M$ as long as it is surjective and smooth (it can also be $\mathcal{E}\supset U \to \M$).
+
+One possibility for $\pi$ would be to just project the point down the cylinder to the circle.
+Indeed, in this picture we can see every fibre (red line) as the tangent space $T_p\M$ at the point
+$p$ on the circle $\M$. Then $\mathcal{E}$ consists of all $T_p\M$ and $\pi$ takes a vector $v\in T_p\M$
+and returns $p$.
+\end{note}
+
+
+\begin{figure}[tbh]
+    \centering
+    \begin{tikzpicture}
+        %\draw (-2,-2.5) grid (3,3);
+        \draw[ultra thick, blue] (0,0) circle [y radius=0.5cm, x radius=1cm];
+    \foreach \t in {0,...,30}
+    {
+        \pgfmathsetmacro{\s}{360/30*\t}
+        \pgfmathsetmacro{\x}{cos(\s+10)}
+        \pgfmathsetmacro{\y}{0.5*sin(\s+10)-2}
+        \pgfmathsetmacro{\yy}{\y+4}
+        \ifnum\t<15
+            \scoped[on background layer]
+            \draw[thick,red!50] (\x, \y) -- (\x,\yy);
+        \else
+            \ifnum\t=20
+                \draw[thick, black] (\x, \y) -- (\x,\yy);
+            \else
+                \draw[thick,red] (\x, \y) -- (\x,\yy);
+            \fi;
+        \fi;
+    }
+        \node[blue] at (1.3,0) {$\mathcal{M}$};
+        \node[red] at (1.8,1.5) {$\mathcal{E} = T\M$};
+
+
+        \pgfmathsetmacro{\s}{360/30*20}
+        \pgfmathsetmacro{\x}{cos(\s+10)}
+        \pgfmathsetmacro{\y}{0.5*sin(\s+10)-2}
+        \pgfmathsetmacro{\yy}{\y+4}
+        \draw (\x, \yy/2+\y/2) node[circle, fill, inner sep=1pt, label=below left :$p$] (p) {};
+        \node at (\x, \yy+0.2) {$T_p\mathcal{M}$};
+    \end{tikzpicture}
+    \caption{Picture for a bundle, where $\M$ is a circle and $\mathcal{E}$ a cylinder. Picture modified from~\cite{texstackexchange:tangentbundlecircle}.}
+    \label{fig:cicletangentbundle}
+\end{figure}
+
 %------------------------------------------------
 
 

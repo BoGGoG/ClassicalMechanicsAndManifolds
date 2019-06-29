@@ -19,6 +19,33 @@
 
 \refsection{0}
   \datalist[entry]{nyt/global//global/global}
+    \entry{texstackexchange:tangentbundlecircle}{misc}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=556c28b5cadae6923d32fde97a3a1ed5}{%
+           family={Arun\bibnamedelima Debray},
+           familyi={A\bibinitperiod\bibinitdelim D\bibinitperiod},
+           given={Zarko},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{556c28b5cadae6923d32fde97a3a1ed5}
+      \strng{fullhash}{556c28b5cadae6923d32fde97a3a1ed5}
+      \strng{bibnamehash}{556c28b5cadae6923d32fde97a3a1ed5}
+      \strng{authorbibnamehash}{556c28b5cadae6923d32fde97a3a1ed5}
+      \strng{authornamehash}{556c28b5cadae6923d32fde97a3a1ed5}
+      \strng{authorfullhash}{556c28b5cadae6923d32fde97a3a1ed5}
+      \field{sortinit}{A}
+      \field{sortinithash}{d77c7cdd82ff690d4c3ef13216f92f0b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://tex.stackexchange.com/a/286751}}
+      \field{month}{1}
+      \field{note}{Accessed: 29 Jun 2019 10:26 CEST}
+      \field{title}{How to draw the tangent bundle of a circle?}
+      \field{year}{2016}
+    \endentry
     \entry{texstackexchange:tangentspace}{misc}{}
       \name{author}{1}{}{%
         {{uniquename=0,uniquepart=base,hash=8d62649f09aa401c82a531e3e14249ca}{%

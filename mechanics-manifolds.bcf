@@ -2001,6 +2001,8 @@
     <bcf:citekey order="3">texstackexchange:manifolds</bcf:citekey>
     <bcf:citekey order="4">texstackexchange:tangentspace</bcf:citekey>
     <bcf:citekey order="5">texstackexchange:tangentspace</bcf:citekey>
+    <bcf:citekey order="6">texstackexchange:tangentbundlecircle</bcf:citekey>
+    <bcf:citekey order="7">texstackexchange:tangentbundlecircle</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">
