@@ -1,4 +1,5 @@
 % arara: pdflatex
+
 %% arara: biber
 %% arara: pdflatex
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -63,6 +64,7 @@ understanding the basic mathematical concepts. For example a physicist usually d
 Lagrangian lives on the tangent bundle, because one implicitly always
 identifies some spaces (here the space and the tangent space), which is possible on a flat manifold.}
 
+\tableofcontents
 %----------------------------------------------------------------------------------------
 %	ARTICLE CONTENTS
 %----------------------------------------------------------------------------------------
@@ -72,7 +74,7 @@ identifies some spaces (here the space and the tangent space), which is possible
 This chapter is basically taken from \citep{Schuller15} with our remarks to it.
 
 We start with a set $M$ which is supposed to be the space where physics happens.
-The weakest structure we need in order to talk about continuity (of curves or fields)
+The weakest structure one needs in order to talk about \textit{continuity} (of curves or fields)
 is called a topology.
 
 \begin{defn}[Power set $\mathcal{P}$]
@@ -88,6 +90,7 @@ is called a topology.
             \left( \bigcup\limits_{\alpha\in A} U_\alpha \right) \in \mathcal{O}$
     \end{enumerate}
 \end{defn}
+
 Every set has the \textit{chaotic topology}
 \begin{equation}
     \mathcal{O}_\text{chaotic} := \left\{ \emptyset, M \right\}\,,
@@ -97,12 +100,11 @@ and the \textit{discrete topology}
     \mathcal{O}_\text{discrete} := \mathcal{P}(M)\,,
 \end{equation}
 which are both useless.
-
 The special case $M = \mathbb{R}^d = \mathbb{R} \times \cdots \times \mathbb{R}$ has a standard topology
 for which we need the definition of a soft ball.
 \begin{defn}[Soft Ball in $\mathbb{R}^d$]
    \begin{equation}
-   B_r(p) := \left\{ (q_1,\cdots,q_d) \left| \sum_{i=1}^{d}(p_i-p_i) < r\right. \right\}\,,
+   B_r(p) := \left\{ (q_1,\cdots,q_d) \left| \sum_{i=1}^{d}(p_i-p_i)^2 < r^2\right. \right\}\,,
    \end{equation} 
    with $r\in \mathbb{R}^+$, $p\in\mathbb{R}^d$.
    Note: This does not need a norm or vector space structure on $\mathbb{R}^d$.
@@ -120,10 +122,10 @@ for which we need the definition of a soft ball.
     %\draw[smooth cycle,tension=3.0] plot coordinates{(1,0) (1,1) (2,2) (3,3) (6,0)} node [label=right:$M$];
 
     % Manifold
-    \draw[smooth cycle, tension=0.4] plot coordinates{(2,4) (-1.5,0) (3.5,-2) (6,1)} node [label=$M$, anchor = west] {};
-    \draw[smooth cycle, tension=1, dashed] plot coordinates{(1,1) (-1,0) (1,-1) (2.5,0.5)} node [label=$U$] {};
-    \draw[smooth cycle, tension=0.4, dashed] plot coordinates{(1, 2) (1,3) (3,3) (3,2)} node [label=$V$] {};
-    \draw[smooth cycle, tension=0.4] plot coordinates{(1, 2) (1,3) (3,3) (3,2)} node [label=$V$] {};
+    \draw[smooth cycle, tension=0.4] plot coordinates{(2,4) (-1.5,0) (3.5,-2) (6,1)} node [label=$M$, anchor = east] {};
+    \draw[smooth cycle, tension=1, dashed] plot coordinates{(1,1) (-1,0) (1,-1) (2.5,0.5)} node [label=$U$, anchor = south west] {};
+    %\draw[smooth cycle, tension=0.4, dashed] plot coordinates{(1, 2) (1,3) (3,3) (3,2)} node [label=$V$] {};
+    \draw[smooth cycle, tension=0.4] plot coordinates{(1, 2) (1,3) (3,3) (3,2)} node [label=$V$, anchor = east] {};
     \draw[dashed] (-0.5,0) circle (.4cm) node [label = $B_r$, anchor = north west] {};
     \draw[fill] (-0.5,0) circle (.05cm) ;
     \draw (1.5,1.95) circle (.2cm) node [label = $B_r$, anchor = north west] {};
@@ -139,7 +141,7 @@ Some terminology: Let $M$ be a set with a topology $\mathcal{O} =:$ set of open 
 We call $(M, \mathcal{O}$ a \textit{topological space} and:
     \begin{itemize}
         \item $U \in \mathcal{O} \Leftrightarrow: \text{call } U\subseteq M$ an \textit{open set}
-        \item $M\backslash A \in \mathcal{O} \Leftrightarrow: \text{call } U\subseteq M$  a \textit{closed set}
+        \item $M\backslash A \in \mathcal{O} \Leftrightarrow: \text{call } A\subseteq M$  a \textit{closed set}
     \end{itemize}
 \begin{note}
     The empty set is open and closed. If a set is open we cannot directly follow that it is not closed or vise versa. For $M = \left\{ 1, 2 \right\}$ and $\mathcal{O}_M = \left\{ \emptyset, \left\{ 1 \right\}, \left\{ 2 \right\}, \left\{ 1,2 \right\} \right\}$ the set $\left\{ 2 \right\}$ is open and closed.
@@ -151,14 +153,14 @@ A map
     f: M \to N\,,
 \end{equation}
 takes every point from the domain M (a set) to the target N (a set).
-If one point $p\in N$ is not reached, the map is not \textit{surjective}.
-If a point is hit twice, the map is not \textit{injective}.
+If at least one point $p\in N$ is not reached, the map is not \textit{surjective}.
+If at least one point is hit twice, the map is not \textit{injective}.
 A map that is injective and surjective is called \textit{surjective}.
 
 \begin{defn}[Preimage]
     \begin{align}
         f&: M \to N \supseteq V \nonumber \\
-        \text{preim}_f(V) &:= \left\{ m\in M~|~f(f) \in V \right\}
+        \text{preim}_f(V) &:= \left\{ m\in M~|~f(m) \in V \right\}
     \end{align}
 \end{defn}
 
@@ -195,7 +197,7 @@ A map that is injective and surjective is called \textit{surjective}.
 \end{defn}
 
 \begin{theorem}[Composition of continuos maps]
-    For $f$, $g$ continuos also $g\circ f$ is continuous (if spaces match).
+    For $f$, $g$ continuos also $g\circ f$ is continuous (if space match, \textit{i.e.}\ $g\circ f$ is defined).
 \end{theorem}
 
 
@@ -1002,16 +1004,18 @@ The vectors and tensors we defined live in the tangent space at that point, $T_p
         \item $\M$: smooth manifold (``base space'').
     \end{itemize}
 \end{defn}
-\begin{defn}[fibre]
+\begin{defn}[Fibre]
     $\mathcal{E} \xrightarrow{\pi} \M$ a bundle, $p\in\M$, then
     \begin{equation}
         \mathrm{preim}_\pi({p})
     \end{equation}
     is called the \textit{fibre over} $p$.
 \end{defn}
-\begin{defn}[section of a bundle]
+\begin{defn}[Section of a bundle]
     A \textit{section} $\sigma$ of a bundle is a map $\M\to\mathcal{E}$
-    with $\pi\circ\sigma = \mathrm{Id}_\M$.
+    with $\pi\circ\sigma = \mathrm{Id}_\M$, \textit{i.e.}\
+    a section projects a point from the base space to a point in the total space
+    that is in the same fibre.
 \end{defn}
 \begin{center}
 \begin{tikzpicture}
@@ -1045,7 +1049,7 @@ and returns $p$.
         %\draw (-2,-2.5) grid (3,3);
         \draw[ultra thick, blue] (0,0) circle [y radius=0.5cm, x radius=1cm];
     \foreach \t in {0,...,30}
-    {
+    {%
         \pgfmathsetmacro{\s}{360/30*\t}
         \pgfmathsetmacro{\x}{cos(\s+10)}
         \pgfmathsetmacro{\y}{0.5*sin(\s+10)-2}
@@ -1072,12 +1076,17 @@ and returns $p$.
         \draw (\x, \yy/2+\y/2) node[circle, fill, inner sep=1pt, label=below left :$p$] (p) {};
         \node at (\x, \yy+0.2) {$T_p\mathcal{M}$};
     \end{tikzpicture}
-    \caption{Picture for a bundle, where $\M$ is a circle and $\mathcal{E}$ a cylinder. Picture modified from~\cite{texstackexchange:tangentbundlecircle}.}
+    \caption{Picture for a bundle, where $\M$ is a circle and $\mathcal{E}$ a cylinder.
+        We have chosen $\pi$ such that every point on the cylinder ($\mathcal{E}$) is projected
+        down to the circle. This way every vertical line is a \textit{fibre}.
+        For example the black vertical line is the fibre over the point $p$. 
+        Picture modified from~\cite{texstackexchange:tangentbundlecircle}.}
     \label{fig:cicletangentbundle}
 \end{figure}
 \begin{note}
     A section is a field and what kind of field it is depends on the choice of total space.
 \end{note}
+
 
 %------------------------------------------------
 
