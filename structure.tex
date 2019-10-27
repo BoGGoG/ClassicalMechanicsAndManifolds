@@ -38,6 +38,8 @@
 \usepackage{enumitem} % Required for customising lists
 \setlist{noitemsep} % Remove spacing between bullet/numbered list elements
 
+\usepackage{xparse}
+
 \usepackage{sectsty} % Enables custom section titles
 \allsectionsfont{\usefont{OT1}{phv}{b}{n}} % Change the font of all section commands (Helvetica)
 
@@ -224,9 +226,32 @@
 \usepackage{hyperref}
 
 \newcommand{\M}{\mathcal{M}}
-\newcommand{\diff}{\mathrm{d}}
+%\newcommand{\diff}{\mathrm{d}\!}
+\DeclareMathOperator{\diff}{d\!}
 \newcommand{\eval}{\big|}
 \newcommand{\linearto}{\xrightarrow[]{\sim}}
+\DeclareMathOperator{\preim}{preim}
+\DeclareDocumentCommand{\T}{o}
+{%
+    \IfNoValueTF{#1}{\operatorname{T}\!}{\operatorname{T}_{#1}\!}
+}
+%\DeclareMathOperator{\T}{T\!}
+%\newcommand{\T}[1][]{\operatorename{T}_{#1} \!}
+
+\makeatletter
+\def\moverlay{\mathpalette\mov@rlay}
+\def\mov@rlay#1#2{\leavevmode\vtop{%
+   \baselineskip\z@skip \lineskiplimit-\maxdimen
+   \ialign{\hfil$\m@th#1##$\hfil\cr#2\crcr}}}
+\newcommand{\charfusion}[3][\mathord]{
+    #1{\ifx#1\mathop\vphantom{#2}\fi
+        \mathpalette\mov@rlay{#2\cr#3}
+      }
+    \ifx#1\mathop\expandafter\displaylimits\fi}
+\makeatother
+
+\newcommand{\cupdot}{\charfusion[\mathbin]{\cup}{\cdot}}
+\newcommand{\bigcupdot}{\charfusion[\mathop]{\bigcup}{\cdot}}
 
 
 \hypersetup{
@@ -282,5 +307,6 @@
 %\usepackage{pifont}
 %\usepackage{wasysym}
 \usepackage{amsfonts}
+\usepackage{cancel}
 %\newcommand{\flower}{\SixFlowerRemovedOpenPetal}
 \newcommand{\flower}{\star}

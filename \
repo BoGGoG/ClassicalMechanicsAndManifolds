@@ -709,7 +709,7 @@ Since $f\circ\gamma: \mathbb{R}\to\mathbb{R}$ we can simply take the normal deri
     $\forall p \in \M$ the ``tangent space to $\M$ at $p$'' consists of all the velocities
     of curves at that point :
     \begin{equation}
-        \T_p\M:=\left\{ v_{\gamma,p} | \gamma\text{ smooth curves} \right\}\,.
+        T_p\M:=\left\{ v_{\gamma,p} | \gamma\text{ smooth curves} \right\}\,.
     \end{equation}
     \label{def:tangentspace}
 \end{defn}
@@ -717,13 +717,13 @@ Since $f\circ\gamma: \mathbb{R}\to\mathbb{R}$ we can simply take the normal deri
     There is no reference to any external space or embedding in definition~\ref{def:tangentspace},
     see also figure~\ref{fig:tangentspace}!
 \end{note}
-$\T_p\M$ can be made into a vector space. The proof for this is so important and contains so many
+$T_p\M$ can be made into a vector space. The proof for this is so important and contains so many
 important things, that one should go through it in detail.
 
 \begin{figure}[tbh]
     \centering
     \begin{tikzpicture}[x={(170:1cm)},y={(55:.7cm)},z={(90:1cm)}]
-        \draw (2.5,-2.5,0)  -- (2.5,2.5,0) node[below right] {$\T_p\M$} -- (-2.5,2.5,0) -- (-2.5,-2.5,0) -- cycle;
+        \draw (2.5,-2.5,0)  -- (2.5,2.5,0) node[below right] {$T_p\M$} -- (-2.5,2.5,0) -- (-2.5,-2.5,0) -- cycle;
         \draw[looseness=.6] (2.5,-2.5,-1) node[above right] {$\M$}
         to[bend left] (2.5,2.5,-1)
         to[bend left] coordinate (mp) (-2.5,2.5,-1)
@@ -749,10 +749,10 @@ important things, that one should go through it in detail.
 \begin{defn}[Addition and multiplication for tangent space]
     For $p\in\M$, $\gamma$ smooth curve on $\M$, $\alpha \in \mathbb{R}$:
     \begin{align}
-        +:~ &\T_p\M\times \T_p\M \to \mathrm{Hom}(C^\infty(\M), \mathbb{R}) \nonumber\\
+        +:~ &T_p\M\times T_p\M \to \mathrm{Hom}(C^\infty(\M), \mathbb{R}) \nonumber\\
         &(v_{\gamma,p} + v_{\delta, p})(f) := v_{\gamma, p}(f) + v_{\delta, p}(f)\\
         & f \in C^\infty(M)\nonumber\\
-        \cdot:~& \mathbb{R} \times \T_p\M \to \mathrm{Hom}(C^\infty(\M), \mathbb{R}) \nonumber\\
+        \cdot:~& \mathbb{R} \times T_p\M \to \mathrm{Hom}(C^\infty(\M), \mathbb{R}) \nonumber\\
         & (\alpha \cdot v_{\gamma, p})(f) = \alpha \cdot v_{\gamma, p}(f)
     \end{align}
 \end{defn}
@@ -844,15 +844,15 @@ Thus we write
 which leads to
 \begin{equation}
     v_{\gamma,p} = \underbrace{\dot{\gamma}^i_x(0)}_{\text{components}} 
-\underbrace{\left( \frac{\partial}{\partial x^i} \right)_p}_{\substack{\text{chart induced} \\\text{basis of } \T_pU}}\,.
+\underbrace{\left( \frac{\partial}{\partial x^i} \right)_p}_{\substack{\text{chart induced} \\\text{basis of } T_pU}}\,.
 \end{equation}
-\begin{theorem}[Chart induced basis of $\T_pU$]
+\begin{theorem}[Chart induced basis of $T_pU$]
     Let $(U,x) \in \mathcal{A}_\text{smooth}$.
     The
     \begin{equation}
-        \left( \frac{\partial}{\partial x^1} \right)_p, \ldots, \left( \frac{\partial}{\partial x^d} \right)_p \quad \in \T_p\M
+        \left( \frac{\partial}{\partial x^1} \right)_p, \ldots, \left( \frac{\partial}{\partial x^d} \right)_p \quad \in T_p\M
     \end{equation}
-    constitute a \textit{basis} of $\T_pU$.
+    constitute a \textit{basis} of $T_pU$.
 \end{theorem}
 \noindent
 \begin{proof}
@@ -866,7 +866,7 @@ which leads to
 \end{proof}
 \begin{corollary}
     \begin{equation}
-        \underbrace{\mathrm{dim}\T_p\M}_{\substack{\text{vector space}\\\text{dimension}}} = d = 
+        \underbrace{\mathrm{dim}T_p\M}_{\substack{\text{vector space}\\\text{dimension}}} = d = 
         \underbrace{\mathrm{dim}\M}_{\substack{\text{top. manif.}\\ \text{dimension}}}\,.
     \end{equation}
 \end{corollary}
@@ -880,14 +880,14 @@ which leads to
     What does change are the components of a vector.
 \end{note}
 \begin{terminology}
-    $X\in \T_p\M$ always means that 
+    $X\in T_p\M$ always means that 
     \begin{itemize}
         \item $\exists\,\gamma:\mathbb{R}\to\M$ s.t.\ $X = v_{\gamma,p}$.
         \item $\exists\, X^1,\ldots,X^d \in \mathbb{R}: X = X^i\left( \partial/\partial x^i \right)_p$.
     \end{itemize}
 \end{terminology}
 Let $(U, x)$ and $(V,y)$ be overlapping charts and $p\in U\cup V$.
-Let $X \in \T_p\M$.
+Let $X \in T_p\M$.
 \begin{align}
     X &= X_{(x)}^i\left( \frac{\partial}{\partial x^i} \right)_p\nonumber\\
     &= X_{(y)}^i\left( \frac{\partial}{\partial y^i} \right)_p
@@ -923,19 +923,19 @@ in the $x$-chart, $X^i_{(x)}$ through
 \end{equation}
 
 \subsection{Cotangent spaces}
-The cotangent space of $\T_p\M$ is
+The cotangent space of $T_p\M$ is
 \begin{equation}
-    (\T_p\M)^* := \left\{ \phi: \T_p\M \linearto \mathbb{R} \right\}\,.
+    (T_p\M)^* := \left\{ \phi: T_p\M \linearto \mathbb{R} \right\}\,.
 \end{equation}
-One often just writes $\T_p\M^*$.
+One often just writes $T_p\M^*$.
 \begin{exmp}[Gradient]
     For $f\in C^\infty(\M)$, define 
     \begin{align}
-        (\diff f)_p: \T_p\M &\linearto \mathbb{R}\nonumber\\
+        (\diff f)_p: T_p\M &\linearto \mathbb{R}\nonumber\\
         X &\mapsto (\diff f)_p(X) := Xf\,,
     \end{align}
     then $(\diff f)_p(X) \in \mathbb{R}$, thus
-    $(\diff f)_p \in \T_p\M^*$ and we call $(\diff f)_p$ the \textit{gradient} of $f$ at $p\in M$. 
+    $(\diff f)_p \in T_p\M^*$ and we call $(\diff f)_p$ the \textit{gradient} of $f$ at $p\in M$. 
     Note that the gradient is a $(0,1)$-tensor, a covector, and not a $(1,0)$-tensor,
     which would be a vector.
 
@@ -954,19 +954,19 @@ One often just writes $\T_p\M^*$.
     \begin{equation}
         \left( \diff x^1 \right), \left( \diff x^2 \right), \ldots, \left( \diff x^d \right),\,,
     \end{equation}
-    is a basis of $\T_p\M^*$. In fact, if one chooses the chart induced basis in $\T_p\M$,
-    it is the dual basis of the dual space $\T_p\M^*$, \textit{i.e.},
+    is a basis of $T_p\M^*$. In fact, if one chooses the chart induced basis in $T_p\M$,
+    it is the dual basis of the dual space $T_p\M^*$, \textit{i.e.},
     \begin{equation}
         (\diff x^a)_p \left( \frac{\partial}{\partial x^b} \right) = \delta^a_b\,.
     \end{equation}
 \end{theorem}
 Again, one can calculate how the components of a covector behave under a \textit{change of chart}.
-Of a covector $\omega \in \T_p\M^\star$ the components are given by
+Of a covector $\omega \in T_p\M^\star$ the components are given by
 \begin{equation}
     \omega = \omega_{(x)i}(\diff x^i)_p = \omega_{(y)i}(\diff y^i)_p\,,
     \label{eq:1form}
 \end{equation}
-Since $\omega$ is a 1-form it always acts on a vector $v\in \T_p\M$,
+Since $\omega$ is a 1-form it always acts on a vector $v\in T_p\M$,
 \begin{equation}
     \omega(v) = \omega_{(x)i}\left( \diff x^i \right)_p(v) = \omega_{(x)i}v(x^i)\,.
 \end{equation}
@@ -989,9 +989,9 @@ So the transformation for the components of a 1-form is
 }\,.
 \end{equation}
 
-\subsection{Bundles and Vector Fields}
+\subsection{Fields, Bundles}
 Up until now we were always working at a single point $p\in \M$.
-The vectors and tensors we defined live in the tangent space at that point, $\T_p\M$.
+The vectors and tensors we defined live in the tangent space at that point, $T_p\M$.
 \begin{defn}[Bundle]
     A \textit{bundle} is a triple
     \begin{equation}
@@ -1012,7 +1012,6 @@ The vectors and tensors we defined live in the tangent space at that point, $\T_
     is called the \textit{fibre over} $p$.
 \end{defn}
 \begin{defn}[Section of a bundle]
-    \label{def:section}
     A \textit{section} $\sigma$ of a bundle is a map $\M\to\mathcal{E}$
     with $\pi\circ\sigma = \mathrm{Id}_\M$, \textit{i.e.}\
     a section projects a point from the base space to a point in the total space
@@ -1104,207 +1103,26 @@ $(\mathcal{M},\mathcal{O},\mathcal{A})$ a smooth manifold.
     \item The tangent bundle is the \textit{disjoint union}
         of all the tangent spaces,
         \begin{equation}
-            \T\M := \bigcupdot_{p\in\mathcal{M}}\T_p\M\,.
+            \T\mathcal{M} := \bigcupdot_{p\in\mathcal{M}}\T_p\mathcal{M}\,.
         \end{equation}
     \item The projection map $\pi$ projects down to the base point of the
         tangent space $T_p\M$ that the vector $X$ is in,
         \begin{align}
             \pi: \T\M &\to \M \,,\\
-            X &\mapsto p,\quad p\in\M: X\in \T_p \M\,.
+            X &\mapsto p,\quad p\in\M: X\in T_p\M\,.
         \end{align}
-    \item Construct the \textit{coarsest} topology on $\T\M$ such that $\pi$
+    \item Construct the \textit{coarsest} topology on $T\M$ such that $\pi$
         is (just) continuous (``the initial topology with respect to $\pi$''),
         which here is given by
         \begin{equation}
             \mathcal{O}_{\T\M} := \left\{ \preim_\pi(\mathcal{U}) \,|\, \mathcal{U} \in \mathcal{O} \right\}\,.
         \end{equation}
 \end{enumerate}    
-\begin{note}
-    An element $X$ of the tangent bundle $X\in\T\M$ is of course an element of the tangent space
-    at its point in the manifold:
-    \begin{equation}
-        X \in \T_{\pi(X)}\M\,.
-    \end{equation}
-\end{note}
-The tangent bundle itself can be made to be a smooth manifold.
-Construct a $C^\infty$-atlas on $\T\M$ from the $C^\infty$-atlas $\mathcal{A}$ on $\M$,
-\begin{equation}
-    \mathcal{A}_{\T\M} := \left\{ (\T\mathcal{U}, \xi_x) \,|\, (\mathcal{U},x)\in\mathcal{A} \right\}\,,
-\end{equation}
-where
-\begin{align}
-    \xi_x: \T\mathcal{U} &\to \mathbb{R}^{2\dim \M}\,,\\
-    X &\mapsto \left( (x^1\circ\pi)(X), \ldots, (x^d\circ\pi)(X), \right. \nonumber \\
-    &~ \left.(\diff x^i)_{\pi(X)}(X), \ldots, 
-    (\diff x^d)_{\pi(X)} (X)\right)\,.
-\end{align}
-\end{defn}
-\begin{note}
-    $x$ is the chart that we have chosen.
-    $X \in \T\M$ is a vector in $\T_p\M$ at a base point $p$.
-    We can get the base point $p$ through the map $\pi$, $p = \pi(X)$.
-    The first part of $\xi_x$ are the coordinates of the base point in the chart $x$, \textit{i.e.}\ $(x\circ\pi)(X)$
-    and the second part are the components of the vector which we can get by acting with $(\diff x)_{\pi(X)}$ on $X$,
-    since
-    \begin{equation}
-        X =: X^i_{(x)} \left( \frac{\partial}{\partial x^i} \right)_{\pi(X)}\,,
-    \end{equation}
-    and
-    \begin{equation}
-        \left( \diff x^j \right)_{\pi(X)} \left( \frac{\partial}{\partial_i} \right)_{\pi(X)} = \delta^j_i\,.
-    \end{equation}
-\end{note}
-Let's write the components of $\xi_x{X}$ as
-\begin{equation}
-    (\underbrace{\alpha^1, \ldots, \alpha^d}_{\text{coordinates in chart }x},
-    \underbrace{\beta^1,\ldots,\beta^d}_{\text{compoenents of vector in }\T_{\pi(X)}\M})
-\end{equation}
-The inverse of $\xi_x$
-\begin{align}
-    \xi_x^{-1}: \mathbb{R}^{2\dim\M} \ni \xi_x(\T\mathcal{U}) &\to \T\mathcal{U}\,,\\
-    (\alpha^1,\ldots,\alpha^d,\beta^1,\ldots,\beta^d) &\mapsto \beta^i \left( \frac{\partial}{\partial x^i} \right)_{x^{-1}(\alpha^1,\ldots,\alpha^d)}\,,
-    \label{eq:xiTangentBundle}
-\end{align}
-and of course $x^{-1}(\alpha^1,\ldots,\alpha^d)$ is just $\pi(X)$ explicitly written out.
-
-The atlas is \textit{smooth} if the chart transition map $\xi_y\circ\xi_x^{-1}$ is smooth.
-We can check that this is true by explicitly acting with $\xi_y$ on eq.~(\ref{eq:xiTangentBundle}).
-Then we see that the $\alpha^i$ transform like the coordinates in a map (because they are),
-\begin{equation}
-    (y^j\circ x^{-1})(\alpha^1,\ldots,\alpha^d\,,
-\end{equation}
-and the
-$\beta^i$ transform like the components of a tangent vector (because they are),
-\begin{equation}
-    \beta^m \left( \frac{\partial y^j}{\partial x^m} \right) = \beta^m \partial_m(y^i\circ x^{-1})(\alpha^1,\ldots,\alpha^d)\,,
-\end{equation}
-The chart transition map on the manifold level, $y^i\circ x^{-1}$, is smooth by assumption,
-and the derivative $\partial_m (y^i \circ x^{-1})$ is also smooth, since the derivative of $C^\infty$ is still $C^\infty$.
-
-We can summarize all of that in one picture:
-
-\begin{center}
-\begin{tikzpicture}
-    \matrix (m) [matrix of math nodes,row sep=3em,column sep=4em,minimum width=2em]
-    {%
-        %\mathcal{E}\\
-        %\mathcal{M}\\
-        \T\M &  & \M\\
-        C^\infty \text{ mfd.} & C^\infty \text{ map} & C^\infty \text{ mfd.} \\
-    };
-    \path[-stealth]
-        (m-1-1) edge node [above] {$\pi$} (m-1-3);
-        %(m-1-2) edge [bend right = 50] node [right] {$\sigma$} (m-1-1);
-        %(m-1-2) edge node [above] {$f$} (m-1-3)
-        %(m-1-1) edge[bend left = -60] node [above] {$f\circ\gamma$} (m-1-3);
-\end{tikzpicture}
-\end{center}
-
-\begin{defn}[Vector Field $\chi$]
-    A \textit{smooth vector field} $\chi$ is a \textit{smooth map}
-    \label{def:vectorField}
-    \begin{center}
-    \begin{tikzpicture}
-        \matrix (m) [matrix of math nodes,row sep=3em,column sep=4em,minimum width=2em]
-        {%
-            \T\M & \pi\circ\chi = \mathrm{id}_\M\\
-            \M \\
-        };
-        \path[-stealth]
-            (m-1-1) edge node [right] {$\pi$} (m-2-1)
-            (m-2-1) edge [bend right = 50] node [right] {$\chi$} (m-1-1);
-            %(m-1-2) edge node [above] {$f$} (m-1-3)
-            %(m-1-1) edge[bend left = -60] node [above] {$f\circ\gamma$} (m-1-3);
-    \end{tikzpicture}
-    \end{center}
-\end{defn}
-\begin{note}
-    We needed all the sommersaults with bundles and fibres for the word \textsc{smooth} in above definition.
-\end{note}
-
-\subsection[The C infinity module of smooth vector fields]{The $C^\infty(\mathcal{M})$ Module $\Gamma(\mathrm{T}\!\mathcal{M})$}
-Remember: $C^\infty$ is the collection of smooth functions and also a vector space $(C^\infty(\M), +)$ (can add functions).
-One can also multiply functions, but for the multiplication $fg$ there exists only an inverse $g^{-1}$ if the function
-$g$ has no zeros (And in the definition of vector space only the multiplication with the function that is zero everywhere
-is excluded). Thus $(C^\infty(\M), +, \cdot)$ is a \textit{ring}.
-
-\begin{itemize}
-    \item Field: Fulfills\footnote{\textbf{C}ommutative, \textbf{A}ssociative, \textbf{N}eutral element, \textbf{I}nverse element, \textbf{D}istributive
-        } (C$^+$, A$^+$, N$^+$, I$^+$, C$^\cdot$, A$^\cdot$, N$^\cdot$, I$^\cdot$, D$^+$)
-    \item Ring Fulfills (C$^+$, A$^+$, N$^+$, I$^+$, C$^\cdot$, A$^\cdot$, N$^\cdot$, $\bcancel{\mathrm{I}^\cdot}$, D$^+$)
-\end{itemize}
-
-\begin{equation}
-    \Gamma(\T\M) := \left\{ \chi: \T\M\to\M\,|\,\text{smooth section} \right\}\,,
-\end{equation}
-which means all smooth vector fields on $\M$;
-a section with total space $\T\M$ and base space $\M$ is a vector field, see definitions~\ref{def:vectorField}
-and~\ref{def:section}.
-\begin{defn}[Set of smooth vector fields $\Gamma(\T\M)$]
-\begin{align}
-    (\chi + \tilde{\chi})(f) := \chi(f) + \tilde{\chi}(f)\,.
-\end{align}
-Watch out for the $+$ and $\cdot$ and on what spaces they operate!
 \end{defn}
 
-One can make a vector field to an $\mathbb{R}$-vector space, by allowing multiplication with real numbers,
-\begin{equation}
-    (\alpha \cdot \chi) (f) := \alpha \cdot \chi(f)\,,
-\end{equation}
-but actually we can even make more! We can allow $C^\infty(\M)$ functions instead of $\mathbb{R}$,
-\begin{equation}
-    (g \cdot \chi) (f) := g \cdot \chi(f)\,,
-\end{equation}
-where $g \in C^\infty(\M)$. 
-The point is, that $C^\infty(\M)$ is only a \textsc{ring} and so we don't call it a
-$C^\infty(\M)$-vector space, but $C^\infty(\M)$-module\footnote{So a vector space over a ring is a module.}!
 
-\begin{center}
-\fbox{\parbox{0.42\textwidth}{%
-        The set of all smooth vector fields $\Gamma(\T\M)$ can be made into a $C^\infty$-module
-    }
-}
-\end{center}
-A module does not have all the properties of vector spaces.
-A module is \textit{not guaranteed} to always have a basis!
-Thus we are \textit{not} in general able to write every vector field $\chi$ as
-\begin{align}
-    &\chi = f^i \chi_{(i)}\,,\\
-    &\chi_{(1)}, \ldots, \chi_{(d)} \in \Gamma(\T\M)\,,\quad\text{global basis}
-\end{align}
-Example: Every vector field on the sphere has to vanish somewhere, 
-but that means at this point it cannot be used as a basis.
-We can do it locally, though, \textit{i.e.}\ for subsets $\mathcal{U} \in \M$.
 
-\subsection{Tensor Fields}
-Since $\T^*\M$ is also a vector space, we can define $\Gamma(\T^*\M)$ as all smooth
-covector fields, which is again a $C^\infty(\M)$-module.
-\begin{defn}[$(r,s)$-tensor field $T$]
-    An $(r,s)$-tensor field $T$ is a $C^\infty$, in every element  multi-linear\footnote{Addition is like always,
-    but s-multiplication means multiplying with a $C^\infty$ function.}, map
-    \begin{align}
-        T:\, & \underbrace{\Gamma(\T^*\M) \times \cdots \times \Gamma(\T^*\M)}_r \times\nonumber\\
-        & \times \underbrace{\Gamma(\T\M) \times \cdots \times \Gamma(\T\M)}_s \linearto C^\infty(M)
-    \end{align}
-\end{defn}
-\begin{note}
-    So $T$ is a map from $C^\infty(\M)$ modules to the $C^\infty(\M)$ module $C^\infty(\M)$.
-    Yes, $C^\infty(\M)$ itself is a $C^\infty(\M)$ module, just like $\mathbb{R}$ is an
-    $\mathbb{R}$-vector space.
-    I just want to write $C^\infty(\M)$ once more: $C^\infty(\M)$.
-\end{note}
 
-Example: $f \in C^\infty(\M)$
-\begin{align}
-    \diff f:\,\Gamma(\T\M)&\linearto C^\infty(\M)\\
-    \chi &\mapsto \diff f(\chi):= \chi f\,,
-\end{align}
-where $\chi f$ is defined by its action on $p\in\M$,
-\begin{equation}
-    (\chi f)(p) := \chi(p) f\,,
-\end{equation}
-which works since $\chi(p)\in\T{p}\M$ can act on a function $f$.
-Thus $\diff f$ is a gradient co-vector field.
 
 %------------------------------------------------
 
