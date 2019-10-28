@@ -31,10 +31,19 @@
 %----------------------------------------------------------------------------------------
 
 %\title{To those physics students who asked why $q$ and $\dot{q}$ are independent in Lagrangian Mechanics}
-\title{Mathematical Notes on Manifolds in Physics}
+%\title{Mathematical Notes on Manifolds in Physics}
+\title{Notes on Manifolds in Physics}
+
+
+%\author{%
+	%\authorstyle{Niklas Zorbach\textsuperscript{1} and Marco Knipfer\textsuperscript{1, 2}} % Authors 
+	%\newline\newline % Space before institutions
+	%\textsuperscript{1}\institution{Institute for Theoretical Physics, Goethe-University Frankfurt, Germany}\\ 
+	%\textsuperscript{2}\institution{Institute for Physics and Astronomy, The University of Alabama, USA}\\ 
+%}
 
 \author{%
-	\authorstyle{Niklas Zorbach\textsuperscript{1} and Marco Knipfer\textsuperscript{1, 2}} % Authors 
+	Marco Knipfer\textsuperscript{1, 2} % Authors 
 	\newline\newline % Space before institutions
 	\textsuperscript{1}\institution{Institute for Theoretical Physics, Goethe-University Frankfurt, Germany}\\ 
 	\textsuperscript{2}\institution{Institute for Physics and Astronomy, The University of Alabama, USA}\\ 
@@ -58,11 +67,17 @@
 %----------------------------------------------------------------------------------------
 
 %\lettrineabstract makes first letter in abstract huge and nice, but does not allow equations in the whole {}.
-\lettrineabstract{We are writing these notes in order to learn Riemannian Geometry and better understand
+\lettrineabstract{These notes are my way of learning Riemannian Geometry and better understanding
 Lagrangian Mechanics and General Relativity. As a physicist one usually learns all of this in a rather practical way without
 understanding the basic mathematical concepts. For example a physicist usually does not learn that the
 Lagrangian lives on the tangent bundle, because one implicitly always
-identifies some spaces (here the space and the tangent space), which is possible on a flat manifold.}
+identifies some spaces (here the space and the tangent space), which is possible on a flat manifold.
+Another example: To understand that for vector fields on a manifold there generally does not exist a global
+basis one has to understand what a module is.
+I start from the lectures about General Relativity.
+This somehow turned into my fancy lecture notes.
+The plan is to go on and write more stuff after I have finished the lectures.
+}
 
 \tableofcontents
 %----------------------------------------------------------------------------------------
@@ -667,8 +682,8 @@ Now $(\M, \mathcal{O}_\M)$ and $(\mathcal{N}, \mathcal{O_N})$.
     Suppose $\gamma(\lambda_0) = p$.
     The velocity $v$ of $\gamma$ at $p$ is the linear map
     \begin{align*}
-        v_{\gamma, p}: C^\infty(\M) \linearto \mathbb{R}\,,\\
-        f \mapsto v_{\gamma, p}(f)\,,
+        v_{\gamma, p}: C^\infty(\M) &\linearto \mathbb{R}\,,\\
+        f &\mapsto v_{\gamma, p}(f)\,,
     \end{align*}
     with
     \begin{equation}
@@ -1306,6 +1321,70 @@ where $\chi f$ is defined by its action on $p\in\M$,
 which works since $\chi(p)\in\T{p}\M$ can act on a function $f$.
 Thus $\diff f$ is a gradient co-vector field.
 
+\section{Connections/Covariant Derivatives}
+Most of the time it is enough to think about a \textit{vector field} $X$ just as a vector in each point.
+Remember: $X$ gives a \textit{directional derivative} $Xf$.
+We define new notation
+\begin{equation}
+    \nabla_X f := Xf = (\diff f)(X)\,,\quad f\in C^\infty(M)\,,
+\end{equation}
+because $\nabla_X$ can be generalized to tensors.
+
+\subsection{Directional Derivatives of Tensor Fields}
+We make a wishlist for  properties of $\nabla_X$ acting on a tensor field.
+There will remain a freedom in the definition of $\nabla_X$ which we need
+to fix by providing additional structure.
+\begin{defn}[Covariant Derivative/Affine Connection]
+    A \textit{connection} $\nabla$ on a smooth manifold $(\M,\mathcal{O}, \mathcal{A})$ is a map
+    that takes a pair consisting of a vector (field) $X$ and a $(p,q)$-tensor \textit{field} $T$
+    and sends them to a $(p,q)$-tensor (field) $\nabla_X T$,
+    satisfying
+    \begin{enumerate}
+        \item \textit{Extension of normal derivative}:
+            \begin{equation}
+                \nabla_X f = Xf\,,
+            \end{equation}
+            $\forall f \in C^\infty(\M)$.
+        \item \textit{Additivity}: 
+            \begin{equation}
+                \nabla_X(T+S) = \nabla_X T + \nabla_X S\,,
+            \end{equation}
+            for $(p,q)$-tensors $T$, $S$,
+        \item \textit{Leibnitz rule}: For a $(1,1)$ tensor field $T$, already evaluated with a covector $\omega$ and a vector $Y$,
+            so $T(\omega, Y)\in C^\infty(\M)$,
+            \begin{align}
+                \nonumber \nabla_X\left( T(\omega, Y) \right) &= (\nabla_X T)(\omega, Y) + T(\nabla_X \omega, Y)\\
+                &~+ T(\omega, \nabla_X Y)\,.
+            \end{align}
+            For $(p,q)$ tensor fields analogously.
+        \item \textit{$C^\infty$-linearity in lower argument}:
+        \begin{equation}
+            \nabla_{fX+Z}T = f\nabla_X T + \nabla_Z T\,,
+        \end{equation}
+        $\forall f \in C^\infty(\M)$.
+    \end{enumerate}
+    A manifold with connection (or affine manifold) is a quadruple of structures, $(\M, \mathcal{O, A}, \nabla)$.
+\end{defn}
+\begin{note}~
+    \begin{itemize}
+        \item $\nabla_X \cdot $ is the extension of $X$,
+        \item $\nabla_\cdot\cdot$ is the extension of $\diff$\,.
+    \end{itemize}
+\end{note}
+\subsection[New Structure on (M,O,A) to Fix Nabla]{New Structure on $(\M, \mathcal{O}, \mathcal{A}$ Required to Fix $\nabla$}
+    How much freedom do we have in choosing such a structure? How fixed is $\nabla_X$ by the definition above?
+
+    We consider vector fields $X, Y$ and choose a chart $(U, x)$, using the rules above
+    \begin{align*}
+        \nabla_X Y &= \nabla_{X^i\frac{\partial}{\partial x^i}} \left( Y^m \frac{\partial}{\partial x^m} \right) \\
+        &= X^i\left( \nabla_{\frac{\partial}{\partial x^i}} Y^m \right)\frac{\partial}{\partial x^m} +
+        X^i Y^m \nabla_{\frac{\partial}{\partial x^i}}\left( \frac{\partial}{\partial x^m} \right) \\
+        &= X^i\left( \frac{\partial}{\partial x^i} Y^m \right)\frac{\partial}{\partial x^m} +
+        X^i Y^m \Gamma^q{}_{mi} \frac{\partial}{\partial x^m}\,,
+    \end{align*}
+    where in the last step we have expanded $\nabla_{\frac{\partial}{\partial x^i}}\left( \frac{\partial}{\partial x^m} \right)
+    = \Gamma^q{}_{mi} \frac{\partial}{\partial x^q}$ with the \textit{connection coefficient functions} $\Gamma^q{}_{mi}$
+    (on $\M$) of $\nabla$ with respect to the chart $(U,x)$.
 %------------------------------------------------
 
 
