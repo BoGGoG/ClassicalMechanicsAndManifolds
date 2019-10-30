@@ -1454,8 +1454,14 @@ to fix by providing additional structure.
         So in $\mathbb{R}$ for the standard basis the $\Gamma$ vanish, but not for \textit{e.g.}\ 
         polar coordinates they are nonzero.
     \end{note}
-    \begin{defn}[Gradient]
-        
+    \begin{defn}[Divergence]
+        Let $X$ be a vector field on $(\M, \mathcal{O}, \mathcal{A}, \nabla)$.
+        The \textit{divergence} of $X$ is the function
+        \begin{equation}
+            \mathrm{div}(X) := \left( \nabla_{\frac{\partial}{\partial x^i}} X \right)^i\,,
+        \end{equation}
+        where there is a sum over $i$.
+        This definition is \textit{chart independent}.
     \end{defn}
 
 
@@ -1467,8 +1473,8 @@ $\partial/\partial y^q$,
     &= \frac{\partial y^i}{\partial x^q}\diff x^q \left( \nabla_{\frac{\partial x^p}{\partial y^k}\frac{\partial}{\partial x^p}}
     \frac{\partial x^s}{\partial yj}\frac{\partial}{\partial x^s}\right)\\
     &= \frac{\partial y^i}{\partial x^q}\diff x^q \frac{\partial x^p}{\partial y^k} 
-    \left\{ \left( \nabla_{\frac{\partial}{\partial x^p}} \frac{\partial x^s}{\partial y^i} \right) \frac{\partial}{\partial x^s}
-        + \frac{\partial x^s}{\partial y^j} \left( \nabla_{\frac{\partial}{\partial x^p}}\frac{\partial}{\partial x^s} \right)
+    \left\{ \left( \nabla_{\frac{\partial}{\partial x^p}} \frac{\partial x^s}{\partial y^i} \right) \frac{\partial}{\partial x^s} \right. \\
+    &\hspace{4cm}+ \left.\frac{\partial x^s}{\partial y^j} \left( \nabla_{\frac{\partial}{\partial x^p}}\frac{\partial}{\partial x^s} \right)
     \right\}\\
     &= \frac{\partial y^i}{\partial x^q} \left(\frac{\partial}{\partial y^k} \frac{\partial x^s}{\partial y^j} \right) \delta^q{}_s
     + \frac{\partial y^i}{\partial x^q} \frac{\partial x^p}{\partial y^k} \frac{\partial x^s}{\partial y^j} \Gamma^q_{(x)sp}\,,
