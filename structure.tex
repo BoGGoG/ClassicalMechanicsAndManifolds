@@ -298,6 +298,14 @@
 \pgfusepath{fill}
 }
 
+\newcommand{\boxalign}[2][0.97\textwidth]{%
+  \par\noindent\tikzstyle{mybox} = [draw=black,inner sep=6pt]
+  \begin{center}\begin{tikzpicture}
+   \node [mybox] (box){%
+    \begin{minipage}{#1}{\vspace{-5mm}#2}\end{minipage}
+   };
+  \end{tikzpicture}\end{center}
+}
 
 %----------------------------------------------------------------------------------------
 %	SYMBOLS
