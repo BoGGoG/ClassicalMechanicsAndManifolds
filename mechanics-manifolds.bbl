@@ -46,6 +46,30 @@
       \field{title}{How to draw the tangent bundle of a circle?}
       \field{year}{2016}
     \endentry
+    \entry{parallelTransportFigure}{misc}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=8ca7e228fb5a7c817a56f917a9835f71}{%
+           family={Crowell},
+           familyi={C\bibinitperiod},
+           given={Benjamin},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{8ca7e228fb5a7c817a56f917a9835f71}
+      \strng{fullhash}{8ca7e228fb5a7c817a56f917a9835f71}
+      \strng{bibnamehash}{8ca7e228fb5a7c817a56f917a9835f71}
+      \strng{authorbibnamehash}{8ca7e228fb5a7c817a56f917a9835f71}
+      \strng{authornamehash}{8ca7e228fb5a7c817a56f917a9835f71}
+      \strng{authorfullhash}{8ca7e228fb5a7c817a56f917a9835f71}
+      \field{sortinit}{C}
+      \field{sortinithash}{963e9d84a3da2344e8833203de5aed05}
+      \field{labeldatesource}{nodate}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://phys.libretexts.org/Bookshelves/Relativity/Book\%3A_General_Relativity_(Crowell)/3\%3A_Differential_Geometry/3.2\%3A_Affine_Notions_and_Parallel_Transport}}
+      \field{note}{Accessed: 31 Oct 2019}
+      \field{title}{The Affine Parameter in Curved Spacetime: A Rough Sketch}
+    \endentry
     \entry{texstackexchange:tangentspace}{misc}{}
       \name{author}{1}{}{%
         {{uniquename=0,uniquepart=base,hash=8d62649f09aa401c82a531e3e14249ca}{%
@@ -115,7 +139,7 @@
       \field{labeldatesource}{year}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{howpublished}{\url{https://www.youtube.com/watch?v=7G4SqIboeig&list=PLFeEvEPtX_0S6vxxiiNPrJbLu9aK1UVC_}}
+      \field{howpublished}{\url{https://www.youtube.com/watch?v=7G4SqIboeig\&list=PLFeEvEPtX_0S6vxxiiNPrJbLu9aK1UVC_}}
       \field{month}{2}
       \field{title}{International Winter School on Gravity and Light 2015}
       \field{year}{2015}

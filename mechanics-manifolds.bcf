@@ -2003,6 +2003,8 @@
     <bcf:citekey order="5">texstackexchange:tangentspace</bcf:citekey>
     <bcf:citekey order="6">texstackexchange:tangentbundlecircle</bcf:citekey>
     <bcf:citekey order="7">texstackexchange:tangentbundlecircle</bcf:citekey>
+    <bcf:citekey order="8">parallelTransportFigure</bcf:citekey>
+    <bcf:citekey order="9">parallelTransportFigure</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">
