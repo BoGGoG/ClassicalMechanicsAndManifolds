@@ -40,6 +40,7 @@
 \setlist{noitemsep} % Remove spacing between bullet/numbered list elements
 
 \usepackage{xparse}
+%\usepackage{todonotes}
 
 \usepackage{sectsty} % Enables custom section titles
 \allsectionsfont{\usefont{OT1}{phv}{b}{n}} % Change the font of all section commands (Helvetica)
@@ -236,6 +237,7 @@
 {%
     \IfNoValueTF{#1}{\operatorname{T}\!}{\operatorname{T}_{#1}\!}
 }
+\DeclareMathOperator{\Riem}{Riem}
 %\DeclareMathOperator{\T}{T\!}
 %\newcommand{\T}[1][]{\operatorename{T}_{#1} \!}
 

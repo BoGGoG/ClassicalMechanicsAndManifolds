@@ -24,6 +24,7 @@
 %----------------------------------------------------------------------------------------
 
 \documentclass[11pt, a4paper, twocolumn]{article} % 10pt font size (11 and 12 also possible), A4 paper (letterpaper for US letter) and two column layout (remove for one column)
+%\documentclass[11pt, a4paper, twocolumn, draft]{article} % 10pt font size (11 and 12 also possible), A4 paper (letterpaper for US letter) and two column layout (remove for one column)
 \input{structure.tex} % Specifies the document structure and loads requires packages
 
 %----------------------------------------------------------------------------------------
@@ -1754,7 +1755,72 @@ Proof that $T$ is a tensor: Check $T$ is $C^\infty$-linear in each entry
 From now on we will be focusing on \textit{torsion-free} connections.
 
 \subsection{Curvature}
+\subsubsection{Riemann Curvature Tensor}
+\begin{defn}[Riemann Curvature]
+    The \textit{Riemann Curvature} of a connection $\nabla$ is the
+    (1,3)-tensor field
+    \begin{align}
+        \nonumber \Riem(\omega, Z, X, Y) := w&\left( \nabla_X \nabla_Y Z - \nabla_Y\nabla_X Z \right.\\
+        &-\left. \nabla_{[X,Y]}Z \right)\,.
+    \end{align}
+\end{defn}
+\begin{note}
+    The Riemmann curvature tensor contains all information about the curvature.
+    For a two-dimensional manifold the Ricci tensor is enough.
+\end{note}
+\begin{note}
+    Of course one has to show that $\Riem$ is $C^\infty$-linear in each slot. 
+    The first slot is trivial, I will show it for the second:
+    \begin{align*}
+         &\Riem(\omega, fZ, X, Y) := \\ 
+         &=\omega\left( \nabla_X \nabla_Y (fZ) - \nabla_Y\nabla_X (fZ) - \nabla_{[X,Y]}(fZ) \right)\,.\\
+         &=\omega\left[ \nabla_X( (Yf)Z) + f\nabla_Y Z) - \right.\\
+         &\phantom{=}\left.\nabla_Y( (Xf)Z - f\nabla_X Z) - ([X,Y]f)Z - f\nabla_{[X,Y]}Z\right]\\
+         &= \omega\left[ ( (XY - YX) f )Z + f(\nabla_X\nabla_Y - \nabla_Y\nabla_X)Z\right.\\
+         &\phantom{=} \left. - ([X,Y]f)Z - f\nabla_{[X,Y]}Z\right]\\
+         &= f \Riem(\omega, Z, X, Y)\,.
+     \end{align*}
+     The third (and by symmetry also forth) argument works the same, one just has to use
+     \begin{align}
+         \nonumber\nabla_{[fX,Y]}Z &= \nabla_{f[X,Y]Z - (Yf)X}Z  \\
+         &=f\nabla_{[X,Y]}Z - (Yf)\nabla_X Z\,.
+     \end{align}
+\end{note}
 
+
+\subsubsection{Algebraic Relevance of Riem}
+\begin{align}
+    \nonumber &\left( \nabla_X \nabla_Y - \nabla_Y \nabla_X \right)Z =\\ %cant have & in \left \right
+    &\phantom{blabla}\Riem(\cdot, Z,X,Y) + \nabla_{[X,Y]}Z
+\end{align}
+Let's look at a chart $(U,x)$.
+We write $\nabla_{\frac{\partial}{\partial x^a}} = \nabla_a$, but be careful, because when
+writing it like this we throw away the information of the chart in $\nabla$.
+\begin{align}
+    \boxed{\left( \nabla_a\nabla_b Z \right)^m - (\nabla_b\nabla_a Z)^m = R^m{}_{nab}Z^n
+    }
+    \\\nonumber+ \cancel{\nabla_{[\frac{\partial}{\partial x^a},\frac{\partial}{\partial x^b}]}Z}\,,
+\end{align}
+where with $R^{m}{}_{nab}$ we now denote the components of $\Riem$ in the basis.
+
+\subsubsection{Geometric Relevance of Riem}
+\begin{center}
+    \textsc{Put picture here of $[X,Y] = 0$ and
+    $[X,Y] \neq 0$}.
+    Schuller did a really god job explaining this at the end of lecture
+    8, but it's hard to write down.
+\end{center}
+
+Assuming a torsion-free connection, $T=0$, then one can imagine curvature as follows.
+Parallel transporting a vector $Z$ along two different paths from $p$ to $q$
+changes the vector.
+Going infinitesimal and ``along'' $X$ or $Y$ (first along $X$ and then along $Y$ or the other
+way round) one can find (for $[X,Y] = 0$)
+\begin{equation}
+    (\delta Z)^m = R^m{}_{nab}X^aY^bZ^n\,\delta s\delta t\,,
+\end{equation}
+plus higher order terms in the ``lengths of the curves'' $\delta s$, $\delta t$.
+%One contracts the first and the third index, because all others are either zero or equivalent.
 
 
 
