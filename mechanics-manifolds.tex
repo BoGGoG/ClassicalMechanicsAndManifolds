@@ -1822,6 +1822,251 @@ way round) one can find (for $[X,Y] = 0$)
 plus higher order terms in the ``lengths of the curves'' $\delta s$, $\delta t$.
 %One contracts the first and the third index, because all others are either zero or equivalent.
 
+\section{Newtonian Spacetime is Curved!?}
+Let's review Newton's axioms:
+\begin{enumerate}
+    \item A body on which \textit{no force} acts moves uniformly along a straight line.
+    \item \textit{Deviation} of a body's motion from such uniform straight motion is effected by a
+        force, reduced by a factor of the body's reciprocal mass.
+\end{enumerate}
+One might think that the first axiom is a special case of the second.
+The problem with that is that the second axiom needs to know what a 
+straight line is.
+So it might be a better idea to interpret the first axiom as a measurement prescription
+for the geometry of space that tells us what a straight line is.
+The second problem is: Gravity acts universally on every particle, so how should
+the first axiom ever be applicable if there are at least two particles in the
+universe?
+
+Maybe similar reasoning lead Laplace (1749-1827) to state the following question:
+\begin{quote}
+    Can gravity be encoded in a curvature of space, such that particles that are subject
+    to no other force than gravity, move in straight lines in this curved space?
+    In other words: Can we get rid of the gravitational ``force'' and put it into the
+    geometry of space?\footnote{%
+        Not sure if I wrote this correctly. The text in the lecture~\cite{Schuller15}
+    is strangely formulated.}
+\end{quote}
+\paragraph{Answer}: No!
+\paragraph{Proof}:
+Newton's equation and Laplace's equation are
+\begin{align}
+    \label{eq:newton} \cancel{m} \ddot{x}^i(t) &= \cancel{m} f^{i}(x(t)) = F^i\,,\\
+    -\partial_i f^i &= 4\pi G \rho\,,\\
+\end{align}
+where $F$ denotes the force, $m$ the mass and $\rho$ the density.
+If we could encode this in curvature then we should be able to write equation~(\ref{eq:newton})
+as
+\begin{align}
+    &\ddot{x}^i(t) - f^i(x(t)) = 0\\
+    =~&\ddot{x}^i(t) + \Gamma^i_{ab}\dot{x}^a(t)\dot{x}^b(t) = 0
+\end{align}
+But that is just not possible, since $f^i$ does not depend on the velocity $\dot(x^a)$.
+
+But lo and behold:
+We have not used the word \textit{uniformly} in the first axiom.
+That basically means that the equal distances are passed in equal times.
+\begin{note}
+    A curve is more than the set of its points!
+    It's the set of its points and its parametrization! 
+\end{note}
+The trick is: When we have a curve $\gamma(t)$ we can plot it in a coordinate
+system with one dimension more that we take as time (just like s-t diagrams in school).
+Then we basically put the information of the parametrization in the form of the line
+in this space. 
+
+\begin{center}
+    \begin{tikzpicture}
+        \draw[line width=1pt,blue, xshift = -100](0,0)--(0.5,0.5);
+        \draw[line width=1pt,blue, xshift = -100](0.55,0.55)--(1,1);
+        \draw[line width=1pt,blue, xshift = -100](1.05,1.05)--(1.5,1.5);
+        \draw[line width=1pt,blue, xshift = -100](1.55,1.55)--(2,2);
+        \draw[line width=1pt,blue, xshift = -100](2.05,2.05)--(2.5,2.5);
+        \draw[line width=1pt,blue, xshift = -100](2.55,2.55)--(3.1,3.1);
+
+        \draw[line width=1pt,red](0,0)--(1,1);
+        \draw[line width=1pt,red](1.05,1.05)--(1.8,1.8);
+        \draw[line width=1pt,red](1.85,1.85)--(2.4,2.4);
+        \draw[line width=1pt,red](2.45,2.45)--(2.8,2.8);
+        \draw[line width=1pt,red](2.85,2.85)--(3,3);
+    \end{tikzpicture}
+    \begin{tikzpicture}
+        \draw [<->,thick, xshift = -100] (0,3.2) node (taxis) [above] {$t$}
+        |- (3.2,0) node (xaxis) [right] {$x$};
+
+        \draw[line width=1pt,blue, xshift = -100](0,0)--(0.5,0.1);
+        \draw[line width=1pt,blue, xshift = -100](0.55,0.12)--(1,0.2);
+        \draw[line width=1pt,blue, xshift = -100](1.05,0.22)--(1.5,0.3);
+        \draw[line width=1pt,blue, xshift = -100](1.55,0.32)--(2,0.4);
+        \draw[line width=1pt,blue, xshift = -100](2.05,0.42)--(2.5,0.5);
+        \draw[line width=1pt,blue, xshift = -100](2.55,0.52)--(3.1,0.6);
+
+        \draw [<->,thick, xshift = 20] (0,3.2) node (taxis) [above] {$t$}
+        |- (3.2,0) node (xaxis) [right] {$x$};
+        \draw[line width=1pt, red, xshift = 20](0,0)--(0.5,0.1);
+        \draw[line width=1pt, red, xshift = 20](0.52,0.12)--(1,0.3);
+        \draw[line width=1pt, red, xshift = 20](1.02,0.32)--(1.5,0.6);
+        \draw[line width=1pt, red, xshift = 20](1.52,0.62)--(2,0.9);
+        \draw[line width=1pt, red, xshift = 20](2.02,0.92)--(2.5,1.3);
+        \draw[line width=1pt, red, xshift = 20](2.52,1.32)--(3.1,1.8);
+        %\draw (0,0) coordinate (a_1) -- (2,1.8) coordinate (a_2);
+        %\draw (0,1.5) coordinate (b_1) -- (2.5,0) coordinate (b_2);
+        %\coordinate (c) at (intersection of a_1--a_2 and b_1--b_2);
+        %\draw[dashed] (yaxis |- c) node[left] {$y'$}
+        %-| (xaxis -| c) node[below] {$x'$};
+        %\fill[red] (c) circle (2pt);
+    \end{tikzpicture}
+\end{center}
+
+So now let us try not only in space, but in (Newtonian) spacetime:\\
+\bigskip
+\begin{minipage}{0.19\textwidth}
+Let $x: \mathbb{R} \to \mathbb{R}^3$ be the particle's trajectory
+in space fulfilling Newton's law $\ddot{x}^i = f^i(x(t))$.
+\end{minipage}
+\hfill
+$\leftrightarrow$
+\hfill
+\begin{minipage}{0.25\textwidth}
+    worldline (history) of the particle
+    $X: \mathbb{R} \to \mathbb{R}^4$\\
+    $t\mapsto (t, x^1(t), x^2(t), x^3(t))$
+    $:= (X^0(t), X^1(t), X^2(t), X^3(t))$
+\end{minipage}
+Trivial rewritings:
+\begin{equation}
+    \dot{X^0} = 1
+\end{equation}
+and
+\begin{align}
+    \ddot{X}^0 &= 0\,,\\
+    \ddot{X}^i - f^i(X(t))\dot{X}^0\dot{X}^0 &= 0\,,\quad i=1,2,3\,,
+\end{align}
+which is equivalent to
+the autoparallel equation in spacetime
+\begin{equation}
+    \ddot{X}^\alpha + \Gamma^\alpha{}_{\beta \gamma} \dot{X}^\beta \dot{X}^\gamma = 0\,,\quad \alpha=0,1,2,3\,,
+\end{equation}
+with
+\begin{equation}
+    \Gamma^i{}_{00} = -f^i\,,
+\end{equation}
+and all other components of $\Gamma$ zero.
+
+This is not a coordinate-choice artefact, since
+\begin{equation}
+    R^{a}{}_{0b0} = -\frac{\partial}{\partial x^b}f^a \neq 0\,\\
+\end{equation}
+and
+\begin{equation}
+    R_{00} = R^\mu{}_{0\mu 0} = -\partial f^a = 4\pi G \rho\,.
+\end{equation}
+If you already know the solution (General Relativity) you can cheat and write
+$T_{00} = \rho/2$ to get
+\begin{equation}
+    R_{00} = 8 \pi G T_{00}\,.
+    \label{eq:newtGR}
+\end{equation}
+Thus Newtonian spacetime is curved (only in time) even if we do not
+have relativity and the curvature is prescribed by the distribution of
+matter $\rho$.
+Uniformly straight in space $\to$ straight in spacetime.
+
+In fact Einstein proposed an equation similar to~(\ref{eq:newtGR}) in 1912, namely
+\begin{equation}
+    R_{\mu\nu} 8 \pi G T_{\mu\nu}\,,\quad \mu,\nu = 0,1,2,3\,,
+\end{equation}
+which is not entirely correct, but almost.
+
+\subsection{Foundations of the Geometric Formulation of Newton's Axioms}
+\begin{defn}[Newtonian Spacetime]
+    A Netwonian spacetime (space+time) is a quintuple
+    \begin{equation}
+        (\M, \mathcal{O}, \mathcal{A}, \nabla, t)\,,
+    \end{equation}
+    where $(\M, \mathcal{O}, \mathcal{A})$ form a 4-dimensional smooth manifold and
+    the \textit{absolute time}
+    \begin{equation}
+        t: \M\to\mathbb{R}\,,\quad\text{smooth function}\,,
+    \end{equation}
+    satisfies
+    \begin{enumerate}
+        \item There is an absolute space that follows from the existence of absolute time.
+            \begin{equation}
+                \left( \diff t \right)_p \neq 0\,,\quad\forall p\in\M\,,
+            \end{equation}
+        \item Absolute time flows uniformly,
+            \begin{equation}
+                \nabla \diff t = 0\,,\quad\text{everywhere}
+            \end{equation}
+        \item $\nabla$ is torsion free.
+    \end{enumerate}
+\end{defn}
+\begin{defn}[Absolute space $S_\tau$ at time $\tau$]
+    \begin{equation}
+        S_\tau:=\left\{ p\in\M | t(p) = \tau \right\}\,,
+    \end{equation}
+    and thus because of $(\diff \tau)_p \neq 0$
+    \begin{equation}
+        \M = \bigcupdot S_\tau\,,
+    \end{equation}
+    where $\bigcupdot$ means the disjoint union.
+\end{defn}
+This means that $S_\tau$ \textit{foliate} spacetime.
+\begin{note}
+    By $\nabla \diff t$ we mean that the argument that $\nabla_\cdot$ takes is
+    open, so what comes out is a (0,2)-tensor.
+\end{note}
+\begin{note}
+    You can view Gravity as curvature of spacetime and already in Newtonian mechanics
+    this is not just an alternative formulation,
+    but if you look at the first axiom there is not really another possible choice.
+    It's not relativity that forces us to use spacetime, it's gravity itself.
+\end{note}
+\begin{defn}[]
+    A vector $X\in\T{p}\M$ is called
+    \begin{enumerate}
+        \item future-directed if
+            \begin{equation}
+                \diff t(X) > 0\,,
+            \end{equation}
+        \item spatial if
+            \begin{equation}
+                \diff(X) = 0\,,
+            \end{equation}
+
+        \item past-directed if
+            \begin{equation}
+                \diff{X}<0\,.
+            \end{equation}
+    \end{enumerate}
+\end{defn}
+\paragraph{Newton 1:} The worldline of a particle under the influence
+of no force (gravity isn't a force now) is a \textit{future directed
+autoparallel},\textit{i.e.}\ everywhere
+\begin{align}
+    \nabla_{v_X}v_X &= 0\,,
+    \diff t(v_X)>0\,.
+\end{align}
+\paragraph{Newton 2:}
+The acceleration of a worldline
+\begin{equation}
+    \underbrace{\nabla_{v_X}v_X}_a = \frac{F}{m}\,,
+\end{equation}
+where $F$ is a spatial vector field: $\diff t(F) =0$, $X$ is a future directed vector
+and $a$ is the acceleration.
+\paragraph{Convention:}
+Restrict attention to \textit{stratified atlases} $\mathcal{A}_\text{stratified}$
+whose charts $(U,x)$ have the property
+\begin{equation}
+    x^0 = t\eval_U
+\end{equation}
+In a stratified atlas the first axiom becomes
+\begin{align}
+    0 = \left( \nabla_\frac{\partial}{\partial x^a} \diff x^0 \right)_b = -\Gamma^0_{ba}\,.
+\end{align}
+
+Let's evaluate Newton 2 in a chart $(U,x)$ of a stratified atlas $\mathcal{A}_\text{stratified}$:
 
 
 %------------------------------------------------
