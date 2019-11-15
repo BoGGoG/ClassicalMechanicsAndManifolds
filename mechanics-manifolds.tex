@@ -212,8 +212,8 @@ A map that is injective and surjective is called \textit{surjective}.
     \end{align}
 \end{defn}
 
-\begin{theorem}[Composition of continuos maps]
-    For $f$, $g$ continuos also $g\circ f$ is continuous (if space match, \textit{i.e.}\ $g\circ f$ is defined).
+\begin{theorem}[Composition of continuous maps]
+    For $f$, $g$ continuous also $g\circ f$ is continuous (if space match, \textit{i.e.}\ $g\circ f$ is defined).
 \end{theorem}
 
 
@@ -684,6 +684,7 @@ Now $(\M, \mathcal{O}_\M)$ and $(\mathcal{N}, \mathcal{O_N})$.
 ``What is the velocity of a curve $\gamma$ at a point $p$?''
 \subsection{Velocities, Tangent Spaces}
 \begin{defn}[Velocity]
+    \label{defn:velocity}
     $(\mathcal{M,O,A})$ smooth manifold, curve $\gamma: \mathbb{R}\to \M$ at least $C^1$.
     Suppose $\gamma(\lambda_0) = p$.
     The velocity $v$ of $\gamma$ at $p$ is the linear map
@@ -696,6 +697,7 @@ Now $(\M, \mathcal{O}_\M)$ and $(\mathcal{N}, \mathcal{O_N})$.
         \boxed{
         v_{\gamma,p}(f) := (f \circ \gamma)'(\underbrace{\gamma^{-1}(p)}_{\lambda_0})
     }\,,
+    \label{eq:defVelocity}
     \end{equation}
     \textit{i.e.}, the directional derivative of $f$ along $\gamma$ at the point $p$
 \end{defn}
@@ -851,9 +853,10 @@ Let $(U,x) \in \mathcal{A}_\text{smooth}$,
     for $\dot{\gamma}^i_x(x)$.
     \begin{align}
         \Aboxed{%
-            \left( \frac{\partial f}{\partial x^i} \right)_p &:= \left( \partial_i(f\circ x^{-1} \right)(x(p))}\\
+            \left( \frac{\partial f}{\partial x^i} \right)_p &:= \left( \partial_i(f\circ x^{-1} \right)(x(p))}\,,\\
         \Aboxed{%
-        \dot{\gamma}_x^i (0) &:= (x^i\circ\gamma)'(0)}
+        \dot{\gamma}_x^i (0) &:= (x^i\circ\gamma)'(0)}\,.
+        \label{eq:vectorcomponents2}
     \end{align}
     Nevertheless one can show that what we write like a partial derivative here,
     behaves (and maybe tastes) like a partial derivative.
@@ -1624,7 +1627,7 @@ are \textit{parallel transported} along the curve.
     \begin{equation}
         \nabla_{v_\gamma} v_\gamma = \mu v_\gamma\,.
     \end{equation}
-    even though most of the time one also uses this notion for an autoparallelly transported curve.
+    even though most of the time one also uses the notion ``autoparallel'' for an autoparallelly transported curve.
     An autoparallelly transported curve is the ``straightest curve possible''.
 \end{note}
 \textit{Example}: \textit{Euclidean plane} $(\mathbb{R}^2, \mathcal{O}, \mathcal{A}, \nabla_E)$
@@ -1655,15 +1658,17 @@ in terms of chart representatives:
 Using $v_{\gamma, \gamma(\lambda)} = \dot{\gamma}^m_{(x)}(\lambda) \left( \frac{\partial}{\partial x^m} \right)_{\gamma(\lambda)}$
 and $\gamma^m_{(x)} := x^m \circ \gamma$ we get
 \begin{align}
-    \nabla_{v_\gamma}v_\gamma  &= \left( \nabla_{\dot{\gamma}^m_{(x)} \left( \frac{\partial}{\partial x^m} \right)} \dot{\gamma}^n_{(x)}  \frac{\partial}{\partial x^n}  \right)\\
+    \nonumber \nabla_{v_\gamma}v_\gamma  &= \left( \nabla_{\dot{\gamma}^m_{(x)} \left( \frac{\partial}{\partial x^m} \right)} \dot{\gamma}^n_{(x)}  \frac{\partial}{\partial x^n}  \right)\\
     &= \underbrace{\dot{\gamma}^m \frac{\partial \dot{\gamma}^q}{\partial x^m}}_{\ddot{\gamma}^m_{(x)}} \frac{\partial}{\partial x^q} + \dot{\gamma}^m \dot{\gamma}^n \Gamma^q{}_{nm}\frac{\partial}{\partial x^q}\,.
+    \label{eq:autoparallelEquation}
 \end{align}
 In summary we have the chart expression of the condition that $\gamma$ be autoparallelly transported:
 \begin{equation}
     \boxed{%
     \ddot{\gamma}^{m}_{(x)}(\lambda) + \Gamma^m{}_{ab}(\gamma(\lambda)) \dot{\gamma}^a(\lambda)\dot{\gamma}^b(\lambda) = 0}\,.
 \end{equation}
-This is the \textit{geodesic equation}.
+As we will see later if for $\Gamma$ we choose the so called \textit{Levi Civita connection}
+then this is the \textit{geodesic equation}.
 
 \paragraph{Examples}
 \begin{enumerate}
@@ -1762,6 +1767,7 @@ From now on we will be focusing on \textit{torsion-free} connections.
     \begin{align}
         \nonumber \Riem(\omega, Z, X, Y) := w&\left( \nabla_X \nabla_Y Z - \nabla_Y\nabla_X Z \right.\\
         &-\left. \nabla_{[X,Y]}Z \right)\,.
+        \label{eq:RiemannCurvature}
     \end{align}
 \end{defn}
 \begin{note}
@@ -2066,7 +2072,6 @@ In a stratified atlas the first axiom becomes
 \begin{align}
     0 = \left( \nabla_\frac{\partial}{\partial x^a} \diff x^0 \right)_b = -\Gamma^0_{ba}\,.
 \end{align}
-=======
 
 \subsubsection{Geometric Relevance of Riem}
 \begin{center}
@@ -2085,11 +2090,373 @@ way round) one can find (for $[X,Y] = 0$)
     (\delta Z)^m = R^m{}_{nab}X^aY^bZ^n\,\delta s\delta t\,,
 \end{equation}
 plus higher order terms in the ``lengths of the curves'' $\delta s$, $\delta t$.
-%One contracts the first and the third index, because all others are either zero or equivalent.
->>>>>>> 6d5208c2299f20973e0c45b14e9186e9c871930e
+One contracts the first and the third index, because all others are either zero or equivalent.
 
 Let's evaluate Newton 2 in a chart $(U,x)$ of a stratified atlas $\mathcal{A}_\text{stratified}$:
 
+\fbox{Finish this section}
+
+\section{Metric Manifolds}
+\subsection[The metric g]{The metric $g$}
+We establish a new structure called a \textit{metric} on a smooth manifold $\M$
+that allows to assign a length to each vector $X$ in each tangent space $X\in
+\T_p\M$ and an angle between vectors in the same tangent space.
+
+Since the velocity $v_{\gamma,p}$ of a curve $\gamma$ at the point $p\in\M$
+(defined by equation~(\ref{eq:defVelocity})) is a vector, we can then integrate
+up the lengths of the velocities to get the length of a curve.
+
+Then we require that the shortest curves are also the straightest curves,
+$\nabla_{v_\gamma} v_\gamma=0$, which will result in the metric determining
+the connection $\nabla$ if there is no torsion ($T=0$) and thus also the
+curvature.
+
+\begin{defn}[Metric]
+    A metrig $g$ on a smooth manifold $(\M, \mathcal{O}, \mathcal{A})$ is a
+    (0,2)-tensor field satisfying
+    \begin{itemize}
+        \item \textit{symmetry}:
+            \begin{equation}
+                g(X,Y) = g(Y,X)\,,\quad\forall X,Y\in\Gamma(\T\M)\,,
+            \end{equation}
+        \item \textit{non-degeneracy:} There are no non-zero vectors $X\in\T{p}\M$
+            with
+            \begin{equation}
+                g(X,Y) = 0\,\quad \forall Y\in\T_p\M\,.
+            \end{equation}
+
+    \end{itemize}
+\end{defn}
+
+\begin{defn}[Inverse Metric $g^{-1}$]
+    The symmetric (2,0)-tensor field $g^{-1}$ with respect to a metric $g$ is
+    \begin{align}
+        g^{-1}: \Gamma(\T^*\M) &\times\Gamma(\T^*\M) \linearto C^\infty(\M)\,\\
+        (\omega, \sigma) &\mapsto w\left( \flat^{-1}(\sigma) \right)\,.
+    \end{align}
+\end{defn}
+
+\begin{defn}[Musical map $\flat$]
+    The musical map (``flat'')
+    \begin{align}
+        \label{eq:musicalMap}
+        \flat: \Gamma(\T\M) &\to \Gamma(\T^*\M)\,\\ 
+        X &\mapsto \flat(X)\,,
+    \end{align}
+    where
+    \begin{equation}
+        \flat(X)(Y):= g(X,Y)\,,
+    \end{equation}
+    \textit{i.e.}\ the musical map is like a partial evaluation
+    of the metric, $\flat(X) = g(X,\cdot)$ and can also be written
+    with indices and the so called raising and lowering of indices
+    \begin{align}
+        X_a := g_{am}X^m := \left( \flat(X) \right)_a\,\\
+        X^a := g^{am}X_m := \left( \flat^{-1}(X) \right)^a\,
+    \end{align}
+\end{defn}
+
+\begin{note}
+    In a chart $g_{ab} = g_{ba}$ and
+    \begin{equation}
+        \left( g^{-1} \right)^{am} g_{mb} = \delta^a_b\,,
+        \label{eq:inverseMetricComponents}
+    \end{equation}
+    but the inverse metric is not really an inverse of the metric.
+    We see this by looking at the spaces:
+    \begin{align}
+        g&: \Gamma(\T\M)\times \Gamma(\T\M) \to C^\infty(\M)\,,\\
+        g^{-1}&: \Gamma(\T^*\M)\times \Gamma(\T^*\M) \to C^\infty(\M)\,,
+    \end{align}
+    so it is not really the inverse map, but the inverse matrix in the sense
+    of equation~(\ref{eq:inverseMetricComponents}).
+\end{note}
+\begin{note}
+    Pulling down or up indices is a dangerous business.
+    It means we are suppressing the metric and hiding
+    that the object depends on the metric.
+    Actually it then is not clear if $X_a$ are the
+    components of a genuine one form or if it is
+    constructed by pulling down the index of the index
+    of a vector and hiding the metric.
+\end{note}
+
+\paragraph{Example: Sphere} $(S^2, \mathcal{O}, \mathcal{A})$
+with a chart $(U,x)$, $\phi\in(0,2\pi)$, $\theta\in (0,\pi)$.
+\begin{equation}
+    g_{ij}\left(x^{-1}(\theta, \phi)\right) = 
+    \begin{pmatrix}
+        R^2 & 0 \\
+        0 & R^2 \sin^2 \theta
+    \end{pmatrix}_{ij}\,,
+\end{equation}
+is the metric of the \textit{round sphere} of radius $R\in\mathbb{R}^+$.
+
+\subsection{Signature}
+Remember \textit{linear algebra}:
+Eigenvalues and eigenvectors
+\begin{equation}
+    A^a{}_m v^m = \lambda v^a\,.
+    \label{eq:eigenvector}
+\end{equation}
+How does this translate the notion of eigenvectors to our case of a metric?
+$A^a{}_m$ is a (1,1)-tensor and eigenvectors are a good notion,
+but for a (0,2)-tensor eq.~(\ref{eq:eigenvector}) does not work
+\begin{equation}
+    g_{am}v^m \neq \lambda v^a\,.
+\end{equation}
+\begin{note}
+    A (1,1) tensor cannot be symmetric on its own, it can only be symmetric
+    with respect to a metric, \textit{i.e.}\ one can pull down an index
+    and then switch indices.
+\end{note}
+\begin{itemize}
+    \item A (1,1)-tensor has eigenvalues and can be transformed to look like
+        \begin{equation}
+            \begin{pmatrix}
+                \lambda_1 & & \\
+                & \ddots & \\
+                & & \lambda_n
+            \end{pmatrix} = \diag(\lambda_1, \ldots, \lambda_n)\,,
+        \end{equation}
+        with eigenvalues $\lambda_i$.
+    \item A (0,2)-tensor like the metric has a \textit{signature} $(p,q)$ and can be transformed to
+        \begin{equation}
+            \diag(\underbrace{1,\dots, 1}_{p}, \underbrace{-1, \ldots, -1}_{q}, 
+            \underbrace{0, \ldots, 0}_{\dim V - p - q})\,,
+        \end{equation}
+        which we can agree has way less information than the eigenvalues.
+\end{itemize}
+\begin{note}
+    The condition that the musical isomorphism $\flat$, eq.~(\ref{eq:musicalMap})
+    is invertible means that there are no zeros in the signature. 
+    Basically a zero would mean that a whole subspace is mapped to zero and
+    this is not invertible.
+\end{note}
+
+\begin{defn}[Riemannianian and Lorentzian Metric]
+    \begin{itemize}
+        \item A metric is called \textit{Riemannian} if its signature is
+            $(+, \ldots, +)$ (or $(-, \ldots, -)$ is equivalent).
+        \item A metric is called \textit{Lorentzian} if its signature is
+            $(+,-, \ldots, -)$ (or $(-,+, \ldots, +)$ is equivalent).
+            We will chose $(+,-, \ldots, -)$ here.
+            This is what we need for General Relativity.
+        \item All other signature including Lorentzian metrics are called
+            \textit{pseudo Riemannian}.
+    \end{itemize}
+\end{defn}
+\begin{note}
+    One might call a non-Riemannian metric a \textit{pseudo metric}, since
+    there are nonzero vectors that have zero length under such a metric.
+    In a Lorentzian manifold one says they lie on the light cone.
+\end{note}
+\begin{note}
+    Generally the metric itself will change from point to point in spacetime $\M$,
+    but the signature stays.
+\end{note}
+\subsection{Length of a Curve}
+Let $\gamma$ be a smooth curve.
+Then we know its velocity $v_{\gamma,\gamma(\lambda)}(f) := (f \circ \gamma)'(\lambda)$
+at each $\gamma(\lambda)\in \M$ from definition~\ref{defn:velocity}.
+
+\begin{defn}[Speed of a curve]
+    On a \textit{Riemannian metric manifold} $(\M, \mathcal{O}, \mathcal{A}, G)$ the
+    \textit{speed} of a curve $\gamma$ at $\gamma(\lambda)$ is the number
+    \begin{equation}
+        s(\lambda) = \left( \sqrt{g(v_\gamma, v_\gamma)} \right)_{\gamma(\lambda)}\,.
+    \end{equation}
+    Basically its just the magnitude of the velocity.
+\end{defn}
+\begin{note}
+    I feel the need, the need for \cancel{speed} a metric to define speed.
+\end{note}
+\begin{note}
+    The physical dimensions are
+    \begin{align*}
+        [v^a] &= \frac{1}{T}\,,\\
+        [g_{ab}] &= L^2\,,\\
+        [\sqrt{g_{ab}v^av^b}] &= \frac{L}{T}\,.
+    \end{align*}
+    The idea that coordinate distance has anything to do with real distance is just wrong.
+    Going double as far in coordinates has nothing to do with going double as far
+    in ``reality'' (the manifold $\M$).
+\end{note}
+
+\begin{defn}[]
+    Let $\gamma: (0,1)\to \M$ be a smooth curve.
+    Then the \textit{length of} $\gamma$ is the number
+    \begin{align}
+        L[\gamma] &:= \int_0^1 \diff \lambda\, s(\lambda) \\
+        &= \int_0^1\diff \lambda\, \sqrt{\left( g(v_\gamma,v_\gamma \right)_{\gamma(\lambda)}}\,.\nonumber
+    \end{align}
+    It is a functional, \textit{i.e.}\ a function is mapped to a number.
+\end{defn}
+\begin{note}
+    It's exactly the other way than one usually thinks.
+    Velocity is more fundamental than speed and speed is more fundamental than
+    length.
+\end{note}
+
+\paragraph{Example:} The round sphere of radius $R$.
+Its equator is a curve
+\begin{align}
+    \theta(\lambda) &:= (x^1\circ \gamma)(\lambda) = \frac{\pi}{2}\,,\\
+    \phi(\lambda) &:= (x^2\circ\gamma)(\lambda) = 2\pi \lambda^3\,,
+\end{align}
+where we have randomly chosen any parametrization that has
+$\phi(0) = 0$, $\phi(1) = 2\pi$.
+Then the components of the velocity are (eq.~(\ref{eq:vectorcomponents2}))
+\begin{align*}
+    v^i &= \dot{\gamma}_x^i (0) := (x^i\circ\gamma)'(0)\,,\\
+    v^1 &= \left( \frac{\pi}{2} \right)' = 0\,,\\
+    v^2 &= \left( 2\pi \lambda^3 \right)' = 6\pi \lambda^2\,.
+\end{align*}
+and $g_{ij} = \diag(R^2, R^2 \sin^2\theta)$ the length of the curve around the equator
+($\theta = \pi/2$, $\sin(\theta) = 1$)
+\begin{align*}
+    L[\gamma] &= \int_0^1\diff\lambda\,\sqrt{R^2\cdot 0 + R^2 \sin^2(\theta(\lambda))(6\pi\lambda^2)^2}\\
+    &= \int_0^1\diff\lambda\, R 6 \pi \lambda^2 = 2\pi R\,,
+\end{align*}
+or just to have it written down in a rigorous way
+\begin{align*}
+    &L[\gamma] =\\
+    &\int_0^1\diff\lambda\,\sqrt{g_{ij}(x^{-1}(\theta(\lambda),\phi(\lambda))(x^i\circ\gamma)'(\lambda)
+        (x^j\circ\gamma)'(\lambda)}
+\end{align*}
+
+\begin{theorem}[Reparametrization invariance of the lengh of a curve]
+    Let $\gamma: (0,1)\to\M$ be a curve and
+    $\sigma: (0,1)\to(0,1)$ a smooth bijection and increasing (don't drive back
+    on the curve), then the reparametrized curve has the same length,
+    \begin{equation}
+        L[\lambda] = L[\gamma\circ\sigma]\,.
+    \end{equation}
+\end{theorem}
+
+\subsection{Geodesics}
+\begin{defn}[Geodesic]
+    A curve $\gamma: (0,1) \to \M$ is called a \textit{geodesic} on a
+    Riemannian manifold $(\M, \mathcal{O}, \mathcal{A}, g)$ is a \textit{stationary}
+    curve with respect to the length functional $L[\gamma]$.
+\end{defn}
+
+\begin{theorem}
+    A curve $\gamma$ is a \textit{geodesic} iff it satisfies the Euler-Lagrange equations for
+    the Lagrangian
+    \begin{align}
+        \calL: \T \M &\to \mathbb{R}\,,\\
+        X &\mapsto \sqrt{g(X,X)}\,.
+    \end{align}
+    In a chart the Euler-Lagrange equations take the form (chart dependent)
+    \begin{equation}
+        \frac{\diff}{\diff \lambda}\left( \frac{\partial \calL}{\partial \dot{\gamma}^m} \right) -
+        \frac{\partial \calL}{\partial \gamma^m} = 0\,,
+        \label{eq:EulerLagrange}
+    \end{equation}
+    where
+    \begin{equation}
+        \calL(\gamma^i, \dot{\gamma}^i) = \sqrt{g_{ij}(\gamma (\lambda)) \dot{\gamma}^i(\lambda)
+            \dot{\gamma}^j(\lambda)}\,.
+            \label{eq:lagrangian}
+    \end{equation}
+\end{theorem}
+Plugging the Lagrangian~(\ref{eq:lagrangian}) into the Euler-Lagrange equations~(\ref{eq:EulerLagrange})
+and using the parametrization of $\gamma$ such that $g(\dot\gamma, \dot\gamma)=1$
+(always driving at unit speed) we get after raising the index with $(g^{-1})^{qm}$
+\begin{align}
+    \ddot{\gamma}^q + 
+    \overbrace{\frac{1}{2}\left( g^{-1} \right)^{qm} \left( \partial_i g_{mj} + \partial_j g_{mi}
+    - \partial_m g_{ij} \right)}^{:= ^\text{L.C.}\Gamma^q{}_{ij}(\gamma(\lambda))} \dot{\gamma}^i \dot{\gamma}^j = 0\,.
+    \label{eq:geodesic}
+\end{align}
+Equation~(\ref{eq:geodesic}) is the \textit{geodesic equation} for $\gamma$.
+We call $^\text{L.C.}\Gamma^q{}_{ij}$ the \textit{Levi-Civita connection coefficient functions}.
+\begin{defn}[Levi-Civita connection]
+    The \textit{Levi-Civita connection} coefficient functions $^\text{L.C.}\Gamma^q{}_{ij}(\gamma(\lambda))$
+    (also called \textit{Christoffel symbols} or ``Christ awful symbols'' because of the labour needed 
+    to calculate them)
+    of the so called \textit{Levi-Civita connection} $^\text{L.C.}\nabla$ and they are
+    \begin{equation}
+        \boxed{%
+        ^\text{L.C.}\Gamma^q{}_{ij} = 
+        \frac{1}{2}\left( g^{-1} \right)^{qm} \left( \partial_i g_{mj} + \partial_j g_{mi}
+        - \partial_m g_{ij} \right)
+    }
+    \end{equation}
+\end{defn}
+\begin{note}
+    If we use the Levi-Civita connection as the connection on our manifold,
+    then the geodesic equation
+    \begin{equation}
+        \ddot{\gamma}^q + \Gamma^q{}_{ij}\dot{\gamma}^i \dot{\gamma}^j = 0\,,
+    \end{equation}
+    is exactly the equation~(\ref{eq:autoparallelEquation}) for an autoparallelly transported curve,
+    \textit{i.e.}\ for a curve that is as straight as possible.
+    Choice of the connection as Christoffel conection thus means we identify autoparallelly transported
+    curves (straight as possible) with the shortest curves.
+\end{note}
+\begin{note}
+    Thus a metric manifold $(\M, \calO, \calA, g)$ implies a manifold with the Christoffel connection
+    \begin{equation}
+        (\M, \calO, \calA, g) \to (\M, \calO, \calA, g,~^\text{L.C.}\nabla)\,,
+    \end{equation}
+    and we usually make this choice of connection.
+\end{note}
+\begin{note}
+    If for a metric manifold $(\M, \calO, \calA, g)$ one imposes
+    \begin{enumerate}
+        \item \textit{Metric compatibility:} $\nabla g = 0$,
+        \item \textit{Absence of torsion:} $T=0$,
+    \end{enumerate}
+    then the connection is already fixed to be the Levi Civita connection
+    $\nabla = {}^\text{L.C.}\nabla$.
+    This is the way many General Relativity textbooks go.
+    They impose metric compatibility and write the equation $\nabla_i g_{ab}$ in
+    three permutations, add them in some way and find an expression for $\nabla$.
+    Sadly they usually don't talk about implicitly identifying autoparallelly transported
+    curves with the shortest curves by doing this.
+\end{note}
+\begin{defn}[Riemann-Christoffel Curvature]
+    The \textit{Riemann-Christoffel Curvature} $R_{abcd}$ of a manifold
+    $(\M, \calO, \calA, g)$ is defined by (in coordinates)
+    \begin{equation}
+        R_{abcd} := g_{am} R^{m}{}_{bcd}\,,
+    \end{equation}
+where the connection used to calculate the Riemann tensor $R^m{}_{bcd}$ is the Levi-Civita connection.
+\end{defn}
+\begin{note}
+    In contrast to the Riemann curvature~(\ref{eq:RiemannCurvature}), 
+    which only needs a connection, the Riemann-Christoffel cuvature also needs a metric.
+\end{note}
+\begin{defn}[Ricci Tensor]
+    The \textit{Ricci tensor} $R_{ab}$ is defined by (in coordinates)
+    \begin{equation}
+        R_{ab} := R^m{}_{amb}\,,
+    \end{equation}
+    where again for the connection to calculate $R^c{}_{amb}$ the Levi-Civita connection is used.
+\end{defn}
+\begin{defn}[Ricci Scalar Curvature]
+    The \textit{Ricci scalar curvature} is
+    \begin{equation}
+        R := g^{ab}R_{ab}\,,
+    \end{equation}
+    where we have introduced the \textit{convention}
+    \begin{equation}
+        g^{ab} := (g^{-1})^{ab} \,.
+    \end{equation}
+\end{defn}
+\begin{defn}[Einstein Curvature]
+    The \textit{Einstein Curvature} $G_{ab}$ is defined by
+    \begin{equation}
+        G_{ab} := R_{ab} - \frac{1}{2} g_{ab} R\,.
+    \end{equation}
+\end{defn}
+
+%\begin{align}
+    %L[\gamma] = \int_0^1 \diff \lambda\, \sqrt{
+    
+%\end{align}
 
 %------------------------------------------------
 
