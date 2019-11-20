@@ -957,6 +957,7 @@ One often just writes $\T_p\M^*$.
     \begin{align}
         (\diff f)_p: \T_p\M &\linearto \mathbb{R}\nonumber\\
         X &\mapsto (\diff f)_p(X) := Xf\,,
+        \label{eq:differential}
     \end{align}
     then $(\diff f)_p(X) \in \mathbb{R}$, thus
     $(\diff f)_p \in \T_p\M^*$ and we call $(\diff f)_p$ the \textit{gradient} of $f$ at $p\in M$. 
@@ -1195,7 +1196,7 @@ The atlas is \textit{smooth} if the chart transition map $\xi_y\circ\xi_x^{-1}$ 
 We can check that this is true by explicitly acting with $\xi_y$ on eq.~(\ref{eq:xiTangentBundle}).
 Then we see that the $\alpha^i$ transform like the coordinates in a map (because they are),
 \begin{equation}
-    (y^j\circ x^{-1})(\alpha^1,\ldots,\alpha^d\,,
+    (y^j\circ x^{-1})(\alpha^1,\ldots,\alpha^d)\,,
 \end{equation}
 and the
 $\beta^i$ transform like the components of a tangent vector (because they are),
@@ -2453,10 +2454,119 @@ where the connection used to calculate the Riemann tensor $R^m{}_{bcd}$ is the L
     \end{equation}
 \end{defn}
 
-%\begin{align}
-    %L[\gamma] = \int_0^1 \diff \lambda\, \sqrt{
-    
-%\end{align}
+\section{Symmetry}
+We have the feeling that the \textit{round sphere}
+\begin{equation}
+    (S^2, \calO, \calA, g^{\text{round}})
+\end{equation}
+has rotational symmetry, while the potato
+\begin{equation}
+    (S^2, \calO, \calA, g^{\text{potato}})
+\end{equation}
+does not.
+\begin{defn}[Push-forward map]
+    Let $\mathcal{N}$ and $\M$ be smooth manifolds.
+    Let $\phi$ be a map $\phi: \M \to \mathcal{N}$.
+    Then the \textit{push-forward} $\phi_*$ is the map
+    \begin{equation}
+        X \mapsto \phi_*(X)\,,
+    \end{equation}
+    where $\forall f \in C^\infty(\mathcal{N})$ and $X\in \T\M$
+    \begin{equation}
+        \phi_*(X)f:= X(f\circ \phi)\,.
+    \end{equation}
+\end{defn}
+\begin{center}
+\begin{tikzpicture}
+\matrix (m) [matrix of math nodes,row sep=3em,column sep=4em,minimum width=2em]
+{%
+    \T\M & \T\mathcal{N} & \\
+    \M & \mathcal{N} & \mathbb{R}\\
+};
+\path[-stealth]
+(m-1-1) edge node [above] {$\phi_*$} (m-1-2)
+(m-1-1) edge node [right] {$\pi_{\T\M}$} (m-2-1)
+(m-1-2) edge node [right] {$\pi_{\T\mathcal{N}}$} (m-2-2)
+(m-2-1) edge node [above] {$\phi$} (m-2-2)
+(m-2-2) edge node [above] {$f$} (m-2-3);
+\end{tikzpicture}
+\end{center}
+\begin{center}
+\fbox{\parbox{0.42\textwidth}{%
+        Vectors are pushed forward.
+    }
+}
+\end{center}
+\begin{note}
+    Not much happens in the push forward.
+    Take a vector $X$ on $\M$ and the push-forward gives a vector on $\mathcal{M}$
+    that has the same effect on a function $f$ as $X$ would have on $(f\circ\phi)$.
+    One can also take the push-forward of a whole fiber and then
+    \begin{equation}
+        \phi_*(\T_p\M) \subseteq T_{\phi(p)}\mathcal{N}\,,
+    \end{equation}
+\end{note}
+\paragraph{Components} $\phi_*^a{}_i$ of $\phi_*$ wrt.\ two charts
+$(U,x)\in\calA_\M$ and $(V,y)\in\calA_{\mathcal{N}}$,
+where $i=1,\ldots,\dim\M$ and $a=1,\ldots,\dim\mathcal{N}$.
+\begin{center}
+\begin{tikzpicture}
+\matrix (m) [matrix of math nodes,row sep=3em,column sep=4em,minimum width=2em]
+{%
+    M\supset U & V\supset \mathcal{N} \\
+    x(U) & y(U)\\
+    %\T\M & \T\mathcal{N} & \\
+    %\M & \mathcal{N} & \mathbb{R}\\
+};
+\path[-stealth]
+(m-1-1) edge node [above] {$\phi$} (m-1-2)
+(m-1-1) edge node [right] {$x$} (m-2-1)
+(m-1-2) edge node [right] {$y$} (m-2-2)
+(m-2-1) edge node [below] {$y\circ\phi\circ x^{-1}$} (m-2-2)
+(m-1-1) edge node [above] {$\hat{\phi}$} (m-2-2);
+\end{tikzpicture}
+\end{center}
+Remember the definition $\diff g (X) = X(g)$ in equation~(\ref{eq:differential}),
+then
+\begin{align}
+    \nonumber \phi_*^a{}_i &= \diff y^a \left( \phi_* \left( \frac{\partial}{\partial^i} \right)_p \right)\\
+    &= \phi_*\left( \frac{\partial}{\partial x^i} \right)_p y^a\\
+    \nonumber &= \left( \frac{\partial}{\partial x^i} \right)_p \left( y\circ\phi \right)^a
+    = \left( \frac{\partial \hat{\phi}^a}{\partial x^i} \right)_p\,.
+\end{align}
+\begin{note}
+    To better understand the push-forward take a smooth curve $\gamma: \mathbb{R} \to \M$ 
+    with a tangent vector $v_{\gamma, p}: C^\infty(\M) \linearto \mathbb{R}$.
+    Then with $\phi$ one can map the whole curve to $\mathcal{N}$.
+    So what happens to the curve $\gamma$ is described by the map $\phi$ and what happens to
+    the tangent vector $v_{\gamma, p}$ is  described by the \textit{push-forward}
+    $\phi_*$,
+    \begin{equation}
+        \phi_*(v_{\gamma, p} = v_{\phi\circ\gamma, \phi(p)}\,.
+    \end{equation}
+    \begin{center}
+        \fbox{\parbox{0.42\textwidth}{%
+                The push-forward pushes tangent vectors of curves forward to
+                tangent vectors of the mapped curves.
+            }
+        }
+    \end{center}
+\end{note}
+\begin{proof}
+    Let $\gamma(\lambda_0) = p$, then $\forall f\in C^\infty(\mathcal{N})$
+    \begin{align}
+        \nonumber \phi_*(v_{\gamma,p})f &= v_{\gamma, p}(f\circ \phi)\\
+        \nonumber &= \left( (f\circ\phi)\circ\gamma \right)'(\lambda_0)\\
+        \nonumber &= \left( f\circ(\phi\circ\gamma) \right)'(\lambda_0)\\
+        &= v_{\phi\circ\gamma,\phi(p)}f\,.
+    \end{align}
+\end{proof}
+\begin{note}
+    If $\dim\M < \dim\mathcal{N}$ then $\phi$ is (or can be?) an embedding.
+    Then $\phi_*$ converts intrinsic tangent vectors in $\M$ to extrinsic
+    tangent vectors in $\mathcal{N}$, just like we often imagine tangent vectors
+    to come out of the manifold into a higher space.
+\end{note}
 
 %------------------------------------------------
 
