@@ -2464,6 +2464,8 @@ has rotational symmetry, while the potato
     (S^2, \calO, \calA, g^{\text{potato}})
 \end{equation}
 does not.
+
+\subsection{Push-Forward}
 \begin{defn}[Push-forward map]
     Let $\mathcal{N}$ and $\M$ be smooth manifolds.
     Let $\phi$ be a map $\phi: \M \to \mathcal{N}$.
@@ -2493,6 +2495,7 @@ does not.
 \end{center}
 \begin{center}
 \fbox{\parbox{0.42\textwidth}{%
+        \centering
         Vectors are pushed forward.
     }
 }
@@ -2542,12 +2545,13 @@ then
     the tangent vector $v_{\gamma, p}$ is  described by the \textit{push-forward}
     $\phi_*$,
     \begin{equation}
-        \phi_*(v_{\gamma, p} = v_{\phi\circ\gamma, \phi(p)}\,.
+        \phi_*(v_{\gamma, p}li) = v_{\phi\circ\gamma, \phi(p)}\,.
     \end{equation}
     \begin{center}
         \fbox{\parbox{0.42\textwidth}{%
+                \centering
                 The push-forward pushes tangent vectors of curves forward to
-                tangent vectors of the mapped curves.
+                tangent vectors of the mapped (pushed forward) curves.
             }
         }
     \end{center}
@@ -2567,6 +2571,70 @@ then
     tangent vectors in $\mathcal{N}$, just like we often imagine tangent vectors
     to come out of the manifold into a higher space.
 \end{note}
+
+\subsection{Pull-Back}
+\begin{defn}[Pull-back]
+    Let $\phi: \M\to\mathcal{N}$ be a smooth map between two manifolds
+    $\M$ and $\mathcal{N}$.
+    Then the \textit{pull-back} $\phi^*$ of $\phi$ is
+    \begin{align}
+        \phi^*: \T^*\mathcal{N} &\to \T^*\M\\
+        \omega &\mapsto \phi^*(\omega),
+    \end{align}
+    where 
+    \begin{equation}
+        \phi^*(\omega)(X) := \omega\left( \phi_*(X) \right)\,,
+    \end{equation}
+    for $\omega\in\T^*\mathcal{N}$ and $X\in\T\M$.
+    So a form $\omega$ is pulled back, $\phi_*(\omega)$, such that its action on
+    a vector $X$ is the same as the action of $\omega$ on the pushed forward
+    vector $\phi_*(X)$ on $\omega$.
+    \begin{center}
+        \fbox{\parbox{0.42\textwidth}{%
+                \centering
+                Forms are pulled-back.
+            }
+        }
+    \end{center}
+\end{defn}
+\paragraph{Components} of the pull-back wrt.\ charts are the same as for the pull-back,
+which can be seen by just plugging in definitions of the pull-back, differential $\diff y$
+and the push-forward,
+\begin{align}
+    \phi^{*a}_i &:= \phi^*\left( (\diff y^a)_{\phi(p)} \right)\left( \left( \frac{\partial}{\partial x^i} \right)_p \right)\\
+    &= \cdots = \phi_*^a{}_i\,.
+\end{align}
+\begin{itemize}
+    \item push-forward:
+        \begin{equation}
+            \left( \phi_*(X) \right)^a := \phi_*^a{}_i X^i\,,
+        \end{equation}
+    \item pull-back:
+        \begin{equation}
+            \left( \phi^*(\omega) \right)_i := \phi^{*a}_i \omega_a\,.
+        \end{equation}
+\end{itemize}
+\begin{note}
+    The picture is that if we have a function $f: \mathbb{R}\to \mathcal{N}$
+    and take its gradient $\diff f$, we can pull back the gradient to $\M$,
+    which should be the same as taking the gradient after ``pulling back''
+    the function $f$ with $\phi$:
+    \begin{equation}
+        \phi^*(\diff f) = \diff (f\circ \phi)\,.
+    \end{equation}
+\end{note}
+\begin{center}
+    \begin{tikzpicture}[framed]
+\matrix (m) [matrix of math nodes,row sep=3em,column sep=4em,minimum width=2em]
+{%
+    \T\M & \T\mathcal{N}\\
+    \T^*\M & \T^*\mathcal{N}\\
+};
+\path[-stealth]
+(m-1-1) edge node [above] {$\phi_*$} node [below] {push-forward} (m-1-2)
+(m-2-2) edge node [above] {$\phi^*$} node [below] {pull-back} (m-2-1);
+\end{tikzpicture}
+\end{center}
 
 %------------------------------------------------
 
