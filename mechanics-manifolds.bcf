@@ -2006,6 +2006,9 @@
     <bcf:citekey order="8">parallelTransportFigure</bcf:citekey>
     <bcf:citekey order="9">parallelTransportFigure</bcf:citekey>
     <bcf:citekey order="10">Schuller15</bcf:citekey>
+    <bcf:citekey order="11">Schuller15</bcf:citekey>
+    <bcf:citekey order="12">texstackexchange:integralCurve</bcf:citekey>
+    <bcf:citekey order="13">texstackexchange:integralCurve</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">

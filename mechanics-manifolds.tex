@@ -2284,12 +2284,13 @@ at each $\gamma(\lambda)\in \M$ from definition~\ref{defn:velocity}.
     in ``reality'' (the manifold $\M$).
 \end{note}
 
-\begin{defn}[]
+\begin{defn}[Length of a curve]
     Let $\gamma: (0,1)\to \M$ be a smooth curve.
     Then the \textit{length of} $\gamma$ is the number
     \begin{align}
         L[\gamma] &:= \int_0^1 \diff \lambda\, s(\lambda) \\
         &= \int_0^1\diff \lambda\, \sqrt{\left( g(v_\gamma,v_\gamma \right)_{\gamma(\lambda)}}\,.\nonumber
+            \label{eq:lengthCurve}
     \end{align}
     It is a functional, \textit{i.e.}\ a function is mapped to a number.
 \end{defn}
@@ -2533,7 +2534,7 @@ Remember the definition $\diff g (X) = X(g)$ in equation~(\ref{eq:differential})
 then
 \begin{align}
     \nonumber \phi_*^a{}_i &= \diff y^a \left( \phi_* \left( \frac{\partial}{\partial^i} \right)_p \right)\\
-    &= \phi_*\left( \frac{\partial}{\partial x^i} \right)_p y^a\\
+    \label{eq:pushForwardComponents} &= \phi_*\left( \frac{\partial}{\partial x^i} \right)_p y^a\\
     \nonumber &= \left( \frac{\partial}{\partial x^i} \right)_p \left( y\circ\phi \right)^a
     = \left( \frac{\partial \hat{\phi}^a}{\partial x^i} \right)_p\,.
 \end{align}
@@ -2636,6 +2637,100 @@ and the push-forward,
 \end{tikzpicture}
 \end{center}
 
+\begin{note}
+    If $\phi$ is invertible of course one can also pull back a vector
+    by pushing it forward with the inverse map, same for covectors/forms. 
+\end{note}
+
+\subsection{Induced Metric}
+An important application of the pull-back is when we have an embedding
+of one manifold $\M$ in another, higher dimensional one, $\mathcal{N}$,
+\begin{equation}
+    \M \xhookrightarrow[\text{injective}]{\phi} \mathcal{N}\,,
+\end{equation}
+From the metric $g$ on $\mathcal{N}$ and the inclusion map $\phi$ we can calculate
+the \textit{induced metric} $g_\M$.
+For $X,Y\in\T_p \M$
+\begin{align}
+    g_\M(X,Y) &:= g\left( \phi_*(X), \phi_*(Y) \right)\,,\\
+    \left( g_\M \right)_{ij,p} &= (g_{ab})_{\phi(p)}\left( \frac{\partial \hat{\phi}^a}{\partial x^i} \right)_{\phi(p)}
+    \left( \frac{\partial \hat{\phi}^b}{\partial x^j} \right)_{\phi(p)}\,.
+\end{align}
+where again $\hat{\phi}^a = (y\circ\phi)^a$ like in equation~(\ref{eq:pushForwardComponents}).
+\begin{note}
+    This way we can for example get the induced metric of a 2-sphere $S^2$ in
+    $\mathbb{R}^3$.
+    This apparently is done in the tutorials of~\cite{Schuller15} and I should do it!
+\end{note}
+\begin{note}
+    Think of $\M=S^2$ embedded in $\mathcal{N} = \mathbb{R}^3$.
+    The length of a curve $\gamma$ is defined by eq.~(\ref{eq:lengthCurve}), 
+    so basically by the tangent vectors.
+    Now one can map the whole curve to $\mathcal{N}$ with $\phi$.
+    That means the tangent vectors of $\gamma$ in $\mathcal{N}$ are the 
+    pushed forward tangent vectors from $\M$.
+    I think we basically require that the lenghts of both curves are the same.
+\end{note}
+
+\section{Flow of a Complete Vector Field}
+Let $(\M, \calO, \calA)$ be a smooth manifold and $X$ be a vector field on $\M$. 
+\begin{defn}[Integral Curve of a Vector Field]
+    A curve $\gamma: \mathbb{R} \supseteq I \to \M$ is called an \textit{integral curve}
+    of $X$ if
+    \begin{equation}
+        v_{\gamma, \gamma(\lambda)} = X_{\gamma(\lambda)}\,,
+    \end{equation}
+    \textit{i.e.}\ at every point the tangent vector of the curve is the vector of the
+    vector field at that point.
+\end{defn}
+\begin{figure}[tbh]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+                width=0.6\textwidth,
+                view={0}{90},
+                domain=0:2*pi+0.5,
+                y domain=0:2*pi+0.5,
+                xmax=2*pi+1, ymax=2*pi+1,
+                samples=20,
+                axis equal image,
+                %axis lines = center,
+                xtick = {0,3.14,6.28},
+                ytick = {0,3.14,6.28},
+                xticklabels = {},
+                yticklabels = {}
+            ]
+            \addplot3 [blue, quiver={u={1}, v={sin(deg(x))^2}, scale arrows=0.3, every arrow/.append style={-latex}}] {x};
+            \addplot [thick, red] {2-sin(deg(x))*cos(deg(x))/2+x/2};
+        \end{axis}
+\end{tikzpicture}
+    \caption{One integral curve of a vector field.
+    Plot adapted from~\cite{texstackexchange:integralCurve}}
+    \label{fig:integralCurve}
+\end{figure}
+\begin{note}
+    Think of $X$ as the velocity of water molecules in a river and $\gamma$
+    the trajectory of a paper ship that you throw into that river.
+\end{note}
+\begin{defn}[Complete Vector Field]
+    A vector field $X$ is said to be \textit{complete} if all integral curves have
+    $I=\mathbb{R}$.
+\end{defn}
+\begin{theorem}[]
+    A compactly supported smooth vector field is complete.
+    (Compact: Any open cover a finite subcover, we don't have to understand this at
+    the current point.)
+\end{theorem}
+\begin{defn}[Flow of a Vector Field]
+    The \textit{flow of a vector field} $X$ is a one-parameter family
+    \begin{align}
+        h^X: \mathbb{R}\times\M &\to \M\,,\\
+        (\lambda, p) &\mapsto \gamma_p(\lambda)\,,
+    \end{align}
+    where $\gamma_p:\mathbb{R}\to\M$ is the integral curve of $X$ with
+    $\gamma(0) = p$.
+\end{defn}
+
 %------------------------------------------------
 
 
@@ -2643,6 +2738,7 @@ and the push-forward,
 %	BIBLIOGRAPHY
 %----------------------------------------------------------------------------------------
 
+\newpage
 \printbibliography[title={Bibliography}] % Print the bibliography, section title in curly brackets
 
 %----------------------------------------------------------------------------------------

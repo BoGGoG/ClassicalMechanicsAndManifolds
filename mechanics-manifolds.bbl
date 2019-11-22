@@ -46,6 +46,33 @@
       \field{title}{How to draw the tangent bundle of a circle?}
       \field{year}{2016}
     \endentry
+    \entry{texstackexchange:integralCurve}{misc}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=3094f4812cc660f7320fd1ab3d3da906}{%
+           family={Carlisle},
+           familyi={C\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{3094f4812cc660f7320fd1ab3d3da906}
+      \strng{fullhash}{3094f4812cc660f7320fd1ab3d3da906}
+      \strng{bibnamehash}{3094f4812cc660f7320fd1ab3d3da906}
+      \strng{authorbibnamehash}{3094f4812cc660f7320fd1ab3d3da906}
+      \strng{authornamehash}{3094f4812cc660f7320fd1ab3d3da906}
+      \strng{authorfullhash}{3094f4812cc660f7320fd1ab3d3da906}
+      \field{sortinit}{C}
+      \field{sortinithash}{963e9d84a3da2344e8833203de5aed05}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://tex.stackexchange.com/a/139078}}
+      \field{month}{6}
+      \field{note}{Accessed: 22 Nov 2019}
+      \field{title}{How to draw slope fields with all the possible solution curves in latex}
+      \field{year}{2017}
+    \endentry
     \entry{parallelTransportFigure}{misc}{}
       \name{author}{1}{}{%
         {{uniquename=0,uniquepart=base,hash=8ca7e228fb5a7c817a56f917a9835f71}{%
