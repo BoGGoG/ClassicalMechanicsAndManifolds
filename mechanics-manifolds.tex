@@ -44,10 +44,11 @@
 %}
 
 \author{%
-	Marco Knipfer\textsuperscript{1, 2} % Authors 
+	Marco Knipfer\textsuperscript{1, 2, 3} % Authors 
 	\newline\newline % Space before institutions
 	\textsuperscript{1}\institution{Institute for Theoretical Physics, Goethe-University Frankfurt, Germany}\\ 
-	\textsuperscript{2}\institution{Institute for Physics and Astronomy, The University of Alabama, USA}\\ 
+	\textsuperscript{2}\institution{Frankfurt Institute for Advanced Studies, Germany}\\ 
+	\textsuperscript{3}\institution{Institute for Physics and Astronomy, The University of Alabama, USA}
 }
 
 % Example of a one line author/institution relationship
@@ -78,6 +79,8 @@ basis one has to understand what a module is.
 I start from the lectures about General Relativity.
 This somehow turned into my fancy lecture notes.
 The plan is to go on and write more stuff after I have finished the lectures.
+I started this in Frankfurt, but then moved to Alabama, since I am not sure what affiliation to put
+here I just put all of them, probably nobody will care anyways.
 }
 
 \tableofcontents
@@ -2681,7 +2684,7 @@ Let $(\M, \calO, \calA)$ be a smooth manifold and $X$ be a vector field on $\M$.
         v_{\gamma, \gamma(\lambda)} = X_{\gamma(\lambda)}\,,
     \end{equation}
     \textit{i.e.}\ at every point the tangent vector of the curve is the vector of the
-    vector field at that point.
+    vector field at that point, see figure~\ref{fig:integralCurve}.
 \end{defn}
 \begin{figure}[tbh]
     \centering
@@ -2716,6 +2719,10 @@ Let $(\M, \calO, \calA)$ be a smooth manifold and $X$ be a vector field on $\M$.
     A vector field $X$ is said to be \textit{complete} if all integral curves have
     $I=\mathbb{R}$.
 \end{defn}
+\begin{note}
+    You cannot just reparametrize the curve with something like an arctan, because
+    then it is no longer an integral curve!
+\end{note}
 \begin{theorem}[]
     A compactly supported smooth vector field is complete.
     (Compact: Any open cover a finite subcover, we don't have to understand this at
@@ -2730,6 +2737,217 @@ Let $(\M, \calO, \calA)$ be a smooth manifold and $X$ be a vector field on $\M$.
     where $\gamma_p:\mathbb{R}\to\M$ is the integral curve of $X$ with
     $\gamma(0) = p$.
 \end{defn}
+\begin{note}
+    For a fixed $\lambda\in\mathbb{R}$
+    \begin{equation}
+        h^X_\lambda: \M \to \M, \quad\text{smooth}\,,
+    \end{equation}
+    it takes points of the manifold and pushes them further along the 
+    curve~$\gamma$ a parameter distance $\lambda$.
+    The same can be done for a set $S\in\M$ and in general
+    \begin{equation}
+        h^X_\lambda(S) \neq S\,,\quad(\text{if }X\neq 0)\,.
+    \end{equation}
+\end{note}
+
+\subsection[Lie Subalgebras of the Lie Algabra of Vector Fields]{Lie Subalgebras of the
+    Lie Algabra $(\Gamma(\T \M, [\cdot,\cdot])$ of Vector Fields}
+    \paragraph{Lie algebra:}
+    \begin{equation}
+        \Gamma(\T\M) = \{\text{set of all vector fields}\}
+    \end{equation}
+    is a $C^\infty(\M)$-module.
+    We can also restrict ourselfs to the $\mathbb{R}$-vector space,
+    \textit{i.e.}\ only multiplication by numbers, not functions.
+    Then the \textit{Lie bracket} is $[X,Y]\in\Gamma(\T\M)$, where again
+    \begin{equation}
+        [X,Y]f := X(Yf) - Y(Xf)\,,
+    \end{equation}
+    with properties
+    \begin{enumerate}
+        \item $[X,Y] = - [Y,X]$\,,
+        \item $[\lambda X + Z, Y] = \lambda[X,Y] + [Z, Y]$\,,
+        \item $[X,[Y,Z]] + [Z,[X,Y]] + [Y, [Z,X]] = 0$ (Jacobi identity).
+    \end{enumerate}
+    Every structure that fulfills above items and so especially
+    $(\Gamma(\T\M), [\cdot,\cdot])$ is called a \textit{Lie algebra}.
+
+    \paragraph{Lie subalgebra:}
+    Let $X_1, \ldots, X_s$ be $s$ many vector fields on $\M$, such that
+    \begin{equation}
+        [X_i, X_j] \ C^k{}_{ij} X_k\,,\quad\forall i,j=1,\ldots,s\,,
+        \label{eq:lieSubalgebra}
+    \end{equation}
+    with the \textit{structure constants} $C^k{}_{ij}\in\mathbb{R}$.
+    Then
+    \begin{defn}[Lie subalgebra]
+        \begin{equation}
+            (\mathrm{span}_\mathbb{R}\left\{ X_1,\ldots,X_s \right\}, [\cdot,\cdot])\,,
+        \end{equation}
+        with eq.~(\ref{eq:lieSubalgebra}) is called a \textit{Lie subalgebra}.
+    \end{defn}
+    Example on $S^2$:
+    \begin{align*}
+        [X_1, X_2] = X_3\,,
+        [X_2, X_3] = X_1\,,
+        [X_3, X_1] = X_2\,,
+    \end{align*}
+    $(\mathrm{span}_\mathbb{R}\left\{ X_1,\ldots,X_s \right\}, [\cdot,\cdot])=so(3)$.
+    Note that we did not need any metric, only a smooth manifold $(S^2, \mathcal{O}_\text{sd}, \calA)$ was needed.
+    The vectors are given in a chart $(\theta, \phi)$ by
+    \begin{align*}
+        X_1(p) &=  -\sin\left( \phi(p) \right)\frac{\partial}{\partial \theta} -
+        \cot\left( \theta(p) \right) \cos\left( \phi(p) \right)\frac{\partial}{\partial \phi}\,,\\
+        X_2(p) &= \cos\left( \phi(p) \right)\frac{\partial}{\partial \theta} - 
+        \cot\left( \theta(p) \sin\left( \phi(p) \right) \right)\frac{\partial}{\partial \phi}\,,\\
+        X_3(p) &= \frac{\partial}{\partial \phi}\,.
+    \end{align*}
+
+    \subsection{Symmetry}
+    \begin{defn}[Symmetry of a Metric]
+        An $s$-dimensional Lie subalgebra $(L, [\cdot,\cdot])$ is said to be a
+        \textit{symmetry} of asymmetry metric tensor field $g$ if
+        $\forall X\in L$ (vector field), $\forall A,B \in \T_p\M$,
+        $\forall \lambda \in \mathbb{R}$:
+        \begin{equation}
+            g\left( (h^X_\lambda)_* (A), (h^X_\lambda)_*(B) \right) = g(A,B)\,,
+        \end{equation}
+        or put differently:
+        \begin{equation}
+            (h^X_\lambda)^* g = g\,.
+        \end{equation}
+    \end{defn}
+
+    \subsection{Lie Derivative}
+    If $\forall X \in L$ the \textit{Lie derivative} of the metric
+    \begin{equation}
+        \mathcal{L}_X g:= \lim_{\lambda \to 0}
+        \frac{(h^X_\lambda)^* g - g}{\lambda} =0\,,
+    \end{equation}
+    then $L$ is a symmetry of $g$.
+
+    \begin{defn}[The Lie Derivative $\mathcal{L}$]
+        On a smooth manifold $(\M, \calO,\calA)$, the \textit{Lie derivative}
+        $\mathcal{L}$ sends a pair of a \textit{vector field} $X$ and a
+        $(p,q)$-\textit{tensor field} $T$ to a $(p,q)$-tensor field 
+        $\mathcal{L}_X T$ such that
+        \begin{enumerate}
+            \item $\Lie_X f = X f$\,, $f\in C^\infty(\M)$\,,
+            \item $\left(\Lie_X Yp\right)_p = [X,Y]_p$\,, $Y\in \Gamma(\T\M)$\,,
+            \item $\Lie_X(T+S) = \Lie_X T + \Lie_X S$\,,
+            \item $\Lie_X\left(T(\omega, Y)\right) = (\Lie_X T) (\omega, Y) +
+                T\left( \Lie_X \omega, Y \right) + T(\omega, \Lie_X Y)$\,,
+            \item $\Lie_{X+Y}T = \Lie_X T + \Lie_Y T$\,.
+        \end{enumerate}
+    \end{defn}
+
+    It is a good exercise to calculate the components of the Lie derivative in a chart:
+    \begin{align*}
+        (&\Lie_X Y)^i = \diff x^i [XY - YX] \\
+        &= \diff x^i \left[ X^m \frac{\partial}{\partial x^m}Y^n \frac{\partial}{\partial x^n}
+        - Y^n\frac{\partial}{\partial x^n} X^m \frac{\partial}{\partial x^m}\right]\\
+        &= \diff x^i \left[ X^m \left( \frac{\partial}{\partial x^m} Y^n \right) \frac{\partial}{\partial x^n}
+        - Y^n \left( \frac{\partial}{\partial x^n} X^m \right)\frac{\partial}{\partial x^n}\right]\\
+        &= X^m\frac{\partial}{\partial x^m}Y^i - Y^m \frac{\partial}{\partial x^m}X^i\,,
+    \end{align*}
+    where we have used the product rule for derivatives and that the second derivatives commute.
+    Summary:
+    \begin{align}
+        \left( \Lie_X Y \right)^i &= X^m\frac{\partial}{\partial x^m}Y^i - Y^m \frac{\partial}{\partial x^m}X^i\,,\\
+        \left( \nabla_X Y \right)^i &= X^m\frac{\partial}{\partial x^m}Y^i + \Gamma^i{}_{ab}X^a Y^b\,,
+    \end{align}
+    and in general for the Lie derivative every index up comes with a ``-'' and every index down
+    comes with a ``+''.
+    \begin{equation}
+        \boxed{%
+         \left( \Lie_X T \right)^i_j = X^m \frac{\partial}{\partial x^m}\left( T^i_j \right) -
+        \frac{\partial X^i}{\partial x^m}T^m_j
+        + \frac{\partial X^m}{\partial x^j}T^i_m
+    }
+    \end{equation}
+    \fbox{\parbox{0.42\textwidth}{%
+            $\nabla_X$: index up comes with $+\Gamma$, index down with $-\Gamma$.\\
+            $\Lie_X$: index up comes with $-Y^s \partial/\partial x^s$, index down with +.
+        }
+    }
+    \begin{note}
+        The \textit{connection} $\nabla_X$ is $C^\infty(\M)$-linear in $X$,
+        whereas the \textit{Lie derivative} $\Lie_X$ is not, it is just $\mathbb{R}$-linear.
+        Also we only have to give a vector $X$ to $\nabla_X$ in order to take the \textit{derivative}
+        of a tensor field.
+        On the other side $\Lie_X$ needs a vector field $X$.
+        For $\nabla_X$ we had to introduce a new structure, the $\Gamma$s, the Lie derivative $\Lie_X$
+        needs no new structure.
+    \end{note}
+    \begin{note}
+        Use
+        \begin{equation}
+            0 = \left( \Lie_X g \right)_{ij} = \ldots
+        \end{equation}
+        to check whether a metric features a symmetry.
+    \end{note}
+
+    \section{Integration on Manifolds}
+    Now we do the completion of our ``lift'' of analysis on the charts to the manifold level.
+    We want to define
+    \begin{equation}
+        \int_\M f\,,
+    \end{equation}
+    and this requires a mild new structure called the \textit{volume form}
+    and we need to restrict the atlas a little bit (``orientation'').
+
+    \subsection[Review of Integration]{Review of Integration on $\mathbb{R}^d$}
+    \begin{enumerate}
+        \item A function $F: \mathbb{R} \to \mathbb{R}$. Assume a notion of integration is known
+            (Riemann, Lebesque):
+            \begin{equation}
+                \int_{(a,b)}F := \int_a^b \diff x\, F(x)\,.
+            \end{equation}
+        \item $F: \mathbb{R}^d \to \mathbb{R}$.
+            On a box-shaped domain
+            $I = (a,b)\times(c,d)\times\cdots\times (u,v) \subseteq \mathbb{R}^d$,
+            \begin{equation}
+                \int_{I} \difff^d\! x\, F(x) := \int_{(a,b)}\diff x^1 \cdots \int_{(u,v)}\diff x^d\,.
+            \end{equation}
+        \item Other domains $G\subseteq \mathbb{R}^d$:
+            \begin{defn}[Indicator function]
+                \begin{align}
+                    \nonumber \mu_G: \mathbb{R}^d &\to \mathbb{R}\,,\\
+                    x&\mapsto
+                    \begin{cases}
+                        1\,, & \text{if } x\in G\\
+                        0\,, & \text{if } x\not\in G
+                    \end{cases}
+                \end{align}
+            \end{defn}
+            and then define
+            \begin{equation}
+                \int_G \difff^d\! x F(x):= \int_{-\infty}^\infty \diff x^1 \cdots \int_{-\infty}^\infty \diff x^d \mu_G(x) F(x)\,,
+            \end{equation}
+            if it exists.
+    \end{enumerate}
+    \paragraph{Change of variables}
+    \begin{center}
+        \begin{tikzpicture}
+            \matrix (m) [matrix of math nodes,row sep=3em,column sep=4em,minimum width=2em]
+            {%
+                \mathbb{R}^d \supseteq \mathrm{preim}_\phi(G) & G \subseteq \mathbb{R}^d \\
+                ~ & \mathbb{R}\\
+            };
+            \path[-stealth]
+            (m-1-1) edge node [above] {$\phi$} (m-1-2)
+            (m-1-2) edge node [right] {$F$} (m-2-2)
+            (m-1-1) edge node [below] {$F\circ \phi$} (m-2-2);
+            %(m-1-1) edge node [above] {$\phi_*$} node [below] {push-forward} (m-1-2)
+            %(m-2-2) edge node [above] {$\phi^*$} node [below] {pull-back} (m-2-1);
+        \end{tikzpicture}
+        \begin{equation}
+            \int_G \difff^d\! x\, F(x) = \int\limits_{\mathclap{\mathrm{preim}_\phi(G)}}\diff^d y
+            \left|\det(\partial_\cdot \phi^\cdot)(y) \right| (F\circ \phi)(y)\,.
+        \end{equation}
+    \end{center}
+
+
 
 %------------------------------------------------
 
