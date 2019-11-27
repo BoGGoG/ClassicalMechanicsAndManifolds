@@ -2941,11 +2941,162 @@ Let $(\M, \calO, \calA)$ be a smooth manifold and $X$ be a vector field on $\M$.
             %(m-1-1) edge node [above] {$\phi_*$} node [below] {push-forward} (m-1-2)
             %(m-2-2) edge node [above] {$\phi^*$} node [below] {pull-back} (m-2-1);
         \end{tikzpicture}
-        \begin{equation}
-            \int_G \difff^d\! x\, F(x) = \int\limits_{\mathclap{\mathrm{preim}_\phi(G)}}\diff^d y
-            \left|\det(\partial_\cdot \phi^\cdot)(y) \right| (F\circ \phi)(y)\,.
-        \end{equation}
     \end{center}
+    \begin{equation}
+        \int_G \difff^d\! x\, F(x) = \int\limits_{\mathclap{\mathrm{preim}_\phi(G)}}\difff^d y
+        \left|\det(\partial_\cdot \phi^\cdot)(y) \right| (F\circ \phi)(y)\,.
+    \end{equation}
+
+    \subsection{Integration on a Chart}
+    Let $(\M, \calO, \calA)$ be a smooth manifold and $f: M\to\mathbb{R}$.
+    Choose two charts $(U,x)\in \calA \ni (U,y)$.
+    \begin{center}
+        \begin{tikzpicture}
+            \matrix (m) [matrix of math nodes,row sep=3em,column sep=4em,minimum width=2em]
+            {%
+                y(u)\subseteq \mathbb{R}^d & \\
+                U & \mathbb{R} \\
+                x(U) & \\
+            };
+            \path[-stealth]
+            (m-1-1) edge node [above, rotate=-32, scale=0.7] {$f_{(y)}:=f\circ y^{-1}$} (m-2-2)
+            (m-2-1) edge node [right] {$y$} (m-1-1)
+            (m-2-1) edge node [right] {$x$} (m-3-1)
+            (m-2-1) edge node [above] {$f$} (m-2-2)
+            (m-3-1) edge node [below, rotate=32, scale=0.7] {$f_{(x)}:=f\circ x^{-1}$} (m-2-2)
+            (m-3-1) edge[bend left = 60] node [sloped, above, rotate=180, pos=0.5] {$\phi=y\circ x^{-1}$} (m-1-1);
+            %(m-1-1) edge node [above] {$\phi_*$} node [below] {push-forward} (m-1-2)
+            %(m-2-2) edge node [above] {$\phi^*$} node [below] {pull-back} (m-2-1);
+        \end{tikzpicture}
+    \end{center}
+    The naive way of integration, namely just integrating $f_{(y)}$ over $y(U)$, \textit{i.e.}\
+    just integrating on a chart, \textit{does not work}, because it depends on the chart.
+    We can see it by transforming from chart $y$ to chart $x$.
+    \begin{align}
+        \nonumber&\int\limits_{\mathclap{y(U)}} \difff^d\! \beta f_{(y)} (\beta)= \\
+        \nonumber&=\int\limits_{\mathclap{x(U)}} \difff^d\! \alpha \left| \det(\partial_a (y^b\circ x^{-1})(\alpha) \right| \left( f_{(y)} \circ (y\circ x^{-1} \right)(\alpha)\\
+        \nonumber&=\int\limits_{\mathclap{x(U)}} \difff^d\! \alpha \left| \det\left( \frac{\partial y^b}{\partial x^a} \right)_{x^{-1}(\alpha)} \right| f_{(x)}(\alpha)\\
+        &\neq \int\limits_{\mathclap{x(U)}} \difff^d\! \alpha f_{(x)} (\alpha)\,.
+        \label{eq:naiveIntegral}
+    \end{align}
+    So we need to put something into the integral that transforms with the inverse of the factor that is too much.
+    
+    \subsection{Volume Forms} 
+    \begin{defn}[Volume Form]
+        On a smooth manifold $(\M, \calO, \calA)$ a $(0, \dim \M)$-tensor field
+        $\Omega$ is called a \textit{volume form} if
+        \begin{enumerate}
+            \item $\Omega$ vanishes nowhere,
+            \item $\Omega$ is totally antisymmetric:
+                \begin{equation}
+                    \Omega(\ldots, X, \ldots, Y, \ldots) = - \Omega(\ldots, Y, \ldots, X, \ldots)\,,
+                \end{equation}
+                for any vectors $X, Y$ in any of the positions of $\Omega$.
+                In a chart we write
+                \begin{equation}
+                    \Omega_{i_1\cdots i_d} = \Omega_{[i_1\cdots i_d]}\,.
+                \end{equation}
+        \end{enumerate}
+    \end{defn}
+
+    On a metric manifold $(\M, \calO, \calA^\uparrow, g)$ one can construct a volume for $\Omega$ from
+    the metric $g$.
+    In any chart:
+    \begin{equation}
+        \Omega_{i_1\cdots i_d} := \sqrt{\det(g_{(x)ij}} \epsilon_{i_1\cdots i_d}\,,
+    \end{equation}
+    where $\epsilon_{i_1\cdots i_d}$ is the \textit{Levi-Civita symbol} and defined as
+    \begin{align}
+        \epsilon_{123\cdots d} &= 1\,,\\
+        \epsilon_{i_1\cdots i_d} &= \epsilon_{[i_1\cdots i_d]}\,.
+    \end{align}
+    It is not a tensor, just see it as a symbol!
+
+    For $\Omega$ to be well defined we actually need to assume the atlas to be an \textit{oriented}
+    atlas $\calA^\uparrow$.
+    The reason is the following:
+    Transforming $\Omega$ that comes form $g$ should give a factor that cancels the problematic factor
+    we had in eq.~(\ref{eq:naiveIntegral}), but
+    \begin{align}
+        \label{eq:omegaTranform}&\Omega_{(y)i_1\cdots i_d} = \sqrt{\det(g_{(y)ij})}\, \epsilon_{i_1\ldots i_d}\\
+            \nonumber&= \sqrt{\det\left( g_{(x)mn}\frac{\partial x^m}{\partial y^i}\frac{\partial x^n}{\partial y^j} \right)}
+                \epsilon_{m_1\cdots m_d}
+    \end{align}
+    where now one has to be careful with the transformations.
+    The transformation in the metric has $\partial x / \partial y$, which is just the way the metric transforms.
+    On the other hand for the Levi-Civita symbol we employ a trick now:
+    This is for example described in~\cite{Carroll}:
+    The determinant $\det(A)$ of a matrix $A^m_n$ is
+    \begin{equation}
+        \det(A^m_n) \epsilon_{i_1\cdots i_d} = \epsilon_{m_1\cdots m_d}A^{m_1}_{i_1}\cdots A^{m_d}_{i_d}\,,
+    \end{equation}
+    Then setting $A^m_n = \frac{\partial x^m}{\partial y^n}$ we get
+    \begin{equation}
+        \epsilon_{i_1\cdots i_d} = \det\left( \frac{\partial y^n}{\partial x^m} \right)
+        \epsilon_{m_1\cdots m_d} \frac{\partial x^{m_1}}{\partial y^{i_1}}\cdots \frac{\partial x^{m_d}}{\partial y^{i_d}}\,,
+    \end{equation}
+    which is of course just an identity and not really a transformation, since the Levi-Civita symbol is the same in
+    every chart.
+    It however looks like a transformation.
+    Plugging this into equation~(\ref{eq:omegaTranform})
+    \begin{align}
+        \nonumber &\sqrt{\det\left( g_{(x)mn}\frac{\partial x^m}{\partial y^i}\frac{\partial x^n}{\partial y^j} \right)}
+        \frac{\partial y^{m_1}}{\partial x^{i_1}}\cdots \frac{\partial y^{m_d}}{\partial x^{i_d}}
+        \det\left( \frac{\partial y^a}{\partial x^b} \right) \epsilon_{m_1\cdots m_d} \MoveEqLeft[2]\\
+        \nonumber &= 
+         \sqrt{\det g_{(x)}} \left| \det \left( \frac{\partial x^c}{\partial y^d} \right)\right|
+        \det\left( \frac{\partial y^a}{\partial x^b} \right)
+        \frac{\partial x^{m_1}}{\partial y^{i_1}}\cdots \frac{\partial x^{m_d}}{\partial y^{i_d}}
+         \epsilon_{m_1\cdots m_d}\\
+         \nonumber&=  \sqrt{\det g_{(x)}} 
+         \mathrm{sgn}\left( \det \frac{\partial x^c}{\partial y^d} \right) 
+         \det \left( \frac{\partial x^a}{\partial y^b}\right)
+         \epsilon_{i_1\cdots i_d}\\
+         &= 
+         \det \left( \frac{\partial x^a}{\partial y^b}\right)
+         \mathrm{sgn}\left( \det \frac{\partial x^c}{\partial y^d} \right) 
+         \Omega_{(x)i_1\cdots i_d}\,,
+         \label{eq:OmegaTransform}
+    \end{align}
+    where we now see that the first term is exactly the inverse of the term that was too much in
+    the naive integral eq.~(\ref{eq:naiveIntegral}),
+    but we have the sign of the determinant extra.\footnote{I am not sure about what I did here, but I think
+    Schuller made a mistake in his lecture and the way I did it seems correct to me.}
+    I actually don't see the problem, because in~(\ref{eq:naiveIntegral}) we also have an
+    absolute value sign which should make it okay again?
+    Nevertheless, Schuller states that we want the sign to be 1,
+    restrict ourselves to an \textit{oriented atlas}, which we denote by
+    $\calA^\uparrow$.
+
+    \begin{defn}[Oriented Atlas $\calA^\uparrow$]
+        An atlas $\calA$ such that any two charts $(U,x)$, $(V,y)$ have
+        a chart transition map $y\circ x^{-1}$ with
+        \begin{equation}
+            \det\left( \frac{\partial y^a}{\partial x^b} \right) > 0\,,
+        \end{equation}
+        is called an oriented atlas and denoted with $\calA^\uparrow$.
+    \end{defn}
+
+    We introduce the \textit{Levi-Civita symbol} with upper indices $\epsilon^{i_1\cdots i_d}$ with
+    exactly the same values as lower indices (no pulling up the indices with metric)
+    and then define the scalar density
+    \begin{defn}[$\omega_{(y)}$]
+        Let $\Omega$ be a volume form on $(\M,\calO, \calA^\uparrow)$
+        and a chart $(U,x)$, then
+        \begin{equation}
+            \omega_{(x)}(p) := \Omega_{i_1\cdots i_d}(p)\epsilon^{i_1\cdots i_n}\,.
+        \end{equation}
+    \end{defn}
+    Looking at the transformation of $\Omega$ in equation~(\ref{eq:OmegaTransform})
+    we directly see that (for an oriented atlas, which is already needed for the definition
+    of $\Omega)$
+    \begin{equation}
+        \boxed{%
+            \omega_{(y)} = \det\left( \frac{\partial x^a}{\partial y^b} \right) \omega_{(x)}\,.
+        }
+    \end{equation}
+    An object with such a transformation behaviour is called a \textit{scalar density}.
+    
 
 
 

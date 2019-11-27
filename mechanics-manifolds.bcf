@@ -2009,6 +2009,7 @@
     <bcf:citekey order="11">Schuller15</bcf:citekey>
     <bcf:citekey order="12">texstackexchange:integralCurve</bcf:citekey>
     <bcf:citekey order="13">texstackexchange:integralCurve</bcf:citekey>
+    <bcf:citekey order="14">Carroll</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">
