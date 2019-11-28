@@ -3097,7 +3097,49 @@ Let $(\M, \calO, \calA)$ be a smooth manifold and $X$ be a vector field on $\M$.
     \end{equation}
     An object with such a transformation behaviour is called a \textit{scalar density}.
     
+    \subsection{Integration on One Chart Domain}
+    
+    \begin{defn}[Integration on one chart domain $U$]
+        On a chart $(U,x)$
+        \begin{equation}
+            \int_U f := \int\limits_{x(U)} \difff^d\!\alpha \omega_{(x)}\left( x^{-1}(\alpha) \right) f_{(x)}(\alpha)\,.
+        \end{equation}
+    \end{defn}
+    From the transformation behaviour of $\omega$ and the integral (Jacobian) we see that this definition is
+    independent of the chart.
+    On an oriented metric manifold $(\M, \calO, \calA^\uparrow, g)$
+    \begin{equation}
+        \int_U f:= \int\limits_{x(U)} \difff^d\!\alpha \underbrace{\sqrt{\det(g_{(x)ij}(x^{-1}(\alpha))}}_{\sqrt{g}} f_{(x)}(\alpha)\,.
+    \end{equation}
 
+    \subsection{Integration on the Entire Manifold}
+
+    We need to require that the manifold admits a so-called \textit{partition of unity}.
+    Roughly: For any finite subatlas $\calA'\subseteq \calA^\uparrow$
+    $\exists$ continuous functions
+    \begin{equation}
+        \rho_i: U_i \to \mathbb{R}\,,
+    \end{equation}
+    such that
+    \begin{equation}
+        \sum\limits_{\mathclap{p\in U_i}} \rho_i(p) = 1\,,\quad\forall p\in \M\,.
+    \end{equation}
+    This is called a \textit{partition of unity}.
+    The point is that the subatlas needs to be finite in order to not have problems
+    with convergence.
+    Then we define
+    \begin{equation}
+        \int\limits_{\M} f = \sum\limits_{i=1}^{\text{finite}}\int\limits_{U_i}\rho_i f\,.
+    \end{equation}
+
+    An example can be seen in figure~\ref{fig:partitionOfUnity}
+
+    \begin{figure}[tbh]
+    \centering\def\svgwidth{\columnwidth}
+    \input{figures/PartitionOfUnity.pdf_tex}
+    \caption{Partition of unity for $\M = \mathbb{R}$}
+        \label{fig:partitionOfUnity}
+    \end{figure}
 
 
 %------------------------------------------------
