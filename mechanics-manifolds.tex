@@ -2865,11 +2865,13 @@ Let $(\M, \calO, \calA)$ be a smooth manifold and $X$ be a vector field on $\M$.
         + \frac{\partial X^m}{\partial x^j}T^i_m
     }
     \end{equation}
-    \fbox{\parbox{0.42\textwidth}{%
-            $\nabla_X$: index up comes with $+\Gamma$, index down with $-\Gamma$.\\
-            $\Lie_X$: index up comes with $-Y^s \partial/\partial x^s$, index down with +.
+    \begin{center}
+        \fbox{\parbox{0.42\textwidth}{%
+                $\nabla_X$: index up comes with $+\Gamma$, index down with $-\Gamma$.\\
+                $\Lie_X$: index up comes with $-Y^s \partial/\partial x^s$, index down with +.
+            }
         }
-    }
+    \end{center}
     \begin{note}
         The \textit{connection} $\nabla_X$ is $C^\infty(\M)$-linear in $X$,
         whereas the \textit{Lie derivative} $\Lie_X$ is not, it is just $\mathbb{R}$-linear.
@@ -3132,16 +3134,108 @@ Let $(\M, \calO, \calA)$ be a smooth manifold and $X$ be a vector field on $\M$.
         \int\limits_{\M} f = \sum\limits_{i=1}^{\text{finite}}\int\limits_{U_i}\rho_i f\,.
     \end{equation}
 
-    An example can be seen in figure~\ref{fig:partitionOfUnity}
+    An example of a partition of unity can be seen in figure~\ref{fig:partitionOfUnity}
 
     \begin{figure}[tbh]
     \centering\def\svgwidth{\columnwidth}
     \input{figures/PartitionOfUnity.pdf_tex}
-    \caption{Partition of unity for $\M = \mathbb{R}$}
+    \caption{A partition of unity for $\M = \mathbb{R}$}
         \label{fig:partitionOfUnity}
     \end{figure}
 
+    \section{Relativistic Spacetime}
 
+    On a Lorentzian metric, here we choose the sign $(+---)$ in every tangent space
+    there is a \textit{light cone} defined by the metric $g$.
+    In figure~\ref{fig:lightCone} such a light cone is drawn.
+    Inside the cone there is $g(X,X)>0$ (timelike, same sign as time in metric)
+    , on the (surface of) the cone there is
+    $g(X,X)=0$ (lightlike or null) and outside $g(X,X)<0$ (spacelike, same sign as space
+    in metric).
+    \begin{figure}[tbh]
+        \centering\def\svgwidth{\columnwidth}
+        \input{figures/lightCone.pdf_tex}
+        \caption{Light cone. One should rather think of a light cone in the tangent space of every
+        point.}
+        \label{fig:lightCone}
+    \end{figure}
+
+    We have to choose a time orientation, \textit{i.e.}\ which side of the cone is
+    future and which is past.
+    We do this by introducing a vector $T$.
+    \begin{defn}[Time-Orientation]
+        Let $(\M, \calO, \calA^\uparrow, g)$ be a Lorentzian manifold.
+        Then a time-orientation is given by a \textit{smooth} vector field $T$ that
+        \begin{enumerate}
+            \item does \textit{not vanish} anywhere,
+            \item $g(T,T)>0$.
+        \end{enumerate}
+    \end{defn}
+    We made this definition of \textit{spacetime} in order to enable the
+    following physical postulates:
+    \begin{enumerate}[label=(\subscript{P}{{\arabic*}})]
+        \item The worldline $\gamma$ of a \textit{massive} particle satisfies
+            \begin{enumerate}
+                \item $g_{\gamma(\lambda)} \left( v_{\gamma,\gamma(\lambda)}, v_{\gamma,\gamma(\lambda)} \right) > 0\,\forall \lambda\in I$\,,
+                \item $g_{\gamma(\lambda)} \left(T, v_{\gamma,\gamma(\lambda)} \right) > 0\,\forall \lambda\in I$\,,
+            \end{enumerate}
+        \item The worldlines of \textit{massless} particles satisfy 
+            \begin{enumerate}
+                \item $g_{\gamma(\lambda)} \left( v_{\gamma,\gamma(\lambda)}, v_{\gamma,\gamma(\lambda)} \right) = 0\,\forall \lambda\in I$\,,
+                \item $g_{\gamma(\lambda)} \left(T, v_{\gamma,\gamma(\lambda)} \right) > 0\,\forall \lambda\in I$\,,
+            \end{enumerate}
+    \end{enumerate}
+    I am not quite sure about the index of $g$, but I think the thing is that $g$ is a tensor field,
+    so it takes two vector fields  $\T\M\time\T\M\to\mathbb{R}$,
+    whereas we plug in two vectors, so we have to take the tensor field at the point $p\in\M$ 
+    where the vectors are in the tangent space $\T{p}\M$
+
+    Now the picture is that at every point $p$ in spacetime $\M$ there is a (double) cone
+    like in figure~\ref{fig:lightCone}.
+    Through the time orientation $T$ we decide to only take one side of that double
+    cone where $T$ lies in.
+    A massive particle has its velocity always in the light cone and a massless particle has its
+    velocity always on the boundary of the cone, see figure~\ref{fig:spacetimeLightCones}
+    \textit{Claim:} 9/10 of a metric are determined by the cone(s).
+    
+    \begin{figure}[tbh]
+        \centering\def\svgwidth{\columnwidth}
+        \input{figures/spacetimeLightCones.pdf_tex}
+        \caption{Light cones in space time, massive and massless particle.}
+        \label{fig:spacetimeLightCones}
+    \end{figure}
+    \begin{note}
+        The difference to Newtonian physics is now, that in Newtonian physics every tangent space was
+        divided in a future and a past. 
+        Now in General Relativity every tangent space is divided in the future light cone
+        and what is not the future light cone (past light cone and something that is not in the
+        future or past light cone).
+    \end{note}
+
+    \subsection{Observers}
+    Spacetime $(\M, \calO, \calA^\uparrow, \nabla, g, T)$.
+    \begin{defn}[Observer]
+        An \textit{observer} is a \textit{worldline} $\gamma$ with
+        $g(v_\gamma, v_\gamma) = 1$, $g(T, v_\gamma)>0$
+        together with a choice of basis
+        \begin{equation}
+            \left\{ e_0(\lambda) = v_{\gamma,\gamma(\lambda)}, e_1(\lambda), e_2(\lambda), e_3(\lambda) \right\}\,,
+        \end{equation}
+        of each $T_{\gamma(\lambda)}\M$ where the observer worldline passes,
+        if
+        \begin{equation}
+            g\left( e_a(\lambda), e_b(\lambda) \right) = \eta_{ab} = \diag(1, -1, -1, -1)\,.
+        \end{equation}
+        (More precisely: Observer = \textit{smooth} curve in the frame bundle
+        $\mathrm{L}\M$ over $\M$.)
+    \end{defn}
+
+    \begin{figure}[tbh]
+        \centering\def\svgwidth{\columnwidth}
+        \input{figures/observers.pdf_tex}
+        \caption{Observers}
+        \label{fig:observers}
+    \end{figure}
 %------------------------------------------------
 
 
