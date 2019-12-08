@@ -1,0 +1,270 @@
+\section{Manifolds}
+\subsection{Topology}
+This chapter is basically taken from \citep{Schuller15} with our remarks to it.
+
+We start with a set $M$ which is supposed to be the space where physics happens.
+The weakest structure one needs in order to talk about \textit{continuity} (of curves or fields)
+is called a topology.
+
+\begin{defn}[Power set $\mathcal{P}$]
+    The set of all subsets of $M$.
+\end{defn}
+
+\begin{defn}[Topology]
+    A Topology $\mathcal{O}$ is a subset $\mathcal{O} \subseteq \mathcal{P}(M)$ satisfying:
+    \begin{enumerate}
+        \item $\emptyset \in \mathcal{O}$, $M\in\mathcal{O}$,
+        \item $U\in\mathcal{O},\quad V\in\mathcal{O}\Rightarrow U\cap V\in\mathcal{O}$
+        \item $U_\alpha\in\mathcal{O},\quad \alpha\in A \Rightarrow
+            \left( \bigcup\limits_{\alpha\in A} U_\alpha \right) \in \mathcal{O}$
+    \end{enumerate}
+\end{defn}
+
+Every set has the \textit{chaotic topology}
+\begin{equation}
+    \mathcal{O}_\text{chaotic} := \left\{ \emptyset, M \right\}\,,
+\end{equation}
+and the \textit{discrete topology}
+\begin{equation}
+    \mathcal{O}_\text{discrete} := \mathcal{P}(M)\,,
+\end{equation}
+which are both useless.
+The special case $M = \mathbb{R}^d = \mathbb{R} \times \cdots \times \mathbb{R}$ has a standard topology
+for which we need the definition of a soft ball.
+\begin{defn}[Soft Ball in $\mathbb{R}^d$]
+   \begin{equation}
+   B_r(p) := \left\{ (q_1,\cdots,q_d) \left| \sum_{i=1}^{d}(p_i-p_i)^2 < r^2\right. \right\}\,,
+   \end{equation} 
+   with $r\in \mathbb{R}^+$, $p\in\mathbb{R}^d$.
+   Note: This does not need a norm or vector space structure on $\mathbb{R}^d$.
+\end{defn}
+\begin{defn}[$\mathcal{O}_\text{standard}$ on $\mathbb{R}^d$]
+    \begin{equation}
+        U \in \mathcal{O}_\text{standard} :\Leftrightarrow \forall p\in U:
+        \exists r\in\mathbb{R}^+ : B_r(p) \subseteq U
+    \end{equation}
+\end{defn}
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+    %\draw[smooth cycle,tension=3.0] plot coordinates{(1,0) (1,1) (2,2) (3,3) (6,0)} node [label=right:$M$];
+
+    % Manifold
+    \draw[smooth cycle, tension=0.4] plot coordinates{(2,4) (-1.5,0) (3.5,-2) (6,1)} node [label=$M$, anchor = east] {};
+    \draw[smooth cycle, tension=1, dashed] plot coordinates{(1,1) (-1,0) (1,-1) (2.5,0.5)} node [label=$U$, anchor = south west] {};
+    %\draw[smooth cycle, tension=0.4, dashed] plot coordinates{(1, 2) (1,3) (3,3) (3,2)} node [label=$V$] {};
+    \draw[smooth cycle, tension=0.4] plot coordinates{(1, 2) (1,3) (3,3) (3,2)} node [label=$V$, anchor = east] {};
+    \draw[dashed] (-0.5,0) circle (.4cm) node [label = $B_r$, anchor = north west] {};
+    \draw[fill] (-0.5,0) circle (.05cm) ;
+    \draw (1.5,1.95) circle (.2cm) node [label = $B_r$, anchor = north west] {};
+    \draw[fill] (1.5,1.95) circle (.05cm) ;
+
+    %\draw[help lines] (-3,-6) grid (8,6);
+
+\end{tikzpicture}
+\caption{The set $U$ is in the standard topology, $V$ not.}
+\end{figure}
+
+Some terminology: Let $M$ be a set with a topology $\mathcal{O} =:$ set of open sets.
+We call $(M, \mathcal{O}$ a \textit{topological space} and:
+    \begin{itemize}
+        \item $U \in \mathcal{O} \Leftrightarrow: \text{call } U\subseteq M$ an \textit{open set}
+        \item $M\backslash A \in \mathcal{O} \Leftrightarrow: \text{call } A\subseteq M$  a \textit{closed set}
+    \end{itemize}
+\begin{note}
+    The empty set is open and closed. If a set is open we cannot directly follow that it is not closed or vise versa. For $M = \left\{ 1, 2 \right\}$ and $\mathcal{O}_M = \left\{ \emptyset, \left\{ 1 \right\}, \left\{ 2 \right\}, \left\{ 1,2 \right\} \right\}$ the set $\left\{ 2 \right\}$ is open and closed.
+\end{note}
+
+\subsection{Continuous Maps}
+A map
+\begin{equation}
+    f: M \to N\,,
+\end{equation}
+takes every point from the domain M (a set) to the target N (a set).
+If at least one point $p\in N$ is not reached, the map is not \textit{surjective}.
+If at least one point is hit twice, the map is not \textit{injective}.
+A map that is injective and surjective is called \textit{surjective}.
+
+\begin{defn}[Preimage]
+    \begin{align}
+        f&: M \to N \supseteq V \nonumber \\
+        \text{preim}_f(V) &:= \left\{ m\in M~|~f(m) \in V \right\}
+    \end{align}
+\end{defn}
+
+\begin{defn}[Continuity]
+    $(M, \mathcal{O}_M)$ and $(N, \mathcal{O}_N)$ topological spaces.
+    Then a map $f: M \to N$ is called \textit{continuous with respect to $\mathcal{O}_M$ and
+    $\mathcal{O}_N$} if
+    \begin{equation}
+        \boxed{
+    \forall V\in \mathcal{O}_N: \text{preim}_f(V) \in \mathcal{O}_M
+}\,.
+    \end{equation}
+    \textit{``A map is open iff the preimages of all open sets are open sets.''}
+\end{defn}
+
+\begin{note}
+    If a map is not surjective there are sets with preimage $\emptyset$, thus we need to have
+    $\emptyset$ in $\mathcal{O}$, otherwise only surjective maps could be continuous.
+\end{note}
+\begin{note}
+    The inverse of a continuous function does not need to be continuous.
+\end{note}
+
+\begin{defn}[Composition of maps]
+    For $f$ and $g$
+    \begin{equation*}
+        f: M \to N, \quad g: N \to P\,,
+    \end{equation*}
+    we define the \textit{composition} as
+    \begin{align}
+        g \circ f&: M \to P \\
+        m &\mapsto (g\circ f)(m) := g(f(m)) \nonumber
+    \end{align}
+\end{defn}
+
+\begin{theorem}[Composition of continuous maps]
+    For $f$, $g$ continuous also $g\circ f$ is continuous (if space match, \textit{i.e.}\ $g\circ f$ is defined).
+\end{theorem}
+
+
+\begin{defn}[Subset topology, Inherited topology]
+    A set $M$ with topology $\mathcal{O}_M$. Given any subset $S \subseteq M$ we
+    can construct the inherited topology $\mathcal{O}\eval_S \subseteq \mathcal{P}(S)$
+    \begin{equation}
+        \mathcal{O}\eval_S := \left\{ U\cap S~|~U\in \mathcal{O}M \right\}\,.
+    \end{equation}
+\end{defn}
+
+\begin{note}
+    For $S \subseteq M$, if $f$ is continuous then $f\eval_{S}$ is also
+    continuous if $\mathcal{O}\eval_S$ is chosen. This is for example important
+    if you are on a trajectory $\gamma$ through $\mathbb{R}^n$ and measure the temperature
+    $T\eval_\gamma$.
+\end{note}
+
+\begin{defn}[Topological manifold]
+    A topological space $(\M, \mathcal{O})$ is called a \textit{d-dimensional topological manifold}
+    if
+    \begin{equation}
+        \forall p \in \M: \exists U \in \mathcal{O},~p\in U: \exists x: U\to x(U)\subseteq \mathbb{R}^{d}
+        \,,
+    \end{equation}
+    with the following properties (wrt. $\mathcal O_\text{std}$ on $\mathbb{R}^{d}$):
+    \begin{enumerate}
+        \item $x$ intervitble: $x^{-1} : x(U) \to U$,
+        \item $x$ continuous,
+        \item $x^{-1}$ continuous\,.
+    \end{enumerate}
+    ``Invertible, in both directions continuous map to $\mathbb{R}^{n}$.''
+\end{defn}
+
+\begin{note}
+    Thus in the above definition $x(U)$ is also open (from the definition of continuity).
+\end{note}
+
+\begin{terminology}~\\
+    \begin{itemize}
+        \item $(U,x)$ is a \textit{chart} of $\M, \mathcal{O}$,
+        \item $\mathcal{A} = \left\{ (U_{(\alpha)}, x_{(\alpha)} | \alpha \in A \right\}$ is an \textit{atlas} of $(\M, \mathcal{O})$ if $\bigcup\limits_{\alpha\in A} U_{(\alpha)}$ covers the whole manifold $\M$,
+        \item $x: U \to x(U) \subseteq \mathbb{R}^{d}$ is a \textit{chart map} 
+            $x(p) = (x^1(p), \dots, x^d(p))$, where the \textit{component maps} $x^i: U\to\mathbb{R}$ are called \textit{coordinate maps},
+        \item $p \in U$, then $x^1(p)$ is the first coordinate of the point p wrt.\ the chosen chart $(U, x)$.
+    \end{itemize}
+\end{terminology}
+\begin{note}
+    The choice of the chart (choice of coordinates) has nothing to do with the physics.
+    Physics is chart independent. $\M$ is ``the real world''.
+\end{note}
+
+\subsection{Chart Transition Maps}
+
+\begin{figure*}[tbh]
+    \centering
+    \begin{tikzpicture}
+    % https://tex.stackexchange.com/questions/382762/drawing-manifolds-in-tikz
+    % Functions i
+        \path[->] (0.8, 0) edge [bend right] node[left, xshift=-2mm] {$x$} (-1, -2.9);
+        \draw[white,fill=white] (0.06,-0.57) circle (.15cm);
+        \path[->] (-0.7, -3.05) edge [bend right] node [right, yshift=-3mm] {$x^{-1}$} (1.093, -0.11);
+        \draw[white, fill=white] (0.95,-1.2) circle (.15cm);
+
+    % Functions j
+        \path[->] (5.8, -2.8) edge [bend left] node[midway, xshift=-5mm, yshift=-3mm] {$y^{-1}$} (3.8, -0.35);
+        \draw[white, fill=white] (4,-1.1) circle (.15cm);
+        \path[->] (4.2, 0) edge [bend left] node[right, xshift=2mm] {$y$} (6.2, -2.8);
+        \draw[white, fill=white] (4.54,-0.12) circle (.15cm);
+
+    % Manifold
+        \draw[smooth cycle, tension=0.4, fill=white, pattern color=brown, pattern=spray, opacity=0.7] plot coordinates{(2,2) (-0.5,0) (3,-2) (5,1)} node at (3,2.3) {$\M$};
+
+    % Help lines
+    %\draw[help lines] (-3,-6) grid (8,6);
+
+    % Subsets
+        \draw[smooth cycle, dashed, pattern color=orange, pattern=crosshatch dots, fill opacity = 0.4] 
+        plot coordinates {(1,0) (1.5, 1.2) (2.5,1.3) (2.6, 0.4)} 
+        node [label={[label distance=-0.3cm, xshift=-2cm, fill=white]:$U$}] {};
+        \draw[smooth cycle, dashed, pattern color=blue, pattern=crosshatch dots, fill opacity = 0.4] 
+        plot coordinates {(4, 0) (3.7, 0.8) (3.0, 1.2) (2.5, 1.2) (2.2, 0.8) (2.3, 0.5) (2.6, 0.3) (3.5, 0.0)} 
+        node [label={[label distance=-0.8cm, xshift=.75cm, yshift=1cm, fill=white]:$V$}] {};
+
+    % First Axis
+        \draw[thick, ->] (-3,-5) -- (0, -5) node [label=above:$x(U)$] {};
+        \draw[thick, ->] (-3,-5) -- (-3, -2) node [label=right:$\mathbb{R}^d$] {};
+
+    % Arrow from i to j
+        \draw[->] (0, -3.85) -- node[midway, above]{$y\circ x^{-1}$} (4.5, -3.85);
+
+    % Second Axis
+        \draw[thick, ->] (5, -5) -- (8, -5) node [label=above:$x(V)$] {};
+        \draw[thick, ->] (5, -5) -- (5, -2) node [label=right:$\mathbb{R}^d$] {};
+
+    % Sets in R^m
+        \draw[white, dashed, pattern color=blue, pattern=crosshatch dots, fill opacity = 0.4] (-0.67, -3.06) -- +(180:0.8) arc (180:270:0.8);
+        \fill[even odd rule, white] [smooth cycle] plot coordinates{(-2, -4.5) (-2, -3.2) (-0.8, -3.2) (-0.8, -4.5)} (-0.67, -3.06) -- +(180:0.8) arc (180:270:0.8);
+        \draw[smooth cycle, dashed, pattern color = orange, pattern = crosshatch dots, fill opacity = 0.4] plot coordinates{(-2, -4.5) (-2, -3.2) (-0.8, -3.2) (-0.8, -4.5)};
+        \draw[dashed] (-1.45, -3.06) arc (180:270:0.8);
+
+        \draw[white, dashed, pattern color=orange, pattern=crosshatch dots, fill opacity = 0.4] (5.7, -3.06) -- +(-90:0.8) arc (-90:0:0.8);
+        \fill[even odd rule, white] [smooth cycle] plot coordinates{(7, -4.5) (7, -3.2) (5.8, -3.2) (5.8, -4.5)} (5.7, -3.06) -- +(-90:0.8) arc (-90:0:0.8);
+        \draw[smooth cycle, dashed, pattern color = blue, pattern = crosshatch dots, fill opacity = 0.4] plot coordinates{(7, -4.5) (7, -3.2) (5.8, -3.2) (5.8, -4.5)};
+        \draw[dashed] (5.69, -3.85) arc (-90:0:0.8);
+
+    \end{tikzpicture}
+
+    \caption{Visualization of chart transition maps. ``How to glue together the charts of an atlas.'' Plot modified from~\citep{texstackexchange:manifolds}}
+    \label{fig:transitionmaps}
+\end{figure*}
+Given $(U, x)$ and $(V, y)$ charts, on $U\cup V$ one can transition from
+one chart to the other by (see figure~\ref{fig:transitionmaps})
+\begin{equation}
+    y\circ x^{-1}: \mathbb{R}^{d} \supseteq x(U\cap V) \to y(U\cap V) \subseteq \mathbb{R}^{d}\,,
+\end{equation}
+which is called the \textit{chart transition map}.
+\begin{note}
+    As a physicist one talks about a ``change in coordinates''.
+\end{note}
+
+\subsection{Manifold Philosophy}
+
+The idea is to define properties of some object in the real world $\M$ by at a chart-representative
+of it. For example the continuity of a curve $\gamma: [0,1]\to\M$ can be judged by looking at
+$x\circ\gamma: [0,1]\to\mathbb{R}^{d}$, because $x$ is invertible and in both directions continuous
+and the composition of two continuous maps is also continuous.
+\begin{note}
+    One needs to make sure that the property of the object on $\M$ does not depend on the
+    map $x$ or $y$. For continuity this is the case, since 
+    $y\circ\gamma = (y\circ x^{-1}) \circ x\circ \gamma$ and the chart transition map
+    $y\circ x^{-1}$ is also continuous.
+\end{note}
+
+Other properties like ``differentiability'' are not even defined on $\M$ a priori,
+so one can only talk about the chart representative. Here the definition that $\gamma$
+is differentiable iff $x\circ\gamma: [0,1]\to\mathbb{R}^{d}$ is differentiable has the
+problem that $x$ and $y$ only need to be continuous and so the chart transition map
+$y\circ x^{-1}$ does not need to be differentiable unless one restricts oneself to only
+differentiable charts.
+

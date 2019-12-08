@@ -1,0 +1,236 @@
+\section{Relativistic Spacetime}
+
+On a Lorentzian metric, here we choose the sign $(+---)$ in every tangent space
+there is a \textit{light cone} defined by the metric $g$.
+In figure~\ref{fig:lightCone} such a light cone is drawn.
+Inside the cone there is $g(X,X)>0$ (timelike, same sign as time in metric)
+, on the (surface of) the cone there is
+$g(X,X)=0$ (lightlike or null) and outside $g(X,X)<0$ (spacelike, same sign as space
+in metric).
+\begin{figure}[tbh]
+    \centering\def\svgwidth{\columnwidth}
+    \input{figures/lightCone.pdf_tex}
+    \caption{Light cone. One should rather think of a light cone in the tangent space of every
+    point.}
+    \label{fig:lightCone}
+\end{figure}
+
+We have to choose a time orientation, \textit{i.e.}\ which side of the cone is
+future and which is past.
+We do this by introducing a vector $T$.
+\begin{defn}[Time-Orientation]
+    Let $(\M, \calO, \calA^\uparrow, g)$ be a Lorentzian manifold.
+    Then a time-orientation is given by a \textit{smooth} vector field $T$ that
+    \begin{enumerate}
+        \item does \textit{not vanish} anywhere,
+        \item $g(T,T)>0$.
+    \end{enumerate}
+\end{defn}
+We made this definition of \textit{spacetime} in order to enable the
+following physical postulates:
+\begin{enumerate}[label=(\subscript{P}{{\arabic*}})]
+    \item The worldline $\gamma$ of a \textit{massive} particle satisfies
+        \begin{enumerate}
+            \item $g_{\gamma(\lambda)} \left( v_{\gamma,\gamma(\lambda)}, v_{\gamma,\gamma(\lambda)} \right) > 0\,\forall \lambda\in I$\,,
+            \item $g_{\gamma(\lambda)} \left(T, v_{\gamma,\gamma(\lambda)} \right) > 0\,\forall \lambda\in I$\,,
+        \end{enumerate}
+        \label{item:massive}
+    \item The worldlines of \textit{massless} particles satisfy 
+        \begin{enumerate}
+            \item $g_{\gamma(\lambda)} \left( v_{\gamma,\gamma(\lambda)}, v_{\gamma,\gamma(\lambda)} \right) = 0\,\forall \lambda\in I$\,,
+            \item $g_{\gamma(\lambda)} \left(T, v_{\gamma,\gamma(\lambda)} \right) > 0\,\forall \lambda\in I$\,,
+        \end{enumerate}
+        \label{item:massless}
+\end{enumerate}
+I am not quite sure about the index of $g$, but I think the thing is that $g$ is a tensor field,
+so it takes two vector fields  $\T\M\time\T\M\to\mathbb{R}$,
+whereas we plug in two vectors, so we have to take the tensor field at the point $p\in\M$ 
+where the vectors are in the tangent space $\T{p}\M$
+
+Now the picture is that at every point $p$ in spacetime $\M$ there is a (double) cone
+like in figure~\ref{fig:lightCone}.
+Through the time orientation $T$ we decide to only take one side of that double
+cone where $T$ lies in.
+A massive particle has its velocity always in the light cone and a massless particle has its
+velocity always on the boundary of the cone, see figure~\ref{fig:spacetimeLightCones}
+\textit{Claim:} 9/10 of a metric are determined by the cone(s).
+
+\begin{figure}[tbh]
+    \centering\def\svgwidth{\columnwidth}
+    \input{figures/spacetimeLightCones.pdf_tex}
+    \caption{Light cones in space time, massive and massless particle.}
+    \label{fig:spacetimeLightCones}
+\end{figure}
+\begin{note}
+    The difference to Newtonian physics is now, that in Newtonian physics every tangent space was
+    divided in a future and a past. 
+    Now in General Relativity every tangent space is divided in the future light cone
+    and what is not the future light cone (past light cone and something that is not in the
+    future or past light cone).
+\end{note}
+
+\subsection{Observers}
+Spacetime $(\M, \calO, \calA^\uparrow, \nabla, g, T)$.
+\begin{defn}[Observer]
+    An \textit{observer} is a \textit{worldline} $\gamma$ with
+    $g(v_\gamma, v_\gamma) = 1$, $g(T, v_\gamma)>0$
+    together with a choice of basis
+    \begin{equation}
+        \left\{ e_0(\lambda) = v_{\gamma,\gamma(\lambda)}, e_1(\lambda), e_2(\lambda), e_3(\lambda) \right\}\,,
+    \end{equation}
+    of each $T_{\gamma(\lambda)}\M$ where the observer worldline passes,
+    if
+    \begin{equation}
+        g\left( e_a(\lambda), e_b(\lambda) \right) = \eta_{ab} = \diag(1, -1, -1, -1)\,.
+    \end{equation}
+    (More precisely: Observer = \textit{smooth} curve in the frame bundle
+    $\mathrm{L}\M$ over $\M$.)
+\end{defn}
+
+\begin{figure}[tbh]
+    \centering\def\svgwidth{\columnwidth}
+    \input{figures/observers.pdf_tex}
+    \caption{Observers}
+    \label{fig:observers}
+\end{figure}
+
+\begin{enumerate}[resume, label=(\subscript{P}{{\arabic*}})]
+    \item A \textit{clock} carried by a specific observer $(\gamma, e)$ will measure a
+        \textit{time} called \textit{proper time} or \textit{eigentime}
+        \begin{equation}
+            \tau := \int_{\lambda_0}^{\lambda_1} \diff \lambda \sqrt{g_{\gamma(\lambda)}(v_{\gamma, \gamma(\lambda)}, v_{\gamma, \gamma(\lambda)}}
+            \end{equation}
+            between the two \textit{events} (see figure~\ref{fig:observers})
+            \begin{itemize}
+                \item $\gamma(\lambda_0)$: ``start the clock'' and
+                \item $\gamma(\lambda_1)$: ``stop the clock''.
+            \end{itemize}
+            \label{item:clock}
+\end{enumerate}
+\paragraph{Example: (Twin paradoxon)}
+Let $\M = \mathbb{R}^4$, $\mathcal{O} = \mathcal{O}_\text{st}$, 
+$\calA^\uparrow \ni (\mathbb{R}^4, \mathrm{id}_{\mathbb{R}^4})$, $T^i_{(x)} = (1,0,0,0)^i$,
+$g_{(x)ij} = \eta_{ij} \Rightarrow \Gamma^i_{(x)jl}=0$ everywhere,
+$\Rightarrow \mathrm{Riem}=0$ everywhere.
+This spacetime is flat and this situation is called \textit{Special Relativity}.
+\begin{note}
+    Otherwise Special Relativity is not different from General Relativity.
+\end{note}
+Consider two observers
+\begin{align}
+    \gamma&: (0,1)\to \M\\
+    \gamma_{(x)}^i &= (\lambda, 0,0,0)^i
+\end{align}
+and
+\begin{align}
+    \delta&:(0,1)\to\M\\
+    \delta_{(x)}^i &=
+    \begin{cases}
+        (\lambda, \alpha \lambda, 0,0)^i\,,& \lambda \leq \frac{1}{2}\\
+        (\lambda, (1-\lambda) \alpha , 0,0)^i\,,& \lambda > \frac{1}{2}\\
+    \end{cases}\,,
+\end{align}
+for $\alpha\in(0,1)$.
+Let's calculate
+\begin{align}
+    \tau_\gamma &:= \int_0^1 \diff \lambda \sqrt{g_{(x)ij}\dot{\gamma}^i_{(x)}\dot{\gamma}^j_{(x)}} = 1\,,\\
+    \tau_\delta &= \int_0^{\frac{1}{2}}\diff \lambda \sqrt{1 - \alpha^2} + \int_{\frac{1}{2}}^1 \sqrt{1 - (-\alpha)^2}
+    = \sqrt{1 - \alpha^2}\,.
+\end{align}
+That means if we push $\alpha$ close to 1 we can make the time that the observer
+$\delta$ measures close to zero.
+
+Taking the clock postulate~\ref{item:clock} seriously,
+one should better come up with a realistic clock design that suports the postulate.
+Idea: Light clock, see figure~\ref{fig:lightClock}.
+\begin{figure}[tbh]
+    \centering\def\svgwidth{0.6\columnwidth}
+    \input{figures/lightClock.pdf_tex}
+    \caption{A light clock. Left: 11 ticks, right: 6 ticks.}
+    \label{fig:lightClock}
+\end{figure}
+\begin{enumerate}[resume, label=(\subscript{P}{{\arabic*}})]
+    \item Let $(\gamma, e)$ be an observer and $\delta$ be a \textit{massive} particle worldline
+        that is parametrized such that $g(v_\delta, v_\delta)=1$.
+        Suppose the observer and the particle \textit{meet} somewhere in spacetime.
+        \begin{equation}
+            \delta(\tau_2) = p = \gamma(\tau_1)
+        \end{equation}
+        This observer measures the 3-velocity (spatial velocity) of this particle as 
+        \begin{equation}
+            v^{(3)}_{\delta, \delta(\tau_2)} := \epsilon^\alpha\left(v_{\delta, \delta(\tau_2)}\right)e_\alpha\,,
+            \, \alpha = 1,2,3\,,
+        \end{equation}
+        where $\{\epsilon^0, \epsilon^1, \epsilon^2, \epsilon^3\}$ is the unique dual basis
+        of the basis $\{e_0, e_1, e_2, e_3\}$ of the observer $\gamma$ and we only take the spatial vectors,
+        see figure~\ref{fig:3velocity}
+        \label{item:3velocity}
+\end{enumerate}
+\begin{note}
+    What happens here is that we project the 4-velocity $v_\delta$ onto the ``spatial part'' of the
+    frame given by the observer $\gamma$.
+    Of course $v_\delta$ is an objective thing, but $v_\delta^{(3)}$ depends on the observer,
+    which is the whole point of doing it.
+    $v_\delta^{(3)}$ is actually a 4-vector, but it just happens to ``lie in the span of $e_1, e_2, e_3$''.
+    We will see that $|v_\delta^{(3)}|\leq 1$.
+\end{note}
+\begin{figure}[tbh]
+    \centering\def\svgwidth{\columnwidth}
+    \input{figures/3vector.pdf_tex}
+    \caption{Projection of the velocity $v_\delta$ to the 3-velocity $v_\delta^{(3)}$.}
+    \label{fig:3velocity}
+\end{figure}
+\paragraph{Consequence:}
+An observer $(\gamma, e)$ will extract quantities measurable in his laboratory frame
+from objective quantities always like that.
+paragraph{Example:}
+The Faraday (0,2)-tensor $F$ of electromagnetism is the objective quantity and
+\begin{equation}
+    F(e_a, e_b) = F_{ab} = 
+    \begin{pmatrix}
+        0     & -E_x & -E_y & -E_z \\
+        E_x &  0     & -B_z   &  B_y    \\
+        E_y &  B_z   &  0     & -B_x   \\
+        E_z & -B_y   &  B_x   &  0
+    \end{pmatrix}
+\end{equation}
+is what the observer measures.
+\begin{note}
+    I am not quite sure how to understand this.
+    Don't we have the tensor field $F$ that we can express as $F_{ab}$ for some
+    chart?
+    As I see it, an observer gives something like a chart on a worldline, but
+    $F_{ab}$ can exist on the whole are where we defined a chart.
+\end{note}
+
+\subsection{Role of the Lorentz Transformations}
+Lorentz transformations emerge as follows:
+Let $(\gamma, e)$ and $(\tilde{\gamma}, \tilde{e})$ be observers with
+$\gamma(0) = \tilde{\gamma}(0) = p$.
+Now $\{e_0, \dots, e_3\}$ and $\{\tilde{e}_0, \dots, \tilde{e}_3\}$ at $\tau=0$
+are both bases for the same $\T_{\gamma(0)}\M$.
+Thus
+\begin{equation}
+    \tilde{e}_a = \Lambda^b{}_a e_b\,,\quad \Lambda \in GL(4)\,.
+\end{equation}
+Now, since both are observers,
+\begin{align}
+    \eta_{ab} &= g(\tilde{e}_a, \tilde{e}_b)\\
+    &= g\left( \lambda^m{}_a e_m, \Lambda^m{}_b e_n \right) =
+    \Lambda^m{}_a \Lambda^n{}_b g(e_m, e_n) \\
+    &= \Lambda^m{}_a \Lambda^n{}_b \eta_{mn}\,,
+\end{align}
+\textit{i.e.} $\Lambda \in O(1,3)$, the transformation $\Lambda$ is an element
+of the \textit{Lorentz transformations}.
+
+\textit{Result:} Lorentz transformations relate the frames of any two observers
+\textit{at the same point}.
+They do not transform spacetime! They just act on one tangent space of spacetime
+where the two observers meet!
+\begin{note}
+    $\tilde{x}^\mu = \Lambda^\mu{}_\nu x^\nu$ is utter nonsense.
+    This is just abuse of flat space structure.
+    In SRT as well as GR Lorentz transformations transform between tangent spaces
+    between observers at the point where they meet.
+\end{note}
+

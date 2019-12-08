@@ -1,0 +1,216 @@
+\section{Symmetry}
+We have the feeling that the \textit{round sphere}
+\begin{equation}
+    (S^2, \calO, \calA, g^{\text{round}})
+\end{equation}
+has rotational symmetry, while the potato
+\begin{equation}
+    (S^2, \calO, \calA, g^{\text{potato}})
+\end{equation}
+does not.
+
+\subsection{Push-Forward}
+\begin{defn}[Push-forward map]
+    Let $\mathcal{N}$ and $\M$ be smooth manifolds.
+    Let $\phi$ be a map $\phi: \M \to \mathcal{N}$.
+    Then the \textit{push-forward} $\phi_*$ is the map
+    \begin{equation}
+        X \mapsto \phi_*(X)\,,
+    \end{equation}
+    where $\forall f \in C^\infty(\mathcal{N})$ and $X\in \T\M$
+    \begin{equation}
+        \phi_*(X)f:= X(f\circ \phi)\,.
+    \end{equation}
+\end{defn}
+\begin{center}
+\begin{tikzpicture}
+\matrix (m) [matrix of math nodes,row sep=3em,column sep=4em,minimum width=2em]
+{%
+    \T\M & \T\mathcal{N} & \\
+    \M & \mathcal{N} & \mathbb{R}\\
+};
+\path[-stealth]
+(m-1-1) edge node [above] {$\phi_*$} (m-1-2)
+(m-1-1) edge node [right] {$\pi_{\T\M}$} (m-2-1)
+(m-1-2) edge node [right] {$\pi_{\T\mathcal{N}}$} (m-2-2)
+(m-2-1) edge node [above] {$\phi$} (m-2-2)
+(m-2-2) edge node [above] {$f$} (m-2-3);
+\end{tikzpicture}
+\end{center}
+\begin{center}
+\fbox{\parbox{0.42\textwidth}{%
+        \centering
+        Vectors are pushed forward.
+    }
+}
+\end{center}
+\begin{note}
+    Not much happens in the push forward.
+    Take a vector $X$ on $\M$ and the push-forward gives a vector on $\mathcal{M}$
+    that has the same effect on a function $f$ as $X$ would have on $(f\circ\phi)$.
+    One can also take the push-forward of a whole fiber and then
+    \begin{equation}
+        \phi_*(\T_p\M) \subseteq T_{\phi(p)}\mathcal{N}\,,
+    \end{equation}
+\end{note}
+\paragraph{Components} $\phi_*^a{}_i$ of $\phi_*$ wrt.\ two charts
+$(U,x)\in\calA_\M$ and $(V,y)\in\calA_{\mathcal{N}}$,
+where $i=1,\ldots,\dim\M$ and $a=1,\ldots,\dim\mathcal{N}$.
+\begin{center}
+\begin{tikzpicture}
+\matrix (m) [matrix of math nodes,row sep=3em,column sep=4em,minimum width=2em]
+{%
+    M\supset U & V\supset \mathcal{N} \\
+    x(U) & y(U)\\
+    %\T\M & \T\mathcal{N} & \\
+    %\M & \mathcal{N} & \mathbb{R}\\
+};
+\path[-stealth]
+(m-1-1) edge node [above] {$\phi$} (m-1-2)
+(m-1-1) edge node [right] {$x$} (m-2-1)
+(m-1-2) edge node [right] {$y$} (m-2-2)
+(m-2-1) edge node [below] {$y\circ\phi\circ x^{-1}$} (m-2-2)
+(m-1-1) edge node [above] {$\hat{\phi}$} (m-2-2);
+\end{tikzpicture}
+\end{center}
+Remember the definition $\diff g (X) = X(g)$ in equation~(\ref{eq:differential}),
+then
+\begin{align}
+    \nonumber \phi_*^a{}_i &= \diff y^a \left( \phi_* \left( \frac{\partial}{\partial^i} \right)_p \right)\\
+    \label{eq:pushForwardComponents} &= \phi_*\left( \frac{\partial}{\partial x^i} \right)_p y^a\\
+    \nonumber &= \left( \frac{\partial}{\partial x^i} \right)_p \left( y\circ\phi \right)^a
+    = \left( \frac{\partial \hat{\phi}^a}{\partial x^i} \right)_p\,.
+\end{align}
+\begin{note}
+    To better understand the push-forward take a smooth curve $\gamma: \mathbb{R} \to \M$ 
+    with a tangent vector $v_{\gamma, p}: C^\infty(\M) \linearto \mathbb{R}$.
+    Then with $\phi$ one can map the whole curve to $\mathcal{N}$.
+    So what happens to the curve $\gamma$ is described by the map $\phi$ and what happens to
+    the tangent vector $v_{\gamma, p}$ is  described by the \textit{push-forward}
+    $\phi_*$,
+    \begin{equation}
+        \phi_*(v_{\gamma, p}li) = v_{\phi\circ\gamma, \phi(p)}\,.
+    \end{equation}
+    \begin{center}
+        \fbox{\parbox{0.42\textwidth}{%
+                \centering
+                The push-forward pushes tangent vectors of curves forward to
+                tangent vectors of the mapped (pushed forward) curves.
+            }
+        }
+    \end{center}
+\end{note}
+\begin{proof}
+    Let $\gamma(\lambda_0) = p$, then $\forall f\in C^\infty(\mathcal{N})$
+    \begin{align}
+        \nonumber \phi_*(v_{\gamma,p})f &= v_{\gamma, p}(f\circ \phi)\\
+        \nonumber &= \left( (f\circ\phi)\circ\gamma \right)'(\lambda_0)\\
+        \nonumber &= \left( f\circ(\phi\circ\gamma) \right)'(\lambda_0)\\
+        &= v_{\phi\circ\gamma,\phi(p)}f\,.
+    \end{align}
+\end{proof}
+\begin{note}
+    If $\dim\M < \dim\mathcal{N}$ then $\phi$ is (or can be?) an embedding.
+    Then $\phi_*$ converts intrinsic tangent vectors in $\M$ to extrinsic
+    tangent vectors in $\mathcal{N}$, just like we often imagine tangent vectors
+    to come out of the manifold into a higher space.
+\end{note}
+
+\subsection{Pull-Back}
+\begin{defn}[Pull-back]
+    Let $\phi: \M\to\mathcal{N}$ be a smooth map between two manifolds
+    $\M$ and $\mathcal{N}$.
+    Then the \textit{pull-back} $\phi^*$ of $\phi$ is
+    \begin{align}
+        \phi^*: \T^*\mathcal{N} &\to \T^*\M\\
+        \omega &\mapsto \phi^*(\omega),
+    \end{align}
+    where 
+    \begin{equation}
+        \phi^*(\omega)(X) := \omega\left( \phi_*(X) \right)\,,
+    \end{equation}
+    for $\omega\in\T^*\mathcal{N}$ and $X\in\T\M$.
+    So a form $\omega$ is pulled back, $\phi_*(\omega)$, such that its action on
+    a vector $X$ is the same as the action of $\omega$ on the pushed forward
+    vector $\phi_*(X)$ on $\omega$.
+    \begin{center}
+        \fbox{\parbox{0.42\textwidth}{%
+                \centering
+                Forms are pulled-back.
+            }
+        }
+    \end{center}
+\end{defn}
+\paragraph{Components} of the pull-back wrt.\ charts are the same as for the pull-back,
+which can be seen by just plugging in definitions of the pull-back, differential $\diff y$
+and the push-forward,
+\begin{align}
+    \phi^{*a}_i &:= \phi^*\left( (\diff y^a)_{\phi(p)} \right)\left( \left( \frac{\partial}{\partial x^i} \right)_p \right)\\
+    &= \cdots = \phi_*^a{}_i\,.
+\end{align}
+\begin{itemize}
+    \item push-forward:
+        \begin{equation}
+            \left( \phi_*(X) \right)^a := \phi_*^a{}_i X^i\,,
+        \end{equation}
+    \item pull-back:
+        \begin{equation}
+            \left( \phi^*(\omega) \right)_i := \phi^{*a}_i \omega_a\,.
+        \end{equation}
+\end{itemize}
+\begin{note}
+    The picture is that if we have a function $f: \mathbb{R}\to \mathcal{N}$
+    and take its gradient $\diff f$, we can pull back the gradient to $\M$,
+    which should be the same as taking the gradient after ``pulling back''
+    the function $f$ with $\phi$:
+    \begin{equation}
+        \phi^*(\diff f) = \diff (f\circ \phi)\,.
+    \end{equation}
+\end{note}
+\begin{center}
+    \begin{tikzpicture}[framed]
+\matrix (m) [matrix of math nodes,row sep=3em,column sep=4em,minimum width=2em]
+{%
+    \T\M & \T\mathcal{N}\\
+    \T^*\M & \T^*\mathcal{N}\\
+};
+\path[-stealth]
+(m-1-1) edge node [above] {$\phi_*$} node [below] {push-forward} (m-1-2)
+(m-2-2) edge node [above] {$\phi^*$} node [below] {pull-back} (m-2-1);
+\end{tikzpicture}
+\end{center}
+
+\begin{note}
+    If $\phi$ is invertible of course one can also pull back a vector
+    by pushing it forward with the inverse map, same for covectors/forms. 
+\end{note}
+
+\subsection{Induced Metric}
+An important application of the pull-back is when we have an embedding
+of one manifold $\M$ in another, higher dimensional one, $\mathcal{N}$,
+\begin{equation}
+    \M \xhookrightarrow[\text{injective}]{\phi} \mathcal{N}\,,
+\end{equation}
+From the metric $g$ on $\mathcal{N}$ and the inclusion map $\phi$ we can calculate
+the \textit{induced metric} $g_\M$.
+For $X,Y\in\T_p \M$
+\begin{align}
+    g_\M(X,Y) &:= g\left( \phi_*(X), \phi_*(Y) \right)\,,\\
+    \left( g_\M \right)_{ij,p} &= (g_{ab})_{\phi(p)}\left( \frac{\partial \hat{\phi}^a}{\partial x^i} \right)_{\phi(p)}
+    \left( \frac{\partial \hat{\phi}^b}{\partial x^j} \right)_{\phi(p)}\,.
+\end{align}
+where again $\hat{\phi}^a = (y\circ\phi)^a$ like in equation~(\ref{eq:pushForwardComponents}).
+\begin{note}
+    This way we can for example get the induced metric of a 2-sphere $S^2$ in
+    $\mathbb{R}^3$.
+    This apparently is done in the tutorials of~\cite{Schuller15} and I should do it!
+\end{note}
+\begin{note}
+    Think of $\M=S^2$ embedded in $\mathcal{N} = \mathbb{R}^3$.
+    The length of a curve $\gamma$ is defined by eq.~(\ref{eq:lengthCurve}), 
+    so basically by the tangent vectors.
+    Now one can map the whole curve to $\mathcal{N}$ with $\phi$.
+    That means the tangent vectors of $\gamma$ in $\mathcal{N}$ are the 
+    pushed forward tangent vectors from $\M$.
+    I think we basically require that the lenghts of both curves are the same.
+\end{note}

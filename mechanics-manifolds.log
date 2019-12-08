@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  6 DEC 2019 09:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  8 DEC 2019 09:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2410,26 +2410,28 @@ Non-PDF special ignored!
 \tf@toc=\write8
 \openout8 = `mechanics-manifolds.toc'.
 
+ (./chapters/manifolds.tex
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/b/n' will be
-(Font)              scaled to size 12.0pt on input line 92.
+(Font)              scaled to size 12.0pt on input line 2.
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/it' will be
-(Font)              scaled to size 10.95pt on input line 96.
+(Font)              scaled to size 10.95pt on input line 6.
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/b/it' will be
-(Font)              scaled to size 10.95pt on input line 99.
+(Font)              scaled to size 10.95pt on input line 9.
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/n' will be
-(Font)              scaled to size 6.0pt on input line 115.
+(Font)              scaled to size 6.0pt on input line 25.
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/b/n' will be
-(Font)              scaled to size 10.0pt on input line 156.
+(Font)              scaled to size 10.0pt on input line 66.
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/it' will be
-(Font)              scaled to size 10.0pt on input line 156.
+(Font)              scaled to size 10.0pt on input line 66.
 LaTeX Font Info:    Try loading font information for TS1+XCharter-TLF on input 
-line 162.
- (/usr/local/texlive/2019/texmf-dist/tex/latex/xcharter/TS1XCharter-TLF.fd
+line 72.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/xcharter/TS1XCharter-TLF.fd
 File: TS1XCharter-TLF.fd 2017/06/25 (autoinst) Font definitions for TS1/XCharte
 r-TLF.
 )
 LaTeX Font Info:    Font shape `TS1/XCharter-TLF/m/n' will be
-(Font)              scaled to size 10.95pt on input line 162.
+(Font)              scaled to size 10.95pt on input line 72.
 Package microtype Info: Character `textlbrackdbl ' is missing
 (microtype)             in font `TS1/XCharter-TLF/m/n/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -2441,7 +2443,7 @@ Package microtype Info: Character `texttildelow ' is missing
 (microtype)             Ignoring protrusion settings for this character.
 
 [2]
-Underfull \hbox (badness 4726) in paragraph at lines 239--241
+Underfull \hbox (badness 4726) in paragraph at lines 149--151
 []\T1/XCharter-TLF/m/n/10.95 (+20) A topo-log-i-cal space $\OT1/cmr/m/n/10.95 (
 \OMS/cmsy/m/n/10.95 M\OML/cmm/m/it/10.95 ; \OMS/cmsy/m/n/10.95 O\OT1/cmr/m/n/10
 .95 )$ \T1/XCharter-TLF/m/n/10.95 (+20) is called a \T1/XCharter-TLF/m/it/10.95
@@ -2449,18 +2451,18 @@ Underfull \hbox (badness 4726) in paragraph at lines 239--241
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 258--260
+Underfull \hbox (badness 10000) in paragraph at lines 168--170
 
  []
 
-[3]
-Underfull \hbox (badness 6675) in paragraph at lines 390--393
+[3]) (./chapters/vectorSpaces.tex
+Underfull \hbox (badness 6675) in paragraph at lines 30--33
 []\T1/XCharter-TLF/m/n/10.95 (+20) (Struc-ture re-spect-ing maps be-tween vec-t
 or
  []
 
 [4]
-Overfull \hbox (11.36053pt too wide) detected at line 452
+Overfull \hbox (11.36053pt too wide) detected at line 92
 [][]\OML/cmm/m/it/10.95 v \OMS/cmsy/m/n/10.95 2 \OML/cmm/m/it/10.95 V \OT1/cmr/
 m/n/10.95 = (\OML/cmm/m/it/10.95 V[]\OT1/cmr/m/n/10.95 )[] \OMS/cmsy/m/n/10.95 
 , \OML/cmm/m/it/10.95 v \OT1/cmr/m/n/10.95 : \OML/cmm/m/it/10.95 V[] [] \U/msb/
@@ -2470,7 +2472,7 @@ m/m/it/10.95 :
  []
 
 
-Overfull \hbox (17.24078pt too wide) detected at line 460
+Overfull \hbox (17.24078pt too wide) detected at line 100
 [][]\OMS/cmsy/m/n/10.95 8\OML/cmm/m/it/10.95 v \OMS/cmsy/m/n/10.95 2 \OML/cmm/m
 /it/10.95 V \OMS/cmsy/m/n/10.95 9\OT1/cmr/m/n/10.95 ! [] \OML/cmm/m/it/10.95 F 
 \OT1/cmr/m/n/10.95 = [] \OMS/cmsy/m/n/10.95 ^^Z \OML/cmm/m/it/10.95 B \OT1/cmr/
@@ -2478,13 +2480,13 @@ m/n/10.95 : \OMS/cmsy/m/n/10.95 9\OT1/cmr/m/n/10.95 ! [] \OML/cmm/m/it/10.95 ;
  []
 
 
-Underfull \hbox (badness 1412) in paragraph at lines 479--482
+Underfull \hbox (badness 1412) in paragraph at lines 119--122
 []\T1/XCharter-TLF/m/n/10.95 (+20) Choose ba-sis $[]$ for $\OML/cmm/m/it/10.95 
 V$\T1/XCharter-TLF/m/n/10.95 (+20) . The ba-sis
  []
 
-[5] [6]
-Underfull \hbox (badness 10000) in paragraph at lines 637--642
+) (./chapters/diffMan.tex [5]) (./chapters/diffeomorphisms.tex [6]
+Underfull \hbox (badness 10000) in paragraph at lines 30--35
 []\T1/XCharter-TLF/m/n/10.95 (+20) Two $\OML/cmm/m/it/10.95 C[]$ \T1/XCharter-T
 LF/m/n/10.95 (+20) man-i-folds $\OT1/cmr/m/n/10.95 (\OMS/cmsy/m/n/10.95 M\OML/c
 mm/m/it/10.95 ; []; []\OT1/cmr/m/n/10.95 )$ \T1/XCharter-TLF/m/n/10.95 (+20) an
@@ -2492,41 +2494,42 @@ d
  []
 
 
-Underfull \hbox (badness 1939) in paragraph at lines 637--642
+Underfull \hbox (badness 1939) in paragraph at lines 30--35
 \OT1/cmr/m/n/10.95 ([])$ \T1/XCharter-TLF/m/n/10.95 (+20) are said to be \T1/XC
 harter-TLF/m/it/10.95 (+20) dif-feo-mor-phic \T1/XCharter-TLF/m/n/10.95 (+20) i
 f
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 674--675
+Underfull \hbox (badness 10000) in paragraph at lines 67--68
 
  []
 
+) (./chapters/tangentSpaces.tex
 Missing character: There is no . in font nullfont!
 Missing character: There is no 0 in font nullfont!
-[7]
-Underfull \hbox (badness 10000) in paragraph at lines 792--797
+ [7]
+Underfull \hbox (badness 10000) in paragraph at lines 107--112
 
  []
 
 
-Overfull \hbox (54.52608pt too wide) detected at line 831
+Overfull \hbox (54.52608pt too wide) detected at line 146
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 842--843
+Underfull \hbox (badness 10000) in paragraph at lines 157--158
 
  []
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 892--894
+Underfull \hbox (badness 10000) in paragraph at lines 207--209
 
  []
 
 
-Overfull \hbox (27.76389pt too wide) detected at line 942
+Overfull \hbox (27.76389pt too wide) detected at line 257
 []
  []
 
@@ -2579,75 +2582,75 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
  [10]
-Overfull \hbox (4.88553pt too wide) detected at line 1195
+Overfull \hbox (4.88553pt too wide) detected at line 510
 []
  []
 
 [11]
-Overfull \hbox (11.43965pt too wide) in paragraph at lines 1228--1229
+Overfull \hbox (11.43965pt too wide) in paragraph at lines 543--544
  [] 
  []
 
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/b/n' will be
-(Font)              scaled to size 9.0pt on input line 1261.
+(Font)              scaled to size 9.0pt on input line 576.
 
-Underfull \hbox (badness 1184) in paragraph at lines 1272--1272
+Underfull \hbox (badness 1184) in paragraph at lines 587--587
 [][]\T1/XCharter-TLF/b/it/10.95 Definition \T1/XCharter-TLF/b/n/10.95 5.13 \T1/
 XCharter-TLF/m/n/10.95 (+20) (Set of smooth vec-tor fields
  []
 
-[12]
-Underfull \hbox (badness 2302) in paragraph at lines 1346--1346
+[12]) (./chapters/connection.tex
+Underfull \hbox (badness 2302) in paragraph at lines 10--10
 []\OT1/phv/b/n/12 Directional Deriva-tives of Ten-sor
  []
 
 
-Underfull \hbox (badness 3907) in paragraph at lines 1400--1400
+Underfull \hbox (badness 3907) in paragraph at lines 64--64
 []\OT1/phv/b/n/12 New Struc-ture on $\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 M\OML/cm
 m/m/it/12 ; \OMS/cmsy/m/n/12 O\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 A$\OT1/phv/b/
 n/12 ) Re-
  []
 
 [13]
-Overfull \hbox (10.71825pt too wide) detected at line 1410
+Overfull \hbox (10.71825pt too wide) detected at line 74
 []
  []
 
 
-Underfull \hbox (badness 3690) in paragraph at lines 1410--1415
+Underfull \hbox (badness 3690) in paragraph at lines 74--79
 \T1/XCharter-TLF/m/n/10.95 (+20) where in the last step we have ex-panded
  []
 
 
-Underfull \hbox (badness 1975) in paragraph at lines 1481--1481
+Underfull \hbox (badness 1975) in paragraph at lines 145--145
 []\OT1/phv/b/n/12 Change of $\OT1/cmr/m/n/12 ^^@$\OT1/phv/b/n/12 s Un-der Chang
 e of
  []
 
 
-Overfull \hbox (7.84813pt too wide) in paragraph at lines 1501--1501
+Overfull \hbox (7.84813pt too wide) in paragraph at lines 165--165
  [] 
  []
 
-[14]
+[14]) (./chapters/parallelTransport.tex
 <figures/parallelTransportSphere.png, id=679, 167.87718pt x 173.89969pt>
 File: figures/parallelTransportSphere.png Graphic file (type png)
 <use figures/parallelTransportSphere.png>
 Package pdftex.def Info: figures/parallelTransportSphere.png  used on input lin
-e 1553.
+e 8.
 (pdftex.def)             Requested size: 193.47578pt x 200.41824pt.
  [15 <./figures/parallelTransportSphere.png>]
-Overfull \hbox (1.54144pt too wide) in paragraph at lines 1607--1608
+Overfull \hbox (1.54144pt too wide) in paragraph at lines 62--63
  [] 
  []
 
 [16]
-Overfull \hbox (14.9847pt too wide) detected at line 1746
+Overfull \hbox (14.9847pt too wide) detected at line 201
 []
  []
 
 
-Underfull \hbox (badness 1077) in paragraph at lines 1751--1755
+Underfull \hbox (badness 1077) in paragraph at lines 206--210
 \T1/XCharter-TLF/m/n/10.95 (+20) and $\OMS/cmsy/m/n/10.95 r[]\OML/cmm/m/it/10.9
 5 f \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 Yf$\T1/XCharter-TLF/m/n/10.95 (+20
 ) . Since $\OML/cmm/m/it/10.95 T\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 !; X; Y
@@ -2655,22 +2658,22 @@ Underfull \hbox (badness 1077) in paragraph at lines 1751--1755
  []
 
 
-Overfull \hbox (12.4469pt too wide) detected at line 1792
+Overfull \hbox (12.4469pt too wide) detected at line 247
 []
  []
 
-[17]
-Underfull \hbox (badness 10000) in paragraph at lines 1836--1836
+[17]) (./chapters/newtonianSpacetime.tex
+Underfull \hbox (badness 10000) in paragraph at lines 1--1
 []\OT1/phv/b/n/14.4 Newtonian Space-time is
  []
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 1942--1946
+Underfull \hbox (badness 10000) in paragraph at lines 107--111
 \OML/cmm/m/it/10.95 t \OMS/cmsy/m/n/10.95 7!
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1942--1946
+Underfull \hbox (badness 10000) in paragraph at lines 107--111
 \OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 t; x[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it
 /10.95 t\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; x[]\OT1/cmr/m/n/10.95 (\OML/c
 mm/m/it/10.95 t\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; x[]\OT1/cmr/m/n/10.95 
@@ -2678,7 +2681,7 @@ mm/m/it/10.95 t\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; x[]\OT1/cmr/m/n/10.95
  []
 
 
-Overfull \hbox (8.23793pt too wide) in paragraph at lines 1942--1946
+Overfull \hbox (8.23793pt too wide) in paragraph at lines 107--111
 \OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 X[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10
 .95 t\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; X[]\OT1/cmr/m/n/10.95 (\OML/cmm/
 m/it/10.95 t\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; X[]\OT1/cmr/m/n/10.95 (\O
@@ -2686,55 +2689,55 @@ ML/cmm/m/it/10.95 t\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; X[]\OT1/cmr/m/n/10
 .95 (\OML/cmm/m/it/10.95 t\OT1/cmr/m/n/10.95 ))$ 
  []
 
-[19] [20]
-Underfull \hbox (badness 1910) in paragraph at lines 2188--2190
+[19]) (./chapters/metricManifolds.tex [20]
+Underfull \hbox (badness 1910) in paragraph at lines 86--88
  []\OT1/phv/b/n/10.95 Example: Sphere[] $\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.9
 5 S[]; \OMS/cmsy/m/n/10.95 O\OML/cmm/m/it/10.95 ; \OMS/cmsy/m/n/10.95 A\OT1/cmr
 /m/n/10.95 )$ \T1/XCharter-TLF/m/n/10.95 (+20) with a chart
  []
 
 
-Overfull \hbox (52.08684pt too wide) in paragraph at lines 2243--2245
+Overfull \hbox (52.08684pt too wide) in paragraph at lines 141--143
 []
  []
 
 [21]
-Overfull \hbox (8.25977pt too wide) detected at line 2331
+Overfull \hbox (8.25977pt too wide) detected at line 229
 []
  []
 
 
-Underfull \hbox (badness 6332) in paragraph at lines 2369--2372
+Underfull \hbox (badness 6332) in paragraph at lines 267--270
 []\T1/XCharter-TLF/m/n/10.95 (+20) Plugging the La-grangian ([]189[]) into the
  []
 
 
-Overfull \hbox (4.43202pt too wide) detected at line 2377
+Overfull \hbox (4.43202pt too wide) detected at line 275
 []
  []
 
-[22] [23]
-Underfull \hbox (badness 10000) in paragraph at lines 2570--2572
+[22]) (./chapters/symmetry.tex [23]
+Underfull \hbox (badness 10000) in paragraph at lines 110--112
 
  []
 
-[24]
-Underfull \hbox (badness 1189) in paragraph at lines 2678--2678
+[24]) (./chapters/flow.tex
+Underfull \hbox (badness 1189) in paragraph at lines 1--1
 []\OT1/phv/b/n/14.4 Flow of a Com-plete Vec-tor
  []
 
 [25]
-Overfull \hbox (8.53763pt too wide) detected at line 2804
+Overfull \hbox (8.53763pt too wide) detected at line 127
 []
  []
 
 
-Overfull \hbox (19.11786pt too wide) detected at line 2852
+Overfull \hbox (19.11786pt too wide) detected at line 175
 []
  []
 
-[26]
-Overfull \hbox (19.53192pt too wide) detected at line 2928
+[26]) (./chapters/integrationManifolds.tex
+Overfull \hbox (19.53192pt too wide) detected at line 37
 [][] [][] [][]  \OML/cmm/m/it/10.95 xF\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x
 \OT1/cmr/m/n/10.95 ) := [][] [] \OML/cmm/m/it/10.95 x[] [] [][] [] x[]^^V[]\OT1
 /cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 F\
@@ -2743,12 +2746,12 @@ OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 ) \OML/cmm/m/it/10.9
  []
 
 
-Overfull \hbox (9.37695pt too wide) detected at line 2983
+Overfull \hbox (9.37695pt too wide) detected at line 92
 []
  []
 
 [27]
-Overfull \hbox (6.30226pt too wide) detected at line 2995
+Overfull \hbox (6.30226pt too wide) detected at line 104
 [][]\OT1/cmr/m/n/10.95 
 ([] \OML/cmm/m/it/10.95 ; X; [] ; Y; []\OT1/cmr/m/n/10.95 ) = \OMS/cmsy/m/n/10.
 95 ^^@\OT1/cmr/m/n/10.95 
@@ -2757,7 +2760,7 @@ Overfull \hbox (6.30226pt too wide) detected at line 2995
  []
 
 
-Overfull \hbox (79.88383pt too wide) detected at line 3062
+Overfull \hbox (79.88383pt too wide) detected at line 171
 []
  []
 
@@ -2780,18 +2783,19 @@ File: figures/PartitionOfUnity.pdf Graphic file (type pdf)
 Package pdftex.def Info: figures/PartitionOfUnity.pdf , page3 used on input lin
 e 62.
 (pdftex.def)             Requested size: 231.88997pt x 174.63403pt.
-) (./figures/lightCone.pdf_tex
+))
+(./chapters/relativisticSpacetime.tex (./figures/lightCone.pdf_tex
 <figures/lightCone.pdf, id=1025, page=1, 405.36107pt x 288.21263pt>
 File: figures/lightCone.pdf Graphic file (type pdf)
 <use figures/lightCone.pdf, page 1>
 Package pdftex.def Info: figures/lightCone.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 231.88997pt x 164.8722pt.
 )
-./mechanics-manifolds.tex:3191: Missing number, treated as zero.
+./chapters/relativisticSpacetime.tex:46: Missing number, treated as zero.
 <to be read again> 
                    \xparse function is not expandable 
-l.3191 ...it takes two vector fields  $\T\M\time\T
-                                                  \M\to\mathbb{R}$,
+l.46 so it takes two vector fields  $\T\M\time\T
+                                                \M\to\mathbb{R}$,
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
@@ -2822,7 +2826,7 @@ File: figures/observers.pdf Graphic file (type pdf)
 Package pdftex.def Info: figures/observers.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 231.88997pt x 204.57664pt.
 )
-Overfull \hbox (16.87859pt too wide) detected at line 3284
+Overfull \hbox (16.87859pt too wide) detected at line 139
 []
  []
 
@@ -2850,64 +2854,63 @@ Underfull \vbox (badness 3312) has occurred while \output is active []
 pdfTeX warning: pdflatex (file ./figures/3vector.pdf): PDF inclusion: multiple 
 pdfs with page group included in a single page
 >]
-Underfull \hbox (badness 1097) in paragraph at lines 3351--3351
+Underfull \hbox (badness 1097) in paragraph at lines 206--206
 []\OT1/phv/b/n/12 Role of the Lorentz Trans-for-ma-
  []
 
 
-Underfull \hbox (badness 1675) in paragraph at lines 3371--3375
+Underfull \hbox (badness 1675) in paragraph at lines 226--230
 []\T1/XCharter-TLF/m/it/10.95 (+20) Result: \T1/XCharter-TLF/m/n/10.95 (+20) Lo
 rentz trans-for-ma-tions re-late the
  []
 
-[32]
+) (./chapters/matter.tex [32])
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Underfull \hbox (badness 1127) in paragraph at lines 3454--3454
+Underfull \hbox (badness 1127) in paragraph at lines 117--117
 [][]\T1/XCharter-TLF/m/n/10.95 (+20) BambOo (Sept. 2018). \T1/XCharter-TLF/m/it
 /10.95 (+20) Axis range for axis z
  []
 
 
-Underfull \hbox (badness 2435) in paragraph at lines 3454--3454
+Underfull \hbox (badness 2435) in paragraph at lines 117--117
 \T1/XCharter-TLF/m/it/10.95 (+20) is ap-prox-i-mately empty\T1/XCharter-TLF/m/n
 /10.95 (+20) . []$\T1/cmtt/m/n/10.95 https : / / tex .
  []
 
 
-Underfull \hbox (badness 3000) in paragraph at lines 3454--3454
+Underfull \hbox (badness 3000) in paragraph at lines 117--117
 [][]\T1/XCharter-TLF/m/n/10.95 (+20) Schuller, Fred-eric (Feb. 2015). \T1/XChar
 ter-TLF/m/it/10.95 (+20) In-ter-na-tional
  []
 
 
-Underfull \hbox (badness 1946) in paragraph at lines 3454--3454
+Underfull \hbox (badness 1946) in paragraph at lines 117--117
 \T1/XCharter-TLF/m/it/10.95 (+20) Win-ter School on Grav-ity and Light 2015\T1/
 XCharter-TLF/m/n/10.95 (+20) .
  []
 
 
-Underfull \hbox (badness 1460) in paragraph at lines 3454--3454
+Underfull \hbox (badness 1460) in paragraph at lines 117--117
 []$\T1/cmtt/m/n/10.95 https : / / www . youtube . com / watch ?
  []
 
 
-Underfull \hbox (badness 5771) in paragraph at lines 3454--3454
+Underfull \hbox (badness 5771) in paragraph at lines 117--117
 \T1/cmtt/m/n/10.95 v = 7G4SqIboeig & list = PLFeEvEPtX _
  []
 
 
 AED: lastpage setting LastPage
 [33]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3457.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 3457.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 120.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 120.
  (./mechanics-manifolds.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 3457.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3457.
-
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 120.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 120.
 Package rerunfilecheck Info: File `mechanics-manifolds.out' has not changed.
 (rerunfilecheck)             Checksum: 8BCFD576643746F259608D4E3F9365CC;4189.
 Package logreq Info: Writing requests to 'mechanics-manifolds.run.xml'.
@@ -2915,10 +2918,10 @@ Package logreq Info: Writing requests to 'mechanics-manifolds.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 61971 strings out of 492616
- 1357610 string characters out of 6129482
- 2135289 words of memory out of 5000000
- 64106 multiletter control sequences out of 15000+600000
+ 62028 strings out of 492616
+ 1358991 string characters out of 6129482
+ 2135308 words of memory out of 5000000
+ 64120 multiletter control sequences out of 15000+600000
  695256 words of font info for 304 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,19n,119p,898b,2258s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2956,7 +2959,7 @@ st/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2019/texm
 f-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2019/texmf-
 dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2019/texmf-dist/fo
 nts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on mechanics-manifolds.pdf (33 pages, 668384 bytes).
+Output written on mechanics-manifolds.pdf (33 pages, 668360 bytes).
 PDF statistics:
  1438 PDF objects out of 1440 (max. 8388607)
  1284 compressed objects within 13 object streams

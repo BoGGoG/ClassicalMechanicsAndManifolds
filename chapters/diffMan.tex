@@ -1,0 +1,96 @@
+\section{Differentiable Manifolds}
+So far we only had topological manifolds. We also want to be able to talk about the velocity of
+curves. The problem is that the notion of a topological manifold is not enough to define
+differentiability of curves. In this section we will find out what additional structure we need
+to be able to talk about the differentiability of
+\begin{itemize}
+    \item curves: $\mathbb{R}\to \M$
+    \item functions: $\M\to \mathbb{R}$
+    \item maps: $\M\to\mathcal{N}$
+\end{itemize}
+Strategy: Choose a chart $(U, x)$ and consider portion of the curve in the domain of the chart:
+$\gamma: \mathbb{R}\to U$ (see figure~\ref{fig:curvechart}). Since $x\circ\gamma: \mathbb{R}\to\mathbb{R}^d$
+we can try to ``lift'' the notion of differentiability of a curve on $\mathbb{R}^d$ to that of
+a curve on $\M$. The problem is to make this independent of the chart.
+\begin{figure}[tbh]
+    \centering
+    \begin{tikzpicture}
+    \matrix (m) [matrix of math nodes,row sep=3em,column sep=4em,minimum width=2em]
+    {
+        ~                 & y(U\cup V)\subseteq \mathbb{R}^d\\
+        \gamma:\mathbb{R} & U\cup V \neq \emptyset \\
+        ~                 & x(U\cup V)\subseteq \mathbb{R}^d \\
+    };
+    \path[-stealth]
+        (m-2-1) edge node [above] {$\gamma$} (m-2-2)
+        (m-2-1) edge node [below, rotate = -25] {$x\circ\gamma$} (m-3-2)
+        (m-2-1) edge node [above, rotate = +25] {$y\circ\gamma$} (m-1-2)
+        (m-3-2) edge[bend right = 60] node [right, rotate = 90, xshift = -0.5cm, yshift = -0.2cm] {$y\circ x^{-1}$} (m-1-2)
+        (m-2-2) edge node [right] {$x$} (m-3-2)
+        (m-2-2) edge node [right] {$y$} (m-1-2);
+    \end{tikzpicture}
+    \caption{Curve $\gamma$ in chart.}
+    \label{fig:curvechart}
+\end{figure}
+\begin{equation}
+    y\circ\gamma = \underbrace{(y\circ x^{-1})}_{\mathbb{R}^d\to\mathbb{R}^d}\circ \underbrace{(x\circ\gamma)}_{\substack{\mathbb{R}\to\mathbb{R}^d\\ \text{differentiable}}}\,,
+\end{equation}
+but we only know that the \textit{chart transition map} $y\circ x^{-1}$ is continuous (because of the definition of a top. Manifold). Thus it is not guaranteed that
+$y\circ \gamma$ is continuons, not differentiable. Reminder: The composition of continuous maps is continuous,
+same for differentiable. 
+The above definition of differentiability of $\gamma$ by
+checking the differentiability of $x\circ\gamma$ with some chart $x$ is not independent of the chart.
+
+\begin{defn}[$\flower$ - compatibility of charts]
+    Two charts $(U, x)$ and $(V, y)$ of a topological manifold are called $\flower$-compatible if
+    either
+    \begin{enumerate}
+        \item $U\cup V = \emptyset$ or
+        \item $U\cup V \neq \emptyset$ and the chart transition maps
+            \begin{align*}
+                y\circ x^{-1}&:\mathbb{R}^d\supseteq x(U\cup V) \to y(U\cup V) \subseteq \mathbb{R}^d \\
+                x\circ y^{-1}&: \mathbb{R}^d\supseteq y(U\cup V) \to x(U\cup V) \subseteq \mathbb{R}^d
+            \end{align*}
+            have the $\flower$-property in the $\mathbb{R}^d$-sense.
+    \end{enumerate}
+\end{defn}
+
+\begin{defn}[$\flower$-compatible atlas]
+    An atlas $\mathcal{A}_\flower$ is a $\flower$-compatible atlas if any two charts in
+    $\mathcal{A}_\flower$ are $\flower$-compatible.
+\end{defn}
+
+\begin{defn}[$\flower$-manifold]
+    A $\flower$-manifold is a triple $(\underbrace{\M, \mathcal{O}}_{\text{top.\ manif.}}, 
+    \underbrace{\mathcal{A}_\flower}_{\in \mathcal{A}_\text{max}}$).
+\end{defn}
+
+\begin{footnotesize}
+    \begin{centering}
+        \begin{tabular}{ll}
+            $\flower$ & $\flower$ property in $\mathbb{R}^d$-sense \\
+            \hline\hline
+            $C^0$     & $C^0(\mathbb{R}^d \to \mathbb{R}^d)$ continuous maps\\
+            $C^1$     & $C^1(\mathbb{R}^d \to \mathbb{R}^d)$ differentiable and result is cont.\\
+            $C^k$     & $C^k(\mathbb{R}^d \to \mathbb{R}^d)$ k times diffble and result is cont.\\
+            $D^k$     & $D^k(\mathbb{R}^d \to \mathbb{R}^d)$ k times differentiable\\
+            $C^\infty$     & $C^\infty(\mathbb{R}^d \to \mathbb{R}^d)$ smooth functions\\
+            $C^\omega$  & $\exists$ multidim. Taylor expansion, $C^\omega \subset C^\infty$
+        \end{tabular}
+    \end{centering}
+\end{footnotesize}
+
+\begin{note}
+    The more fancy properties one wants for the objects on the manifold, the more restrictive one
+    has to be for the atlas.
+\end{note}
+\begin{theorem}[$C^1\to C^\infty$]
+    Any $C^{k \leq 1}$-manifold atlas $\mathcal{A}_{C^{k\leq 1}}$ of a topological manifold contains
+    a $C^\infty$-atlas.
+\end{theorem}
+Thus we may without loss of generality always consider $C^\infty$-manifolds. 
+``smooth'' manifolds, unless we wish to define Taylor expandibility or complex differentiability, \ldots.
+\begin{defn}[Smooth manifold]
+    $(\M, \mathcal{O}, \mathcal{A})$, where $(\mathcal{M, O})$ is a topological manifold and $\mathcal{A}$ is a $C^\infty$-atlas.
+\end{defn}
+

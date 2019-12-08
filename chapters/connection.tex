@@ -1,0 +1,209 @@
+\section{Connections/Covariant Derivatives}
+Most of the time it is enough to think about a \textit{vector field} $X$ just as a vector in each point.
+Remember: $X$ gives a \textit{directional derivative} $Xf$.
+We define new notation
+\begin{equation}
+    \nabla_X f := Xf = (\diff f)(X)\,,\quad f\in C^\infty(M)\,,
+\end{equation}
+because $\nabla_X$ can be generalized to tensors.
+
+\subsection{Directional Derivatives of Tensor Fields}
+We make a wishlist for  properties of $\nabla_X$ acting on a tensor field.
+There will remain a freedom in the definition of $\nabla_X$ which we need
+to fix by providing additional structure.
+\begin{defn}[Covariant Derivative/Affine Connection]
+    A \textit{connection} $\nabla$ on a smooth manifold $(\M,\mathcal{O}, \mathcal{A})$ is a map
+    that takes a pair consisting of a vector (field) $X$ and a $(p,q)$-tensor \textit{field} $T$
+    and sends them to a $(p,q)$-tensor (field) $\nabla_X T$,
+    satisfying
+    \begin{enumerate}
+        \item \textit{Extension of normal derivative}:
+            \begin{equation}
+                \nabla_X f = Xf\,,
+            \end{equation}
+            $\forall f \in C^\infty(\M)$.
+        \item \textit{Additivity}: 
+            \begin{equation}
+                \nabla_X(T+S) = \nabla_X T + \nabla_X S\,,
+            \end{equation}
+            for $(p,q)$-tensors $T$, $S$,
+        \item \textit{Leibnitz rule}: For a $(1,1)$ tensor field $T$, already evaluated with a covector $\omega$ and a vector $Y$,
+            so $T(\omega, Y)\in C^\infty(\M)$,,
+            \begin{align}
+                \nonumber \nabla_X\left( T(\omega, Y) \right) &= (\nabla_X T)(\omega, Y) + T(\nabla_X \omega, Y)\\
+                &~+ T(\omega, \nabla_X Y)\,.
+            \end{align}
+            For $(p,q)$ tensor fields analogously.
+            Easier formulation (definition of the tensor product below):
+            \begin{equation}
+                \nabla_X(T\otimes S) = (\nabla_X T) \otimes S + T \otimes \nabla_X S\,.
+            \end{equation}
+        \item \textit{$C^\infty$-linearity in lower argument}:
+        \begin{equation}
+            \nabla_{fX+Z}T = f\nabla_X T + \nabla_Z T\,,
+        \end{equation}
+        $\forall f \in C^\infty(\M)$.
+    \end{enumerate}
+    A manifold with connection (or affine manifold) is a quadruple of structures, $(\M, \mathcal{O, A}, \nabla)$.
+\end{defn}
+\begin{defn}[Tensor Product $T\otimes S$]
+    For a $(p,q)$-tensor $T$ and a $(l,m)$-tensor $S$, the \textit{tensor product} is defined as
+    \begin{align}
+        \nonumber&(T\otimes S)(\omega_1, \ldots, \omega_{p+l}, X_1,\ldots, X_{q+m}) = \\
+        &T(w,\ldots, \omega_p, X_1, \ldots, X_q)\cdot\\ 
+        \nonumber&~\cdot S(\omega_{p+1}, \ldots, \omega_{p+l}, X_{q+1},\ldots,X_{q+m})\,.
+    \end{align}
+    The first tensor eats as many covectors and vectors as it can followed by the second tensor who eats the rest.
+\end{defn}
+\begin{note}~
+    \begin{itemize}
+        \item $\nabla_X \cdot $ is the extension of $X$,
+        \item $\nabla_\cdot\cdot$ is the extension of $\diff$\,.
+    \end{itemize}
+\end{note}
+\subsection[New Structure on (M,O,A) to Define Nabla]{New Structure on $(\M, \mathcal{O}, \mathcal{A}$) Required to Define $\nabla$}
+    How much freedom do we have in choosing such a structure? How fixed is $\nabla_X$ by the definition above?
+
+    We consider vector fields $X, Y$ and choose a chart $(U, x)$, using the rules above
+    \begin{align}
+        \nabla_X Y &= \nabla_{X^i\frac{\partial}{\partial x^i}} \left( Y^m \frac{\partial}{\partial x^m} \right) \\
+        \nonumber &= X^i\left( \nabla_{\frac{\partial}{\partial x^i}} Y^m \right)\frac{\partial}{\partial x^m} +
+        X^i Y^m \nabla_{\frac{\partial}{\partial x^i}}\left( \frac{\partial}{\partial x^m} \right) \\
+        \nonumber &= X^i\left( \frac{\partial}{\partial x^i} Y^m \right)\frac{\partial}{\partial x^m} +
+        X^i Y^m \Gamma^q_{(x)}{}_{mi} \frac{\partial}{\partial x^m}\,,
+    \end{align}
+    where in the last step we have expanded $\nabla_{\frac{\partial}{\partial x^i}}\left( \frac{\partial}{\partial x^m} \right)
+    = \Gamma^q_{(x)}{}_{mi} \frac{\partial}{\partial x^q}$ with the \textit{connection coefficient functions} $\Gamma^q{}_{mi}$
+    (on $\M$) of $\nabla$ with respect to the chart $(U,x)$.
+    The $(x)$ on $\Gamma^q_{(x)}{}_{mi}$ denotes that it depends on the chart $x$.
+    \begin{defn}[Connection coefficient functions $\Gamma$]
+        Given $(\M, \mathcal{O}, \mathcal{A}, \nabla)$ and a chart $(U,x)\in\mathcal{A}$ the
+        \textit{connection coefficient functions} (the ``$\Gamma$s'') with respect to $(U,x)$
+        are the $(\dim \M)^3$ many chart dependent functions
+        \begin{align}
+            \Gamma^i_{(x)}{}_{jk}: U &\to \mathbb{R} \\
+            p &\mapsto \left( \diff x^i \left( \nabla_{\frac{\partial}{\partial x^k}}\frac{\partial}{\partial x^j} \right) \right)(p)\,.
+        \end{align}
+    \end{defn}
+    Thus:
+    \begin{equation}
+        \left( \nabla_X Y \right)^i = X^m\left( \frac{\partial}{\partial x^m}Y^i \right) +
+        \Gamma^i{}_{nm}Y^n X^m\,.
+    \end{equation}
+    \begin{note}
+        The new structure that we need to fix $\nabla$ acting on a \textit{vector field} are the $(\dim \M)^3$ many functions 
+        $\Gamma^{i}{}_{jl}$. Actually we are lucky and they already fix $\nabla$ acting on any tensor field of any rank as we
+        will see.
+    \end{note}
+    For a dual vector field we arrive at one point at
+    \begin{equation}
+        \nabla_{\frac{\partial}{\partial x^m}}\left( \diff x^i \right) = \Sigma^{i}{}_{qm}\diff x^q\,,
+    \end{equation}
+    but now
+    \begin{align*}
+        &\nabla_{\frac{\partial}{\partial x^m}}\left( \diff x^i \left( \frac{\partial}{\partial x^j} \right) \right) = 0\\
+        &=\left(\nabla_{\frac{\partial}{\partial x^m}}\diff x^i\right)\left(\frac{\partial}{\partial x^j}\right) +
+            \diff x^i \nabla_{\frac{\partial}{\partial x^m}}\left( \frac{\partial}{\partial x^j} \right)=\\
+            &= \Sigma^{i}{}_{qm}\diff x^q \left( \frac{\partial}{\partial x^j} \right) +
+            \Gamma^{i}{}_{qm}\diff x^q \left( \frac{\partial}{\partial x^q} \right)\,,
+    \end{align*}
+    so $\Sigma = - \Gamma$ and we will just use $\Gamma$.
+    \begin{center}
+        \fbox{\parbox{0.42\textwidth}{%
+                $\nabla$ comes with a $+$ for vectors and a $-$ for covectors.
+                The last index of $\Gamma^i{}_{jm}$ goes always with the direction $X$
+                of $\nabla_X$.
+            }
+        }
+    \end{center}
+    \begin{align}
+        \left( \nabla_X Y \right)^i &= X(Y^i) + \Gamma^{i}{}_{jm}Y^j X^m\,,\\
+        \left( \nabla_X \omega \right)_i &= X(Y^i) - \Gamma^{j}{}_{im}\omega^j X^l\,.
+    \end{align}
+    For higher rank tensors every upper index comes with a $+\Gamma$ and every lower index with a $-\Gamma$,
+    \textit{e.g.}\ for a $(1,2)$-tensor $T$:
+    \begin{align}
+        \nonumber (\nabla_X T)^i_{jk} &= X(T^i_{jk}) + \Gamma^i{}_{sm}T^s_{jk}X^m \\
+        &- \Gamma^s{}_{jm}T^i_{sk}X^m - \Gamma^s{}_{km}T^i_{js}X^m\,.
+    \end{align}
+    \begin{note}
+        In Euclidean space (non-curved) $\Gamma^i{}_{lm} = 0$ for non-curvilinear coordinates.
+        So in $\mathbb{R}$ for the standard basis the $\Gamma$ vanish, but not for \textit{e.g.}\ 
+        polar coordinates they are nonzero.
+    \end{note}
+    \begin{defn}[Divergence]
+        Let $X$ be a vector field on $(\M, \mathcal{O}, \mathcal{A}, \nabla)$.
+        The \textit{divergence} of $X$ is the function
+        \begin{equation}
+            \mathrm{div}(X) := \left( \nabla_{\frac{\partial}{\partial x^i}} X \right)^i\,,
+        \end{equation}
+        where there is a sum over $i$.
+        This definition is \textit{chart independent}.
+    \end{defn}
+
+
+\subsection[Change of Gammas Under Change of Chart]{Change of $\Gamma$s Under Change of Chart}
+Let $(U,x),\,(V,y)\in\mathcal{A}$ and $U\cap V \neq \emptyset$, then using the transformations of $\diff x^q$ and
+$\partial/\partial y^q$,
+\begin{align*}
+    &\Gamma^i_{(y)jk} := \diff y^i \left( \nabla_{\frac{\partial}{\partial y^l}} \frac{\partial}{\partial y^j} \right) \\
+    &= \frac{\partial y^i}{\partial x^q}\diff x^q \left( \nabla_{\frac{\partial x^p}{\partial y^k}\frac{\partial}{\partial x^p}}
+    \frac{\partial x^s}{\partial yj}\frac{\partial}{\partial x^s}\right)\\
+    &= \frac{\partial y^i}{\partial x^q}\diff x^q \frac{\partial x^p}{\partial y^k} 
+    \left\{ \left( \nabla_{\frac{\partial}{\partial x^p}} \frac{\partial x^s}{\partial y^i} \right) \frac{\partial}{\partial x^s} \right. \\
+    &\hspace{4cm}+ \left.\frac{\partial x^s}{\partial y^j} \left( \nabla_{\frac{\partial}{\partial x^p}}\frac{\partial}{\partial x^s} \right)
+    \right\}\\
+    &= \frac{\partial y^i}{\partial x^q} \left(\frac{\partial}{\partial y^k} \frac{\partial x^s}{\partial y^j} \right) \delta^q{}_s
+    + \frac{\partial y^i}{\partial x^q} \frac{\partial x^p}{\partial y^k} \frac{\partial x^s}{\partial y^j} \Gamma^q_{(x)sp}\,,
+\end{align*}
+and in summary the transformation of the $\Gamma$s is
+\boxalign[0.47\textwidth]{%
+\begin{align}
+    \Gamma^i_{(y)jk} &= \frac{\partial y^i}{\partial x^q} \frac{\partial x^s}{\partial y^j} \frac{\partial x^p}{\partial y^k}\Gamma^q_{(x)sp}\\
+    &~+ \frac{\partial y^i}{\partial x^q} \frac{\partial^2 x^q}{\partial y^k \partial y^j}\,.\nonumber
+\end{align}
+}
+The first part is like the transformation of the components of a $(1,2)$-tensor.
+The second part only depends on $x$ and $y$ and even if $\Gamma$ is zero in one chart, it does not have to be zero
+in another, depending on this term.
+If all componenets of a tensor are zero in one chart, then they are zero in all charts.
+We see that for linear transformations $x(y)$ this term is zero.
+\begin{note}
+    \begin{equation}
+        \frac{\partial}{\partial x^p}\frac{\partial}{\partial y^j} \neq \frac{\partial}{\partial y^j}\frac{\partial}{\partial x^p} \,,
+    \end{equation}
+    no Schwartz rule in this case, but if we write it as only derivatives with respect to $y$, then there is.
+\end{note}
+
+\subsection{Normal Coordinates}
+Let $p\in \M$ of $(\M, \mathcal{O}, \mathcal{A}, \nabla)$.
+Then one can construct a chart $(U,x)$ with $p\in U$ such that
+\begin{equation}
+    \Gamma^i_{(x)(jk)}(p) = 0\,,
+    \label{eq:GammaZero}
+\end{equation}
+\textit{at} the point $p$, but not necessarily in a neighbourhood.
+\begin{note}
+    In equation~(\ref{eq:GammaZero}) $(jk)$ means the symmetrized part of $\Gamma^i{}_{(x)jk}$.
+\end{note}
+
+\textsc{Proof}: Let $(V,y)$ be any chart, $p\in V$.
+Then in general $\Gamma^i_{(y)jk}\neq 0$.
+Consider a new chart $(U,x)$ with the chart transition map $y \to x$:
+\begin{align*}
+    (x\circ y^{-1})^i&(\alpha^i, \ldots, \alpha^d) := \alpha^i - \frac{1}{2} \Gamma^i_{(y)jk}(p) \alpha^j \alpha^k\,,\\
+    \frac{\partial x^i}{\partial y^k \partial y^j} &= - \Gamma^i_{(y)(kj)}(p)\,,\\
+    \Gamma^i_{(x)jk} &= \Gamma^i_{(y)jk}(p) - \Gamma^i_{(y)(jk)}(p) = \Gamma^i_{(y)[jk]}\,,
+\end{align*}
+and thus $\Gamma_{(x)}$ has vanishing symmetric part (lower two indices).
+$\Gamma^i_{[jk]}(p)$ is actually a tensor (the components transform like for a tensor) and is called the
+\textit{torsion tensor},
+\begin{equation}
+    \Gamma^i_{[jk]} = T^{i}_{jk}\,.
+\end{equation}
+We call this chart $(U,x)$ a \textit{normal coordinate chart} of $\nabla$ at the point $p\in\M$.
+\begin{note}
+    Nonzero curvature prevents us from extending this to a neighbourhood
+    around that point, but we will be able to extend it to a curve in $\M$.
+\end{note}
+

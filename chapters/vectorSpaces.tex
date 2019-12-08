@@ -1,0 +1,151 @@
+\section{Vector Spaces}
+\subsection{Vectors and Linear Maps}
+In order to understand the tangent space we need to understand vector spaces.
+\begin{defn}[Vector space $(V,+,\cdot)$]
+    \label{def:vectorspace}
+    A vector space $(V,+,\cdot)$ is a set $V$ with
+    \begin{itemize}
+        \item an ``addition'' $+: V\times V \ to V$,
+        \item an ``S-multiplication'' $\cdot:\mathbb{R}\times V \ to V$
+    \end{itemize}
+    and the properties CANI ADDU:\\ $\forall v, w, u \in V, \lambda, \mu \in \mathbb{R}$
+    \begin{description}
+        \item[C$^+$:] $v + w = w + v$\,,
+        \item[A$^+$:] $(u + v) + w = u + (v + w)$\,,
+        \item[N$^+$:] $\exists 0 \in V: \forall v \in V: v + 0 = v$\,,
+        \item[I$^+$:] $\forall v \in V: \exists(-v)\in V: v + (-v) = 0$\,,
+        \item[A:] $\lambda \cdot ( \mu \cdot v) = (\lambda \cdot \mu) \cdot v$\,,
+        \item[D:] $(\lambda + \mu)\cdot v = \lambda \cdot v + \mu \cdot v$\,,
+        \item[D:] $\lambda \cdot v + \lambda \cdot w = \lambda \cdot (v + w)$\,,
+        \item[U:] $ 1 \cdot v = v$\,.
+    \end{description}
+    An element of a vector space is called a \textit{vector}.
+\end{defn}
+\begin{note}
+The addition $+$ in definition~\ref{def:vectorspace} sometimes is between vectors and sometimes between
+scalars. It is important to know the difference.
+\end{note}
+
+\begin{defn}[Linear maps]
+    (Structure respecting maps between vector spaces)\newline
+    $(V, +_V, \cdot_V)$ and $(W, +_W, \cdot_W)$ vector spaces.
+    A map
+    \begin{equation}
+        \phi: V \to W
+    \end{equation}
+    is called \textit{linear} if $\forall v, \tilde{v} \in V, \forall \lambda \in \mathbb{R}$
+    \begin{enumerate}
+        \item $\phi(v +_V + \tilde{v}) = \phi(v) +_W \phi(\tilde{v})$
+        \item $\phi(\lambda\cdot_V v) = \lambda \cdot_W \phi(v)$
+    \end{enumerate}
+    We write:
+    \begin{equation}
+        \phi: V \to W\, \text{linear}\, \Leftrightarrow: \phi: V \linearto W\,.
+    \end{equation}
+\end{defn}
+
+\begin{theorem}[Transitivity of linearity of maps]
+    $V, W, U$ vector spaces, $\psi: V\linearto W$, $\phi: W\linearto U$
+    then $\phi \circ \psi$ is also linear: $\phi\circ\psi: V \linearto U$.
+\end{theorem}
+
+\begin{defn}[Homomorphisms Hom$(V,W)$]
+    \begin{equation}
+        \text{Hom}(V,W):= \left\{ \phi: V\linearto W \right\}\,.
+    \end{equation}
+\end{defn}
+\begin{note}
+    Hom$(V,W)$ can be made into a vector space by defining an addition and a multiplication
+    \begin{itemize}
+        \item $(\phi + \psi)(v) := \phi(v) + \psi(v)$\,,
+        \item $(\lambda \psi)(v) := \lambda (\psi(v))$\,.
+    \end{itemize}
+\end{note}
+
+\begin{defn}[Dual vector space $V^\star$]
+    \begin{equation}
+        V^\star := \left\{ \phi: V \linearto \mathbb{R} \right\} = \text{Hom}(V, \mathbb{R})\,.
+    \end{equation}
+    The vector space $(V^\star, +, \cdot)$ is the \textit{dual vector space} to $V$.
+    $\phi \in V^\star$ is informally called a \textit{covector}.
+\end{defn}
+
+\begin{defn}[$(r, s)$ - Tensors]
+    $(V, +, \cdot)$ vector space, $r, s\in \mathbb{N}_0$.
+    An $(r, s)$-tensor $T$ over $V$ is a multi-linar map
+    \begin{equation}
+        T: \overbrace{V^\star \times \cdots \times V^\star}^r \times
+        \overbrace{V \times \cdots \times V}^s \xrightarrow{\begin{smallmatrix} \sim\\ \vdots \\ \sim \end{smallmatrix}} \mathbb{R}
+    \end{equation}
+\end{defn}
+\begin{theorem}[Covector is (0,1)-tensor]
+    \begin{equation}
+        \phi\in V^\star \Leftrightarrow \phi: V\linearto \mathbb{R} \Leftrightarrow \phi\,(0,1)\,\text{tensor}\,.
+    \end{equation}
+\end{theorem}
+\begin{theorem}[Vector is (1,0)-tensor]
+    If $\text{dim}V < \infty$
+    \begin{equation}
+        v \in V = (V^\star)^\star \Leftrightarrow 
+        v: V^\star \linearto \mathbb{R} \Leftrightarrow
+        v\,\text{is}\, (1,0)-\text{tensor}\,.
+    \end{equation}
+\end{theorem}
+
+\subsection{Bases}
+\begin{defn}[Hamel-basis]
+    $(V, +, \cdot))$ vector space. A subset $B \subset V$ is called a Hamel-basis if
+    \begin{equation}
+        \forall v\in V\, \exists!\,\text{finite}\,F=\left\{ f_1,\ldots,f_n \right\}\subset B: \exists! \underbrace{v^1, \cdots, v^n}_{\in \mathbb{R}}\,,
+    \end{equation}
+    such that
+    \begin{equation}
+        v = v^1 f_1 + \cdots + v^n f_n\,.
+    \end{equation}
+    (and all $f_i$ linearly independent).
+\end{defn}
+\begin{defn}[Dimension of a vector space]
+    If a basis $B$ with $d<\infty$ many elements, then we call $d =: \text{dim}V$.
+\end{defn}
+
+If we have chosen a basis $\left\{ e_1, \ldots, e_n \right\}$ of $(V, +, \cdot)$ then
+$(v^1, \ldots, v^n)$ are called the \textit{components of $V$} w.r.t.\ the chosen basis
+if
+\begin{equation}
+    v = v^1 e_1 + \cdots v^n e_n\,.
+\end{equation}
+
+\begin{defn}[Dual basis]
+    Choose basis $\left\{ e_1, \cdots, e_n \right\}$ for $V$. 
+    The basis $\left\{ \epsilon^1, \cdots, \epsilon^n \right\}$
+    for $V^\star$ can be chosen that
+    \begin{equation}
+        \epsilon^a(e_b) = \delta^a_b\quad \forall a,b = 1,\ldots, n\,.
+    \end{equation}
+    $\left\{ \epsilon^1,\dots,\epsilon^n \right\}$ is then called \textit{the dual basis} of the dual
+    space.
+\end{defn}
+
+\subsection{Components of a tensor}
+$T$ an $(r,s)$-tensor. Then the real numbers
+\begin{equation}
+    T\indices{^{i_1\ldots i_r} _{j_1\ldots j_s}} = T\left( \epsilon^{i_1},\ldots, \epsilon^{i_r}, e_{j_1}, \ldots e_{j_s}\right)
+\end{equation}
+are the components of $T$ with respect to the chosen basis.
+From the components and the basis one can reconstruct the entire tensor:
+Example for (1, 1)-tensor:
+\begin{equation}
+    T(\varphi, v) = T\indices{^i _j} \varphi_i v^j\, \label{eq:tensorcomponentsexample}
+\end{equation}
+where $\varphi_i$ are the components of $\varphi\in V^\star$ and $v^j$ the components of $v\in V$ with respect to
+the chosen basis. In equation~(\ref{eq:tensorcomponentsexample}) the \textit{Einstein summation convention} is used, \textit{i.e.}\ an index that appears up and down in an expression is summed over.
+
+\begin{note}
+    The Einstein summation convention is only useful because we are working with \textit{linear maps},
+    otherwise the expression
+    \begin{equation}
+        \varphi\left(\sum_i v^i e_i\right) = \sum_i \varphi(v^i e_i)\,, 
+    \end{equation}
+    would not hold and with the summation index we would not know where the sum sign goes.
+\end{note}
+

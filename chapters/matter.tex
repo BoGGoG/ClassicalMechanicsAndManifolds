@@ -1,0 +1,59 @@
+\section{Matter}
+\subsection{Point Matter}
+Our postulates~\ref{item:massive} and~\ref{item:massless} already constrain the possible particle worldlines.
+But what is the precise law of motion, possibly in the presence of ``forces''?
+
+\paragraph{Without external forces:}
+\begin{equation}
+    S_\text{massive}[\gamma] := m\int\diff\lambda\sqrt{g_{\gamma(\lambda)} ( v_{\gamma, \gamma(\lambda)} v_{\gamma, \gamma(\lambda)})}\,,
+\end{equation}
+with particles going forward in time, \textit{i.e.}
+\begin{equation}
+    g_{\gamma(\lambda)} \left( T_{\gamma(\lambda)}, v_{\gamma, \gamma(\lambda)} \right) > 0\,,
+\end{equation}
+The dynamical law then follows from the Euler-Lagrange equations of $S_\text{matter}$ or equivalently
+from the variation of $S_\text{matter}$ with respect to the curve $\gamma$.
+Similarly for massless particles
+\begin{equation}
+    S_\text{massive}[\gamma] := \int\diff\lambda\, \mu g_{\gamma(\lambda)} ( v_{\gamma, \gamma(\lambda)} v_{\gamma, \gamma(\lambda)})\,,
+    \label{eq:massiveAction}
+\end{equation}
+where $\mu$ is a Lagrange multiplier and its Euler Lagrange equation enforces
+\begin{equation}
+    g\left( v_{\gamma, \gamma(\lambda)}, v_{\gamma, \gamma(\lambda)} \right) = 0\,,
+    \label{eq:masslessAction}
+\end{equation}
+so it has to be a massless particle, postulate~\ref{item:massless}.
+\begin{note}
+    Note that there is no square root for the massless particle~\ref{eq:masslessAction}.
+    For a massless particle the world line cannot parametrized with respect to time,
+    because time does not run along it.
+    Actually this is a meaningless statement, because time was only defined for
+    \textit{observers} and an observer was defined for timelike curves, not null curves.
+    (timelike curve means the velocity vector is timelike everywhere, in our convention
+    the norm must be positive. A null/lightlike vector has norm zero.)
+\end{note}
+
+\begin{note}
+    The reason for describing equations of motions by actions is that compositve systems have
+    an action that is the sum of the actions of the parts of that system plus possibly
+    \textit{interaction terms.}
+    Example:
+    \begin{equation}
+        S[\gamma] + S[\delta] + S_\text{int}[\gamma,\delta]\,.
+    \end{equation}
+\end{note}
+
+\paragraph{With external forces:}
+or rather: Presence of \textit{fields} to which a particle couples, \textit{i.e.}\ there
+is an interaction therm with the field in the action.
+
+\begin{example}
+    \begin{align*}
+        S[\gamma;A] &= \int\diff\lambda \left(m\sqrt{g_{\gamma(\lambda)} ( v_{\gamma, \gamma(\lambda)} v_{\gamma, \gamma(\lambda)})}\right.\\
+        &~+\underbrace{q A(v_{\gamma, \gamma(\lambda)})}_{L_\text{int}}\left.\vphantom{\sqrt{g_{\gamma(\lambda)}}}\right)\,,
+    \end{align*}
+    where $A$ is a \textit{covector field} on $\M$ (electromagnetic field).
+    In $S[\gamma;A]$ the semicolon means that $A$ is fixed and the action should not be varied with respect to it.
+\end{example}
+

@@ -1,0 +1,78 @@
+\section{Diffeomorphisms}
+\begin{equation*}
+    M \xrightarrow{\phantom{asdf}\phi\phantom{asdf}} N
+\end{equation*}
+$M$, $N$ naked sets, then the structure-preserving maps are bijections (invertionable maps).
+\begin{defn}[Set-theoretically isomorphic]
+    Two sets $M$, $N$ are said to be \textit{set-thoretically isomorphic} $M\cong_\text{st} N$ if
+    $\exists$ a bijection $\phi: M\to N$ between them.
+\end{defn}
+\begin{note}
+    Then they are ``of the same size''. Examples: $\mathbb{N}\cong_\text{st}\mathbb{Z}$, $\mathbb{N}\cong_\text{st} \mathbb{Q}$,
+    $\mathbb{N}\not\cong_\text{st} \mathbb{R}$
+\end{note}
+Now $(\M, \mathcal{O}_\M)$ and $(\mathcal{N}, \mathcal{O_N})$.
+\begin{equation*}
+    \M \xrightarrow{\phantom{asdf}\phi\phantom{asdf}} \mathcal{N}
+\end{equation*}
+\begin{defn}[Topologically isomorphic (homeomorphic)]
+    $(\M, \mathcal{O}_\M) \cong_\text{top} (\mathcal{N}, \mathcal{O_N})$ topologically isomorphic = ``homeomorphic'' if $\exists \phi: \M\to\mathcal{N}$ and $\phi, \phi^{-1}$ are \textit{continuous}.
+\end{defn}
+\begin{note}
+    Continuity is the important property here.
+    This is a stronger notion. If two spaces are hoemomorphic then they are also set-theoretically isomorphic.
+\end{note}
+\begin{defn}[Isomorphic vector spaces]
+    $(V, +_V, \cdot_V) \cong_\text{vec} (W, +_W, \cdot_W)$ if $\exists$ a bijection $\phi:V\to W$ that is
+    linear in both directions.
+\end{defn}
+\begin{defn}[diffeomorphic]
+    Two $C^\infty$ manifolds $(\M, \mathcal{O_M}, \mathcal{A_M})$ and $(\mathcal{N, O_N, A_N})$
+    are said to be \textit{diffeomorphic} if $\exists$ a bijeciton $\phi: \M \to \mathcal{N}$ such that
+    $\phi, \phi^{-1}$ are both $C^\infty$-maps, where by $C^\infty$ we mean that $y\circ \phi \circ x^{-1}$
+    is in $C^\infty$ in the $\mathbb{R}^d$-sense, see figure~\ref{fig:diffeo-commdiag}.
+    \label{def:diffeomorphic}
+\end{defn}
+
+\begin{figure}[tbh]
+    \centering
+    \begin{tikzpicture}
+    \matrix (m) [matrix of math nodes,row sep=3em,column sep=4em,minimum width=2em]
+    {
+        \mathbb{R}^d & \mathbb{R}^l \\
+        \M \supseteq U & V \subseteq N \\
+        \mathbb{R}^d & \mathbb{R}^l \\
+    };
+    \path[-stealth]
+        (m-1-1) edge node [below] {$\tilde{y} \circ \phi \circ \tilde{x}^{-1}$} (m-1-2)
+        (m-2-1) edge node [left] {$\tilde{x}$} (m-1-1)
+        (m-2-2) edge node [right] {$\tilde{y}$} (m-1-2)
+        (m-2-1) edge node [above] {$\phi$} (m-2-2)
+        (m-2-1) edge node [left] {$x$} (m-3-1)
+        (m-2-2) edge node [right] {$y$} (m-3-2)
+        (m-3-1) edge node [above] {$y \circ \phi \circ x^{-1}$} (m-3-2)
+        (m-3-1) edge[bend left = 60] node [left, rotate = 90, xshift = 0.5cm, yshift = +0.2cm] {$C^\infty$} (m-1-1)
+        (m-3-2) edge[bend right = 60] node [right, rotate = 90, xshift = -0.4cm, yshift = -0.25cm] {$C^\infty$} (m-1-2);
+    \end{tikzpicture}
+    \caption{In the definition of diffeomorphic~\ref{def:diffeomorphic} $\phi, \phi^{-1}$ have to be
+    $C^\infty$, which is defined such that $y\circ\phi\circ x^{-1}$ has to be $C^\infty$ in the $\mathbb{R}^d$-sense, which is chart-independent here.}
+    \label{fig:diffeo-commdiag}
+\end{figure}
+\begin{note}
+    Since we started with $C^\infty$-manifolds, the chart transition maps are $C^\infty$ and thus
+    the notion of differentiability in the definition~\ref{def:diffeomorphic} is independent of the
+    choice of charts, \textit{i.e.} $\tilde{y}\circ\phi\tilde{x}^{-1}$ is also $C^\infty$, see figure~\ref{fig:diffeo-commdiag}.
+\end{note}
+\begin{theorem}
+    \# = number of $C^\infty$-manifolds one can make of a given $C^\infty$-manifold (if any) --- up to diffeomorphisms ---.\newline
+    \begin{center}
+    \begin{tabular}{ll}
+        $\text{dim}M$  & \# \\
+        \hline
+        \begin{tabular}{l} 1 \\ 2 \\ 3 \end{tabular} & $\left.\begin{tabular}{l} 1 \\ 2 \\ 3 \end{tabular}\right\}$ Moise-Radon theorem  \\
+        \begin{tabular}{l} 4 \end{tabular} & \begin{tabular}{l} uncountable infinitely many \end{tabular} \\
+        \begin{tabular}{l} 5 \\ 6 \\ \vdots \end{tabular} & $\left.\begin{tabular}{l} finite \\ finite \\ finite \end{tabular}\right\}$ surgery theory
+    \end{tabular}
+    \end{center}
+\end{theorem}
+
