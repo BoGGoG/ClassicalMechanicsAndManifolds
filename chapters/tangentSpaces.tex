@@ -615,9 +615,11 @@ Thus we are \textit{not} in general able to write every vector field $\chi$ as
     &\chi = f^i \chi_{(i)}\,,\\
     &\chi_{(1)}, \ldots, \chi_{(d)} \in \Gamma(\T\M)\,,\quad\text{global basis}
 \end{align}
-Example: Every vector field on the sphere has to vanish somewhere, 
+\begin{example}
+Every vector field on the sphere has to vanish somewhere, 
 but that means at this point it cannot be used as a basis.
 We can do it locally, though, \textit{i.e.}\ for subsets $\mathcal{U} \in \M$.
+\end{example}
 
 \subsection{Tensor Fields}
 Since $\T^*\M$ is also a vector space, we can define $\Gamma(\T^*\M)$ as all smooth
@@ -637,7 +639,8 @@ covector fields, which is again a $C^\infty(\M)$-module.
     I just want to write $C^\infty(\M)$ once more: $C^\infty(\M)$.
 \end{note}
 
-Example: $f \in C^\infty(\M)$
+\begin{example}[(Gradient co-vector field)]
+$f \in C^\infty(\M)$,
 \begin{align}
     \diff f:\,\Gamma(\T\M)&\linearto C^\infty(\M)\\
     \chi &\mapsto \diff f(\chi):= \chi f\,,
@@ -648,4 +651,4 @@ where $\chi f$ is defined by its action on $p\in\M$,
 \end{equation}
 which works since $\chi(p)\in\T{p}\M$ can act on a function $f$.
 Thus $\diff f$ is a gradient co-vector field.
-
+\end{example}

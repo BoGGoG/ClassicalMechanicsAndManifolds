@@ -41,7 +41,8 @@ Let $(\M, \mathcal{O}, \mathcal{A}, \nabla)$ a vector field with connection.
     for $\mu: \mathbb{R} \to \mathbb{R}$.
     This is a weaker notion than \textit{parallel transported}.
 \end{defn}
-\textit{Example}: \textit{Euclidean plane} $(\mathbb{R}^2, \mathcal{O}, \mathcal{A}, \nabla_E)$
+\begin{example}[(Parallel vs.\ parallel transported)]
+ \textit{Euclidean plane} $(\mathbb{R}^2, \mathcal{O}, \mathcal{A}, \nabla_E)$
 The red arrows (left picture) are \textit{parallel} along the curve and the blue arrows (right picture)
 are \textit{parallel transported} along the curve.
 \begin{center}
@@ -61,10 +62,12 @@ are \textit{parallel transported} along the curve.
         \draw[line width=1pt,red,-stealth, xshift = -100](3,0)--(2,-1);
     \end{tikzpicture}
 \end{center}
+\end{example}
+
 \begin{note}
     Explanation by Schuller:
     \begin{itemize}
-        \item \textit{Parallel transport}: Pinocchio move along the curve and point your nose in the same direction always
+        \item \textit{Parallel transport}: Pinocchio, move along the curve and point your nose in the same direction always
             and \textsc{do not lie}.
         \item \textit{Parallel}: Now you're allowed to lie.
     \end{itemize}
@@ -89,7 +92,8 @@ are \textit{parallel transported} along the curve.
     even though most of the time one also uses the notion ``autoparallel'' for an autoparallelly transported curve.
     An autoparallelly transported curve is the ``straightest curve possible''.
 \end{note}
-\textit{Example}: \textit{Euclidean plane} $(\mathbb{R}^2, \mathcal{O}, \mathcal{A}, \nabla_E)$
+\begin{example}[(Autoparallel vs.\ autoparallelly transported)]
+    \textit{Euclidean plane} $(\mathbb{R}^2, \mathcal{O}, \mathcal{A}, \nabla_E)$.\\
 Red (left): autoparallel curve, blue (right): autoparallelly transported curve.
 Equal distances mean equal affine parameter $\lambda$.
 \begin{center}
@@ -108,6 +112,7 @@ Equal distances mean equal affine parameter $\lambda$.
         \draw[line width=1pt,red,xshift = -100](2.55,2.55)--(3.1,3.1);
     \end{tikzpicture}
 \end{center}
+\end{example}
 
 \subsection{Autoparallel Equation} 
 Let $\gamma$ be an autoparallelly transported curve.
@@ -129,7 +134,7 @@ In summary we have the chart expression of the condition that $\gamma$ be autopa
 As we will see later if for $\Gamma$ we choose the so called \textit{Levi Civita connection}
 then this is the \textit{geodesic equation}.
 
-\paragraph{Examples}
+\begin{example}
 \begin{enumerate}
     \item Euclidean plane:\\ $U = \mathbb{R}^d$, $x = \mathrm{id}_{\mathbb{R}^d}$, $\Gamma_(x)^{i}{}_{jl} = 0$,
         $\Rightarrow \ddot{\gamma}^m_{(x)} = 0$ $\Rightarrow \gamma_{(x)}^m(\lambda) = a^m \lambda + b^m$, $a,b\in \mathbb{R}^d$
@@ -164,6 +169,8 @@ then this is the \textit{geodesic equation}.
         This is a curve around the equator with constant speed.
         Similarity other curves along great circles are solutions.
 \end{enumerate}
+\end{example}
+
 \begin{note}
     Thus if someone gives you the connection $\nabla_\text{potato}$ on a potato,
     you can calculate the straightest curves on that potato.

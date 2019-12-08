@@ -109,22 +109,23 @@ Let $(\M, \calO, \calA)$ be a smooth manifold and $X$ be a vector field on $\M$.
         \end{equation}
         with eq.~(\ref{eq:lieSubalgebra}) is called a \textit{Lie subalgebra}.
     \end{defn}
-    Example on $S^2$:
-    \begin{align*}
-        [X_1, X_2] = X_3\,,
-        [X_2, X_3] = X_1\,,
-        [X_3, X_1] = X_2\,,
-    \end{align*}
-    $(\mathrm{span}_\mathbb{R}\left\{ X_1,\ldots,X_s \right\}, [\cdot,\cdot])=so(3)$.
-    Note that we did not need any metric, only a smooth manifold $(S^2, \mathcal{O}_\text{sd}, \calA)$ was needed.
-    The vectors are given in a chart $(\theta, \phi)$ by
-    \begin{align*}
-        X_1(p) &=  -\sin\left( \phi(p) \right)\frac{\partial}{\partial \theta} -
-        \cot\left( \theta(p) \right) \cos\left( \phi(p) \right)\frac{\partial}{\partial \phi}\,,\\
-        X_2(p) &= \cos\left( \phi(p) \right)\frac{\partial}{\partial \theta} - 
-        \cot\left( \theta(p) \sin\left( \phi(p) \right) \right)\frac{\partial}{\partial \phi}\,,\\
-        X_3(p) &= \frac{\partial}{\partial \phi}\,.
-    \end{align*}
+    \begin{example}[(on $S^2$)]
+        \begin{align*}
+            [X_1, X_2] = X_3\,,
+            [X_2, X_3] = X_1\,,
+            [X_3, X_1] = X_2\,,
+        \end{align*}
+        $(\mathrm{span}_\mathbb{R}\left\{ X_1,\ldots,X_s \right\}, [\cdot,\cdot])=so(3)$.
+        Note that we did not need any metric, only a smooth manifold $(S^2, \mathcal{O}_\text{sd}, \calA)$ was needed.
+        The vectors are given in a chart $(\theta, \phi)$ by
+        \begin{align*}
+            X_1(p) &=  -\sin\left( \phi(p) \right)\frac{\partial}{\partial \theta} -
+            \cot\left( \theta(p) \right) \cos\left( \phi(p) \right)\frac{\partial}{\partial \phi}\,,\\
+            X_2(p) &= \cos\left( \phi(p) \right)\frac{\partial}{\partial \theta} - 
+            \cot\left( \theta(p) \sin\left( \phi(p) \right) \right)\frac{\partial}{\partial \phi}\,,\\
+            X_3(p) &= \frac{\partial}{\partial \phi}\,.
+        \end{align*}
+    \end{example}
 
     \subsection{Symmetry}
     \begin{defn}[Symmetry of a Metric]

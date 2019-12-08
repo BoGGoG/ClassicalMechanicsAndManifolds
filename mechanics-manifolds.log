@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  8 DEC 2019 09:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  8 DEC 2019 09:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2633,24 +2633,24 @@ Overfull \hbox (7.84813pt too wide) in paragraph at lines 165--165
  []
 
 [14]) (./chapters/parallelTransport.tex
-<figures/parallelTransportSphere.png, id=679, 167.87718pt x 173.89969pt>
+<figures/parallelTransportSphere.png, id=681, 167.87718pt x 173.89969pt>
 File: figures/parallelTransportSphere.png Graphic file (type png)
 <use figures/parallelTransportSphere.png>
 Package pdftex.def Info: figures/parallelTransportSphere.png  used on input lin
 e 8.
 (pdftex.def)             Requested size: 193.47578pt x 200.41824pt.
- [15 <./figures/parallelTransportSphere.png>]
-Overfull \hbox (1.54144pt too wide) in paragraph at lines 62--63
+
+Overfull \hbox (12.9225pt too wide) in paragraph at lines 63--64
  [] 
  []
 
-[16]
-Overfull \hbox (14.9847pt too wide) detected at line 201
+[15 <./figures/parallelTransportSphere.png>] [16]
+Overfull \hbox (14.9847pt too wide) detected at line 208
 []
  []
 
 
-Underfull \hbox (badness 1077) in paragraph at lines 206--210
+Underfull \hbox (badness 1077) in paragraph at lines 213--217
 \T1/XCharter-TLF/m/n/10.95 (+20) and $\OMS/cmsy/m/n/10.95 r[]\OML/cmm/m/it/10.9
 5 f \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 Yf$\T1/XCharter-TLF/m/n/10.95 (+20
 ) . Since $\OML/cmm/m/it/10.95 T\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 !; X; Y
@@ -2658,7 +2658,7 @@ Underfull \hbox (badness 1077) in paragraph at lines 206--210
  []
 
 
-Overfull \hbox (12.4469pt too wide) detected at line 247
+Overfull \hbox (12.4469pt too wide) detected at line 254
 []
  []
 
@@ -2690,29 +2690,32 @@ ML/cmm/m/it/10.95 t\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; X[]\OT1/cmr/m/n/10
  []
 
 [19]) (./chapters/metricManifolds.tex [20]
-Underfull \hbox (badness 1910) in paragraph at lines 86--88
- []\OT1/phv/b/n/10.95 Example: Sphere[] $\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.9
-5 S[]; \OMS/cmsy/m/n/10.95 O\OML/cmm/m/it/10.95 ; \OMS/cmsy/m/n/10.95 A\OT1/cmr
-/m/n/10.95 )$ \T1/XCharter-TLF/m/n/10.95 (+20) with a chart
- []
-
-
-Overfull \hbox (52.08684pt too wide) in paragraph at lines 141--143
+Overfull \hbox (30.18678pt too wide) in paragraph at lines 143--145
 []
  []
 
 [21]
-Overfull \hbox (8.25977pt too wide) detected at line 229
+Underfull \hbox (badness 10000) in paragraph at lines 211--215
+\T1/XCharter-TLF/m/n/10.95 (+20) where we have ran-domly cho-sen any
+ []
+
+
+Underfull \hbox (badness 2261) in paragraph at lines 211--215
+\T1/XCharter-TLF/m/n/10.95 (+20) Then the com-po-nents of the ve-loc-ity are
+ []
+
+
+Overfull \hbox (19.64082pt too wide) detected at line 231
 []
  []
 
 
-Underfull \hbox (badness 6332) in paragraph at lines 267--270
+Underfull \hbox (badness 6332) in paragraph at lines 270--273
 []\T1/XCharter-TLF/m/n/10.95 (+20) Plugging the La-grangian ([]189[]) into the
  []
 
 
-Overfull \hbox (4.43202pt too wide) detected at line 275
+Overfull \hbox (4.43202pt too wide) detected at line 278
 []
  []
 
@@ -2727,12 +2730,12 @@ Underfull \hbox (badness 1189) in paragraph at lines 1--1
  []
 
 [25]
-Overfull \hbox (8.53763pt too wide) detected at line 127
+Overfull \hbox (19.91869pt too wide) detected at line 127
 []
  []
 
 
-Overfull \hbox (19.11786pt too wide) detected at line 175
+Overfull \hbox (19.11786pt too wide) detected at line 176
 []
  []
 
@@ -2751,33 +2754,24 @@ Overfull \hbox (9.37695pt too wide) detected at line 92
  []
 
 [27]
-Overfull \hbox (6.30226pt too wide) detected at line 104
-[][]\OT1/cmr/m/n/10.95 
-([] \OML/cmm/m/it/10.95 ; X; [] ; Y; []\OT1/cmr/m/n/10.95 ) = \OMS/cmsy/m/n/10.
-95 ^^@\OT1/cmr/m/n/10.95 
-([] \OML/cmm/m/it/10.95 ; Y; [] ; X; []\OT1/cmr/m/n/10.95 ) \OML/cmm/m/it/10.95
- ;
- []
-
-
 Overfull \hbox (79.88383pt too wide) detected at line 171
 []
  []
 
 [28] (./figures/PartitionOfUnity.pdf_tex
-<figures/PartitionOfUnity.pdf, id=1021, page=1, 561.93839pt x 423.1935pt>
+<figures/PartitionOfUnity.pdf, id=1026, page=1, 561.93839pt x 423.1935pt>
 File: figures/PartitionOfUnity.pdf Graphic file (type pdf)
 <use figures/PartitionOfUnity.pdf, page 1>
 Package pdftex.def Info: figures/PartitionOfUnity.pdf , page1 used on input lin
 e 56.
 (pdftex.def)             Requested size: 231.88997pt x 174.63403pt.
-<figures/PartitionOfUnity.pdf, id=1022, page=2, 561.93839pt x 423.1935pt>
+<figures/PartitionOfUnity.pdf, id=1027, page=2, 561.93839pt x 423.1935pt>
 File: figures/PartitionOfUnity.pdf Graphic file (type pdf)
 <use figures/PartitionOfUnity.pdf, page 2>
 Package pdftex.def Info: figures/PartitionOfUnity.pdf , page2 used on input lin
 e 59.
 (pdftex.def)             Requested size: 231.88997pt x 174.63403pt.
-<figures/PartitionOfUnity.pdf, id=1023, page=3, 561.93839pt x 423.1935pt>
+<figures/PartitionOfUnity.pdf, id=1028, page=3, 561.93839pt x 423.1935pt>
 File: figures/PartitionOfUnity.pdf Graphic file (type pdf)
 <use figures/PartitionOfUnity.pdf, page 3>
 Package pdftex.def Info: figures/PartitionOfUnity.pdf , page3 used on input lin
@@ -2785,7 +2779,7 @@ e 62.
 (pdftex.def)             Requested size: 231.88997pt x 174.63403pt.
 ))
 (./chapters/relativisticSpacetime.tex (./figures/lightCone.pdf_tex
-<figures/lightCone.pdf, id=1025, page=1, 405.36107pt x 288.21263pt>
+<figures/lightCone.pdf, id=1030, page=1, 405.36107pt x 288.21263pt>
 File: figures/lightCone.pdf Graphic file (type pdf)
 <use figures/lightCone.pdf, page 1>
 Package pdftex.def Info: figures/lightCone.pdf , page1 used on input line 56.
@@ -2813,20 +2807,20 @@ multiple pdfs with page group included in a single page
 pdfTeX warning: pdflatex (file ./figures/lightCone.pdf): PDF inclusion: multipl
 e pdfs with page group included in a single page
 >] (./figures/spacetimeLightCones.pdf_tex
-<figures/spacetimeLightCones.pdf, id=1065, page=1, 555.11534pt x 390.28206pt>
+<figures/spacetimeLightCones.pdf, id=1070, page=1, 555.11534pt x 390.28206pt>
 File: figures/spacetimeLightCones.pdf Graphic file (type pdf)
 <use figures/spacetimeLightCones.pdf, page 1>
 Package pdftex.def Info: figures/spacetimeLightCones.pdf , page1 used on input 
 line 56.
 (pdftex.def)             Requested size: 231.88997pt x 163.03001pt.
 ) (./figures/observers.pdf_tex
-<figures/observers.pdf, id=1066, page=1, 586.73813pt x 517.63132pt>
+<figures/observers.pdf, id=1071, page=1, 586.73813pt x 517.63132pt>
 File: figures/observers.pdf Graphic file (type pdf)
 <use figures/observers.pdf, page 1>
 Package pdftex.def Info: figures/observers.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 231.88997pt x 204.57664pt.
 )
-Overfull \hbox (16.87859pt too wide) detected at line 139
+Overfull \hbox (28.25964pt too wide) detected at line 139
 []
  []
 
@@ -2835,31 +2829,34 @@ Overfull \hbox (16.87859pt too wide) detected at line 139
 pdfTeX warning: pdflatex (file ./figures/observers.pdf): PDF inclusion: multipl
 e pdfs with page group included in a single page
 >] (./figures/lightClock.pdf_tex
-<figures/lightClock.pdf, id=1127, page=1, 140.60822pt x 343.43936pt>
+<figures/lightClock.pdf, id=1132, page=1, 140.60822pt x 343.43936pt>
 File: figures/lightClock.pdf Graphic file (type pdf)
 <use figures/lightClock.pdf, page 1>
 Package pdftex.def Info: figures/lightClock.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 139.13539pt x 339.875pt.
 ) (./figures/3vector.pdf_tex
-<figures/3vector.pdf, id=1129, page=1, 115.94508pt x 144.26398pt>
+<figures/3vector.pdf, id=1134, page=1, 115.94508pt x 144.26398pt>
 File: figures/3vector.pdf Graphic file (type pdf)
 <use figures/3vector.pdf, page 1>
 Package pdftex.def Info: figures/3vector.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 231.88997pt x 288.54483pt.
 )
-Underfull \vbox (badness 3312) has occurred while \output is active []
+Underfull \hbox (badness 1097) in paragraph at lines 188--190
+\T1/XCharter-TLF/m/n/10.95 (+20) The Fara-day (0,2)-tensor $\OML/cmm/m/it/10.95
+ F$ \T1/XCharter-TLF/m/n/10.95 (+20) of elec-tro-mag-
+ []
 
- [31 <./figures/lightClock.pdf> <./figures/3vector.pdf
+[31 <./figures/lightClock.pdf> <./figures/3vector.pdf
 
 pdfTeX warning: pdflatex (file ./figures/3vector.pdf): PDF inclusion: multiple 
 pdfs with page group included in a single page
 >]
-Underfull \hbox (badness 1097) in paragraph at lines 206--206
+Underfull \hbox (badness 1097) in paragraph at lines 209--209
 []\OT1/phv/b/n/12 Role of the Lorentz Trans-for-ma-
  []
 
 
-Underfull \hbox (badness 1675) in paragraph at lines 226--230
+Underfull \hbox (badness 1675) in paragraph at lines 229--233
 []\T1/XCharter-TLF/m/it/10.95 (+20) Result: \T1/XCharter-TLF/m/n/10.95 (+20) Lo
 rentz trans-for-ma-tions re-late the
  []
@@ -2918,11 +2915,11 @@ Package logreq Info: Writing requests to 'mechanics-manifolds.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 62028 strings out of 492616
- 1358991 string characters out of 6129482
- 2135308 words of memory out of 5000000
- 64120 multiletter control sequences out of 15000+600000
- 695256 words of font info for 304 fonts, out of 8000000 for 9000
+ 62064 strings out of 492616
+ 1359566 string characters out of 6129482
+ 2135873 words of memory out of 5000000
+ 64148 multiletter control sequences out of 15000+600000
+ 695622 words of font info for 306 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,19n,119p,898b,2258s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
@@ -2959,10 +2956,10 @@ st/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2019/texm
 f-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2019/texmf-
 dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2019/texmf-dist/fo
 nts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on mechanics-manifolds.pdf (33 pages, 668360 bytes).
+Output written on mechanics-manifolds.pdf (33 pages, 672128 bytes).
 PDF statistics:
- 1438 PDF objects out of 1440 (max. 8388607)
- 1284 compressed objects within 13 object streams
- 562 named destinations out of 1000 (max. 500000)
+ 1444 PDF objects out of 1728 (max. 8388607)
+ 1290 compressed objects within 13 object streams
+ 567 named destinations out of 1000 (max. 500000)
  40626 words of extra memory for PDF output out of 42996 (max. 10000000)
 

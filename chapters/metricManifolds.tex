@@ -83,7 +83,8 @@ curvature.
     of a vector and hiding the metric.
 \end{note}
 
-\paragraph{Example: Sphere} $(S^2, \mathcal{O}, \mathcal{A})$
+\begin{example}[(Sphere)]
+ $(S^2, \mathcal{O}, \mathcal{A})$
 with a chart $(U,x)$, $\phi\in(0,2\pi)$, $\theta\in (0,\pi)$.
 \begin{equation}
     g_{ij}\left(x^{-1}(\theta, \phi)\right) = 
@@ -93,6 +94,7 @@ with a chart $(U,x)$, $\phi\in(0,2\pi)$, $\theta\in (0,\pi)$.
     \end{pmatrix}_{ij}\,,
 \end{equation}
 is the metric of the \textit{round sphere} of radius $R\in\mathbb{R}^+$.
+\end{example}
 
 \subsection{Signature}
 Remember \textit{linear algebra}:
@@ -201,7 +203,7 @@ at each $\gamma(\lambda)\in \M$ from definition~\ref{defn:velocity}.
     length.
 \end{note}
 
-\paragraph{Example:} The round sphere of radius $R$.
+\begin{example}[(Round sphere of radius $R$)]
 Its equator is a curve
 \begin{align}
     \theta(\lambda) &:= (x^1\circ \gamma)(\lambda) = \frac{\pi}{2}\,,\\
@@ -227,6 +229,7 @@ or just to have it written down in a rigorous way
     &\int_0^1\diff\lambda\,\sqrt{g_{ij}(x^{-1}(\theta(\lambda),\phi(\lambda))(x^i\circ\gamma)'(\lambda)
         (x^j\circ\gamma)'(\lambda)}
 \end{align*}
+\end{example}
 
 \begin{theorem}[Reparametrization invariance of the lengh of a curve]
     Let $\gamma: (0,1)\to\M$ be a curve and
