@@ -111,7 +111,7 @@ is an interaction therm with the field in the action.
 \begin{example}[(Maxwell Theory)]
     For simplicity assume the whole manifold $\M$ is covered by one chart.
     \begin{equation}
-        S_\text{Maxwell}[A;g] = \frac{1}{4} \int_{\M} \diff x\,\underbrace{\sqrt{-g} F_{ab}F_{cd}g^{ac}g^{bd}}_\mathcal{L}\,.
+        S_\text{Maxwell}[A;g] = \frac{1}{4} \int\limits_{\M} \diff x\,\underbrace{\sqrt{-g} F_{ab}F_{cd}g^{ac}g^{bd}}_\mathcal{L}\,.
     \end{equation}
     The minus sign by the determinant is because of the metric signature $(+---)$.
     The spacetime metric $g$ is fixed for now.
@@ -144,8 +144,99 @@ is an interaction therm with the field in the action.
 Another example that is well-liked by textbooks is the \textit{Klein-Gordon} field.
 \begin{example}[(Klein-Gordon Field)]
     \begin{equation*}
-        S_\text{K.G.}[\phi] := \int_m\difff^4\!x\sqrt{-g} \left[ 
+        S_\text{K.G.}[\phi] := \int\limits_\M\difff^4\!x\sqrt{-g} \left[ 
         g^{ab}(\partial_a \phi) (\partial_b \phi) - m^2 \phi^2 \right]\,,
     \end{equation*}
     where $\phi$ is a (0,0)-tensor field.
+\end{example}
+
+\subsection{Energy-Momentum Tensor of Matter Fields}
+We want to write down an action $S_\text{grav}[g]$ for the metric tensor field itself
+and add it to any $S_\text{matter}[A, \phi, \ldots]$ in order to describe the total system.
+\begin{equation}
+    S_\text{total}[g, A] = S_\text{grav}[g] + S_\text{Maxwell}[A,g]\,,
+\end{equation}
+where now we also vary with respect to $g_{ab}$.
+\begin{align}
+    \delta A: &\to \text{Maxwell equations}\\
+    \delta g_{ab}: &\to \frac{1}{16\pi G_\text{N}} G^{ab} - \frac{1}{2}T^{ab}=0\,,
+\end{align}
+with the Einstein tensor (to be introduced) $G^{ab}$, Newton's constant $G_\text{N}$
+and the \textit{energy momentum tensor} $T^{ab}$.
+Above equation is called \textit{Einstein field equations}.
+The Einstein tensor $G^{ab}$ comes from $S_\text{grav}$ and will never change.
+On the other side, the energy momentum tensor $T^{ab}$ comes from
+$S_\text{matter}$ and depends on the matter and the theory we are looking at.
+\begin{note}
+    There are matter actions that don't depend on the metric, so called
+    \textit{topological field theories}.
+\end{note}
+\begin{defn}[Energy-Momentum Tensor]
+    If $S_\text{matter}[\Phi]$ is a matter action, then the \textit{Energy-Momentum tensor}
+    is
+    \begin{equation}
+        T^{ab}:= \frac{-2}{\sqrt{-g}}\left( \frac{\partial \mathcal{L}_\text{matter}}{\partial g_{ab}}
+        - \partial_s \frac{\partial \mathcal{L}_\text{matter}}{\partial(\partial_s g_{ab})} + \ldots\right)\,,
+    \end{equation}
+    where the dots stand for higher derivatives. 
+    Usually there are no higher derivatives and not even the second term.
+\end{defn}
+\begin{note}
+    There are many conditions on the energy momentum tensor called \textit{energy conditions}.
+    One would be for example
+    \begin{equation*}
+        T(\epsilon^0, \epsilon^0) \geq 0\,,
+    \end{equation*}
+    with the unique dual basis $\epsilon$.
+    Above equation means that the energy density should be positive.
+
+    With the energy conditions one tries to capture what properties any future matter
+    that we have not discovered yet might have.
+\end{note}
+
+\begin{example}[(Maxwell)]
+    \begin{equation}
+        T_{ab} = F_{am}F_{bn}g^{mn} - \frac{1}{4} F_{mn}F^{mn} g_{ab}\,.
+    \end{equation}
+    And the energy density is
+    \begin{equation}
+        T(\epsilon^0, \epsilon^0) = E^2 + B^2\,.
+    \end{equation}
+\end{example}
+\begin{note}
+    One often does not specify the fundamental action for some matter,
+    but one is rather satisfied to assume certain properties/forms of
+    the energy momentum tensor $T_{ab}$.
+\end{note}
+\begin{example}[(Perfect Fluid)]
+    Assuming homogeneity and isotropy then a \textit{perfect fluid}
+    of pressure $p$ and density $\rho$ is modeled by
+    \begin{equation}
+        T^{ab} = (\rho + p) u^a u^b - p g^{ab}\,.
+        \label{eq:TPerfectFluid}
+    \end{equation}
+\end{example}
+\begin{example}[(Perfect Fluid of Photons)]
+    Observe:
+    \begin{equation}
+        T_\text{maxwell}^{ab}g_{ab} = 0\,,
+    \end{equation}
+    then a perfect radiation fluid should also have this property.
+    Taking the trace of the energy momentum tensor of the perfect fluid~(\ref{eq:TPerfectFluid})
+    \begin{equation*}
+        0 = (\rho + p) u^a u^b g_{ab} - p g^{ab}g_{ab} = \rho + p - 4 p\,,
+    \end{equation*}
+    where we have used that the velocity is normalized $u^a u_a = 1$ and
+    $g^{ab}g_{ab} = d$ the dimension of spacetime (here 4).
+    Thus for a radiation fluid we have the equation of state
+    \begin{equation}
+        p = \frac{1}{3}\rho\,.
+    \end{equation}
+\end{example}
+\begin{example}[(Dust)]
+    For dust we have
+    \begin{equation*}
+        p = 0\,,
+    \end{equation*}
+    no matter how dense it becomes, it does not develop any pressure.
 \end{example}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  12 DEC 2019 08:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  12 DEC 2019 10:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2633,7 +2633,7 @@ Overfull \hbox (7.84813pt too wide) in paragraph at lines 165--165
  []
 
 [14]) (./chapters/parallelTransport.tex
-<figures/parallelTransportSphere.png, id=686, 167.87718pt x 173.89969pt>
+<figures/parallelTransportSphere.png, id=692, 167.87718pt x 173.89969pt>
 File: figures/parallelTransportSphere.png Graphic file (type png)
 <use figures/parallelTransportSphere.png>
 Package pdftex.def Info: figures/parallelTransportSphere.png  used on input lin
@@ -2759,19 +2759,19 @@ Overfull \hbox (79.88383pt too wide) detected at line 171
  []
 
 [28] (./figures/PartitionOfUnity.pdf_tex
-<figures/PartitionOfUnity.pdf, id=1031, page=1, 561.93839pt x 423.1935pt>
+<figures/PartitionOfUnity.pdf, id=1037, page=1, 561.93839pt x 423.1935pt>
 File: figures/PartitionOfUnity.pdf Graphic file (type pdf)
 <use figures/PartitionOfUnity.pdf, page 1>
 Package pdftex.def Info: figures/PartitionOfUnity.pdf , page1 used on input lin
 e 56.
 (pdftex.def)             Requested size: 231.88997pt x 174.63403pt.
-<figures/PartitionOfUnity.pdf, id=1032, page=2, 561.93839pt x 423.1935pt>
+<figures/PartitionOfUnity.pdf, id=1038, page=2, 561.93839pt x 423.1935pt>
 File: figures/PartitionOfUnity.pdf Graphic file (type pdf)
 <use figures/PartitionOfUnity.pdf, page 2>
 Package pdftex.def Info: figures/PartitionOfUnity.pdf , page2 used on input lin
 e 59.
 (pdftex.def)             Requested size: 231.88997pt x 174.63403pt.
-<figures/PartitionOfUnity.pdf, id=1033, page=3, 561.93839pt x 423.1935pt>
+<figures/PartitionOfUnity.pdf, id=1039, page=3, 561.93839pt x 423.1935pt>
 File: figures/PartitionOfUnity.pdf Graphic file (type pdf)
 <use figures/PartitionOfUnity.pdf, page 3>
 Package pdftex.def Info: figures/PartitionOfUnity.pdf , page3 used on input lin
@@ -2779,7 +2779,7 @@ e 62.
 (pdftex.def)             Requested size: 231.88997pt x 174.63403pt.
 ))
 (./chapters/relativisticSpacetime.tex (./figures/lightCone.pdf_tex
-<figures/lightCone.pdf, id=1035, page=1, 405.36107pt x 288.21263pt>
+<figures/lightCone.pdf, id=1041, page=1, 405.36107pt x 288.21263pt>
 File: figures/lightCone.pdf Graphic file (type pdf)
 <use figures/lightCone.pdf, page 1>
 Package pdftex.def Info: figures/lightCone.pdf , page1 used on input line 56.
@@ -2807,14 +2807,14 @@ multiple pdfs with page group included in a single page
 pdfTeX warning: pdflatex (file ./figures/lightCone.pdf): PDF inclusion: multipl
 e pdfs with page group included in a single page
 >] (./figures/spacetimeLightCones.pdf_tex
-<figures/spacetimeLightCones.pdf, id=1075, page=1, 555.11534pt x 390.28206pt>
+<figures/spacetimeLightCones.pdf, id=1081, page=1, 555.11534pt x 390.28206pt>
 File: figures/spacetimeLightCones.pdf Graphic file (type pdf)
 <use figures/spacetimeLightCones.pdf, page 1>
 Package pdftex.def Info: figures/spacetimeLightCones.pdf , page1 used on input 
 line 56.
 (pdftex.def)             Requested size: 231.88997pt x 163.03001pt.
 ) (./figures/observers.pdf_tex
-<figures/observers.pdf, id=1076, page=1, 586.73813pt x 517.63132pt>
+<figures/observers.pdf, id=1082, page=1, 586.73813pt x 517.63132pt>
 File: figures/observers.pdf Graphic file (type pdf)
 <use figures/observers.pdf, page 1>
 Package pdftex.def Info: figures/observers.pdf , page1 used on input line 56.
@@ -2829,13 +2829,13 @@ Overfull \hbox (28.25964pt too wide) detected at line 139
 pdfTeX warning: pdflatex (file ./figures/observers.pdf): PDF inclusion: multipl
 e pdfs with page group included in a single page
 >] (./figures/lightClock.pdf_tex
-<figures/lightClock.pdf, id=1137, page=1, 140.60822pt x 343.43936pt>
+<figures/lightClock.pdf, id=1143, page=1, 140.60822pt x 343.43936pt>
 File: figures/lightClock.pdf Graphic file (type pdf)
 <use figures/lightClock.pdf, page 1>
 Package pdftex.def Info: figures/lightClock.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 139.13539pt x 339.875pt.
 ) (./figures/3vector.pdf_tex
-<figures/3vector.pdf, id=1139, page=1, 115.94508pt x 144.26398pt>
+<figures/3vector.pdf, id=1145, page=1, 115.94508pt x 144.26398pt>
 File: figures/3vector.pdf Graphic file (type pdf)
 <use figures/3vector.pdf, page 1>
 Package pdftex.def Info: figures/3vector.pdf , page1 used on input line 56.
@@ -2867,12 +2867,12 @@ Underfull \hbox (badness 3547) in paragraph at lines 51--51
  []
 
 [32]
-Overfull \hbox (11.12578pt too wide) detected at line 149
+Overfull \hbox (7.97383pt too wide) detected at line 149
 \OML/cmm/m/it/10.95 S[]\OT1/cmr/m/n/10.95 [\OML/cmm/m/it/10.95 ^^^\OT1/cmr/m/n/
-10.95 ] := [][] [][]  \OML/cmm/m/it/10.95 x[] []  ;
+10.95 ] := [] [][]  \OML/cmm/m/it/10.95 x[] []  ;
  []
 
-) [33]
+[33]) [34]
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
@@ -2913,7 +2913,7 @@ Underfull \hbox (badness 5771) in paragraph at lines 117--117
 
 
 AED: lastpage setting LastPage
-[34
+[35
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 120.
@@ -2922,16 +2922,16 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 120.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 120.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 120.
 Package rerunfilecheck Info: File `mechanics-manifolds.out' has not changed.
-(rerunfilecheck)             Checksum: D37681D24C1CF7F580B55A12FC9BD34B;4253.
+(rerunfilecheck)             Checksum: 8095051BEC5E336EE937730520B2AE1D;4344.
 Package logreq Info: Writing requests to 'mechanics-manifolds.run.xml'.
 \openout1 = `mechanics-manifolds.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 62084 strings out of 492616
- 1359893 string characters out of 6129482
- 2135864 words of memory out of 5000000
- 64154 multiletter control sequences out of 15000+600000
+ 62111 strings out of 492616
+ 1360288 string characters out of 6129482
+ 2136020 words of memory out of 5000000
+ 64165 multiletter control sequences out of 15000+600000
  695988 words of font info for 308 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,19n,119p,898b,2258s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2969,10 +2969,10 @@ st/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2019/texm
 f-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2019/texmf-
 dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2019/texmf-dist/fo
 nts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on mechanics-manifolds.pdf (34 pages, 679676 bytes).
+Output written on mechanics-manifolds.pdf (35 pages, 686259 bytes).
 PDF statistics:
- 1467 PDF objects out of 1728 (max. 8388607)
- 1311 compressed objects within 14 object streams
- 578 named destinations out of 1000 (max. 500000)
- 40634 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 1495 PDF objects out of 1728 (max. 8388607)
+ 1338 compressed objects within 14 object streams
+ 594 named destinations out of 1000 (max. 500000)
+ 40642 words of extra memory for PDF output out of 42996 (max. 10000000)
 
