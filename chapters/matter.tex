@@ -48,12 +48,104 @@ so it has to be a massless particle, postulate~\ref{item:massless}.
 or rather: Presence of \textit{fields} to which a particle couples, \textit{i.e.}\ there
 is an interaction therm with the field in the action.
 
-\begin{example}
+\begin{example}[(Coupling to Electromagnetic Field)]
     \begin{align*}
         S[\gamma;A] &= \int\diff\lambda \left(m\sqrt{g_{\gamma(\lambda)} ( v_{\gamma, \gamma(\lambda)} v_{\gamma, \gamma(\lambda)})}\right.\\
         &~+\underbrace{q A(v_{\gamma, \gamma(\lambda)})}_{L_\text{int}}\left.\vphantom{\sqrt{g_{\gamma(\lambda)}}}\right)\,,
     \end{align*}
     where $A$ is a \textit{covector field} on $\M$ (electromagnetic field).
     In $S[\gamma;A]$ the semicolon means that $A$ is fixed and the action should not be varied with respect to it.
+
+    Now we can use the Euler-Lagrange equations to get the equations of motion.
+    It is easier to first write out the Lagrangian in a chart.
+    \begin{equation*}
+        L = m \sqrt{g_{ab}\dot{\gamma}^a\dot{\gamma}^b} + A_c(\gamma(\lambda)) \dot{\gamma}(\lambda)^c\,.
+    \end{equation*}
+    We also know that the E.L.\ equations for the first part give $m\nabla_{v_{\gamma, \gamma(\lambda)}}
+    v_{\gamma, \gamma(\lambda)}$ or in a chart $m \dot{\gamma}^a\nabla_a \dot{\gamma}_m$.
+    Then,
+    \begin{align*}
+        \frac{\diff}{\diff \lambda}\frac{\partial L}{\partial \dot{\gamma}^m} &= 
+        m \dot{\gamma}^a\nabla_a \dot{\gamma}_m + \frac{\partial A_m}{\partial \gamma^n}\dot{\gamma}^n\,,\\
+        \frac{\partial L}{\partial \gamma^m} &= \frac{\partial A_n}{\partial \gamma^m}\dot{\gamma}^n\,,
+    \end{align*}
+    and so
+    \begin{align*}
+        0 &= \frac{\diff}{\diff \lambda}\frac{\partial L}{\partial \dot{\gamma}^m} - 
+        \frac{\partial L}{\partial \gamma^m}\\
+        &= 
+        m \dot{\gamma}^a\nabla_a \dot{\gamma}_m + \frac{\partial A_m}{\partial \gamma^n}\dot{\gamma}^n
+        - \frac{\partial A_n}{\partial \gamma^m}\dot{\gamma}^n\,.
+    \end{align*}
+    In general, I think $\partial/\partial\gamma^i$ should be $\partial/\partial x^i$, because in the
+    E.L.\ equations it should also be this way and in the end overall $x^i \to \gamma^i$,
+    \textit{i.e.}\ in the end it's evaluated on the curve.
+    Finally with $F_{ab} = \partial_a A_b - \partial_b A_a$ we arrive at
+    \begin{equation}
+        \boxed{%
+        m \left( \nabla_{v_\gamma}v_\gamma \right)^a = -q F^a{}_m \dot{\gamma}^m
+    }\,,
+    \end{equation}
+    or coordinate free
+    \begin{equation}
+        \boxed{%
+        m \left( \nabla_{v_\gamma}v_\gamma \right)^a =
+        -q \flat^{-1}\left( F(\cdot, v_\gamma) \right)
+    }\,,
+    \end{equation}
+    the \textit{Lorentz force} on a charged particle.
+
+    The coupling to the electromagnetic field like in the action above exactly yields the
+    Lorentz force law.
+    This is the reason why it is the right coupling.
+    Note that The action is still reparametrization invariant, because
+    $A(v_\gamma)\diff\lambda$ also is.
 \end{example}
 
+\subsection{Field Matter}
+\begin{defn}[Classical Field Matter]
+    \textit{Classical field matter} is any tensor field on spacetime whose equations
+    of motion derive from an action.
+    Classical here refers to non-quantum.
+\end{defn}
+\begin{example}[(Maxwell Theory)]
+    For simplicity assume the whole manifold $\M$ is covered by one chart.
+    \begin{equation}
+        S_\text{Maxwell}[A;g] = \frac{1}{4} \int_{\M} \diff x\,\underbrace{\sqrt{-g} F_{ab}F_{cd}g^{ac}g^{bd}}_\mathcal{L}\,.
+    \end{equation}
+    The minus sign by the determinant is because of the metric signature $(+---)$.
+    The spacetime metric $g$ is fixed for now.
+    Again, $F_{ab} = \partial a A_b - \partial_b A_a = 2 \partial_{[a}A_{b]} = 2 (\nabla_{[a}A)_{b]}$.
+    The Euler-Lagrange equations are
+    \begin{equation}
+        0 = \frac{\partial \mathcal{L}}{A_m} 
+        - \frac{\partial}{\partial x^s}\left( \frac{\partial \mathcal{L}}{\partial(\partial_s A_m)} \right)\,.
+    \end{equation}
+    After some calculation one arrives at
+    \begin{equation}
+        \boxed{%
+        \left( \nabla_{\frac{\partial}{\partial x^m}} F \right)^{ma} = j^a
+    }\,,
+    \end{equation}
+    the \textit{inhomogeneous} Maxwell equations.
+    The current $j$ is zero for our case, but if we had a coupling $\sqrt{-g} A(j)$ in the Lagrangian
+    it would be nonzero. For \textit{e.g.}\ a point particle it would be $j = q v_\gamma$.
+    The \textit{homogeneous} Maxwell equations are
+    \begin{equation}
+        \partial_{[a}F_{bc} = \left( \nabla_{[a}F \right)_{bc]} = 0\,.
+    \end{equation}
+    In components the equations would be
+    \begin{align*}
+        \nabla_m F^{ma} &= j^a\,,\\
+        \epsilon^{abcd}\nabla_a F_{bc} &= 0\,.
+    \end{align*}
+\end{example}
+
+Another example that is well-liked by textbooks is the \textit{Klein-Gordon} field.
+\begin{example}[(Klein-Gordon Field)]
+    \begin{equation*}
+        S_\text{K.G.}[\phi] := \int_m\difff^4\!x\sqrt{-g} \left[ 
+        g^{ab}(\partial_a \phi) (\partial_b \phi) - m^2 \phi^2 \right]\,,
+    \end{equation*}
+    where $\phi$ is a (0,0)-tensor field.
+\end{example}
