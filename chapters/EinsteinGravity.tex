@@ -1,0 +1,123 @@
+\section{Einstein Gravity}
+Recall that in Newtonian spacetime we were able to reformulate the Poisson law
+$\Delta \phi = 4 \pi G_\text{N} \rho$
+in terms of the \textit{Newtonian spacetime} curvature as
+\begin{equation*}
+    R_{00} = 4 \pi G_\text{N} \rho\,,
+\end{equation*}
+This prompted Einstein to postulate that the relativistic field 
+equations for the Lorentzian metric $g$ of relativistic spacetime
+is 
+\begin{equation*}
+    R_{ab} = 8 \pi G_\text{N} T_{ab}\,.
+\end{equation*}
+However, this equations suffers from a problem:
+\begin{equation*}
+    (\nabla_a T)^{ab} = 0\,,
+\end{equation*}
+\begin{note}
+    Schuller states that this is true because $T$ comes from an action and
+    could have been formulated without the choice of coordinated.
+    I don't know why.
+\end{note}
+But generally
+\begin{equation*}
+    (\nabla_a R)^{ab} \neq 0\,,
+\end{equation*}
+\subsection{Hilbert}
+Hilbert was a specialist for variational principles.
+To find the appropriate left hand side of the gravitational field equations,
+Hilbert suggested to start from the (simplest) action
+\begin{equation}
+    S_\text{Hilbert}[g] = \int\limits_\M \sqrt{-g} R_{ab}g^{ab}\,.
+\end{equation}
+Varying of $S_\text{Hilbert}$ yields $G^{ab}$.
+
+\paragraph{Variation of the Hilbert action}
+\begin{align*}
+    &0 \stackrel{!}{=} \delta_g S_\text{Hilbert}[g] = \delta_g \int\limits_\M \sqrt{-g} R_{ab}g^{ab}\\
+    &= \int\limits_\M \left( \delta_g\sqrt{-g} g^{ab} R_{ab} + \sqrt{-g} \delta_g g^{ab} R_{ab}
+    + \sqrt{-g} g^{ab} \delta_g R_{ab}\right)
+\end{align*}
+We look at the different terms separately:
+\begin{itemize}
+    \item 
+        \begin{equation}
+            \delta_g\sqrt{-g} = \frac{- (\det g) g^{mn}\delta g_{mn}}{2 \sqrt{-g}}\,,
+        \end{equation}
+        where we have used that $\delta_g \det(g) = \det(g) g^{mn}\delta g_{mn}$,
+        which can be derived from $\det(g) = \exp \mathrm{tr} \ln g$ or how I remember it:
+        ``ln det = trace log''.
+    \item 
+        From $g^{ab}g_{bc} = \delta^a_c$ follows
+        \begin{equation}
+            \delta g^{ab} = - g^{am} g^{bn} \delta g_{mn}\,.
+        \end{equation}
+    \item Variation of the Ricci tensor:
+        We go to normal coordinates where $\Gamma = 0$,
+        \begin{align*}
+            \delta R_{ab} &= \delta \partial_b \Gamma^m{}_{am} -
+            \delta \partial_m \Gamma^m{}_{ab} + \delta(\cancel{\Gamma\Gamma} - \cancel{\Gamma\Gamma})\\
+            &= \partial_b \delta \Gamma^{m}{}_{am} - \partial_m \delta \Gamma^m{}_{ab}\,.
+        \end{align*}
+        Now $\delta \Gamma^m{ab}$ is the difference between two $\Gamma$s.
+        Remember that $\Gamma - \tilde{\Gamma}$ is a tensor, because under coordinate transformation
+        $\Gamma$ picks up a wrong term ($\Gamma$ is no tensor),
+        but $\tilde\Gamma$ pics up the same term and so those cancel and the difference between
+        two connection coefficients is a tensor.
+
+        Because we are in normal coordinates and $\delta \Gamma$ is a tensor, we can now just write
+        \begin{equation*}
+            = \nabla_b \delta \Gamma^{m}{}_{am} - \nabla_m \delta \Gamma^m{}_{ab}
+        \end{equation*}
+        Introducing new notation
+        \begin{align}
+            (\nabla_b A)^i{}_j =: A^i{}_{j;b}\,,
+            \partial_b A^i{}_j =: A^i{}_{j,b}\,,
+        \end{align}
+        we have, using $\nabla g = 0$,
+        \begin{align*}
+            \sqrt{-g} g^{ab} \delta R_{ab} &= \sqrt{-g} \left( g^{ab} \delta \Gamma^m{}_{am} \right)_{;b}\\
+             &~- \sqrt{-g} \left( g^{ab} \delta \Gamma^m{}_{ab} \right)_{;m}\\
+        \end{align*}
+        \begin{align*}
+             &= \sqrt{-g} \left( g^{ab} \delta \Gamma^m{}_{am} \right)_{,b} - 
+              \sqrt{-g} \left( g^{ab} \delta \Gamma^m{}_{ab} \right)_{,m}\\
+              &= \left(\sqrt{-g} A^a\right)_{,a} - \left( \sqrt{-g} B^b \right)_{,b}\,.
+        \end{align*}
+        Collecting the terms
+        \begin{align*}
+            \delta S_\text{Hilbert} &= \int\limits_\M
+            \left[ \frac{1}{2} \sqrt{-g} g^{mn} \delta g_{mn} g^{ab}R_{ab}\right.\\
+        &~\left.- \sqrt{-g} g^{am}g^{bn}\delta g_{nm}R_{ab} \right. \\
+        &~\left.+ \left( \sqrt{-g} A^a \right)_{,a} - \left( \sqrt{-g} B^b \right)_{,b} \right]\,.
+        \end{align*}
+        The last two terms are surface terms and to get the equations of motion we can ignore them.
+        We end up with
+        \begin{equation}
+            \delta S_\text{Hilbert} = \int\limits_\M \sqrt{-g}
+            \underbrace{\left[ \frac{1}{2} g^{mn} R - R^{mn} \right]}_{G^{mn}} \delta g_{mn}\,,
+        \end{equation}
+        with $\delta g_{mn}$ an arbitrary variation.
+        We have defined the \textit{Einstein Tensor}
+        \begin{equation}
+            G^{mn} = \frac{1}{2} g^{mn} R - R^{mn}\,.
+        \end{equation}
+        Hence, Hilbert, from this ``mathematical argument'' concluded that
+        one may take
+        \begin{equation}
+            \boxed{%
+            G^{mn} = \frac{1}{2} g^{mn} R - R^{mn} = 8 \pi G_\text{N} T_{ab}
+        }
+        \label{eq:EFEs}
+        \end{equation}
+        and in fact Einstein by physical arguments arrived at the same result.
+        Equation~(\ref{eq:EFEs}) is called \textit{Einstein Field Equations} and the action is
+        also called \textit{Einstein-Hilbert action}
+        \begin{equation}
+            \boxed{%
+                S_\text{EH}[g] = \int\limits_\M \sqrt{-g} R
+            }\,.
+        \end{equation}
+\end{itemize}
+
