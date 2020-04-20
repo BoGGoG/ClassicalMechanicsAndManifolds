@@ -10,17 +10,21 @@ equations for the Lorentzian metric $g$ of relativistic spacetime
 is 
 \begin{equation*}
     R_{ab} = 8 \pi G_\text{N} T_{ab}\,.
+    \label{eq:ProposedEFEs}
 \end{equation*}
 However, this equations suffers from a problem:
+The divergence of the energy momentum tensor should be zero,
 \begin{equation*}
-    (\nabla_a T)^{ab} = 0\,,
+    (\nabla_a T)^{ab} = 0\,.
 \end{equation*}
 \begin{note}
     Schuller states that this is true because $T$ comes from an action and
-    could have been formulated without the choice of coordinated.
-    I don't know why.
+    could have been formulated without the choice of coordinates,
+    which gives this kind of conservation law because of Noether's theorem.
+    I don't understand the details.
 \end{note}
-But generally
+But generally the left hand side of eq.~(\ref{eq:ProposedEFEs}) does not have
+zero divergence,
 \begin{equation*}
     (\nabla_a R)^{ab} \neq 0\,,
 \end{equation*}
@@ -31,13 +35,20 @@ Hilbert suggested to start from the (simplest) action
 \begin{equation}
     S_\text{Hilbert}[g] = \int\limits_\M \sqrt{-g} R_{ab}g^{ab}\,.
 \end{equation}
-Varying of $S_\text{Hilbert}$ yields $G^{ab}$.
+Variation of $S_\text{Hilbert}$ with respect to the metric yields $G^{ab}$.
+\begin{note}[Simplest function of the metric]
+    $R_{ab}$ is actually the simplest function one can build from the
+    metric. From the zeroth derivative of the metric one cannot build anything
+    interesting, from the first one can't build any tensor and from the second
+    one can build $R_{ab}$.
+\end{note}
+
 
 \paragraph{Variation of the Hilbert action}
 \begin{align*}
     &0 \stackrel{!}{=} \delta_g S_\text{Hilbert}[g] = \delta_g \int\limits_\M \sqrt{-g} R_{ab}g^{ab}\\
-    &= \int\limits_\M \left( \delta_g\sqrt{-g} g^{ab} R_{ab} + \sqrt{-g} \delta_g g^{ab} R_{ab}
-    + \sqrt{-g} g^{ab} \delta_g R_{ab}\right)
+    &= \int\limits_\M \left( (\delta_g\sqrt{-g}) g^{ab} R_{ab} + \sqrt{-g} (\delta_g g^{ab}) R_{ab}
+    + \sqrt{-g} g^{ab} (\delta_g R_{ab})\right)
 \end{align*}
 We look at the different terms separately:
 \begin{itemize}
@@ -54,13 +65,13 @@ We look at the different terms separately:
             \delta g^{ab} = - g^{am} g^{bn} \delta g_{mn}\,.
         \end{equation}
     \item Variation of the Ricci tensor:
-        We go to normal coordinates where $\Gamma = 0$,
+        We go to normal coordinates (at a point) where $\Gamma = 0$,
         \begin{align*}
             \delta R_{ab} &= \delta \partial_b \Gamma^m{}_{am} -
             \delta \partial_m \Gamma^m{}_{ab} + \delta(\cancel{\Gamma\Gamma} - \cancel{\Gamma\Gamma})\\
             &= \partial_b \delta \Gamma^{m}{}_{am} - \partial_m \delta \Gamma^m{}_{ab}\,.
         \end{align*}
-        Now $\delta \Gamma^m{ab}$ is the difference between two $\Gamma$s.
+        Now $\delta \Gamma^m_{ab}$ is the difference between two $\Gamma$s.
         Remember that $\Gamma - \tilde{\Gamma}$ is a tensor, because under coordinate transformation
         $\Gamma$ picks up a wrong term ($\Gamma$ is no tensor),
         but $\tilde\Gamma$ pics up the same term and so those cancel and the difference between
@@ -68,26 +79,27 @@ We look at the different terms separately:
 
         Because we are in normal coordinates and $\delta \Gamma$ is a tensor, we can now just write
         \begin{equation*}
-            = \nabla_b \delta \Gamma^{m}{}_{am} - \nabla_m \delta \Gamma^m{}_{ab}
+            = \nabla_b \delta \Gamma^{m}{}_{am} - \nabla_m \delta \Gamma^m{}_{ab}\,,
         \end{equation*}
+        since the difference between $\partial$ and $\nabla$ is a $\Gamma = 0$ in
+        normal coordinates.
         Introducing new notation
         \begin{align}
-            (\nabla_b A)^i{}_j =: A^i{}_{j;b}\,,
-            \partial_b A^i{}_j =: A^i{}_{j,b}\,,
+            (\nabla_b A)^i{}_j &=: A^i{}_{j;b}\,,\\
+            \partial_b A^i{}_j &=: A^i{}_{j,b}\,.
         \end{align}
         we have, using $\nabla g = 0$,
         \begin{align*}
-            \sqrt{-g} g^{ab} \delta R_{ab} &= \sqrt{-g} \left( g^{ab} \delta \Gamma^m{}_{am} \right)_{;b}\\
-             &~- \sqrt{-g} \left( g^{ab} \delta \Gamma^m{}_{ab} \right)_{;m}\\
-        \end{align*}
-        \begin{align*}
-             &= \sqrt{-g} \left( g^{ab} \delta \Gamma^m{}_{am} \right)_{,b} - 
-              \sqrt{-g} \left( g^{ab} \delta \Gamma^m{}_{ab} \right)_{,m}\\
+            \sqrt{-g}& g^{ab} \delta R_{ab} = \sqrt{-g} \left( g^{ab} \delta \Gamma^m{}_{am} \right)_{;b}\\
+             &~ \quad\quad\quad - \sqrt{-g} \left( g^{ab} \delta \Gamma^m{}_{ab} \right)_{;m}\\
+             &= \sqrt{-g} \left( g^{ab} \delta \Gamma^m{}_{am} \right)_{;b} - 
+              \sqrt{-g} \left( g^{ab} \delta \Gamma^m{}_{ab} \right)_{;m}\\
+              &= \left(\sqrt{-g} A^a\right)_{;a} - \left( \sqrt{-g} B^b \right)_{;b}\\
               &= \left(\sqrt{-g} A^a\right)_{,a} - \left( \sqrt{-g} B^b \right)_{,b}\,.
         \end{align*}
-        Collecting the terms
+        Collecting the terms, one obtains:
         \begin{align*}
-            \delta S_\text{Hilbert} &= \int\limits_\M
+            0 = \delta S_\text{Hilbert} &= \int\limits_\M
             \left[ \frac{1}{2} \sqrt{-g} g^{mn} \delta g_{mn} g^{ab}R_{ab}\right.\\
         &~\left.- \sqrt{-g} g^{am}g^{bn}\delta g_{nm}R_{ab} \right. \\
         &~\left.+ \left( \sqrt{-g} A^a \right)_{,a} - \left( \sqrt{-g} B^b \right)_{,b} \right]\,.
@@ -96,18 +108,18 @@ We look at the different terms separately:
         We end up with
         \begin{equation}
             \delta S_\text{Hilbert} = \int\limits_\M \sqrt{-g}
-            \underbrace{\left[ \frac{1}{2} g^{mn} R - R^{mn} \right]}_{G^{mn}} \delta g_{mn}\,,
+            \underbrace{\left[ \frac{1}{2} g^{mn} R - R^{mn} \right]}_{- G^{mn}} \delta g_{mn}\,,
         \end{equation}
         with $\delta g_{mn}$ an arbitrary variation.
         We have defined the \textit{Einstein Tensor}
         \begin{equation}
-            G^{mn} = \frac{1}{2} g^{mn} R - R^{mn}\,.
+            G^{mn} = R^{mn} - \frac{1}{2} g^{mn} R \,.
         \end{equation}
-        Hence, Hilbert, from this ``mathematical argument'' concluded that
+        Hence, Hilbert from this ``mathematical argument'' concluded that
         one may take
         \begin{equation}
             \boxed{%
-            G^{mn} = \frac{1}{2} g^{mn} R - R^{mn} = 8 \pi G_\text{N} T_{ab}
+            G^{mn} = R^{mn} - \frac{1}{2} g^{mn} R = 8 \pi G_\text{N} T_{ab}
         }
         \label{eq:EFEs}
         \end{equation}
@@ -120,4 +132,60 @@ We look at the different terms separately:
             }\,.
         \end{equation}
 \end{itemize}
+\paragraph{Solution of the $(\nabla_a T)^{ab} = 0$ issue:}
+One can show that the \textit{Einstein curvature tensor}
+\begin{equation}
+    G_{ab} = R_{ab} - \frac{1}{2} g_{ab} R\,,
+\end{equation}
+satisfies the so-called \emph{contracted differential Bianci identity}
+\begin{equation}
+    (\nabla_a G)^{ab} = 0\,,
+\end{equation}
+and so the Einstein equations~(\ref{eq:EFEs}) fulfill energy momentum conservation
+$(\nabla_a T)^{ab} = 0$.
+\begin{note}[Conservation of the Einstein Tensor]
+    Indeed $(\nabla_a G)^{ab}$ has to hold for the same reason for which
+    $(\nabla_a T)^{ab}$ has to hold, namely that they were derived from
+    an action.
+\end{note}
 
+\subsection{Variants of the Field Equations}
+\begin{enumerate}[label=(\alph*)]
+    \item A simple rewriting (forgetting constants in front of $T$):
+        \begin{align*}
+            R_{ab} - \frac{1}{2} g_{ab} R &= T_{ab} \quad\quad \Big|\, g^{ab} \\
+            R - 2R &= T_{ab}g^{ab} = T \\
+            R &= -T \\
+            R_{ab} &= T_{ab} - \frac{1}{2}T g_{ab} =: \hat{T}_{ab}
+        \end{align*}
+        This is just a modified energy-momentum, that now of course
+        does no longer fulfill $(\nabla_a \hat{T})^{ab} \neq 0$.
+    \item Cosmological constant:
+        \begin{equation}
+            S_\text{EH}[g] := \int_\M \sqrt{-g} \left( R + 2 \Lambda \right) \,,
+        \end{equation}
+        with the cosmological constant $\Lambda$, which does not destroy
+        the conservation of the energy momentum tensor.
+        This can be interpreted as a contribution to curvature or to matter.
+        If we understand it as a contribution $-\frac{1}{2}\Lambda g_{ab}$ to matter,
+        then it is like a constant extra energy density all over the universe,
+        ``dark energy''!
+        You cannot see it, but it contributes to the energy density of the universe.
+        \begin{equation}
+            R_{ab} - \frac{1}{2} g_{ab} R = 8\pi G_\text{N}T_{ab} - \frac{1}{2} \Lambda g_{ab}\,.
+        \end{equation}
+        History:
+        \begin{itemize}
+            \item[1915:] $\Lambda <0$: Einstein wanted a non-expanding universe.
+            \item[>1915:] $\Lambda = 0$: Hubble.
+            \item[today:] $\Lambda > 0$ accelerated expanding universe.
+        \end{itemize}
+        The measured $\Lambda$ is very small.
+        A good idea is that it might come from the (quantum) vacuum fluctuation of the
+        standard matter fields, but if one actually does the calculation one gets
+        \begin{equation}
+            \Lambda_\text{calc} = 10^{120} \cdot \Lambda_\text{obs}\,,
+        \end{equation}
+        which is the \textsc{worst prediction of physics}.
+        
+\end{enumerate}

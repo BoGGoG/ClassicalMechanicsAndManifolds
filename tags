@@ -1,0 +1,459 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/a3c87ab/
+Algebraic Relevance of Riem	chapters/parallelTransport.tex	/^\\subsubsection{Algebraic Relevance of Riem}$/;"	b	subsection:Parallel Transport \\& Curvature""Curvature
+Answer	chapters/newtonianSpacetime.tex	/^\\paragraph{Answer}: No!$/;"	P	section:Newtonian Spacetime is Curved!?
+Arrow1Lend	figures/3vector.svg	/^       inkscape:stockid="Arrow1Lend">$/;"	d
+Arrow1Lend	figures/3vector.svg	/^       inkscape:stockid="Arrow1Lend">$/;"	i
+Arrow1Lend	figures/PartitionOfUnity.svg	/^       inkscape:isstock="true">$/;"	d
+Arrow1Lend	figures/PartitionOfUnity.svg	/^       inkscape:isstock="true">$/;"	i
+Arrow1Lend	figures/lightCone.svg	/^       inkscape:stockid="Arrow1Lend">$/;"	d
+Arrow1Lend	figures/lightCone.svg	/^       inkscape:stockid="Arrow1Lend">$/;"	i
+Arrow1Lend	figures/observers.svg	/^       inkscape:isstock="true">$/;"	d
+Arrow1Lend	figures/observers.svg	/^       inkscape:isstock="true">$/;"	i
+Arrow1Lend-3	figures/PartitionOfUnity.svg	/^       inkscape:stockid="Arrow1Lend">$/;"	d
+Arrow1Lend-3	figures/PartitionOfUnity.svg	/^       inkscape:stockid="Arrow1Lend">$/;"	i
+Arrow1Lend-7	figures/observers.svg	/^       inkscape:stockid="Arrow1Lend">$/;"	d
+Arrow1Lend-7	figures/observers.svg	/^       inkscape:stockid="Arrow1Lend">$/;"	i
+Arrow1Lstart	figures/lightCone.svg	/^       inkscape:stockid="Arrow1Lstart">$/;"	d
+Arrow1Lstart	figures/lightCone.svg	/^       inkscape:stockid="Arrow1Lstart">$/;"	i
+Arrow1Mend	figures/3vector.svg	/^       inkscape:stockid="Arrow1Mend">$/;"	d
+Arrow1Mend	figures/3vector.svg	/^       inkscape:stockid="Arrow1Mend">$/;"	i
+Arrow1Mend-3	figures/3vector.svg	/^       inkscape:isstock="true">$/;"	d
+Arrow1Mend-3	figures/3vector.svg	/^       inkscape:isstock="true">$/;"	i
+Arrow1Mend-9	figures/3vector.svg	/^       inkscape:isstock="true">$/;"	d
+Arrow1Mend-9	figures/3vector.svg	/^       inkscape:isstock="true">$/;"	i
+Autoparallel Equation	chapters/parallelTransport.tex	/^\\subsection{Autoparallel Equation} $/;"	u	section:Parallel Transport \\& Curvature
+Autoparallelly Transported Curves	chapters/parallelTransport.tex	/^\\subsection{Autoparallelly Transported Curves}$/;"	u	section:Parallel Transport \\& Curvature
+Bases	chapters/vectorSpaces.tex	/^\\subsection{Bases}$/;"	u	section:Vector Spaces
+Bundles and Vector Fields	chapters/tangentSpaces.tex	/^\\subsection{Bundles and Vector Fields}$/;"	u	section:Tangent Spaces
+Carroll	mybib.bib	/^@BOOK{Carroll,$/;"	b
+Change of Gammas Under Change of Chart	chapters/connection.tex	/^\\subsection[Change of Gammas Under Change of Chart]{Change of $\\Gamma$s Under Change of Chart}$/;"	u	section:Connections/Covariant Derivatives
+Change of variables	chapters/integrationManifolds.tex	/^\\paragraph{Change of variables}$/;"	P	subsection:Integration on Manifolds""Review of Integration
+Change of vector components under a change of charts	chapters/tangentSpaces.tex	/^\\subsection{Change of vector components under a change of charts}$/;"	u	section:Tangent Spaces
+Chart Transition Maps	chapters/manifolds.tex	/^\\subsection{Chart Transition Maps}$/;"	u	section:Manifolds
+Components	chapters/symmetry.tex	/^\\paragraph{Components} $\\phi_*^a{}_i$ of $\\phi_*$ wrt.\\ two charts$/;"	P	subsection:Symmetry""Push-Forward
+Components	chapters/symmetry.tex	/^\\paragraph{Components} of the pull-back wrt.\\ charts are the same as for the pull-back,$/;"	P	subsection:Symmetry""Pull-Back
+Components of a tensor	chapters/vectorSpaces.tex	/^\\subsection{Components of a tensor}$/;"	u	section:Vector Spaces
+Components of vectors	chapters/tangentSpaces.tex	/^\\subsection{Components of vectors}$/;"	u	section:Tangent Spaces
+Connections/Covariant Derivatives	chapters/connection.tex	/^\\section{Connections\/Covariant Derivatives}$/;"	s
+Consequence:	chapters/relativisticSpacetime.tex	/^\\paragraph{Consequence:}$/;"	P	subsection:Relativistic Spacetime""Observers
+Continuous Maps	chapters/manifolds.tex	/^\\subsection{Continuous Maps}$/;"	u	section:Manifolds
+Convention:	chapters/newtonianSpacetime.tex	/^\\paragraph{Convention:}$/;"	P	subsection:Newtonian Spacetime is Curved!?""Foundations of the Geometric Formulation of Newton's Axioms
+Cotangent spaces	chapters/tangentSpaces.tex	/^\\subsection{Cotangent spaces}$/;"	u	section:Tangent Spaces
+Curvature	chapters/parallelTransport.tex	/^\\subsection{Curvature}$/;"	u	section:Parallel Transport \\& Curvature
+Diffeomorphisms	chapters/diffeomorphisms.tex	/^\\section{Diffeomorphisms}$/;"	s
+Differentiable Manifolds	chapters/diffMan.tex	/^\\section{Differentiable Manifolds}$/;"	s
+Directional Derivatives of Tensor Fields	chapters/connection.tex	/^\\subsection{Directional Derivatives of Tensor Fields}$/;"	u	section:Connections/Covariant Derivatives
+Einstein Gravity	chapters/EinsteinGravity.tex	/^\\section{Einstein Gravity}$/;"	s
+Energy-Momentum Tensor of Matter Fields	chapters/matter.tex	/^\\subsection{Energy-Momentum Tensor of Matter Fields}$/;"	u	section:Matter
+Field Matter	chapters/matter.tex	/^\\subsection{Field Matter}$/;"	u	section:Matter
+Flow of a Complete Vector Field	chapters/flow.tex	/^\\section{Flow of a Complete Vector Field}$/;"	s
+Foundations of the Geometric Formulation of Newton's Axioms	chapters/newtonianSpacetime.tex	/^\\subsection{Foundations of the Geometric Formulation of Newton's Axioms}$/;"	u	section:Newtonian Spacetime is Curved!?
+Geodesics	chapters/metricManifolds.tex	/^\\subsection{Geodesics}$/;"	u	section:Metric Manifolds
+Geometric Relevance of Riem	chapters/newtonianSpacetime.tex	/^\\subsubsection{Geometric Relevance of Riem}$/;"	b	subsection:Newtonian Spacetime is Curved!?""Foundations of the Geometric Formulation of Newton's Axioms
+Geometric Relevance of Riem	chapters/parallelTransport.tex	/^\\subsubsection{Geometric Relevance of Riem}$/;"	b	subsection:Parallel Transport \\& Curvature""Curvature
+Hilbert	chapters/EinsteinGravity.tex	/^\\subsection{Hilbert}$/;"	u	section:Einstein Gravity
+Induced Metric	chapters/symmetry.tex	/^\\subsection{Induced Metric}$/;"	u	section:Symmetry
+Integration on Manifolds	chapters/integrationManifolds.tex	/^\\section{Integration on Manifolds}$/;"	s
+Integration on One Chart Domain	chapters/integrationManifolds.tex	/^            \\subsection{Integration on One Chart Domain}$/;"	u	section:Integration on Manifolds
+Integration on a Chart	chapters/integrationManifolds.tex	/^\\subsection{Integration on a Chart}$/;"	u	section:Integration on Manifolds
+Integration on the Entire Manifold	chapters/integrationManifolds.tex	/^                \\subsection{Integration on the Entire Manifold}$/;"	u	section:Integration on Manifolds
+Length of a Curve	chapters/metricManifolds.tex	/^\\subsection{Length of a Curve}$/;"	u	section:Metric Manifolds
+Lie Derivative	chapters/flow.tex	/^    \\subsection{Lie Derivative}$/;"	u	section:Flow of a Complete Vector Field
+Lie Subalgebras of the Lie Algabra of Vector Fields	chapters/flow.tex	/^\\subsection[Lie Subalgebras of the Lie Algabra of Vector Fields]{Lie Subalgebras of the$/;"	u	section:Flow of a Complete Vector Field
+Lie algebra:	chapters/flow.tex	/^    \\paragraph{Lie algebra:}$/;"	P	subsection:Flow of a Complete Vector Field""Lie Subalgebras of the Lie Algabra of Vector Fields
+Lie subalgebra:	chapters/flow.tex	/^    \\paragraph{Lie subalgebra:}$/;"	P	subsection:Flow of a Complete Vector Field""Lie Subalgebras of the Lie Algabra of Vector Fields
+Manifold Philosophy	chapters/manifolds.tex	/^\\subsection{Manifold Philosophy}$/;"	u	section:Manifolds
+Manifolds	chapters/manifolds.tex	/^\\section{Manifolds}$/;"	s
+Mathematical Notes on Riemannian Geometry, General Relativity and Lagrangian Mechanics	README.md	/^# Mathematical Notes on Riemannian Geometry, General Relativity and Lagrangian Mechanics$/;"	c
+Matter	chapters/matter.tex	/^\\section{Matter}$/;"	s
+Metric Manifolds	chapters/metricManifolds.tex	/^\\section{Metric Manifolds}$/;"	s
+New Structure on M O A to Define Nabla	chapters/connection.tex	/^\\subsection[New Structure on (M,O,A) to Define Nabla]{New Structure on $(\\M, \\mathcal{O}, \\m/;"	u	section:Connections/Covariant Derivatives
+Newton 1:	chapters/newtonianSpacetime.tex	/^\\paragraph{Newton 1:} The worldline of a particle under the influence$/;"	P	subsection:Newtonian Spacetime is Curved!?""Foundations of the Geometric Formulation of Newton's Axioms
+Newton 2:	chapters/newtonianSpacetime.tex	/^\\paragraph{Newton 2:}$/;"	P	subsection:Newtonian Spacetime is Curved!?""Foundations of the Geometric Formulation of Newton's Axioms
+Newtonian Spacetime is Curved!?	chapters/newtonianSpacetime.tex	/^\\section{Newtonian Spacetime is Curved!?}$/;"	s
+Normal Coordinates	chapters/connection.tex	/^\\subsection{Normal Coordinates}$/;"	u	section:Connections/Covariant Derivatives
+Notes	todo.md	/^Notes$/;"	c
+Observers	chapters/relativisticSpacetime.tex	/^\\subsection{Observers}$/;"	u	section:Relativistic Spacetime
+Parallel Transport \\& Curvature	chapters/parallelTransport.tex	/^\\section{Parallel Transport \\& Curvature}$/;"	s
+Parallelity of Vector Fields	chapters/parallelTransport.tex	/^\\subsection{Parallelity of Vector Fields}$/;"	u	section:Parallel Transport \\& Curvature
+Point Matter	chapters/matter.tex	/^\\subsection{Point Matter}$/;"	u	section:Matter
+Proof	chapters/newtonianSpacetime.tex	/^\\paragraph{Proof}:$/;"	P	section:Newtonian Spacetime is Curved!?
+Pull-Back	chapters/symmetry.tex	/^\\subsection{Pull-Back}$/;"	u	section:Symmetry
+Push-Forward	chapters/symmetry.tex	/^\\subsection{Push-Forward}$/;"	u	section:Symmetry
+Relativistic Spacetime	chapters/relativisticSpacetime.tex	/^\\section{Relativistic Spacetime}$/;"	s
+Review of Integration	chapters/integrationManifolds.tex	/^\\subsection[Review of Integration]{Review of Integration on $\\mathbb{R}^d$}$/;"	u	section:Integration on Manifolds
+Riemann Curvature Tensor	chapters/parallelTransport.tex	/^\\subsubsection{Riemann Curvature Tensor}$/;"	b	subsection:Parallel Transport \\& Curvature""Curvature
+Role of the Lorentz Transformations	chapters/relativisticSpacetime.tex	/^\\subsection{Role of the Lorentz Transformations}$/;"	u	section:Relativistic Spacetime
+Schuller15	mybib.bib	/^@Misc{Schuller15,$/;"	n
+Signature	chapters/metricManifolds.tex	/^\\subsection{Signature}$/;"	u	section:Metric Manifolds
+Solution of the $(\\nabla_a T)^{ab} = 0$ issue:	chapters/EinsteinGravity.tex	/^\\paragraph{Solution of the $(\\nabla_a T)^{ab} = 0$ issue:}$/;"	P	subsection:Einstein Gravity""Hilbert
+Symmetry	chapters/flow.tex	/^    \\subsection{Symmetry}$/;"	u	section:Flow of a Complete Vector Field
+Symmetry	chapters/symmetry.tex	/^\\section{Symmetry}$/;"	s
+Tangent Spaces	chapters/tangentSpaces.tex	/^\\section{Tangent Spaces}$/;"	s
+Tensor Fields	chapters/tangentSpaces.tex	/^\\subsection{Tensor Fields}$/;"	u	section:Tangent Spaces
+The C infinity module of smooth vector fields	chapters/tangentSpaces.tex	/^\\subsection[The C infinity module of smooth vector fields]{The $C^\\infty(\\mathcal{M})$ Module/;"	u	section:Tangent Spaces
+The metric g	chapters/metricManifolds.tex	/^\\subsection[The metric g]{The metric $g$}$/;"	u	section:Metric Manifolds
+ToDo	todo.md	/^ToDo$/;"	c
+Topology	chapters/manifolds.tex	/^\\subsection{Topology}$/;"	u	section:Manifolds
+Torsion	chapters/parallelTransport.tex	/^\\subsection{Torsion}$/;"	u	section:Parallel Transport \\& Curvature
+TriangleInL	figures/PartitionOfUnity.svg	/^       inkscape:isstock="true">$/;"	d
+TriangleInL	figures/PartitionOfUnity.svg	/^       inkscape:isstock="true">$/;"	i
+Variants of the Field Equations	chapters/EinsteinGravity.tex	/^\\subsection{Variants of the Field Equations}$/;"	u	section:Einstein Gravity
+Variation of the Hilbert action	chapters/EinsteinGravity.tex	/^\\paragraph{Variation of the Hilbert action}$/;"	P	subsection:Einstein Gravity""Hilbert
+Vector Spaces	chapters/vectorSpaces.tex	/^\\section{Vector Spaces}$/;"	s
+Vectors and Linear Maps	chapters/vectorSpaces.tex	/^\\subsection{Vectors and Linear Maps}$/;"	u	section:Vector Spaces
+Velocities, Tangent Spaces	chapters/tangentSpaces.tex	/^\\subsection{Velocities, Tangent Spaces}$/;"	u	section:Tangent Spaces
+Volume Forms	chapters/integrationManifolds.tex	/^        \\subsection{Volume Forms} $/;"	u	section:Integration on Manifolds
+With external forces:	chapters/matter.tex	/^\\paragraph{With external forces:}$/;"	P	subsection:Matter""Point Matter
+Without external forces:	chapters/matter.tex	/^\\paragraph{Without external forces:}$/;"	P	subsection:Matter""Point Matter
+base	figures/3vector.svg	/^     id="base" \/>$/;"	i
+base	figures/PartitionOfUnity.svg	/^     inkscape:window-maximized="0">$/;"	i
+base	figures/lightClock.svg	/^     id="base" \/>$/;"	i
+base	figures/lightCone.svg	/^     inkscape:window-maximized="0">$/;"	i
+base	figures/observers.svg	/^     inkscape:window-maximized="0" \/>$/;"	i
+base	figures/spacetimeLightCones.svg	/^     id="base">$/;"	i
+cc	figures/3vector.svg	/^   width="210mm">$/;"	n	uri:http://creativecommons.org/ns#
+cc	figures/PartitionOfUnity.svg	/^   sodipodi:docname="PartitionOfUnity.svg">$/;"	n	uri:http://creativecommons.org/ns#
+cc	figures/lightClock.svg	/^   width="210mm">$/;"	n	uri:http://creativecommons.org/ns#
+cc	figures/lightCone.svg	/^   sodipodi:docname="lightCone.svg">$/;"	n	uri:http://creativecommons.org/ns#
+cc	figures/observers.svg	/^   sodipodi:docname="observers.svg">$/;"	n	uri:http://creativecommons.org/ns#
+cc	figures/spacetimeLightCones.svg	/^   width="210mm">$/;"	n	uri:http://creativecommons.org/ns#
+clipPath10382	figures/3vector.svg	/^       clipPathUnits="userSpaceOnUse">$/;"	d
+clipPath10382	figures/3vector.svg	/^       clipPathUnits="userSpaceOnUse">$/;"	i
+dc	figures/3vector.svg	/^   width="210mm">$/;"	n	uri:http://purl.org/dc/elements/1.1/
+dc	figures/PartitionOfUnity.svg	/^   sodipodi:docname="PartitionOfUnity.svg">$/;"	n	uri:http://purl.org/dc/elements/1.1/
+dc	figures/lightClock.svg	/^   width="210mm">$/;"	n	uri:http://purl.org/dc/elements/1.1/
+dc	figures/lightCone.svg	/^   sodipodi:docname="lightCone.svg">$/;"	n	uri:http://purl.org/dc/elements/1.1/
+dc	figures/observers.svg	/^   sodipodi:docname="observers.svg">$/;"	n	uri:http://purl.org/dc/elements/1.1/
+dc	figures/spacetimeLightCones.svg	/^   width="210mm">$/;"	n	uri:http://purl.org/dc/elements/1.1/
+def:diffeomorphic	chapters/diffeomorphisms.tex	/^    \\label{def:diffeomorphic}$/;"	l
+def:section	chapters/tangentSpaces.tex	/^    \\label{def:section}$/;"	l
+def:tangentspace	chapters/tangentSpaces.tex	/^    \\label{def:tangentspace}$/;"	l
+def:vectorField	chapters/tangentSpaces.tex	/^    \\label{def:vectorField}$/;"	l
+def:vectorspace	chapters/vectorSpaces.tex	/^    \\label{def:vectorspace}$/;"	l
+defn:velocity	chapters/tangentSpaces.tex	/^    \\label{defn:velocity}$/;"	l
+defs1766	figures/observers.svg	/^     id="defs1766">$/;"	i
+defs2	figures/3vector.svg	/^     id="defs2">$/;"	i
+defs2	figures/PartitionOfUnity.svg	/^     id="defs2">$/;"	i
+defs2	figures/lightClock.svg	/^     id="defs2" \/>$/;"	i
+defs2	figures/lightCone.svg	/^     id="defs2">$/;"	i
+defs2	figures/spacetimeLightCones.svg	/^     id="defs2" \/>$/;"	i
+diagram	figures/parallelTransportSphere.svg	/^<g id="diagram">$/;"	i
+eq:1form	chapters/tangentSpaces.tex	/^    \\label{eq:1form}$/;"	l
+eq:EFEs	chapters/EinsteinGravity.tex	/^        \\label{eq:EFEs}$/;"	l
+eq:EulerLagrange	chapters/metricManifolds.tex	/^        \\label{eq:EulerLagrange}$/;"	l
+eq:GammaZero	chapters/connection.tex	/^    \\label{eq:GammaZero}$/;"	l
+eq:OmegaTransform	chapters/integrationManifolds.tex	/^                \\label{eq:OmegaTransform}$/;"	l
+eq:RiemannCurvature	chapters/parallelTransport.tex	/^        \\label{eq:RiemannCurvature}$/;"	l
+eq:TPerfectFluid	chapters/matter.tex	/^        \\label{eq:TPerfectFluid}$/;"	l
+eq:autoparallelEquation	chapters/parallelTransport.tex	/^    \\label{eq:autoparallelEquation}$/;"	l
+eq:changeofcomp-calc	chapters/tangentSpaces.tex	/^    \\partial_i \\left( f\\circ x^{-1} \\right)(x(p))\\label{eq:changeofcomp-calc}\\\\$/;"	l
+eq:defVelocity	chapters/tangentSpaces.tex	/^    \\label{eq:defVelocity}$/;"	l
+eq:differential	chapters/tangentSpaces.tex	/^        \\label{eq:differential}$/;"	l
+eq:eigenvector	chapters/metricManifolds.tex	/^    \\label{eq:eigenvector}$/;"	l
+eq:geodesic	chapters/metricManifolds.tex	/^    \\label{eq:geodesic}$/;"	l
+eq:inverseMetricComponents	chapters/metricManifolds.tex	/^        \\label{eq:inverseMetricComponents}$/;"	l
+eq:lagrangian	chapters/metricManifolds.tex	/^            \\label{eq:lagrangian}$/;"	l
+eq:lengthCurve	chapters/metricManifolds.tex	/^            \\label{eq:lengthCurve}$/;"	l
+eq:lieSubalgebra	chapters/flow.tex	/^        \\label{eq:lieSubalgebra}$/;"	l
+eq:massiveAction	chapters/matter.tex	/^    \\label{eq:massiveAction}$/;"	l
+eq:masslessAction	chapters/matter.tex	/^    \\label{eq:masslessAction}$/;"	l
+eq:musicalMap	chapters/metricManifolds.tex	/^        \\label{eq:musicalMap}$/;"	l
+eq:naiveIntegral	chapters/integrationManifolds.tex	/^            \\label{eq:naiveIntegral}$/;"	l
+eq:newtGR	chapters/newtonianSpacetime.tex	/^    \\label{eq:newtGR}$/;"	l
+eq:newton	chapters/newtonianSpacetime.tex	/^    \\label{eq:newton} \\cancel{m} \\ddot{x}^i(t) &= \\cancel{m} f^{i}(x(t)) = F^i\\,,\\\\$/;"	l
+eq:omegaTranform	chapters/integrationManifolds.tex	/^                \\label{eq:omegaTranform}&\\Omega_{(y)i_1\\cdots i_d} = \\sqrt{\\det(g_{(y)ij})}/;"	l
+eq:pushForwardComponents	chapters/symmetry.tex	/^    \\label{eq:pushForwardComponents} &= \\phi_*\\left( \\frac{\\partial}{\\partial x^i} \\right/;"	l
+eq:tensorcomponentsexample	chapters/vectorSpaces.tex	/^    T(\\varphi, v) = T\\indices{^i _j} \\varphi_i v^j\\, \\label{eq:tensorcomponentsexample}$/;"	l
+eq:vectorcomponents	chapters/tangentSpaces.tex	/^    \\label{eq:vectorcomponents}$/;"	l
+eq:vectorcomponents2	chapters/tangentSpaces.tex	/^        \\label{eq:vectorcomponents2}$/;"	l
+eq:vectransformdef	chapters/tangentSpaces.tex	/^    \\label{eq:vectransformdef}$/;"	l
+eq:vsigma	chapters/tangentSpaces.tex	/^                v_{\\sigma_x, p}(f) &= (f\\circ\\sigma_x)'(0)\\label{eq:vsigma}\\\\$/;"	l
+eq:xiTangentBundle	chapters/tangentSpaces.tex	/^    \\label{eq:xiTangentBundle}$/;"	l
+fig:3velocity	chapters/relativisticSpacetime.tex	/^    \\label{fig:3velocity}$/;"	l
+fig:circletangentbundle	chapters/tangentSpaces.tex	/^    \\label{fig:circletangentbundle}$/;"	l
+fig:curvechart	chapters/diffMan.tex	/^    \\label{fig:curvechart}$/;"	l
+fig:diffeo-commdiag	chapters/diffeomorphisms.tex	/^    \\label{fig:diffeo-commdiag}$/;"	l
+fig:integralCurve	chapters/flow.tex	/^    \\label{fig:integralCurve}$/;"	l
+fig:lightClock	chapters/relativisticSpacetime.tex	/^    \\label{fig:lightClock}$/;"	l
+fig:lightCone	chapters/relativisticSpacetime.tex	/^    \\label{fig:lightCone}$/;"	l
+fig:observers	chapters/relativisticSpacetime.tex	/^    \\label{fig:observers}$/;"	l
+fig:parallelTransportSphere	chapters/parallelTransport.tex	/^    \\label{fig:parallelTransportSphere}$/;"	l
+fig:partitionOfUnity	chapters/integrationManifolds.tex	/^                    \\label{fig:partitionOfUnity}$/;"	l
+fig:spacetimeLightCones	chapters/relativisticSpacetime.tex	/^    \\label{fig:spacetimeLightCones}$/;"	l
+fig:tangentspace	chapters/tangentSpaces.tex	/^    \\label{fig:tangentspace}$/;"	l
+fig:transitionmaps	chapters/manifolds.tex	/^    \\label{fig:transitionmaps}$/;"	l
+g10256	figures/3vector.svg	/^       id="g10256">$/;"	i
+g1802	figures/observers.svg	/^       inkscape:transform-center-y="-10.371335">$/;"	i
+g1802-5	figures/observers.svg	/^       id="g1802-5">$/;"	i
+g2089	figures/observers.svg	/^       transform="translate(19.276786,-9.0714286)">$/;"	i
+g2089-5	figures/observers.svg	/^       inkscape:transform-center-y="5.0188198">$/;"	i
+g855-9	figures/spacetimeLightCones.svg	/^       id="g855-9">$/;"	i
+g855-9-2	figures/spacetimeLightCones.svg	/^       transform="matrix(0.65140427,0,0,0.63853989,38.337618,59.544531)">$/;"	i
+g855-9-7	figures/spacetimeLightCones.svg	/^       transform="matrix(0.65140427,0,0,0.63853989,1.4544228,28.541266)">$/;"	i
+g855-9-7-4	figures/spacetimeLightCones.svg	/^       id="g855-9-7-4">$/;"	i
+g855-9-7-8	figures/spacetimeLightCones.svg	/^       id="g855-9-7-8">$/;"	i
+g855-9-8	figures/spacetimeLightCones.svg	/^       transform="matrix(0.65140427,0,0,0.63853989,1.4544228,-4.8674255)">$/;"	i
+g855-9-8-5	figures/spacetimeLightCones.svg	/^       id="g855-9-8-5">$/;"	i
+g855-9-8-5-5	figures/spacetimeLightCones.svg	/^       id="g855-9-8-5-5">$/;"	i
+g855-9-8-5-5-0	figures/spacetimeLightCones.svg	/^       inkscape:transform-center-x="-3.2565364">$/;"	i
+g855-9-8-5-5-0-1	figures/spacetimeLightCones.svg	/^       id="g855-9-8-5-5-0-1">$/;"	i
+g855-9-8-5-5-0-2	figures/spacetimeLightCones.svg	/^       id="g855-9-8-5-5-0-2">$/;"	i
+g855-9-8-5-5-7	figures/spacetimeLightCones.svg	/^       id="g855-9-8-5-5-7">$/;"	i
+g855-9-8-5-8	figures/spacetimeLightCones.svg	/^       inkscape:transform-center-x="-8.514662">$/;"	i
+grid23	figures/lightCone.svg	/^       type="xygrid" \/>$/;"	i
+guide1097	figures/spacetimeLightCones.svg	/^       position="27.662479,141.7775" \/>$/;"	i
+guide905	figures/PartitionOfUnity.svg	/^       id="guide905" \/>$/;"	i
+guide915	figures/PartitionOfUnity.svg	/^       id="guide915" \/>$/;"	i
+guide921	figures/PartitionOfUnity.svg	/^       id="guide921" \/>$/;"	i
+image189	figures/PartitionOfUnity.svg	/^     y="20.919552" \/>$/;"	i
+image2183	figures/observers.svg	/^       style="opacity:1;stop-opacity:1" \/>$/;"	i
+image2197	figures/observers.svg	/^       style="opacity:1;stop-opacity:1" \/>$/;"	i
+image2211	figures/observers.svg	/^       style="opacity:1;stop-opacity:1" \/>$/;"	i
+image2225	figures/observers.svg	/^       style="opacity:1;stop-opacity:1" \/>$/;"	i
+image2239	figures/observers.svg	/^       style="opacity:1;stop-opacity:1" \/>$/;"	i
+image2253	figures/observers.svg	/^       style="opacity:1;stop-opacity:1" \/>$/;"	i
+image2267	figures/observers.svg	/^       style="opacity:1;stop-opacity:1" \/>$/;"	i
+image2281	figures/observers.svg	/^       style="opacity:1;stop-opacity:1" \/>$/;"	i
+image881	figures/3vector.svg	/^     style="opacity:1;stop-opacity:1" \/>$/;"	i
+image895	figures/3vector.svg	/^     style="opacity:1;stop-opacity:1" \/>$/;"	i
+image909	figures/3vector.svg	/^     style="opacity:1;stop-opacity:1" \/>$/;"	i
+image923	figures/3vector.svg	/^     style="opacity:1;stop-opacity:1" \/>$/;"	i
+image937	figures/3vector.svg	/^     style="opacity:1;stop-opacity:1" \/>$/;"	i
+image940	figures/observers.svg	/^       y="83.549934" \/>$/;"	i
+image951	figures/3vector.svg	/^     style="opacity:1;stop-opacity:1" \/>$/;"	i
+image965	figures/3vector.svg	/^     style="opacity:1;stop-opacity:1" \/>$/;"	i
+inkscape	figures/3vector.svg	/^   width="210mm">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
+inkscape	figures/PartitionOfUnity.svg	/^   sodipodi:docname="PartitionOfUnity.svg">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
+inkscape	figures/lightClock.svg	/^   width="210mm">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
+inkscape	figures/lightCone.svg	/^   sodipodi:docname="lightCone.svg">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
+inkscape	figures/observers.svg	/^   sodipodi:docname="observers.svg">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
+inkscape	figures/spacetimeLightCones.svg	/^   width="210mm">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
+item:3velocity	chapters/relativisticSpacetime.tex	/^        \\label{item:3velocity}$/;"	l
+item:addofcurves	chapters/tangentSpaces.tex	/^        \\label{item:addofcurves}$/;"	l
+item:clock	chapters/relativisticSpacetime.tex	/^            \\label{item:clock}$/;"	l
+item:massive	chapters/relativisticSpacetime.tex	/^        \\label{item:massive}$/;"	l
+item:massless	chapters/relativisticSpacetime.tex	/^        \\label{item:massless}$/;"	l
+layer1	figures/3vector.svg	/^     inkscape:label="Layer 1">$/;"	i
+layer1	figures/PartitionOfUnity.svg	/^     id="layer1">$/;"	i
+layer1	figures/lightClock.svg	/^     inkscape:label="Layer 1">$/;"	i
+layer1	figures/lightCone.svg	/^     id="layer1">$/;"	i
+layer1	figures/observers.svg	/^     id="layer1">$/;"	i
+layer1	figures/spacetimeLightCones.svg	/^     inkscape:label="Layer 1">$/;"	i
+layer2	figures/3vector.svg	/^     inkscape:groupmode="layer" \/>$/;"	i
+layer2	figures/lightCone.svg	/^     inkscape:groupmode="layer">$/;"	i
+linearGradient897	figures/lightCone.svg	/^       id="linearGradient897">$/;"	d
+linearGradient897	figures/lightCone.svg	/^       id="linearGradient897">$/;"	i
+marker1215	figures/lightCone.svg	/^       inkscape:isstock="true">$/;"	d
+marker1215	figures/lightCone.svg	/^       inkscape:isstock="true">$/;"	i
+marker1249	figures/lightCone.svg	/^       inkscape:isstock="true">$/;"	d
+marker1249	figures/lightCone.svg	/^       inkscape:isstock="true">$/;"	i
+marker2076	figures/observers.svg	/^       inkscape:isstock="true">$/;"	d
+marker2076	figures/observers.svg	/^       inkscape:isstock="true">$/;"	i
+marker2076-9	figures/observers.svg	/^       inkscape:stockid="Arrow1Lend">$/;"	d
+marker2076-9	figures/observers.svg	/^       inkscape:stockid="Arrow1Lend">$/;"	i
+marker2080	figures/observers.svg	/^       inkscape:isstock="true">$/;"	d
+marker2080	figures/observers.svg	/^       inkscape:isstock="true">$/;"	i
+marker2080-3	figures/observers.svg	/^       inkscape:stockid="Arrow1Lend">$/;"	d
+marker2080-3	figures/observers.svg	/^       inkscape:stockid="Arrow1Lend">$/;"	i
+marker2084	figures/observers.svg	/^       inkscape:isstock="true">$/;"	d
+marker2084	figures/observers.svg	/^       inkscape:isstock="true">$/;"	i
+marker2084-3	figures/observers.svg	/^       inkscape:stockid="Arrow1Lend">$/;"	d
+marker2084-3	figures/observers.svg	/^       inkscape:stockid="Arrow1Lend">$/;"	i
+marker9528	figures/3vector.svg	/^       inkscape:stockid="Arrow1Mend">$/;"	d
+marker9528	figures/3vector.svg	/^       inkscape:stockid="Arrow1Mend">$/;"	i
+marker9602	figures/3vector.svg	/^       inkscape:stockid="Arrow1Mend">$/;"	d
+marker9602	figures/3vector.svg	/^       inkscape:stockid="Arrow1Mend">$/;"	i
+mesh_polyfill	figures/3vector.svg	/^     type="text\/javascript">$/;"	i
+metadata1769	figures/observers.svg	/^     id="metadata1769">$/;"	i
+metadata5	figures/3vector.svg	/^     id="metadata5">$/;"	i
+metadata5	figures/PartitionOfUnity.svg	/^     id="metadata5">$/;"	i
+metadata5	figures/lightClock.svg	/^     id="metadata5">$/;"	i
+metadata5	figures/lightCone.svg	/^     id="metadata5">$/;"	i
+metadata5	figures/spacetimeLightCones.svg	/^     id="metadata5">$/;"	i
+ns5a5063ab0101	figures/lightClock.svg	/^   width="210mm">$/;"	n	uri:http://www.w3.org/2000/svg
+ns60d66aef0101	figures/PartitionOfUnity.svg	/^   sodipodi:docname="PartitionOfUnity.svg">$/;"	n	uri:http://www.w3.org/2000/svg
+ns6383094d0101	figures/3vector.svg	/^   width="210mm">$/;"	n	uri:http://www.w3.org/2000/svg
+nsad6af7820101	figures/observers.svg	/^   sodipodi:docname="observers.svg">$/;"	n	uri:http://www.w3.org/2000/svg
+nsb10c7c240101	figures/lightCone.svg	/^   sodipodi:docname="lightCone.svg">$/;"	n	uri:http://www.w3.org/2000/svg
+nsc2c422e80101	figures/parallelTransportSphere.svg	/^	 viewBox="0 0 408 456" width="408" height="456" style="enable-background:new 0 0 408 456;" xml:/;"	n	uri:http://www.w3.org/2000/svg
+nsd24945520101	figures/spacetimeLightCones.svg	/^   width="210mm">$/;"	n	uri:http://www.w3.org/2000/svg
+parallelTransportFigure	mybib.bib	/^@misc{parallelTransportFigure,$/;"	n
+path10	figures/PartitionOfUnity.svg	/^       inkscape:connector-curvature="0" \/>$/;"	i
+path10	figures/lightCone.svg	/^       inkscape:connector-curvature="0" \/>$/;"	i
+path10-9	figures/lightCone.svg	/^       style="fill:none;stroke:#000000;stroke-width:0.157114px;stroke-linecap:butt;stroke-linejo/;"	i
+path1062	figures/PartitionOfUnity.svg	/^         transform="scale(-0.8)" \/>$/;"	i
+path1130	figures/lightCone.svg	/^     style="fill:none;stroke:#000000;stroke-width:0.26458300000000001px;stroke-linecap:butt;stro/;"	i
+path1130-5	figures/lightCone.svg	/^     inkscape:connector-curvature="0" \/>$/;"	i
+path1167	figures/lightCone.svg	/^       style="fill:#bdcccc;stroke:#000000;stroke-width:0.26449299999999998px;stroke-linecap:butt/;"	i
+path12	figures/PartitionOfUnity.svg	/^       sodipodi:nodetypes="cc" \/>$/;"	i
+path1213	figures/lightCone.svg	/^         transform="scale(0.8) translate(12.5,0)" \/>$/;"	i
+path1247	figures/lightCone.svg	/^         transform="scale(0.8) rotate(180) translate(12.5,0)" \/>$/;"	i
+path14	figures/PartitionOfUnity.svg	/^       sodipodi:nodetypes="cc" \/>$/;"	i
+path1535	figures/spacetimeLightCones.svg	/^       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejo/;"	i
+path1539	figures/spacetimeLightCones.svg	/^       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejo/;"	i
+path1589	figures/spacetimeLightCones.svg	/^       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejo/;"	i
+path16	figures/PartitionOfUnity.svg	/^       cx="93.738091" \/>$/;"	i
+path1774	figures/observers.svg	/^       sodipodi:nodetypes="cc" \/>$/;"	i
+path1774-3	figures/observers.svg	/^       style="fill:none;stroke:#0000cb;stroke-width:1.465;stroke-linecap:butt;stroke-linejoin:mi/;"	i
+path1776	figures/observers.svg	/^         style="fill:none;stroke:#000000;stroke-width:0.215173px;stroke-linecap:butt;stroke-line/;"	i
+path1776-2	figures/observers.svg	/^         inkscape:connector-curvature="0" \/>$/;"	i
+path1776-5	figures/observers.svg	/^         inkscape:connector-curvature="0" \/>$/;"	i
+path1776-5-2	figures/observers.svg	/^         style="fill:none;stroke:#000000;stroke-width:0.215173px;stroke-linecap:butt;stroke-line/;"	i
+path1797	figures/observers.svg	/^         style="fill:#bdcccc;fill-opacity:0.477733;stroke:#000000;stroke-width:0.264999" \/>$/;"	i
+path1797-7	figures/observers.svg	/^         ry="3.0647666" \/>$/;"	i
+path1804	figures/observers.svg	/^         style="fill:none;stroke:#000000;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:/;"	i
+path1804-8	figures/observers.svg	/^         inkscape:connector-curvature="0" \/>$/;"	i
+path1806	figures/observers.svg	/^         style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-line/;"	i
+path1806-9	figures/observers.svg	/^         inkscape:connector-curvature="0" \/>$/;"	i
+path1808	figures/observers.svg	/^         style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-line/;"	i
+path1808-6	figures/observers.svg	/^         inkscape:connector-curvature="0" \/>$/;"	i
+path1813	figures/observers.svg	/^         transform="scale(0.8) rotate(180) translate(12.5,0)" \/>$/;"	i
+path1813-7	figures/observers.svg	/^         inkscape:connector-curvature="0" \/>$/;"	i
+path2074	figures/observers.svg	/^         transform="scale(0.8) rotate(180) translate(12.5,0)" \/>$/;"	i
+path2074-5	figures/observers.svg	/^         inkscape:connector-curvature="0" \/>$/;"	i
+path2078	figures/observers.svg	/^         transform="scale(0.8) rotate(180) translate(12.5,0)" \/>$/;"	i
+path2078-8	figures/observers.svg	/^         inkscape:connector-curvature="0" \/>$/;"	i
+path2082	figures/observers.svg	/^         transform="scale(0.8) rotate(180) translate(12.5,0)" \/>$/;"	i
+path2082-3	figures/observers.svg	/^         inkscape:connector-curvature="0" \/>$/;"	i
+path2285	figures/observers.svg	/^       ry="1.0773729" \/>$/;"	i
+path2285-9	figures/observers.svg	/^       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.134233;stroke-miterlimit/;"	i
+path27-8	figures/lightCone.svg	/^       style="fill:url(#radialGradient901);fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke/;"	i
+path27-8-6	figures/lightCone.svg	/^       ry="7.1671209" \/>$/;"	i
+path29	figures/lightCone.svg	/^     style="fill:none;stroke:#000000;stroke-width:0.165;stroke-linecap:butt;stroke-linejoin:mite/;"	i
+path5009	figures/PartitionOfUnity.svg	/^       inkscape:connector-curvature="0" \/>$/;"	i
+path5013	figures/PartitionOfUnity.svg	/^       inkscape:connector-curvature="0" \/>$/;"	i
+path5015	figures/PartitionOfUnity.svg	/^       inkscape:connector-curvature="0" \/>$/;"	i
+path5017	figures/PartitionOfUnity.svg	/^       inkscape:connector-curvature="0" \/>$/;"	i
+path5057	figures/PartitionOfUnity.svg	/^       inkscape:connector-curvature="0" \/>$/;"	i
+path5131	figures/PartitionOfUnity.svg	/^       inkscape:connector-curvature="0" \/>$/;"	i
+path5131-4	figures/PartitionOfUnity.svg	/^       style="fill:none;stroke:#000000;stroke-width:0.264999;stroke-linecap:butt;stroke-linejoin/;"	i
+path6048	figures/3vector.svg	/^         sodipodi:nodetypes="ccccc" \/>$/;"	i
+path833	figures/lightClock.svg	/^       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejo/;"	i
+path833-3-7	figures/spacetimeLightCones.svg	/^         inkscape:connector-curvature="0" \/>$/;"	i
+path833-3-7-1	figures/spacetimeLightCones.svg	/^         style="fill:none;stroke:#000000;stroke-width:0.207666px;stroke-linecap:butt;stroke-line/;"	i
+path833-3-7-1-0	figures/spacetimeLightCones.svg	/^         inkscape:connector-curvature="0" \/>$/;"	i
+path833-3-7-1-4	figures/spacetimeLightCones.svg	/^         inkscape:connector-curvature="0" \/>$/;"	i
+path833-3-7-3	figures/spacetimeLightCones.svg	/^         style="fill:none;stroke:#000000;stroke-width:0.207666px;stroke-linecap:butt;stroke-line/;"	i
+path833-3-7-3-6	figures/spacetimeLightCones.svg	/^         inkscape:connector-curvature="0" \/>$/;"	i
+path833-3-7-3-6-3	figures/spacetimeLightCones.svg	/^         inkscape:connector-curvature="0" \/>$/;"	i
+path833-3-7-3-6-3-1	figures/spacetimeLightCones.svg	/^         style="fill:none;stroke:#000000;stroke-width:0.207666px;stroke-linecap:butt;stroke-line/;"	i
+path833-3-7-3-6-3-1-8	figures/spacetimeLightCones.svg	/^         inkscape:connector-curvature="0" \/>$/;"	i
+path833-3-7-3-6-3-1-88	figures/spacetimeLightCones.svg	/^         inkscape:connector-curvature="0" \/>$/;"	i
+path833-3-7-3-6-3-7	figures/spacetimeLightCones.svg	/^         inkscape:connector-curvature="0" \/>$/;"	i
+path833-3-7-3-6-6	figures/spacetimeLightCones.svg	/^         style="fill:none;stroke:#000000;stroke-width:0.207666px;stroke-linecap:butt;stroke-line/;"	i
+path833-3-7-6	figures/spacetimeLightCones.svg	/^         style="fill:none;stroke:#000000;stroke-width:0.207666px;stroke-linecap:butt;stroke-line/;"	i
+path833-4	figures/lightClock.svg	/^       inkscape:connector-curvature="0" \/>$/;"	i
+path833-91	figures/spacetimeLightCones.svg	/^         style="fill:none;stroke:#000000;stroke-width:0.207666px;stroke-linecap:butt;stroke-line/;"	i
+path833-91-2	figures/spacetimeLightCones.svg	/^         inkscape:connector-curvature="0" \/>$/;"	i
+path833-91-8	figures/spacetimeLightCones.svg	/^         inkscape:connector-curvature="0" \/>$/;"	i
+path833-91-8-8	figures/spacetimeLightCones.svg	/^         style="fill:none;stroke:#000000;stroke-width:0.207666px;stroke-linecap:butt;stroke-line/;"	i
+path833-91-8-8-1	figures/spacetimeLightCones.svg	/^         style="fill:none;stroke:#000000;stroke-width:0.207666px;stroke-linecap:butt;stroke-line/;"	i
+path833-91-8-8-1-2	figures/spacetimeLightCones.svg	/^         inkscape:connector-curvature="0" \/>$/;"	i
+path833-91-8-8-1-2-4	figures/spacetimeLightCones.svg	/^         style="fill:none;stroke:#000000;stroke-width:0.207666px;stroke-linecap:butt;stroke-line/;"	i
+path833-91-8-8-1-2-6	figures/spacetimeLightCones.svg	/^         style="fill:none;stroke:#000000;stroke-width:0.207666px;stroke-linecap:butt;stroke-line/;"	i
+path833-91-8-8-1-3	figures/spacetimeLightCones.svg	/^         style="fill:none;stroke:#000000;stroke-width:0.207666px;stroke-linecap:butt;stroke-line/;"	i
+path833-91-8-8-5	figures/spacetimeLightCones.svg	/^         inkscape:connector-curvature="0" \/>$/;"	i
+path833-91-84	figures/spacetimeLightCones.svg	/^         inkscape:connector-curvature="0" \/>$/;"	i
+path833-91-84-4	figures/spacetimeLightCones.svg	/^         style="fill:none;stroke:#000000;stroke-width:0.207666px;stroke-linecap:butt;stroke-line/;"	i
+path833-91-84-6	figures/spacetimeLightCones.svg	/^         style="fill:none;stroke:#000000;stroke-width:0.207666px;stroke-linecap:butt;stroke-line/;"	i
+path835	figures/3vector.svg	/^         sodipodi:nodetypes="cc" \/>$/;"	i
+path837	figures/3vector.svg	/^         sodipodi:nodetypes="cc" \/>$/;"	i
+path839	figures/3vector.svg	/^         inkscape:transform-center-y="-4.4977862" \/>$/;"	i
+path839-0	figures/3vector.svg	/^         sodipodi:nodetypes="cc" \/>$/;"	i
+path839-8	figures/3vector.svg	/^         sodipodi:nodetypes="cc" \/>$/;"	i
+path844	figures/3vector.svg	/^         id="path844" \/>$/;"	i
+path850	figures/3vector.svg	/^         id="path850" \/>$/;"	i
+path850-23	figures/spacetimeLightCones.svg	/^         style="fill:#bdcccc;fill-opacity:0.477733;stroke:#000000;stroke-width:0.264999" \/>$/;"	i
+path850-23-5	figures/spacetimeLightCones.svg	/^         ry="5.2916665" \/>$/;"	i
+path850-23-5-2	figures/spacetimeLightCones.svg	/^         style="fill:#bdcccc;fill-opacity:0.477733;stroke:#000000;stroke-width:0.264999" \/>$/;"	i
+path850-23-5-2-7	figures/spacetimeLightCones.svg	/^         ry="5.2916665" \/>$/;"	i
+path850-23-5-2-9	figures/spacetimeLightCones.svg	/^         style="fill:#bdcccc;fill-opacity:0.477733;stroke:#000000;stroke-width:0.264999" \/>$/;"	i
+path850-23-5-2-9-5	figures/spacetimeLightCones.svg	/^         style="fill:#bdcccc;fill-opacity:0.477733;stroke:#000000;stroke-width:0.264999" \/>$/;"	i
+path850-23-5-2-9-8	figures/spacetimeLightCones.svg	/^         ry="5.2916665" \/>$/;"	i
+path850-23-5-2-9-8-7	figures/spacetimeLightCones.svg	/^         style="fill:#bdcccc;fill-opacity:0.477733;stroke:#000000;stroke-width:0.264999" \/>$/;"	i
+path850-23-5-2-9-8-9	figures/spacetimeLightCones.svg	/^         style="fill:#bdcccc;fill-opacity:0.477733;stroke:#000000;stroke-width:0.264999" \/>$/;"	i
+path850-23-6	figures/spacetimeLightCones.svg	/^         ry="5.2916665" \/>$/;"	i
+path850-23-7	figures/spacetimeLightCones.svg	/^         ry="5.2916665" \/>$/;"	i
+path850-23-7-0	figures/spacetimeLightCones.svg	/^         style="fill:#bdcccc;fill-opacity:0.477733;stroke:#000000;stroke-width:0.264999" \/>$/;"	i
+path850-23-7-3	figures/spacetimeLightCones.svg	/^         style="fill:#bdcccc;fill-opacity:0.477733;stroke:#000000;stroke-width:0.264999" \/>$/;"	i
+path850-7	figures/3vector.svg	/^         transform="matrix(-0.4,0,0,-0.4,-4,0)" \/>$/;"	i
+path850-9	figures/3vector.svg	/^         transform="matrix(-0.4,0,0,-0.4,-4,0)" \/>$/;"	i
+path854	figures/lightCone.svg	/^         id="path854" \/>$/;"	i
+path857	figures/lightCone.svg	/^         id="path857" \/>$/;"	i
+path861	figures/PartitionOfUnity.svg	/^       d="m 123.59815,30.988771 a 1.2756704,1.2756704 0 0 1 1.25954,-1.290298 1.2756704,1.275670/;"	i
+path861-6	figures/PartitionOfUnity.svg	/^       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.264583;stroke-opacity:1"/;"	i
+path878	figures/lightClock.svg	/^       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejo/;"	i
+path878-9	figures/lightClock.svg	/^       sodipodi:nodetypes="cc" \/>$/;"	i
+path906	figures/lightClock.svg	/^       style="fill:none;stroke:#e1e400;stroke-width:0.26458300000000001px;stroke-linecap:butt;st/;"	i
+path910	figures/lightClock.svg	/^       style="fill:none;stroke:#e8e600;stroke-width:0.26458300000000001px;stroke-linecap:butt;st/;"	i
+path919	figures/PartitionOfUnity.svg	/^       inkscape:connector-curvature="0" \/>$/;"	i
+path923	figures/PartitionOfUnity.svg	/^       inkscape:connector-curvature="0" \/>$/;"	i
+path927	figures/PartitionOfUnity.svg	/^       inkscape:connector-curvature="0" \/>$/;"	i
+path927-5	figures/PartitionOfUnity.svg	/^       style="fill:none;stroke:#000000;stroke-width:0.264999;stroke-linecap:butt;stroke-linejoin/;"	i
+path932	figures/PartitionOfUnity.svg	/^         transform="scale(0.8) rotate(180) translate(12.5,0)" \/>$/;"	i
+path932-6	figures/PartitionOfUnity.svg	/^         inkscape:connector-curvature="0" \/>$/;"	i
+path9524	figures/3vector.svg	/^         sodipodi:nodetypes="cc" \/>$/;"	i
+path9526	figures/3vector.svg	/^         id="path9526" \/>$/;"	i
+path9596	figures/3vector.svg	/^         sodipodi:nodetypes="cc" \/>$/;"	i
+path9598	figures/3vector.svg	/^         sodipodi:nodetypes="cc" \/>$/;"	i
+path9600	figures/3vector.svg	/^         id="path9600" \/>$/;"	i
+radialGradient901	figures/lightCone.svg	/^       gradientUnits="userSpaceOnUse" \/>$/;"	d
+radialGradient901	figures/lightCone.svg	/^       gradientUnits="userSpaceOnUse" \/>$/;"	i
+rdf	figures/3vector.svg	/^   width="210mm">$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdf	figures/PartitionOfUnity.svg	/^   sodipodi:docname="PartitionOfUnity.svg">$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdf	figures/lightClock.svg	/^   width="210mm">$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdf	figures/lightCone.svg	/^   sodipodi:docname="lightCone.svg">$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdf	figures/observers.svg	/^   sodipodi:docname="observers.svg">$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdf	figures/spacetimeLightCones.svg	/^   width="210mm">$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rect10384	figures/3vector.svg	/^         style="fill:#0000ff;fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-miterlim/;"	i
+requests	mechanics-manifolds.run.xml	/^<!DOCTYPE requests [$/;"	r
+sodipodi	figures/3vector.svg	/^   width="210mm">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+sodipodi	figures/PartitionOfUnity.svg	/^   sodipodi:docname="PartitionOfUnity.svg">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+sodipodi	figures/lightClock.svg	/^   width="210mm">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+sodipodi	figures/lightCone.svg	/^   sodipodi:docname="lightCone.svg">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+sodipodi	figures/observers.svg	/^   sodipodi:docname="observers.svg">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+sodipodi	figures/spacetimeLightCones.svg	/^   width="210mm">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+stop893	figures/lightCone.svg	/^         id="stop893" \/>$/;"	i
+stop895	figures/lightCone.svg	/^         id="stop895" \/>$/;"	i
+svg	figures/3vector.svg	/^   width="210mm">$/;"	n	uri:http://www.w3.org/2000/svg
+svg	figures/PartitionOfUnity.svg	/^   sodipodi:docname="PartitionOfUnity.svg">$/;"	n	uri:http://www.w3.org/2000/svg
+svg	figures/lightClock.svg	/^   width="210mm">$/;"	n	uri:http://www.w3.org/2000/svg
+svg	figures/lightCone.svg	/^   sodipodi:docname="lightCone.svg">$/;"	n	uri:http://www.w3.org/2000/svg
+svg	figures/observers.svg	/^   sodipodi:docname="observers.svg">$/;"	n	uri:http://www.w3.org/2000/svg
+svg	figures/spacetimeLightCones.svg	/^   width="210mm">$/;"	n	uri:http://www.w3.org/2000/svg
+svg1772	figures/observers.svg	/^   sodipodi:docname="observers.svg">$/;"	i
+svg8	figures/3vector.svg	/^   width="210mm">$/;"	i
+svg8	figures/PartitionOfUnity.svg	/^   sodipodi:docname="PartitionOfUnity.svg">$/;"	i
+svg8	figures/lightClock.svg	/^   width="210mm">$/;"	i
+svg8	figures/lightCone.svg	/^   sodipodi:docname="lightCone.svg">$/;"	i
+svg8	figures/spacetimeLightCones.svg	/^   width="210mm">$/;"	i
+texstackexchange	mybib.bib	/^@misc{texstackexchange:integralCurve,$/;"	n
+texstackexchange	mybib.bib	/^@misc{texstackexchange:manifolds,$/;"	n
+texstackexchange	mybib.bib	/^@misc{texstackexchange:tangentbundlecircle,$/;"	n
+texstackexchange	mybib.bib	/^@misc{texstackexchange:tangentspace,$/;"	n
+text	figures/parallelTransportSphere.svg	/^<g id="text">$/;"	i
+text1641	figures/spacetimeLightCones.svg	/^       xml:space="preserve"><tspan$/;"	i
+text1645	figures/spacetimeLightCones.svg	/^       xml:space="preserve"><tspan$/;"	i
+text47	figures/PartitionOfUnity.svg	/^     xml:space="preserve"><tspan$/;"	i
+text5021	figures/PartitionOfUnity.svg	/^       transform="scale(1.0323557,0.96865841)"><tspan$/;"	i
+text5021-7	figures/PartitionOfUnity.svg	/^       xml:space="preserve"><tspan$/;"	i
+text51	figures/PartitionOfUnity.svg	/^     xml:space="preserve"><tspan$/;"	i
+tspan1639	figures/spacetimeLightCones.svg	/^         sodipodi:role="line">massive<\/tspan><\/text>$/;"	i
+tspan1643	figures/spacetimeLightCones.svg	/^         sodipodi:role="line">massless<\/tspan><\/text>$/;"	i
+tspan45	figures/PartitionOfUnity.svg	/^       sodipodi:role="line">U<\/tspan><\/text>$/;"	i
+tspan49	figures/PartitionOfUnity.svg	/^       sodipodi:role="line">V<\/tspan><\/text>$/;"	i
+tspan5019	figures/PartitionOfUnity.svg	/^         style="stroke-width:0.206953">1<\/tspan><\/text>$/;"	i
+tspan5019-5	figures/PartitionOfUnity.svg	/^         sodipodi:role="line">1<\/tspan><\/text>$/;"	i
+xlink	figures/3vector.svg	/^   width="210mm">$/;"	n	uri:http://www.w3.org/1999/xlink
+xlink	figures/PartitionOfUnity.svg	/^   sodipodi:docname="PartitionOfUnity.svg">$/;"	n	uri:http://www.w3.org/1999/xlink
+xlink	figures/lightCone.svg	/^   sodipodi:docname="lightCone.svg">$/;"	n	uri:http://www.w3.org/1999/xlink
+xlink	figures/observers.svg	/^   sodipodi:docname="observers.svg">$/;"	n	uri:http://www.w3.org/1999/xlink
+xlink	figures/parallelTransportSphere.svg	/^	 viewBox="0 0 408 456" width="408" height="456" style="enable-background:new 0 0 408 456;" xml:/;"	n	uri:http://www.w3.org/1999/xlink
